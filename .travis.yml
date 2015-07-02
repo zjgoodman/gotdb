@@ -31,7 +31,7 @@ script:
     - ls -al
     - touch IDB.log
     - ls -al
-    - make IDB.html
+    - make models.html
     - ls -al
     - make TestIDB.out
     - make check

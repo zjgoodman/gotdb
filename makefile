@@ -28,7 +28,7 @@ config:
 	git config -l
 
 models.html: models.py
-	pydoc3 -w IDB
+	pydoc3 -w models
 
 IDB.log:
 	git log > IDB.log
