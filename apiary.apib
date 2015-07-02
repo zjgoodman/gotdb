@@ -1,0 +1,82 @@
+FORMAT: 1A
+HOST: http://GOT.apiblueprint.org/
+
+# GOTapi
+
+Simple API for navigating the GOT inspired imdb
+
+## Group Splash Page
+
+# Splash Page [/]
+
+Going to have links to characters in places that appear in the show. 
+
+## Go to home page [GET]
+
++ Response 200 (application/json)
+
+        {
+            "people_url": "/people"
+            "places_url": "/places"
+        }
+
+## Group Character
+
+Resources related to character in the API.
+
+## Character [/Character/{Character_id}]
+
+A Character object has the following attributes:
+
++ Character Name
++ Actor Name
++ House Name
++ Dead/Alive
++ url
+
++ Parameters
+    + Character_id: Jon.Snow (required, string) - ID of the Character in the form first.last
+
+### View a Character in detail [GET]
+
++ Response 200 (application/json)
+
+        {
+            "Character Name": "JonSnow",
+            "Actor Name": "Kit",
+            "House Name": "Stark",
+            "Dead/Alive": "Dead",
+            "url": "/Character/Jon.Snow"
+        }
+
+
+
+### Create a New Character [POST]
+
+You may create your own Character using this action. It takes a JSON
+object containing a Character and their attributes.
+
++ Character (string) - The Character
+
+
++ Request (application/json)
+
+        {
+            "Character": "Jon Snow"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /Character/Jon.Snow
+
+    + Body
+
+            {
+                "Character Name": "JonSnow",
+                "Actor Name": "Kit",
+                "House Name": "Stark",
+                "Dead/Alive": "Dead",
+                "url": "/Character/Jon.Snow"
+            }
