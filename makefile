@@ -30,13 +30,13 @@ config:
 models.html: models.py
 	pydoc3 -w models
 
-IDB.log:
+idb.log:
 	git log > IDB.log
 
-SHA:
+sha:
 	git rev-parse HEAD
 
-TestIDB.out: tests.py
-	coverage3 run --omit=*numpy* --branch tests.py >  TestIDB.out 2>&1
-	coverage3 report -m                      >> TestIDB.out
-	cat TestIDB.out
+test: tests.py
+	coverage3 run --omit=*numpy* --branch tests.py >  tests.out 2>&1
+	coverage3 report -m                      >> tests.out
+	cat tests.out

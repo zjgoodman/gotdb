@@ -33,5 +33,5 @@ script:
     - ls -al
     - make models.html
     - ls -al
-    - make TestIDB.out
+    - make test
     - make check
