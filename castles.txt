@@ -1,0 +1,18 @@
+Winterfell:
+	Location:
+		The North
+	Ruling Family:
+		Stark
+
+Storm's End:
+	Location:
+		Stormlands
+	Ruling Family:
+		Baratheon
+
+Casterly Rock:
+	Location:
+		West
+	Ruling Family:
+		Lannister
+

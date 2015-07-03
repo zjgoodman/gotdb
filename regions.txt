@@ -1,0 +1,17 @@
+The North:
+	Capitol:
+		Winterfell
+	Ruling Family:
+		Stark
+
+Stormlands:
+	Capitol:
+		Storm's End
+	Ruling Family:
+		Baratheon
+
+Westerlands:
+	Capitol:
+		Casterly Rock
+	Ruling Family:
+		Lannister
