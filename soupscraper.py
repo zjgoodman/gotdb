@@ -17,8 +17,10 @@ from bs4 import BeautifulSoup
 # for house in houses:
 # 	if not house.get():
 #
-hdr = {'User-Agent': 'Mozilla/5.0'}
+hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 
+#using Westeros.org
+#finds and scrapes info on all people listed in string
 print("People:\n")
 for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
 	# name = 'Eddard_Stark'
@@ -42,9 +44,15 @@ for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
 		print(parag[3:-4])
 	print('\n\n')
 
-print("Places:\n")
-for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock'):
+#using gameofthrones.wikia.com
+#finds and scrapes info on all places and regions listed in string, places first
+print("\nPlaces:\n")
+regions = False
+for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_Stormlands', 'The_Westerlands'):
 	#place = 'Winterfell'
+	if place == 'The_North':
+		print("\nRegions:\n")
+		regions = True
 	site = 'http://gameofthrones.wikia.com/wiki/' + place
 	page = urllib2.urlopen(site)
 	soup = BeautifulSoup(page)
@@ -52,6 +60,7 @@ for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock'):
 	data = soup.find('div', id = "mw-content-text")
 	for parag in data.find_all('p'):
 		parag = str(parag)
+		#Parse out any '<' or '>' and inbetween to remove ugly html
 		while parag.find('<') != -1 and parag.find('>') != -1:
 			start = parag.find('<')
 			cut = start
@@ -62,6 +71,7 @@ for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock'):
 				if parag[start] == '<':
 					cut = start
 			parag = parag[:cut] + parag[end + 1:]
+		#Parse out any brackets and references inbetween
 		while parag.find('[') != -1 and parag.find(']') != -1:
 			start = parag.find('[')
 			cut = start
