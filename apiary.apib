@@ -39,7 +39,6 @@ A Character object has the following attributes:
 
 + Parameters
     + Character_id: Jon.Snow (required, string) - ID of the Character in the form first.last
-
 + Response 200 (application/json)
 
         {
@@ -93,6 +92,9 @@ A Castle has the following attributes:
 
 ### View a castle in detail [GET]
 
++ Parameters 
+    + Castle_id : "Winterfell" (required, string) 
+
 + Response 200 (application/json)
 
         {
@@ -101,8 +103,31 @@ A Castle has the following attributes:
             "url": "/Castle/Winterfell"
         }
 
-+ Parameters 
-    + Castle_id : Winterfell 
+
+
+## Group Region
+
+## Region [/Region/{Region_id}]
+
+A region has the following attributes:
++ Region Name
++ Capitol 
++ url
+
+### View a region in detail [GET]
+
++ Parameters
+    + Region_id : "The.North" (required, string)
+    
++ Response 200 (application/json)
+    
+        {
+            "Region Name": "The North",
+            "Capitol": "Winterfell",
+            "url": "/Region/The.North"
+        }
+
+
 
 
 
