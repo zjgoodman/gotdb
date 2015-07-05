@@ -20,7 +20,3 @@ def person_detail(request, person_name):
         raise Http404("Person does not exist :")
     return render(request, 'populate_content/detail.html', {'person': person})
 
-def test(request):
-    return render(request, 'populate_content/www/index.html')
-        
-

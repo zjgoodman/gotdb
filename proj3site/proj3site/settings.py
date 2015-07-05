@@ -16,6 +16,9 @@ STATICFILES_DIRS = (
     os.path.join(
         BASE_DIR, '/splash/static/',
     ),
+    os.path.join(
+        BASE_DIR, '/populate_content/static/',
+    ),
 )
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
