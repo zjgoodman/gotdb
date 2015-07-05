@@ -16,8 +16,9 @@ Going to have links to characters in places that appear in the show.
 + Response 200 (application/json)
 
         {
-            "people_url": "/people"
-            "places_url": "/places"
+            "Character_url": "/Character"
+            "Castles_url": "/Castles"
+            "Region_url": "/Regions"
         }
 
 ## Group Character
@@ -34,15 +35,14 @@ A Character object has the following attributes:
 + Dead/Alive
 + url
 
-+ Parameters
-    + Character_id: Jon.Snow (required, string) - ID of the Character in the form first.last
-
 ### View a Character in detail [GET]
 
++ Parameters
+    + Character_id: Jon.Snow (required, string) - ID of the Character in the form first.last
 + Response 200 (application/json)
 
         {
-            "Character Name": "JonSnow",
+            "Character Name": "Jon Snow",
             "Actor Name": "Kit",
             "House Name": "Stark",
             "Dead/Alive": "Dead",
@@ -62,7 +62,7 @@ object containing a Character and their attributes.
 + Request (application/json)
 
         {
-            "Character": "Jon Snow"
+            "Character": "Jon.Snow"
         }
 
 + Response 201 (application/json)
@@ -80,3 +80,73 @@ object containing a Character and their attributes.
                 "Dead/Alive": "Dead",
                 "url": "/Character/Jon.Snow"
             }
+
+## Group Castle
+
+## Castle [/Castle/{Castle_id}]
+
+A Castle has the following attributes:
++ Castle Name
++ Region 
++ url
+
+### View a castle in detail [GET]
+
++ Parameters 
+    + Castle_id : "Winterfell" (required, string) 
+
++ Response 200 (application/json)
+
+        {
+            "Castle Name": "Winterfell",
+            "Castle Region": "The North",
+            "url": "/Castle/Winterfell"
+        }
+
+
+
+## Group Region
+
+## Region [/Region/{Region_id}]
+
+A region has the following attributes:
++ Region Name
++ Capitol 
++ url
+
+### View a region in detail [GET]
+
++ Parameters
+    + Region_id : "The.North" (required, string)
+    
++ Response 200 (application/json)
+    
+        {
+            "Region Name": "The North",
+            "Capitol": "Winterfell",
+            "url": "/Region/The.North"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

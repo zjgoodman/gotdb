@@ -32,7 +32,7 @@ for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
 	data = soup.find(id="Wrapper").find(id = "Main").find(id = "MainMiddle").find(id = "MainMiddleInner")
 	for line in data.find('div', attrs={'class': 'CharActor'}):
 		try:
-			if line[1:].startswith("Played"):
+			if line[1:].startswith("Played"): #find line with actor name
 				print(line[1:-1])
 		except:
 			pass
@@ -41,18 +41,22 @@ for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
 		parag = str(parag)
 		parag = parag.replace("<em>", "")
 		parag = parag.replace("</em>", "")
-		print(parag[3:-4])
+		print(parag[3:-4]) #removes html brackets
 	print('\n\n')
 
 #using gameofthrones.wikia.com
 #finds and scrapes info on all places and regions listed in string, places first
 print("\nPlaces:\n")
 regions = False
-for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_Stormlands', 'The_Westerlands'):
+houses = False
+for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_Stormlands', 'The_Westerlands', 'House_Stark', 'House_Baratheon', 'House_Lannister'):
 	#place = 'Winterfell'
 	if place == 'The_North':
 		print("\nRegions:\n")
 		regions = True
+	if place == 'House_Stark':
+		print("\nHouses:\n")
+		houses = True
 	site = 'http://gameofthrones.wikia.com/wiki/' + place
 	page = urllib2.urlopen(site)
 	soup = BeautifulSoup(page)
@@ -70,7 +74,7 @@ for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_S
 				start += 1
 				if parag[start] == '<':
 					cut = start
-			parag = parag[:cut] + parag[end + 1:]
+			parag = parag[:cut] + parag[end + 1:] #removed bracketed section
 		#Parse out any brackets and references inbetween
 		while parag.find('[') != -1 and parag.find(']') != -1:
 			start = parag.find('[')
@@ -81,6 +85,6 @@ for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_S
 				start += 1
 				if parag[start] == '[':
 					cut = start
-			parag = parag[:cut] + parag[end + 1:]
+			parag = parag[:cut] + parag[end + 1:] #removed bracketed section
 		print(parag)
 	print('\n\n')
