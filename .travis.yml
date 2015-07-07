@@ -4,6 +4,16 @@
 
 sudo: required
 
+# blacklist
+branches:
+  except:
+    - master
+
+# whitelist
+branches:
+  only:
+    - dev
+
 language: python
 
 python:
