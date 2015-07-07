@@ -1,4 +1,12 @@
-{{ person }}
+{% load staticfiles %}
+<header>
+	{% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
+	<img src="{% static image_static %}" alt="image not found"></img>
+	{% endwith %}
+</header>
+<p>
+	{{ person }}
+</p>
 <ul>
   <li>Titles: {{ person.titles }}</li>
   <li>House:  {{ person.house_name }}</li>

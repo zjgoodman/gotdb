@@ -31,7 +31,7 @@ class Person(models.Model) :
         return self.first_name + " " + self.last_name
 
     class Meta:
-        ordering = ('first_name',)
+        ordering = ('last_name',)
 
 class Region(models.Model) :
     """
@@ -112,3 +112,31 @@ class House(models.Model) :
 
     class Meta:
         ordering = ('name',)
+
+class Author(models.Model) :
+    # name
+    author_id = models.CharField(max_length=200, null=True)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
+
+    # photo
+    photo = models.ImageField(null=True)
+
+    # bio
+    bio = models.TextField(null=True)
+
+    # major responsibilities
+    responsibilities = models.TextField(null=True)
+
+    # statistics
+    num_commits = models.IntegerField(null=True)
+    num_issues  = models.IntegerField(null=True)
+    num_unit_tests = models.IntegerField(null=True)
+
+    def __str__(self):
+        return self.author_id
+
+    class Meta:
+        ordering = ('last_name',)
+    
+        
