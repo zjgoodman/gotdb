@@ -10,7 +10,6 @@ from django.test import TestCase
 from . import models
 class GOT_Tests (TestCase):
 
-
     def test_person_1(self):
         """
         Testing Person Models
@@ -33,6 +32,43 @@ class GOT_Tests (TestCase):
         self.assertEqual(titles,     'Lord of Winterfell')
         self.assertEqual(status, 	 'Dead')
         self.assertEqual(bio,        'Neds bio')
+
+    def test_person_2(self):
+        """
+        Testing Person Models
+        Create and store Person model (move input around)
+        check for correct output.
+        """
+        person = models.Person(last_name='Stark',
+                               first_name='Eddard',
+                               status='Dead',
+                               titles='Lord of Winterfell',
+                               bio='Neds bio')
+        first_name = person.first_name
+        last_name = person.last_name
+        titles = person.titles
+        status = person.status
+        bio = person.bio
+
+        self.assertEqual(first_name, 'Eddard')
+        self.assertEqual(last_name,  'Stark')
+        self.assertEqual(titles,     'Lord of Winterfell')
+        self.assertEqual(status, 	 'Dead')
+        self.assertEqual(bio,        'Neds bio')
+
+    def test_person_3(self):
+        """
+        Testing Person Models
+        Get the contents of the __str__ method
+        check for correct output (persons name).
+        """
+        person = models.Person(first_name='Eddard',
+                               last_name='Stark',
+                               titles='Lord of Winterfell',
+                               status='Dead',
+                               bio='Neds bio')
+
+        self.assertEqual(str(person), "Eddard Stark")
 
     def test_region_1(self):
         """
@@ -57,6 +93,44 @@ class GOT_Tests (TestCase):
         self.assertEqual(lord, 	 models.Person(self, first_name="evil guy", last_name="prob"))
         self.assertEqual(bio,        'may the lord bless your soul')
 
+    def test_region_2(self):
+        """
+        Testing region Models
+        Create and store Region model
+        check for correct output.
+        """
+        region = models.Region(name='The North',
+                               ruling_lord=models.Person(self, first_name="evil guy", last_name="prob"),
+                               ruling_house=models.House(self, name='that one house'),
+                               capital_name=models.Castle(self, name='whatever'),
+                               description='may the lord bless your soul')
+        name = region.name
+        capital = region.capital_name
+        house = region.ruling_house
+        lord = region.ruling_lord
+        bio = region.description
+
+        self.assertEqual(name, 'The North')
+        self.assertEqual(capital,  models.Castle(self, name='whatever'))
+        self.assertEqual(house,     models.House(self, name='that one house'))
+        self.assertEqual(lord, 	 models.Person(self, first_name="evil guy", last_name="prob"))
+        self.assertEqual(bio,        'may the lord bless your soul')
+
+    def test_region_3(self):
+        """
+        Testing region Models
+        Create and store Region model
+        check for correct output.
+        """
+        region = models.Region(name='The North',
+                               capital_name=models.Castle(self, name='whatever'),
+                               ruling_house=models.House(self, name='that one house'),
+                               ruling_lord=models.Person(self, first_name="evil guy", last_name="prob"),
+                               description='may the lord bless your soul')
+
+        self.assertEqual(str(region), 'The North')
+
+
     def test_castles_1(self):
         """
         Testing Castle Models
@@ -80,6 +154,44 @@ class GOT_Tests (TestCase):
         self.assertEqual(lord, 	 models.Person(self, first_name="evil guy", last_name="prob"))
         self.assertEqual(bio,        'may the lord bless your soul')
 
+    def test_castles_2(self):
+        """
+        Testing Castle Models
+        Create and store Castle model
+        check for correct output.
+        """
+        castle = models.Castle(name='The North',
+                               ruling_lord=models.Person(self, first_name="evil guy", last_name="prob"),
+                               ruling_house=models.House(self, name='that one house'),
+                               region_name=models.Region(self, name='whatever'),
+                               description='may the lord bless your soul')
+        name = castle.name
+        capital = castle.region_name
+        house = castle.ruling_house
+        lord = castle.ruling_lord
+        bio = castle.description
+
+        self.assertEqual(name, 'The North')
+        self.assertEqual(capital,  models.Region(self, name='whatever'))
+        self.assertEqual(house,     models.House(self, name='that one house'))
+        self.assertEqual(lord, 	 models.Person(self, first_name="evil guy", last_name="prob"))
+        self.assertEqual(bio,        'may the lord bless your soul')
+
+    def test_castles_3(self):
+        """
+        Testing Castle Models
+        Create and store Castle model
+        check for correct output.
+        """
+        castle = models.Castle(name='The North',
+                               region_name=models.Region(self, name='whatever'),
+                               ruling_house=models.House(self, name='that one house'),
+                               ruling_lord=models.Person(self, first_name="evil guy", last_name="prob"),
+                               description='may the lord bless your soul')
+
+        self.assertEqual(str(castle), 'The North')
+
+
     def test_House_1(self):
         """
         Testing house Models
@@ -102,6 +214,43 @@ class GOT_Tests (TestCase):
         self.assertEqual(region,     models.Region(self, name='whatever'))
         self.assertEqual(castle, 	 models.Castle(self, name='that one place'))
         self.assertEqual(bio,        'may the lord bless your soul')
+
+    def test_House_2(self):
+        """
+        Testing house Models
+        Create and store house model
+        check for correct output.
+        """
+        house = models.House(name='The North',
+                             region_name=models.Region(self, name='whatever'),
+                             words='some words',
+                             castle_name=models.Castle(self, name='that one place'),
+                             description='may the lord bless your soul')
+        name = house.name
+        words = house.words
+        region = house.region_name
+        castle = house.castle_name
+        bio = house.description
+
+        self.assertEqual(name, 'The North')
+        self.assertEqual(words, 'some words')
+        self.assertEqual(region,     models.Region(self, name='whatever'))
+        self.assertEqual(castle, 	 models.Castle(self, name='that one place'))
+        self.assertEqual(bio,        'may the lord bless your soul')
+
+    def test_House_3(self):
+        """
+        Testing house Models
+        Create and store house model
+        check for correct output.
+        """
+        house = models.House(name='The North',
+                             words='some words',
+                             region_name=models.Region(self, name='whatever'),
+                             castle_name=models.Castle(self, name='that one place'),
+                             description='may the lord bless your soul')
+
+        self.assertEqual(str(house), 'The North')
 class GOT_API_Tests (TestCase):
     url = "http://127.0.0.1:8000"
 
