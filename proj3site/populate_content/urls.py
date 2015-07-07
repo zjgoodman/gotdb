@@ -13,5 +13,7 @@ urlpatterns = [
     url(r'^api/people/$', views.person_api_list),
     url(r'^api/castles/$', views.castle_api_list),
     url(r'^api/regions/$', views.region_api_list),
+    url(r'^api/people/(?P<name>\w+_\w+)/$', views.person_api_detail),
+    url(r'^api/regions/(?P<name>[a-zA-z ]+)/$', views.region_api_detail),
+    url(r'^api/castles/(?P<name>[\'a-zA-z ]+)/$', views.castle_api_detail),
 ]
-

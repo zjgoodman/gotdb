@@ -50,6 +50,8 @@ def castle_detail(request, castle_name):
         raise Http404("Castle does not exist :")
     return render(request, 'populate_content/castle_detail.html', {'castle': castle})
 
+
+# API Views and JSON creator class
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -84,4 +86,44 @@ def castle_api_list(request):
     if request.method == 'GET':
         castle = Castle.objects.all()
         serializer = CastleSerializer(castle, many=True)
+        return JSONResponse(serializer.data)
+
+def person_api_detail(request, name):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        first_name, last_name = name.split('_')
+        person = Person.objects.get(last_name__exact=last_name)
+    except Person.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = PeopleSerializer(person)
+        return JSONResponse(serializer.data)
+
+def region_api_detail(request, name):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        region = Region.objects.get(name__exact=name)
+    except Region.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = RegionSerializer(region)
+        return JSONResponse(serializer.data)
+
+def castle_api_detail(request, name):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        castle = Castle.objects.get(name__exact=name)
+    except Castle.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = CastleSerializer(castle)
         return JSONResponse(serializer.data)
