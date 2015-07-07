@@ -77,28 +77,31 @@
     <header>
         <div class="header-content">
             <div class="container-fluid">
-                <div class="row">
-                    {% if all_people %}
-                        {% for person in all_people %}
-                                <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/people/{{ person.first_name }}_{{ person.last_name }}/">
-                                        {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                {% if all_authors %}
+                    {% for author in all_authors %}
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="portfolio-box">
+                                    <div class="portfolio-box-caption-content">
+                                        <p>
+                                        {% with 'img/portfolio/'|add:author.author_id|add:'.jpg' as image_static %}
+                                            <img src="{% static image_static %}" class="img-responsive" alt="image not found"></img>
                                         {% endwith %}
-                                        <div class="portfolio-box-caption">
-                                            <div class="portfolio-box-caption-content">
-                                                <div class="project-category text-faded">
-                                                    {{ person.first_name }} {{ person.last_name }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+                                            <br>{{ author.first_name }} {{ author.last_name }}
+                                            <br>{{ author.bio }}
+                                            <br>{{ author.bio }}
+                                            <br>Commits: {{ author.num_commits }}
+                                            <br>Issues: {{ author.num_issues }}
+                                            <br>Unit Tests: {{ author.num_unit_tests }}
+                                        </p>
+                                    </div>
                                 </div>
-                        {% endfor %}
-                    {% else %}
-                        <p>No people are available.</p>
-                    {% endif %}
-                </div>
+                            </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No people are available.</p>
+                {% endif %}
+                        </div>
             </div>
         </div>
     </header>
