@@ -1,6 +1,17 @@
 from django.db import models
 
 class Person(models.Model) :
+    """
+    Person model corresponds to a character in the show.
+    A Person has the following attributes that appear on its page:
+    - First Name
+    - Last Name
+    - Actor Name
+    - Title
+    - House Name (ForeignKey House)
+    - Status
+    - Bio
+    """
     # name info
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
@@ -22,6 +33,15 @@ class Person(models.Model) :
         ordering = ('first_name',)
 
 class Region(models.Model) :
+    """
+    Region models correspond to geographical areas.
+    A Region has the following attributes that appear on its page:
+    - Name
+    - Capitol (ForeignKey Castle)
+    - Ruling Family (ForeignKey House)
+    - Description 
+    - History 
+    """
     # name
     name = models.CharField(max_length=200)
     
@@ -41,6 +61,15 @@ class Region(models.Model) :
         ordering = ('name',)
 
 class Castle(models.Model) :
+    """
+    Castle models correspond to castles.
+    A Castle has the following attributes that appear on its page:
+    - Name
+    - Location (ForeignKey Region)
+    - Ruling Family (ForeignKey House)
+    - Description
+    - History
+    """
     # name and region
     name = models.CharField(max_length=200, null=True)
     region_name = models.ForeignKey(Region, null=True)
