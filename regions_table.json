@@ -1,0 +1,30 @@
+[
+	{
+		"name": "The North",
+		"capitol" : "Winterfell",
+		"ruling family" : [
+							"House Stark(former)",
+							"House Bolton"
+						  ],
+		"description" : "The North is one of the constituent regions of the Seven Kingdoms, and was formerly a sovereign nation known as the Kingdom of the North before the Targaryen conquest...",
+		"history" : "According to legend, the Kingdom of the North was established eight thousand years ago by Bran the Builder, the founder of House Stark, who constructed the Wall as a shield against the possible return of the White Walkers...",
+	},
+	{
+		"name": "The Stormlands",
+		"capitol" : "Storm's End",
+		"ruling family" : [
+							"House Baratheon"
+						  ],
+		"description" : "The Stormlands is one of the nine constituent regions of the Seven Kingdoms. It is located on the south east coast of the continent of Westeros, on the shores of the Narrow Sea, south of the Crownlands and north of Dorne...",
+		"history" : "When Aegon Targaryen and his army invaded Westeros during the War of Conquest, Aegon sent his bastard half-brother Orys Baratheon to secure the Stormlands...",
+	},
+	{
+		"name": "The Westerlands",
+		"captiol" : "Casterly Rock",
+		"ruling family" : [
+							"House Lannister"
+						  ],
+		"description" : "The Westerlands is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the Rock before the Targaryen conquest.",
+		"history" : "The Westerlands are ruled from the castle of Casterly Rock by House Lannister. It is one of the smaller regions of the Seven Kingdoms, but is immensely rich in natural resources, particularly metals...",
+	}
+]
