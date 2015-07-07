@@ -78,7 +78,9 @@
                         {% for region in all_regions %}
                                 <div class="col-lg-4 col-sm-6">
                                     <a href="/content/regions/{{ region.name }}/">
-                                        <img src="{% static "img/portfolio/sigils.jpg" %}" class="img-responsive" alt="">
+                                        {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
+                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                                        {% endwith %}
                                         <div class="portfolio-box-caption">
                                             <div class="portfolio-box-caption-content">
                                                 <div class="project-category text-faded">

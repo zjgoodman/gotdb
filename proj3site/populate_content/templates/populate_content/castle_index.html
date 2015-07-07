@@ -78,7 +78,9 @@
                         {% for castle in all_castles %}
                                 <div class="col-lg-4 col-sm-6">
                                     <a href="/content/castles/{{ castle.name }}/">
-                                        <img src="{% static "img/portfolio/{{ castle.castle_id }}.jpg" %}" class="img-responsive" alt="">
+                                        {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                                        {% endwith %}
                                         <div class="portfolio-box-caption">
                                             <div class="portfolio-box-caption-content">
                                                 <div class="project-category text-faded">
