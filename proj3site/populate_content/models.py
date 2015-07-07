@@ -22,10 +22,17 @@ class Person(models.Model) :
         ordering = ('first_name',)
 
 class Region(models.Model) :
+    # name
     name = models.CharField(max_length=200)
-    # ruling_house = models.ForeignKey('House', null=True)
-    # capital = models.ForeignKey('Castle', null=True)
+    
+    # capital
+    capital_name = models.ForeignKey('Castle', null=True)
+
+    # ruling family and lord
+    ruling_house = models.ForeignKey('House', null=True)
     ruling_lord = models.ForeignKey(Person, null=True)
+
+    # brief description
     description = models.TextField(null=True)
     def __str__(self):
         return self.name
@@ -34,11 +41,16 @@ class Region(models.Model) :
         ordering = ('name',)
 
 class Castle(models.Model) :
+    # name and region
     name = models.CharField(max_length=200, null=True)
-    region = models.ForeignKey(Region, null=True)
-    description = models.TextField(null=True)
-    ruling_lord = models.ForeignKey(Person, null=True)
+    region_name = models.ForeignKey(Region, null=True)
+
+    # ruling house and lord
     ruling_house = models.ForeignKey('House', null=True)
+    ruling_lord = models.ForeignKey(Person, null=True)
+
+    # brief description
+    description = models.TextField(null=True)
 
     def __str__(self):
         return self.name
@@ -54,7 +66,7 @@ class House(models.Model) :
     words = models.CharField(max_length=300, null=True)
 
     # region of the world
-    region = models.ForeignKey(Region, null=True)
+    region_name = models.ForeignKey(Region, null=True)
 
     # the name of their castle
     castle_name = models.ForeignKey(Castle, null=True)
