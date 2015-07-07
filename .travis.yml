@@ -14,8 +14,7 @@ before_install:
 
 install:
     - pip install --upgrade pip
-    - pip install coverage
-    - pip install numpy
+    - pip install django
 
 before_script:
     - uname -a
@@ -23,15 +22,13 @@ before_script:
     - pip3 --version
     - pip3 freeze
     - python3 --version
-    - coverage3 --version
-    - python3 -c "import numpy; print(numpy.__version__)"
 
 script:
     - date
+    # - ls -al
+    # - touch IDB.log
+    # - ls -al
+    # - make models.html
     - ls -al
-    - touch IDB.log
-    - ls -al
-    - make models.html
-    - ls -al
-    - make test
-    - make check
+    - make requirements
+    - make testserver

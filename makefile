@@ -33,10 +33,17 @@ models.html: models.py
 idb.log:
 	git log > IDB.log
 
+requirements:
+	pip install -r requirements.txt
+
 sha:
 	git rev-parse HEAD
 
-test: tests.py
+testserver:
+	python proj3site/manage.py migrate
+	python proj3site/manage.py runserver
+
+unittest: tests.py
 	coverage3 run --omit=*numpy* --branch tests.py >  tests.out 2>&1
 	coverage3 report -m                      >> tests.out
 	cat tests.out
