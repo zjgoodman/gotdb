@@ -62,7 +62,7 @@ class Region(models.Model) :
     class Meta:
         ordering = ('name',)
 
-class Castle(models.Model) :
+class Castle(models.Model):
     """
     Castle models correspond to castles.
     A Castle has the following attributes that appear on its page:
