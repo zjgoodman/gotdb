@@ -26,6 +26,11 @@ def person_detail(request, person_name):
         raise Http404("Person does not exist :")
     return render(request, 'populate_content/person_detail.html', {'person': person})
 
+def about_index(request):
+    all_authors = Author.objects.all()
+    context = {'all_authors': all_authors}
+    return render(request, 'populate_content/about_index.html', context)
+
 def region_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
