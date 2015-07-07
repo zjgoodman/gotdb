@@ -16,68 +16,77 @@ Going to have links to characters in places that appear in the show.
 + Response 200 (application/json)
 
         {
-            "Character_url": "/Character"
+            "Person_url": "/Person"
             "Castles_url": "/Castles"
             "Region_url": "/Regions"
         }
 
-## Group Character
+## Group Person
 
 Resources related to character in the API.
 
-## Character [/Character/{Character_id}]
+## Person [/Person/{Person_id}]
 
-A Character object has the following attributes:
+A Person object has the following attributes:
 
-+ Character Name
++ First Name
++ Last Name
 + Actor Name
++ Title
 + House Name
-+ Dead/Alive
++ Status
++ Bio
 + url
 
-### View a Character in detail [GET]
+### View a Person in detail [GET]
 
 + Parameters
-    + Character_id: Jon.Snow (required, string) - ID of the Character in the form first.last
+    + Person_id: Jon.Snow (required, string) - ID of the Person in the form first.last
 + Response 200 (application/json)
 
         {
-            "Character Name": "Jon Snow",
-            "Actor Name": "Kit",
+            "First Name": "Jon",
+            "Last Name": "Snow",
+            "Actor Name": "Kit Harrington",
+            "Title": "Lord Commander of the Night's Watch",
             "House Name": "Stark",
-            "Dead/Alive": "Dead",
+            "Status": "Dead",
+            "Bio": "Sample bio",
             "url": "/Character/Jon.Snow"
         }
 
 
 
-### Create a New Character [POST]
+### Create a New Person [POST]
 
-You may create your own Character using this action. It takes a JSON
-object containing a Character and their attributes.
+You may create your own Person using this action. It takes a JSON
+object containing a Person and their attributes.
 
-+ Character (string) - The Character
++ Person (string) - The Person
 
 
 + Request (application/json)
 
         {
-            "Character": "Jon.Snow"
+            "Person": "Jon.Snow"
         }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /Character/Jon.Snow
+            Location: /Person/Jon.Snow
 
     + Body
 
             {
-                "Character Name": "JonSnow",
-                "Actor Name": "Kit",
+                "First Name": "Jon",
+                "Last Name": "Snow",
+                "Actor Name": "Kit Harrington",
+                "Title": "Lord Commander of the Night's Watch",
                 "House Name": "Stark",
-                "Dead/Alive": "Dead",
+                "Status": "Dead",
+                "Bio": "Sample bio",
                 "url": "/Character/Jon.Snow"
             }
 
@@ -86,8 +95,11 @@ object containing a Character and their attributes.
 ## Castle [/Castle/{Castle_id}]
 
 A Castle has the following attributes:
-+ Castle Name
-+ Region 
++ Name
++ Location
++ Ruling Family
++ Description
++ History
 + url
 
 ### View a castle in detail [GET]
@@ -98,8 +110,11 @@ A Castle has the following attributes:
 + Response 200 (application/json)
 
         {
-            "Castle Name": "Winterfell",
-            "Castle Region": "The North",
+            "Name": "Winterfell",
+            "Location": "The North",
+            "Ruling Family": "The Starks",
+            "Description": "Sample description",
+            "History": "Sample history",
             "url": "/Castle/Winterfell"
         }
 
@@ -111,7 +126,10 @@ A Castle has the following attributes:
 
 A region has the following attributes:
 + Region Name
-+ Capitol 
++ Capitol
++ Ruling Family
++ Description
++ History
 + url
 
 ### View a region in detail [GET]
@@ -124,6 +142,9 @@ A region has the following attributes:
         {
             "Region Name": "The North",
             "Capitol": "Winterfell",
+            "Ruling Family": "The Starks",
+            "Description": "Sample description",
+            "History": "Sample history",
             "url": "/Region/The.North"
         }
 
