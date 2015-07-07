@@ -41,6 +41,8 @@ runserver:
 
 sha:
 	git rev-parse HEAD
+fake:
+	python proj3site/manage.py migrate --fake
 
 testserver:
 	python proj3site/manage.py makemigrations
