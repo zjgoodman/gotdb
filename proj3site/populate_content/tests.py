@@ -10,9 +10,13 @@ from django.test import TestCase
 from . import models
 class GOT_Tests (TestCase):
 
-    # Person(first_name, last_name, titles, status, bio)
-    def test_person_1(self):
 
+    def test_person_1(self):
+        """
+        Testing Person Models
+        Create and store Person model
+        check for correct output.
+        """
         person = models.Person(first_name='Eddard',
                                last_name='Stark',
                                titles='Lord of Winterfell',
@@ -31,7 +35,11 @@ class GOT_Tests (TestCase):
         self.assertEqual(bio,        'Neds bio')
 
     def test_region_1(self):
-
+        """
+        Testing region Models
+        Create and store Region model
+        check for correct output.
+        """
         region = models.Region(name='The North',
                                capital_name=models.Castle(self, name='whatever'),
                                ruling_house=models.House(self, name='that one house'),
@@ -50,7 +58,11 @@ class GOT_Tests (TestCase):
         self.assertEqual(bio,        'may the lord bless your soul')
 
     def test_castles_1(self):
-
+        """
+        Testing Castle Models
+        Create and store Castle model
+        check for correct output.
+        """
         castle = models.Castle(name='The North',
                                region_name=models.Region(self, name='whatever'),
                                ruling_house=models.House(self, name='that one house'),
@@ -68,14 +80,36 @@ class GOT_Tests (TestCase):
         self.assertEqual(lord, 	 models.Person(self, first_name="evil guy", last_name="prob"))
         self.assertEqual(bio,        'may the lord bless your soul')
 
+    def test_House_1(self):
+        """
+        Testing house Models
+        Create and store house model
+        check for correct output.
+        """
+        house = models.House(name='The North',
+                             words='some words',
+                             region_name=models.Region(self, name='whatever'),
+                             castle_name=models.Castle(self, name='that one place'),
+                             description='may the lord bless your soul')
+        name = house.name
+        words = house.words
+        region = house.region_name
+        castle = house.castle_name
+        bio = house.description
+
+        self.assertEqual(name, 'The North')
+        self.assertEqual(words, 'some words')
+        self.assertEqual(region,     models.Region(self, name='whatever'))
+        self.assertEqual(castle, 	 models.Castle(self, name='that one place'))
+        self.assertEqual(bio,        'may the lord bless your soul')
 class GOT_API_Tests (TestCase):
     url = "http://127.0.0.1:8000"
 
     def test_api_get_person (self):
         """
-        Doing an http get on person 'Ned Stark'.
+        Doing an http get on people.
         Expecting a response with a json object
-        containing Ned Starks data members
+        containing a collection each persons data members
         """
         response = requests.get(self.url + '/content/api/people/')
         self.assertEqual(response.status_code, 200)
@@ -85,9 +119,9 @@ class GOT_API_Tests (TestCase):
 
     def test_api_get_castle (self):
         """
-        Doing an http get on person 'Ned Stark'.
+        Doing an http get on castles.
         Expecting a response with a json object
-        containing Ned Starks data members
+        containing a collection each castle data members
         """
         response = requests.get(self.url + '/content/api/castles/')
         self.assertEqual(response.status_code, 200)
@@ -97,9 +131,9 @@ class GOT_API_Tests (TestCase):
 
     def test_api_get_regions (self):
         """
-        Doing an http get on person 'Ned Stark'.
+        Doing an http get on regions.
         Expecting a response with a json object
-        containing Ned Starks data members
+        containing a collection each regions data members
         """
         response = requests.get(self.url + '/content/api/regions/')
         self.assertEqual(response.status_code, 200)
