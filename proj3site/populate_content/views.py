@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from .models import Castle, Region, Person
+from .models import Castle, Region, Person, Author
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer
 
 from .models import Person, Region, Castle

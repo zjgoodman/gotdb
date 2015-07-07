@@ -11,6 +11,5 @@ urlpatterns = patterns('',
     url(r'^', include('splash.urls')),
     url(r'^content/', include('populate_content.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^about/', include(admin.site.urls)),
 
 )
