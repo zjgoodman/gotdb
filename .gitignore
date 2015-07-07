@@ -35,5 +35,6 @@
 # Python cache
 *.pyc
 *.swp
+*.swo
 
 TestInteger
