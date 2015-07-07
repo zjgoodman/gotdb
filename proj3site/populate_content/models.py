@@ -4,7 +4,7 @@ class Person(models.Model) :
     # name info
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
-    house_name = models.ForeignKey('House', null=True)
+    #house_name = models.ForeignKey('House', null=True)
 
     # titles
     titles = models.CharField(max_length=200, null=True)
@@ -29,7 +29,7 @@ class Region(models.Model) :
     capital_name = models.ForeignKey('Castle', null=True)
 
     # ruling family and lord
-    ruling_house = models.ForeignKey('House', null=True)
+    #ruling_house = models.ForeignKey('House', null=True)
     ruling_lord = models.ForeignKey(Person, null=True)
 
     # brief description
@@ -46,7 +46,7 @@ class Castle(models.Model) :
     region_name = models.ForeignKey(Region, null=True)
 
     # ruling house and lord
-    ruling_house = models.ForeignKey('House', null=True)
+    #ruling_house = models.ForeignKey('House', null=True)
     ruling_lord = models.ForeignKey(Person, null=True)
 
     # brief description
@@ -58,24 +58,24 @@ class Castle(models.Model) :
     class Meta:
         ordering = ('name',)
 
-class House(models.Model) :
-    # name
-    name = models.CharField(max_length=200, null=True)
-
-    # famous expressions
-    words = models.CharField(max_length=300, null=True)
-
-    # region of the world
-    region_name = models.ForeignKey(Region, null=True)
-
-    # the name of their castle
-    castle_name = models.ForeignKey(Castle, null=True)
-
-    # brief description
-    description = models.TextField(null=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ('name',)
+#class House(models.Model) :
+#    # name
+#    name = models.CharField(max_length=200, null=True)
+#
+#    # famous expressions
+#    words = models.CharField(max_length=300, null=True)
+#
+#    # region of the world
+#    region_name = models.ForeignKey(Region, null=True)
+#
+#    # the name of their castle
+#    castle_name = models.ForeignKey(Castle, null=True)
+#
+#    # brief description
+#    description = models.TextField(null=True)
+#
+#    def __str__(self):
+#        return self.name
+#
+#    class Meta:
+#        ordering = ('name',)
