@@ -8,9 +8,9 @@ import json
 import requests
 
 from io       import StringIO
-from unittest import main, TestCase
+from django.test import TestCase
 
-from proj3site/populate_content import models
+from .proj3site/populate_content import models
 
 
 
