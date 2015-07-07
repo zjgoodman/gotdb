@@ -45,7 +45,7 @@ sha:
 testserver:
 	python proj3site/manage.py makemigrations
 	python proj3site/manage.py migrate
-	python proj3site/manage.py runserver &
+	python proj3site/manage.py runserver
 
 unittest: tests.py
 	coverage3 run --omit=*numpy* --branch tests.py >  tests.out 2>&1
