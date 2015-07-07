@@ -20,7 +20,7 @@ class GOT_API_Tests (TestCase):
         response = requests.get(self.url + '/content/api/people/')
         self.assertEqual(response.status_code, 200)
         actual = response.json()  # convert response to json obj
-        expected = [{"id":1,"first_name":"Ned","last_name":"Stark","status":"Dead","bio":"Ned is cool"},{"id":2,"first_name":"Robert","last_name":"Baratheon","status":"Dead","bio":"He loves women"},{"id":3,"first_name":"Tywin","last_name":"Lannister","status":"Dead","bio":"Tywin is (was) pretty scary"}]
+        expected = [{"id":2,"first_name":"Robert","last_name":"Baratheon","status":"Dead","bio":"He loves women"},{"id":3,"first_name":"Tywin","last_name":"Lannister","status":"Dead","bio":"Tywin is (was) pretty scary"},{"id":1,"first_name":"Ned","last_name":"Stark","status":"Dead","bio":"Ned is cool"}]
         self.assertEqual(actual, expected)
 
     def test_api_get_castle (self):
