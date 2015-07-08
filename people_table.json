@@ -1,0 +1,43 @@
+[
+	{
+		"first name": "Eddard \"Ned\"",
+		"last name" : "Stark",
+		"actor" : "Sean Bean",
+		"house" : "House Stark",
+		"titles" : [
+					"Lord of Winterfell",
+					"Warden of the North",
+					"King Robert's Oldest and Greatest Friend"
+					],
+		"home" : "Winterfell",
+		"status" : "Dead",
+		"description" : "Lord of Winterfell and Warden of the North, Eddard Stark is King Robert’s oldest and greatest friend..."
+	},
+	{
+		"first name": "Robert",
+		"last name" : "Baratheon",
+		"actor" : "Mark Addy",
+		"house" : "House Baratheon",
+		"titles" : [
+					"King of the Andals and the Rhoynar and the First Men",
+					"Lord of the Seven Kingdoms",
+					"Protector of the Realm"
+					],
+		"home" : "Storm's End",
+		"status" : "Dead",
+		"description" : "King Robert is King of the Andals and the Rhoynar and the First Men, Lord of the Seven Kingdoms, and Protector of the Realm..."
+	},
+	{
+		"first name": "Tywin",
+		"last name" : "Lannister",
+		"actor" : "Charles Dance",
+		"house" : "House Lannister",
+		"titles" : [
+					"Lord of Casterly Rock",
+					"Warden of the West"
+					],
+		"home" : "Casterly Rock",
+		"status" : "Dead",
+		"description" : "The Lord of Casterly Rock and Warden of the West, Lord Tywin is the wealthiest and among the most powerful magnates of the realm..."
+	}
+]
