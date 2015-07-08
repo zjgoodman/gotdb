@@ -37,7 +37,7 @@ requirements:
 	pip install -r requirements.txt
 
 runserver:
-	proj3site/manage.py runserver
+	proj3site/manage.py runserver 0.0.0.0:8000
 
 sha:
 	git rev-parse HEAD
