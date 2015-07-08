@@ -17,9 +17,12 @@ class Person(models.Model) :
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
     house_name = models.ForeignKey('House', null=True)
+    region_from = models.ForeignKey('Region', null=True)
 
     # titles
     titles = models.CharField(max_length=200, null=True)
+
+    actor = models.CharField(max_length=200, null=True)
 
     # alive or dead
     status = models.CharField(max_length=200, null=True)
@@ -56,6 +59,8 @@ class Region(models.Model) :
 
     # brief description
     description = models.TextField(null=True)
+    history = models.TextField(null=True)
+
     def __str__(self):
         return self.name
 
@@ -83,6 +88,7 @@ class Castle(models.Model):
 
     # brief description
     description = models.TextField(null=True)
+    history = models.TextField(null=True)
 
     def __str__(self):
         return self.name
