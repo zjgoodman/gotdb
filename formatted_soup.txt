@@ -79,9 +79,10 @@ Ruling Family:
 House Stark(former)
 House Bolton
 
-Description and History:
+Description:
 Winterfell is the seat of House Bolton (formerly House Stark). It is a very large castle located at the center of the North, from where the head of House Stark rules over his people. A small Godswood is enclosed within the walls. It is the capital of the North under King Robb Stark. The castle is located alongside the Kingsroad as it makes its way from the Wall to the capital at King's Landing, more than a thousand miles to the south. It is situated atop hot springs which keep the castle warm even in the worst winters. Winding tombs below the castle contain the remains of Stark kings and lords and record the history of the ancient family. The castle has stood for millennia.
 
+History:
 The castle is put to the torch by Ramsay Snow after Theon Greyjoy was betrayed by his own crew. This burned out the wood portions of the castle, though the core stone structures remained fundamentally intact, as did the enclosed godswood. After the fall of Moat Cailin, the Bolton army relocated to the ruined castle in order to restore it as the seat of the rulers of the North.
 
 According to legend, House Stark has held a castle at Winterfell for 8,000 years, though it has been considerably expanded over the centuries.
@@ -136,9 +137,10 @@ Location: The Stormlands
 Ruling Family:
 House Baratheon
 
-Description and History:
+Description:
 Storm's End is the ancestral seat of House Baratheon, and one of three major castles currently held by the royal house, the others being the Red Keep in King's Landing and the island fastness of Dragonstone. Stannis Baratheon is the current Lord of Storm's End. Storm's End is a formidable fortress, located on the southeastern coast of Westeros overlooking Shipbreaker Bay.
 
+History:
 Storm's End's construction was attributed to Durran, a legendary figure of the Age of Heroes, who earned the hatred of the sea god and the wind goddess when he took Elenei, daughter of the two gods, as his wife. In rage, the two gods sent massive storms to destroy Durran's keep. Durran defied the gods and built a larger and more formidable keep, but it was also destroyed. Durran's seventh keep, built allegedly with the aid of Bran the Builder, withstood the rage of Elenei's parents and gained the name of Storm's End.
 
 Storm's End became the seat of the rulers of the Stormlands, the Storm Kings, for millennia. When Aegon the Conqueror invaded Westeros, he sent his commander and rumored half-brother, Orys Baratheon, to take Storm's End. The last of the Storm Kings, Argilac the Arrogant, left the safety of his stronghold and met Baratheon in open battle. Argilac was defeated, and Orys Baratheon took Argilac's domains, sigil, motto and daughter, becoming the founder of House Baratheon 
@@ -159,9 +161,11 @@ Location: The Westerlands
 Ruling Family:
 Lannister
 
-Description and History:
+Description:
 Casterly Rock is the ancestral stronghold of House Lannister. It is located on the Western coast of Westeros on a rocky promontory overlooking the Sunset Sea. It overlooks the major city of Lannisport. A major goldmine is located under Casterly Rock. It is one of the most productive in the realm and provides House Lannister with their wealth.
 
+
+History:
 Lann the Clever swindled Casterly Rock from House Casterly.
 According to tradition, the castle was originally held by the House Casterly, the old Kings of the Rock. They were hoodwinked into giving the Rock to Lann the Clever, a legendary trickster and ancestor of House Lannister, thousands of years ago, during the Age of Heroes.
 
@@ -206,11 +210,12 @@ Ruling Family:
 House Stark(former)
 House Bolton
 
-Description and History:
+Description:
 The North is one of the constituent regions of the Seven Kingdoms, and was formerly a sovereign nation known as the Kingdom of the North before the Targaryen conquest.
 
 The North is ruled from the castle of Winterfell by House Bolton following the fall of House Stark during the War of the Five Kings. It is the largest of the nine major regions of the continent, almost equal in size to the other eight combined.  
 
+History:
 According to legend, the Kingdom of the North was established eight thousand years ago by Bran the Builder, the founder of House Stark, who constructed the Wall as a shield against the possible return of the White Walkers.  The North is the only region where the First Men were able to resist the Andal Invasion, six thousand years before the War of the Five Kings.  As a result the North is the only region of Westeros in which the ethnic makeup is predominantly First Men, and the only region where the culture, customs, and traditions of the First Men still predominate. Among these is the belief that the man who passes the sentence of death must swing the sword himself.  In particular, the religion of the First Men, the worship of the Old Gods of the Forest, is still the dominant faith in the North. The Faith of the Seven introduced into southern Westeros by the Andals has found little foothold in the North. As a result, warriors from the North are not "knights", because "knighthood" is a code of values associated with the Faith of the Seven.  However, mounted warriors are still an honored and esteemed military asset in the North, so that while northmen like Ned Stark may not carry the title "Ser", Northern cavalry are functionally equivalent to mounted knights.  
 
 Bastards born in the North are given the surname Snow. People of the North are known as Northmen (or Northerners), and, derogatorily as wolves, in reference to the sigil of House Stark.
@@ -233,9 +238,10 @@ Capitol: Storm's End
 Ruling Family:
 House Baratheon
 
-Description and History:
+Description:
 The Stormlands is one of the nine constituent regions of the Seven Kingdoms. It is located on the south east coast of the continent of Westeros, on the shores of the Narrow Sea, south of the Crownlands and north of Dorne. The Stormlands are ruled from the castle of Storm's End by House Baratheon. They are so-named for the savage and frequent storms from the Narrow Sea that batter the coast. It was originally a sovereign nation known as the Storm Kingdom, until Aegon the Conqueror united Westeros under his rule.
 
+History:
 When Aegon Targaryen and his army invaded Westeros during the War of Conquest, Aegon sent his bastard half-brother Orys Baratheon to secure the Stormlands. The Storm King, Argilac the Arrogant, could have withstood siege indefinitely within Storm's End's mighty walls, but chose instead to give battle. He was defeated and killed. Storm's End surrendered and Aegon ennobled Orys, giving him Argilac's lands, castle and daughter to rule. House Baratheon continued to rule the Stormlands for the next three centuries, up to the time of Robert's Rebellion.
 
 Bastards born in the Stormlands are given the surname Storm.
@@ -272,11 +278,12 @@ Capitol: Casterly Rock
 Ruling Family:
 House Lannister
 
-Description and History:
+Description:
 The Westerlands is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the Rock before the Targaryen conquest.
 
 The Westerlands are ruled from the castle of Casterly Rock by House Lannister. It is one of the smaller regions of the Seven Kingdoms, but is immensely rich in natural resources, particularly metals. Predominantly mountainous, the hills of the Westerlands are riddled with veins of gold and silver, the mining of which has made the Lannisters and their bannermen immensely rich. While the Lannister armies are not as huge as those of the Reach, they are the best-equipped in the realm, with heavily-armored soldiers and cavalry.
 
+History:
 Bastards born in the Westerlands are given the surname Hill. People of the Westerlands are collectively known as Westernmen, and are referred to, derogatorily, as "lions", in reference to the sigil of House Lannister. Colloquially, Westermen are also referred to as Lannisters.
 
 The Westerlands border the Riverlands to the east, and the Reach to the south. The Goldroad links Lannisport on Westeros' west coast with the capital city of King's Landing on the east coast, passing through the Reach, skirting south of the Riverlands. The Searoad, hugging the coast, links Lannisport with the capital of the Reach at Highgarden as well as the major city of Oldtown further south. Predominantly mountainous, the Westerlands are well-defended from external attack. There is only one major pass through the mountains in the east of the Westerlands, near the headwaters of the Red Fork of the Trident River. Thus there is only one narrow and predictable path that armies moving between the Westerlands and Riverlands can normally take, and it is guarded by the castle of Golden Tooth.
