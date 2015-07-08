@@ -27,7 +27,7 @@ clean:
 config:
 	git config -l
 
-models.html: models.py
+models.html: proj3site/populate_content/models.py
 	pydoc3 -w models
 
 idb.log:
