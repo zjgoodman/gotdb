@@ -79,7 +79,7 @@ aside {
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #fff;
+    background-color: #222;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -180,6 +180,7 @@ header {
     color: #fff;
     background-image: url(../img/header.jpg);
     background-position: center;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

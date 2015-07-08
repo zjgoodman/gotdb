@@ -38,9 +38,12 @@
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
+            
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -55,13 +58,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="/content/people">People</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/people">People</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/content/castles">Castles</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/castles">Castles</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/content/regions">Regions</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/regions">Regions</a>
+                    </li>                    
+                    <li>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
+                    </li>
+                    <li>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +87,9 @@
                         {% for person in all_people %}
                                 <div class="col-lg-4 col-sm-6">
                                     <a href="/content/people/{{ person.first_name }}_{{ person.last_name }}/">
-                                        <img src="{% static "img/portfolio/sigils.jpg" %}" class="img-responsive" alt="">
+                                        {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
+                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                                        {% endwith %}
                                         <div class="portfolio-box-caption">
                                             <div class="portfolio-box-caption-content">
                                                 <div class="project-category text-faded">

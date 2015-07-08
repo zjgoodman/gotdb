@@ -8,9 +8,9 @@ import json
 import requests
 
 from io       import StringIO
-from unittest import main, TestCase
+from django.test import TestCase
 
-from proj3site/populate_content import models
+from .proj3site/populate_content import models
 
 
 
@@ -38,12 +38,12 @@ class GOT_Tests (TestCase):
 		self.assertEqual(string, 	 'Eddard Stark')
 
 	def test_person_2 (self):
-		person 		= models.Person('Robert', 
+		person 		= models.Person('Robert',
 			'Baratheon',
 			'Lord of the Seven Kingdoms',
 			'Dead',
 			'Roberts bio')
-		first_name 	= person.get_first_name()
+		first_name 	= Person.objects.get(last_name__exact=last_name)
 		last_name 	= person.get_last_name()
 		titles 		= person.get_titles()
 		status 		= person.get_status()

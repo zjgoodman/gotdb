@@ -25,128 +25,126 @@ Going to have links to characters in places that appear in the show.
 
 Resources related to character in the API.
 
-## Person [/Person/{Person_id}]
+## People [/content/api/people/{person_name}]
 
-A Person object has the following attributes:
+A People object has the following attributes:
 
++ id
 + First Name
 + Last Name
-+ Actor Name
-+ Title
-+ House Name
 + Status
 + Bio
-+ url
 
-### View a Person in detail [GET]
+### View all people [GET]
 
-+ Parameters
-    + Person_id: Jon.Snow (required, string) - ID of the Person in the form first.last
 + Response 200 (application/json)
 
-        {
-            "First Name": "Jon",
-            "Last Name": "Snow",
-            "Actor Name": "Kit Harrington",
-            "Title": "Lord Commander of the Night's Watch",
-            "House Name": "Stark",
-            "Status": "Dead",
-            "Bio": "Sample bio",
-            "url": "/Character/Jon.Snow"
-        }
-
-
-
-### Create a New Person [POST]
-
-You may create your own Person using this action. It takes a JSON
-object containing a Person and their attributes.
-
-+ Person (string) - The Person
-
-
-+ Request (application/json)
-
-        {
-            "Person": "Jon.Snow"
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /Person/Jon.Snow
-
-    + Body
-
+        [
             {
-                "First Name": "Jon",
-                "Last Name": "Snow",
-                "Actor Name": "Kit Harrington",
-                "Title": "Lord Commander of the Night's Watch",
-                "House Name": "Stark",
-                "Status": "Dead",
-                "Bio": "Sample bio",
-                "url": "/Character/Jon.Snow"
+                "id":1,
+                "first_name":"Ned",
+                "last_name":"Stark",
+                "status":"Dead",
+                "bio":"Ned is cool"
+            },
+            {
+                "id":2,
+                "first_name":"Robert",
+                "last_name":"Baratheon",
+                "status":"Dead",
+                "bio":"He loves women"
+            },
+            {
+                "id":3,
+                "first_name":"Tywin",
+                "last_name":"Lannister",
+                "status":"Dead",
+                "bio":"Tywin is (was) pretty scary"
             }
+        ]
 
-## Group Castle
+## Group Castles
 
-## Castle [/Castle/{Castle_id}]
+## Castles [/content/api/castles/]
 
 A Castle has the following attributes:
+fields = ('id', 'name', 'region_name', 'ruling_lord', 'description')
+
++ id
 + Name
-+ Location
-+ Ruling Family
++ Region_name
++ Ruling_load
 + Description
-+ History
-+ url
 
-### View a castle in detail [GET]
-
-+ Parameters 
-    + Castle_id : "Winterfell" (required, string) 
+### View all castles [GET]
 
 + Response 200 (application/json)
 
-        {
-            "Name": "Winterfell",
-            "Location": "The North",
-            "Ruling Family": "The Starks",
-            "Description": "Sample description",
-            "History": "Sample history",
-            "url": "/Castle/Winterfell"
-        }
+        [
+            {
+                "id":2,
+                "name":"Casterly Rock",
+                "region_name":2,
+                "ruling_lord":3,
+                "description":"The seat of house Lannister"
+            },
+            {
+                "id":3,
+                "name":"Storm's End",
+                "region_name":3,
+                "ruling_lord":2,
+                "description":"The seat of house Baratheon"
+            },
+            {
+                "id":1,
+                "name":"Winterfell",
+                "region_name":1,
+                "ruling_lord":1,
+                "description":"The seat of house Stark"
+            }
+        ]
 
 
 
-## Group Region
+## Group Regions
 
-## Region [/Region/{Region_id}]
+## Regions [/content/api/regions/]
 
 A region has the following attributes:
-+ Region Name
+fields = ('id', 'name', 'capital_name', 'ruling_lord', 'description')
++ Id
++ Name
 + Capitol
-+ Ruling Family
++ Ruling Lord
 + Description
-+ History
-+ url
 
-### View a region in detail [GET]
-
-+ Parameters
-    + Region_id : "The.North" (required, string)
+### View all regions in detail [GET]
     
 + Response 200 (application/json)
     
-        {
-            "Region Name": "The North",
-            "Capitol": "Winterfell",
-            "Ruling Family": "The Starks",
-            "Description": "Sample description",
-            "History": "Sample history",
-            "url": "/Region/The.North"
-        }
+        [
+            {
+                "id":3,
+                "name":"Stormlands",
+                "capital_name":3,
+                "ruling_lord":2,
+                "description":"The Baratheon lands."
+            },
+            {   
+                "id":1,
+                "name":"The North",
+                "capital_name":1,
+                "ruling_lord":1,
+                "description":"A big fancy place"
+            },
+            {
+                "id":2,
+                "name":"Westerlands",
+                "capital_name":2,
+                "ruling_lord":3,
+                "description":"The Lannister lands"
+            }
+        ]
 
 
 
