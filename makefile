@@ -37,7 +37,7 @@ requirements:
 	pip install -r requirements.txt
 
 runserver:
-	proj3site/manage.py runserver 0.0.0.0:8000
+	proj3site/manage.py runserver
 
 sha:
 	git rev-parse HEAD
@@ -50,6 +50,4 @@ testserver:
 	python proj3site/manage.py runserver
 
 unittest: tests.py
-	coverage3 run --omit=*numpy* --branch tests.py >  tests.out 2>&1
-	coverage3 report -m                      >> tests.out
-	cat tests.out
+	python3 proj3site/manage.py test proj3site/populate_content/
