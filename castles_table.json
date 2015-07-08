@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Winterfell",
+		"location" : "The North",
+		"ruling family" : [
+							"House Stark(former)",
+							"House Bolton"
+						  ],
+		"description" : "Winterfell is the seat of House Bolton (formerly House Stark). It is a very large castle located at the center of the North, from where the head of House Stark rules over his people...",
+		"history" : "The castle is put to the torch by Ramsay Snow after Theon Greyjoy was betrayed by his own crew...",
+	},
+	{
+		"name": "Storm's End",
+		"location" : "The Stormlands",
+		"ruling family" : [
+							"House Baratheon"
+						  ],
+		"description" : "Storm's End is the ancestral seat of House Baratheon, and one of three major castles currently held by the royal house, the others being the Red Keep in King's Landing and the island fastness of Dragonstone...",
+		"history" : "Storm's End's construction was attributed to Durran, a legendary figure of the Age of Heroes, who earned the hatred of the sea god and the wind goddess when he took Elenei, daughter of the two gods, as his wife...",
+	},
+	{
+		"name": "Casterly Rock",
+		"location" : "The Westerlands",
+		"ruling family" : [
+							"House Lannister"
+						  ],
+		"description" : "Casterly Rock is the ancestral stronghold of House Lannister. It is located on the Western coast of Westeros on a rocky promontory overlooking the Sunset Sea...",
+		"history" : "Lann the Clever swindled Casterly Rock from House Casterly...",
+	}
+]
