@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home</title>
+    <title>Game of Thrones</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
@@ -38,7 +38,7 @@
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
+   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             
@@ -73,90 +73,36 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
     <header>
         <div class="header-content">
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="/content/people" class="portfolio-box">
-                        <img src="{% static "img/portfolio/sigils.jpg" %}" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    People
+                {% if all_authors %}
+                    {% for author in all_authors %}
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="portfolio-box">
+                                    <div class="portfolio-box-caption-content">
+                                        <p>
+                                        {% with 'img/portfolio/'|add:author.author_id|add:'.jpg' as image_static %}
+                                            <img src="{% static image_static %}" class="img-responsive" alt="image not found"></img>
+                                        {% endwith %}
+                                            <br>{{ author.first_name }} {{ author.last_name }}
+                                            <br>{{ author.bio }}
+                                            <br>{{ author.bio }}
+                                            <br>Commits: {{ author.num_commits }}
+                                            <br>Issues: {{ author.num_issues }}
+                                            <br>Unit Tests: {{ author.num_unit_tests }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No people are available.</p>
+                {% endif %}
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="/content/castles" class="portfolio-box">
-                        <img src="{% static "img/portfolio/castles.jpg" %}" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Castles
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="/content/regions" class="portfolio-box">
-                        <img src="{% static "img/portfolio/regions.jpg" %}" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Regions
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/houses.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Houses
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
-                <!-- <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
-                <!-- <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
             </div>
-        </div>
         </div>
     </header>
 
@@ -359,4 +305,5 @@
 </body>
 
 </html>
+
 
