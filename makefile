@@ -50,4 +50,4 @@ testserver:
 	python proj3site/manage.py runserver
 
 unittest: tests.py
-	python3 proj3site/manage.py test proj3site/populate_content
+	python proj3site/manage.py test proj3site/populate_content
