@@ -17,4 +17,7 @@ urlpatterns = [
     url(r'^api/people/(?P<name>\w+_\w+)/$', views.person_api_detail),
     url(r'^api/regions/(?P<name>[a-zA-z ]+)/$', views.region_api_detail),
     url(r'^api/castles/(?P<name>[\'a-zA-z ]+)/$', views.castle_api_detail),
+    url(r'^all_castles/$', views.all_castles_index, name='all_castles_index'),
+    url(r'^all_regions/$', views.all_regions_index, name='all_regions_index'),
+    url(r'^all_people/$', views.all_people_index, name='all_people_index'),
 ]
