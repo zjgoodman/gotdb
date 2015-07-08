@@ -39,6 +39,7 @@ script:
     # - ls -al
     # - make models.html
     # - make models.html
+    - rm -rf *.pyc
     - ls -al
     - make requirements
     #- make testserver
