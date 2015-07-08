@@ -55,6 +55,25 @@ def castle_detail(request, castle_name):
         raise Http404("Castle does not exist :")
     return render(request, 'populate_content/castle_detail.html', {'castle': castle})
 
+def all_castles_index(request):
+    all_castles = Castle.objects.all()
+    context = {'all_castles': all_castles}
+    return render(request, 'populate_content/all_castles_index.html', context)
+
+def all_people_index(request):
+    all_people = Person.objects.all()
+    context = {'all_people': all_people}
+    return render(request, 'populate_content/all_people_index.html', context)
+
+def all_regions_index(request):
+    all_regions = Region.objects.all()
+    context = {'all_regions': all_regions}
+    return render(request, 'populate_content/all_regions_index.html', context)
+
+
+#--------------------------------------------------------------------------------
+#                           API STUFF
+#--------------------------------------------------------------------------------
 
 # API Views and JSON creator class
 class JSONResponse(HttpResponse):
