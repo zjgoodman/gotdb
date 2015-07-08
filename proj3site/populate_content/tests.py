@@ -252,7 +252,7 @@ class GOT_Tests (TestCase):
 
         self.assertEqual(str(house), 'The North')
 class GOT_API_Tests (TestCase):
-    url = "http://127.0.0.1:8000"
+    url = "http://104.130.27.102:8000"
 
     def test_api_get_person (self):
         """
