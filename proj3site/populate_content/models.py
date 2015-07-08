@@ -21,6 +21,8 @@ class Person(models.Model) :
     # titles
     titles = models.CharField(max_length=200, null=True)
 
+    actor = models.CharField(max_length=200, null=True)
+
     # alive or dead
     status = models.CharField(max_length=200, null=True)
 
@@ -56,6 +58,8 @@ class Region(models.Model) :
 
     # brief description
     description = models.TextField(null=True)
+    history = models.TextField(null=True)
+
     def __str__(self):
         return self.name
 
@@ -83,6 +87,7 @@ class Castle(models.Model):
 
     # brief description
     description = models.TextField(null=True)
+    history = models.TextField(null=True)
 
     def __str__(self):
         return self.name
