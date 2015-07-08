@@ -4,3 +4,4 @@ django-filter
 Pillow
 django-nose
 coverage
+requests
