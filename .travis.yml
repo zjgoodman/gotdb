@@ -39,7 +39,7 @@ script:
     # - ls -al
     # - make models.html
     # - make models.html
-    - rm -rf *.pyc
+    - find -name '*.pyc' -delete
     - ls -al
     - make requirements
     #- make testserver
