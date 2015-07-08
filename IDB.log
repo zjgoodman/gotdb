@@ -1,0 +1,1107 @@
+commit ac8f26bd150722df8200f4250e30099d00ed1202
+Merge: bf394de 420df31
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 21:34:47 2015 -0500
+
+    people link to regions!
+
+commit bf394deca3b6a0e3d69798c54479cf22a686c1c9
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 21:32:35 2015 -0500
+
+    people link to regions!
+
+commit 420df31e2768b026243c31ec21e6edafd562513d
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 21:24:47 2015 -0500
+
+    restored travis file
+
+commit 8501add6cc5bcc5b948ff7d46a62d2596325ff1f
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 21:22:29 2015 -0500
+
+    updated travis to remove .pyc
+
+commit 2ed2764f9f228f262712292de97f76092c6d5dd5
+Merge: 63a3ca7 bf38417
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 21:18:55 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit 63a3ca7f5ec6ceda0fcf303afdf56856dccfeff1
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 21:18:43 2015 -0500
+
+    updated travis to remove .pyc
+
+commit bf38417dea5bae7d665b0952b3eb313613d31ba2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:17:56 2015 -0500
+
+    added makefile
+
+commit 842e9e89401509815cda49c4ebc350034161ed54
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:14:12 2015 -0500
+
+    updated html
+
+commit cbcd86edce0337a41f18d1bc4369dfdfd6f90311
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:08:33 2015 -0500
+
+    added gitignore
+
+commit 353966513a89f8c741569e94c964adbf57b5bb45
+Merge: 646c3d9 d2f74c1
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:04:34 2015 -0500
+
+    commit
+
+commit 646c3d94991ddbaa81fc56f465f9171147821a38
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:03:59 2015 -0500
+
+    added
+
+commit 92a2c76a0d527261c8d7dd332ac5a1e305108745
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 21:03:41 2015 -0500
+
+    updated html
+
+commit d2f74c145b019666ac29870d44aaf15fcfc02a05
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 21:03:10 2015 -0500
+
+    removing python3 call from make unittest
+
+commit eed91a0e3a14b48665a129177708228f38682f04
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:58:51 2015 -0500
+
+    trying new makefile
+
+commit 84f3b7eca87129c225fad1c5f288baca9dde39c6
+Merge: 6b9572b 85ff6f7
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:55:57 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit 6b9572bfc599f2da96d80dc2c01feae431492229
+Merge: 5115f30 f4a0972
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:55:37 2015 -0500
+
+    adding cache
+
+commit 85ff6f746907b945c1702eedaa988570d9d1ad29
+Merge: 247e730 f4a0972
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 20:55:29 2015 -0500
+
+    minor layout changes and so forth
+
+commit 247e7308d7cb40e758fc35652461d59e771ea282
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 20:54:22 2015 -0500
+
+    minor layout changes and so forth
+
+commit 5115f305fda460462d2aa7bdc1d8a322344916d6
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:53:35 2015 -0500
+
+    updated cache
+
+commit f4a0972e19940421862a33413f5515ea4a2fa5bf
+Merge: 5d77407 ee6c4a0
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:50:31 2015 -0500
+
+    Merge branch 'dev' of http://github.com/zjg95/cs373-idb into dev
+
+commit 5d77407f42674091f34d9950a279cf9cb86afc09
+Merge: f0d5239 792d7b2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:50:28 2015 -0500
+
+    pyc
+
+commit ee6c4a0e46e0b6c824e85fadac4fc537a6f6d665
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:48:45 2015 -0500
+
+    changed make to work with new cache
+
+commit e9aefd4f86fbd95d6ce5b9eef456ee78f34ae6ea
+Merge: d5ed49d f0d5239
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:47:27 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	proj3site/proj3site/__pycache__/settings.cpython-34.pyc
+    #	proj3site/proj3site/__pycache__/wsgi.cpython-34.pyc
+    #	proj3site/splash/__pycache__/admin.cpython-34.pyc
+    #	proj3site/splash/__pycache__/models.cpython-34.pyc
+
+commit 792d7b213b5a691ae3f5ae970aea0880836c8455
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:47:17 2015 -0500
+
+    added stuff
+
+commit d5ed49d21edc6e9d3ae9b762d69370a1a2a41885
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:46:41 2015 -0500
+
+    adding caches
+
+commit f0d52399fd9b505d2664615e55c24afa75ac6f61
+Merge: 23b9957 4074165
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:44:29 2015 -0500
+
+    added pyc?
+
+commit 23b995707cc5b76148c75cfd1aac97a6078e0753
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:41:15 2015 -0500
+
+    trying travis again
+
+commit 800bf9c688759c58abe3707bc0b3e70f9b046d46
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:31:29 2015 -0500
+
+    testing travis again
+
+commit 6d02e5db8c3c7670a2d369900a7a25db00c5beb3
+Merge: b1aa5b8 fa2ef38
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:27:45 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit b1aa5b82f4785863473ac5f4d77a242417fce040
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:27:30 2015 -0500
+
+    testing travis
+
+commit fa2ef383a93a289bd9606acd73e2a8e8bb806b77
+Merge: c720425 006e475
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 20:25:03 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit c72042550adbc9fcabbb09e7808f3be1980275a4
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 20:24:48 2015 -0500
+
+    closes #35
+
+commit 006e4759edaff5fa30f57b328ad9967591533702
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:18:21 2015 -0500
+
+    updated travis
+
+commit ebc1b88f95798bac7e6e058504563db3d4e7a935
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:17:51 2015 -0500
+
+    updated travis
+
+commit 40741658485df3d23f0996c33b01395da943a8bf
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:16:23 2015 -0500
+
+    added pyc
+
+commit caa0a352811caeba054d6370f48b8e673b560364
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:14:38 2015 -0500
+
+    updated makefile
+
+commit de08cdac6692ce6c587552669f8d996c124fcd40
+Merge: 5086f62 e36b628
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:08:57 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit e36b6289ad586a8e6ab690e62bc23c6c7ee6821b
+Merge: 83359d6 e6e9922
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:04:56 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into HEAD
+
+commit 5086f62d2a81df12cf79e83af8fcb77750ba297e
+Merge: ee931af e6e9922
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:04:29 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	proj3site/populate_content/__init__.pyc
+    #	proj3site/populate_content/migrations/__init__.pyc
+    #	proj3site/populate_content/models.pyc
+    #	proj3site/proj3site/settings.pyc
+    #	proj3site/proj3site/wsgi.pyc
+    #	proj3site/splash/models.pyc
+
+commit 83359d656caa51f557b71114d2598f72342294c2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:04:14 2015 -0500
+
+    adding pyc files
+
+commit ee931aff13f63783a62a515d3ee9961c0bd32c0c
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 20:03:41 2015 -0500
+
+    updated travis, make, and requirements
+
+commit e6e9922b347d0b8c5a39c5b2ef25b3e9c24efc4f
+Merge: 1fffa67 afaafca
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 20:01:22 2015 -0500
+
+    added pyc files. we need them. don't delete them
+
+commit 1fffa67f5b355d6f39b9b033c436fc8c86d356c8
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:59:45 2015 -0500
+
+    added pyc files
+
+commit afaafca0f80268951a27831a8e727b2f5062ccfb
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:53:05 2015 -0500
+
+    added gitignore
+
+commit 1a101f4fee48113ed0732ef251da98bce78bb1cc
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Tue Jul 7 19:51:51 2015 -0500
+
+    Delete .gitignore
+
+commit 409181891720ef152cbb07175879b01ab5bb5ea4
+Merge: 74e5bd1 6204480
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:50:15 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 62044808030d6d36687bca4f47c7333b642b65dd
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 7 19:50:02 2015 -0500
+
+    split desc and hist
+
+commit 74e5bd12daadf28de596eae5a98ff1c8d6e79916
+Merge: 4b0feea 3dd09bc
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:47:58 2015 -0500
+
+    Merge branch 'dev'
+
+commit e8a65df426c6130a3319caeda78be92ab6687fb3
+Merge: 99d34f6 3dd09bc
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 19:47:32 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 99d34f6d1ed17095a52dec616ee3f3ddcb24106a
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 19:47:17 2015 -0500
+
+    most of the html and (somewhat rough) design is complete. templates work as intended
+
+commit 3dd09bc35fdd818fb1b4700707f432d324dfe85a
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:47:11 2015 -0500
+
+    added .gitignore
+
+commit feb9a58be98e8ef8f212ed65b9b40052b19e473d
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:46:19 2015 -0500
+
+    added .gitignore
+
+commit 4b0feea727cd3cce6b6f646ff7f53ed7652f673f
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 7 19:45:25 2015 -0500
+
+    split desc and hist
+
+commit 86b545cb129a6bb3ec3dc96e92903ede201edb35
+Merge: 1291b2b af13ad4
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:43:47 2015 -0500
+
+    removed .pyc files
+
+commit 1291b2b9eaaa31cdef3eae24e5a074d1322ba10b
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:41:29 2015 -0500
+
+    removed .pyc files
+
+commit af13ad4a96944a29f393dfebe7c27a6256a449da
+Merge: faadb28 95e6378
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 19:38:54 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit faadb28efd9c50abf1fa3625b391fed3bb9f4205
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 19:38:50 2015 -0500
+
+    stuff
+
+commit 36a3460c24f6c0194507d00a7bfb8e8834aa0f33
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 19:36:32 2015 -0500
+
+    added tables that represent all entities of each model
+
+commit 95e6378cb6d1892e45d90b9a8155e840f3cf6e20
+Merge: 44eab5c f3e6cd3
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 19:34:34 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit 44eab5c559f38fa2814bb431583a8bd5360c9851
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 19:34:19 2015 -0500
+
+    changed url to live version
+
+commit f3e6cd3519dbe745c4f89d9c03c85c46be640042
+Merge: 8741ca4 2003bc9
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:32:54 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 8741ca421c58f2dde6bbfaba698cb89f33341ae8
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:32:48 2015 -0500
+
+    added about link to about page from people page. fixes #34
+
+commit 2003bc9d83728623a1577cd22d524022969968b0
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 19:30:00 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit d2198e67a0cd96734d769894853f02a7adbf3629
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 19:05:56 2015 -0500
+
+    ALL
+
+commit 9d820e5889a0e6e40c34e6c70dec38808e5a4431
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 19:04:08 2015 -0500
+
+    removed the gitignore
+
+commit 28ea22c883462dd8cdb52683ec9af42fa9575fb3
+Merge: ee0776b 3f6bae1
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:48:31 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit ee0776b377f42947e72671f0c5063a2f33ca5d87
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:48:23 2015 -0500
+
+    klafhd
+
+commit 3f6bae149f2d5c843f14b6472a24950a3c3945e4
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 18:47:17 2015 -0500
+
+    Finished adding tests (maybe)
+
+commit 88fed2d7e4af2635582376cffdc97bbd736bb0f8
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:46:29 2015 -0500
+
+    init files re-added
+
+commit 6f8cdbda7b47205bd20692143362c736a9cbe3a5
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:45:16 2015 -0500
+
+    region_detail.html roughly complete and functional
+
+commit 8d777cebfccf7cb0dd4dcfcc11d49699afca9b85
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:37:54 2015 -0500
+
+    another!
+
+commit 67f91a78541342d40e4377ec906d2805dc8b5c2d
+Merge: 91a28ed 50fb190
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:31:25 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 91a28ed348a8f5778b8ac5a1730933450804417d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 18:31:04 2015 -0500
+
+    region page coming along
+
+commit 50fb1903df2ed4e9149e4d30fbede3ed4eaa3470
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 18:29:53 2015 -0500
+
+    added even more model test
+
+commit b30ed0cb5d95965770e1dbfacb6b521498141a16
+Merge: 2b2359a 5024719
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 18:19:47 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 2b2359acf919dbedad56bc6ae2f831672eca4a79
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 18:19:41 2015 -0500
+
+    added about page! it looks bad and needs formatting but it works! #32
+
+commit 5024719be136cf8cebd229b978a3193dfe300188
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 18:15:08 2015 -0500
+
+    added tests for models
+
+commit 52d6e1dbb21b0d6b870a3f9a62a6bd98d83c4c7f
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 17:37:37 2015 -0500
+
+    fixed broken api test
+
+commit 419fe4959537a76d7d11b01d5afabc3a9c9593b6
+Merge: aee1a62 433a219
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 17:31:49 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit aee1a62bbd7e6543c4070f9522685529bc136408
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 17:27:00 2015 -0500
+
+    added api tests
+
+commit df4382ea1b4cba553a458a20cb290e8cb4443947
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 17:21:59 2015 -0500
+
+    updated tests
+
+commit 433a219f9a1dd336c226c89992ca3431ad898e33
+Merge: 065b968 cfa9101
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:21:13 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 065b96859bdb43922ad68eba43802a4867460a3a
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:21:00 2015 -0500
+
+    minor updates to stylesheets, more consistent design
+
+commit cfa9101d5be75cb78ccd823ada8f2712abaf6300
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:20:30 2015 -0500
+
+    removing migrations again
+
+commit 2e80f01823b332f50884ddf01801f79e15d5bc37
+Merge: 13dc92f ec2e345
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:19:55 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 13dc92f4f6438d85098228245e486a300a3e8a3e
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:19:50 2015 -0500
+
+    removed migrations. not sure if this will break anything
+
+commit ec2e3457086389eadd68c51b95d1ed3047f5c6fe
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:19:06 2015 -0500
+
+    minor updates to stylesheets, more consistent design
+
+commit b93c9624cb3e2950ab3e9fb5e51070afe33970d8
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:16:16 2015 -0500
+
+    fixed an issue that prevented accessing the about page. #32
+
+commit 5f392e2cacd050a271036cfadf19f00864b133e7
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:11:50 2015 -0500
+
+    added database
+
+commit f2bb0acaa73eab972524939a127525a8cc5729af
+Merge: e7f333a 751032f
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:04:21 2015 -0500
+
+    content template started
+
+commit 751032fd86064b872cc758f44fc8477828887900
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 17:03:29 2015 -0500
+
+    the about page can be visited. #32
+
+commit e7f333a8767407829a24d98b83f23cdf2b7c9ae6
+Merge: 75344f1 2d28053
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:03:17 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 75344f1ab6f4e57100205f7ac95c3e1526fba981
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 17:03:02 2015 -0500
+
+    content template started
+
+commit 2d280536ed5788021557c5f3ffdd19b7e52d89b2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 16:53:54 2015 -0500
+
+    fixed #33. updated splash page to include link to about page in issue #32
+
+commit ef0d3178dc56f1f37a84367f9e39876cef98d1ad
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 7 16:30:02 2015 -0500
+
+    typo in region table fixed
+
+commit 3931a0fc7c397ff14abe6c86ce8ef4de83b670a3
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 7 16:28:09 2015 -0500
+
+    json files for the 3 tables
+
+commit c34a35935e65634de6ab8c69164f98065b16a7a3
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 16:21:40 2015 -0500
+
+    make fake added
+
+commit c10a7e809463cc27ed936bc8280fc66cead68f23
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 16:09:43 2015 -0500
+
+    added the about url
+
+commit c6cd05f3d86ccce5399e0cc72e55e500bc33edd5
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 16:05:00 2015 -0500
+
+    updated people details page
+
+commit 18d6eda6a7bab10ff3f2267bf1d595ffa917fb95
+Merge: a75a5d1 db81d0d
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 15:36:57 2015 -0500
+
+    merged
+
+commit a75a5d195d79b43fd4f44f06480247e786ff2edb
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 15:33:51 2015 -0500
+
+    updated files
+
+commit db81d0d20f3ac816675ebccf802a5e22caef0536
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 14:58:53 2015 -0500
+
+    images for index pages in place
+
+commit 7660df1a80dc3dd7d520bd3f17f8bc2c758618a9
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 14:27:45 2015 -0500
+
+    added jpgs for navigation page
+
+commit 7e38bb6eca4d9a57656c807475532549bdca1e48
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 14:25:55 2015 -0500
+
+    updated database to include model id values. this will help with finding the data
+
+commit 4109ba67a84e3447b21f1af04796877176a44242
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 14:07:42 2015 -0500
+
+    remove .swo files
+
+commit 3ab858093f46df3d7e6bd659bcb78019bc6f4d98
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Tue Jul 7 14:07:21 2015 -0500
+
+    Update .gitignore
+
+commit 78a2b7de0c775d4db3f6bc7705a2ad5fc40a3070
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 14:06:35 2015 -0500
+
+    removed .pyc files
+
+commit 137592f181aa097371cc02df45673cb75629af86
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 14:05:46 2015 -0500
+
+    added house model
+
+commit 900e08d9b70954306a1256ccb87587879ca5b254
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 13:53:37 2015 -0500
+
+    moved installs from .travis to requirements
+
+commit 160cc47838128aad1fc32d3c7e422a9bca197f97
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 7 13:47:30 2015 -0500
+
+    added description comments to models.py for pydoc
+
+commit 982a06946a5d0775bb968fbbb483ab0cae77c9d8
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 13:46:17 2015 -0500
+
+    updated .travis.yml to download rest framework
+
+commit d7a22bc7feba2f01d35ce9750f2253a59a24a33f
+Merge: 3ef5c7c edc7280
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 13:41:45 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit 3ef5c7cc73b3638d3d2ff8b177e8816a8676bab5
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 13:41:23 2015 -0500
+
+    added details api
+
+commit edc72809b3099444fc95f06f28c065b89c44b8e7
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Tue Jul 7 13:39:23 2015 -0500
+
+    added gitignore. fixes #31
+
+commit 58e84210aa523cb416ce8182287030b17257806b
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 7 13:27:52 2015 -0500
+
+    added api
+
+commit 6cb63a9a348d0c8693cc93036cb22cf299215318
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 7 10:32:00 2015 -0500
+
+    _
+
+commit 437ef48e283ab56fa85e5c78817046eb67b46263
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:47:56 2015 -0500
+
+    removed swp and pyc
+
+commit ae5a99a945cc498f851e5a578c3ea4b171999174
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:46:16 2015 -0500
+
+    another unnecessary www folder removed
+
+commit 42c285761c01540020c0c304f1c81ecb61728233
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:43:48 2015 -0500
+
+    removed extraneous www file in templates folder in proj3site
+
+commit b7a21235e2a18db01406b0a8203a015921f17a64
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:43:05 2015 -0500
+
+    links fixed
+
+commit d8510c7791e8763c0705ba9ef385622b973c4150
+Merge: df99e92 a53360d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:37:42 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit df99e920fb6b730a0efafafd7f9a57f2ad02a72a
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:37:25 2015 -0500
+
+    templates added
+
+commit a53360d5bd0d3f81dfea75b8a1f4471222dbc245
+Merge: 77fd416 5bd1732
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 22:27:49 2015 -0500
+
+    Merge branch 'dev'
+
+commit 5bd1732b553be85ce05fa899a9c5b75bbedb6527
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:25:25 2015 -0500
+
+    one more
+
+commit 3958333aef2302e6be6bd31351431835a9f8f16b
+Merge: 8c45617 f62525d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:10:08 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 8c456174b0720861f31b9cfe5761d7f636e2a9b8
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 6 22:09:37 2015 -0500
+
+    regions index page and detail page up and running
+
+commit f62525dd3cd5f3f3442a63f281d1159284dfa162
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:59:01 2015 -0500
+
+    updated makefile
+
+commit 2411e0ed3758aed028a51b872c59eedc8976f4f2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:58:03 2015 -0500
+
+    updated makefile
+
+commit 77fd416bbee97cfa2e5d45b6cd65c0ddd5de0ba6
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Mon Jul 6 21:57:07 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 4ee366c5d2dcaf67aff97362a6b39b6f21d6327f
+Merge: 78a86bc d66baa2
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:35:04 2015 -0500
+
+    Merge branch 'master' of https://github.com/zjg95/cs373-idb
+    merge
+
+commit 78a86bca5fefcfc1bca243ddcdda326f25a860af
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:34:57 2015 -0500
+
+    updated travis
+
+commit d66baa22755b16c87ae9f30881ac53bb1212f81c
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Mon Jul 6 21:22:42 2015 -0500
+
+    Made test.py. Will need some tweaking once database is actually implemented but lays out some basic unit tests for our models. Also touches on testing that our api is correct. closes #27
+
+commit 5e15d98b1d30c634ea8315922c6bb008d3b174e0
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:19:44 2015 -0500
+
+    updated travis and makefile
+
+commit 7e87a62382603d40d05a94a0c39aa4419d66bb89
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:06:29 2015 -0500
+
+    added requirements.txt
+
+commit b5ec57866cb0b5b3cf8dfa0f49e7618047149511
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 21:00:20 2015 -0500
+
+    updated models
+
+commit ad22e59e936bd0ecef583e10fab1917ea063ecc9
+Author: Zach Goodman <zjg95@wireless-10-147-70-41.public.utexas.edu>
+Date:   Mon Jul 6 20:49:47 2015 -0500
+
+    updated models
+
+commit 6f919452f9a5f94115d5bdefcf7b9c39d5de5eea
+Author: Zach Goodman <zjg95@wireless-10-145-247-174.public.utexas.edu>
+Date:   Mon Jul 6 20:13:55 2015 -0500
+
+    added more to the models
+
+commit 5ef86c0e84105dab38f9eba6ad4dd26f23e7d565
+Author: Zach Goodman <zjg95@wireless-10-145-247-174.public.utexas.edu>
+Date:   Mon Jul 6 17:58:30 2015 -0500
+
+    removed www folder
+
+commit 8484760888346522fd3de43b863cade7b767cbc9
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 6 17:54:35 2015 -0500
+
+    Delete castles.txt
+
+commit d073f7ad73a074905e35330c095bdb48a130f4c9
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 6 17:54:27 2015 -0500
+
+    Delete people.txt
+
+commit 8c9e7e1a820484e1cd4070c98ccd39af8a5c20a9
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 6 17:54:19 2015 -0500
+
+    Delete regions.txt
+
+commit 2f22b9a515bff98fb441a9f1e24d4d9c182906f2
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 6 17:53:47 2015 -0500
+
+    Delete models.py
+
+commit 42bef9916ee34af85031d8d5fb08993a389c4572
+Author: Zach Goodman <zjg95@wireless-10-145-247-174.public.utexas.edu>
+Date:   Mon Jul 6 17:52:29 2015 -0500
+
+    added new castles and regions
+
+commit 1b646f614c9cb8a263e18be67ea741607854b37d
+Author: Zach Goodman <zjg95@wireless-10-145-247-174.public.utexas.edu>
+Date:   Mon Jul 6 17:46:48 2015 -0500
+
+    added superuser to django server
+
+commit 07abc24f81659b138b1bd2e999f39fc80bee1fd6
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 17:02:00 2015 -0500
+
+    Working splash page and rough person index page
+
+commit ab30d854f82f567aaa63bb73de9e8bfa0358f909
+Merge: 2bc24b2 5f1ae45
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 16:56:09 2015 -0500
+
+    Splash page and a rough Person index page working in proj3site
+
+commit 2bc24b21c15ecb279c3ba839398e241fbdf2f27b
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 16:52:47 2015 -0500
+
+    Splash page and a rough Person index page added to proj3site
+
+commit 5f1ae4589a6ecb195dd29220da61ae674b685173
+Author: Scott Stephens <stevo4932@gmail.com>
+Date:   Sun Jul 5 16:41:45 2015 -0500
+
+    added api
+
+commit e13bbe2afde1162b7a03e63f441bbc671b0ee404
+Author: Scott Stephens <stevo4932@gmail.com>
+Date:   Sun Jul 5 16:35:38 2015 -0500
+
+    added api
+
+commit df73f0d841e23a5dbcc9acbeea99e855bb452b38
+Author: lucas harrison <lucash@cs.utexas.edu>
+Date:   Sun Jul 5 16:24:15 2015 -0500
+
+    added yuml pdf. closes #20
+
+commit c2488da54b860ade90b9a542044b11f845fb11d6
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 16:10:46 2015 -0500
+
+    splash page is up in proj3site
+
+commit 227230a697cc33921d5b3439affad371f17e1332
+Merge: cbd3bda 1f97f5a
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 14:41:05 2015 -0500
+
+    Merge branch 'master' of https://github.com/zjg95/cs373-idb
+
+commit cbd3bda1f15597566eba8659ed807953933e94cc
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 5 14:35:11 2015 -0500
+
+    updated the site
+
+commit 1f97f5a7663de73ec1a3042181532ef55b723710
+Merge: e447baf 1f7f1b3
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 5 14:28:46 2015 -0500
+
+    Merge branch 'dev'
+
+commit e447baf60a1bed28d549661774c07662e1360e48
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Sun Jul 5 14:27:17 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 1f7f1b3a5a5d3d00f40d1e50ac7dc96c417e1fca
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 5 14:25:59 2015 -0500
+
+    soup now formatted for easier reading in formatted_soup.txt closes #12
+
+commit bcf527f7bf3d27a26035e5f579aa41e9d7590e29
+Merge: 057ff66 82ef9f8
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Sun Jul 5 14:08:55 2015 -0500
+
+    Merge branch 'dev'
+    merging with dev branch
+
+commit 82ef9f85e1bdc6d519af2190ff2194cffec54e4d
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Sun Jul 5 14:08:31 2015 -0500
+
+    updated splash page
+
+commit c0c06065593508160d9db68ce297fa79174d888f
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Sun Jul 5 14:07:37 2015 -0500
+
+    updated splash page
+
+commit 057ff66097a29378d628f16c03d288a3d114c9e0
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Sun Jul 5 13:38:04 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 6afc370d932d46e09493e1fdd274eb76e35d1b92
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Fri Jul 3 16:40:47 2015 -0500
+
+    added bootstrap sample
+
+commit 8e3b14989fd81c0038adac38e8f605ed4bc026e3
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Fri Jul 3 16:38:25 2015 -0500
+
+    Beginnings of a website added under proj3site/
+
+commit fafbeeb6ac64f3b1c0f43cb6e51249f3cbf83fad
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Fri Jul 3 16:24:38 2015 -0500
+
+    basic version of scraper done for all, needs a clean up at later date
+
+commit 065dba20724240dbbb0ad8c22c5144a3c1a8c9ff
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Fri Jul 3 16:01:30 2015 -0500
+
+    places now have info, still need a bit more parsing
+
+commit 20ea48cd195dee465a776172b61208c53840dedd
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Fri Jul 3 15:12:57 2015 -0500
+
+    messed with test file
+
+commit 70836fe823707e4f0b6963c2686c1001f93843f1
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Fri Jul 3 14:44:12 2015 -0500
+
+    have a basic scraping working for characters
+
+commit bfe674cbcb2ad8a35fe3fadd284a1cc98562281c
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Fri Jul 3 13:53:00 2015 -0500
+
+    added test data
+
+commit 3f10ea072d08432b43f38f830faaef8bd736e095
+Merge: f1c1143 5d711c2
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Thu Jul 2 16:39:09 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit f1c11435867f0e69050d0ccbadc34b940cb585b3
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Thu Jul 2 16:39:00 2015 -0500
+
+    updated models file
+
+commit 5d711c2069358b0ca556a850a883116a2df93783
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Thu Jul 2 16:17:50 2015 -0500
+
+    basic scraper, needs lots of work
+
+commit 6fa38ba25f6bb2e04a316751851d600a896d9594
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Thu Jul 2 14:56:16 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 5c7db71d47e285680afa614bcfb23ef720fa5b53
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Thu Jul 2 14:55:18 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit fa9c6ce6085a9f8ac91787673dd11b83da1a2c05
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Thu Jul 2 14:21:15 2015 -0500
+
+    updated makefile
+
+commit 9c209a37feb487de713ff6ddbbe196f176560cea
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Thu Jul 2 14:04:39 2015 -0500
+
+    added files
+
+commit 3b60dcb00e5e3357354e7cfcdf199ac8c4b06055
+Author: Zachary Goodman <zjg95@cs.utexas.edu>
+Date:   Wed Jul 1 18:32:59 2015 -0500
+
+    first commit
