@@ -73,29 +73,26 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    </body>
 
-    <header style="background-image: url();color:#000">
+    <body style="background-image: url();color:#000">
 
       <h1 class="header_content"><br></h1>
-      <h1 class="header_content">{{ person.first_name }} {{ person.last_name }}</h1>
-      <p class="lead blog-description"> {{ person.titles }}</p>
+      <h1 class="header_content" style="text-align:center">{{ person.first_name }} {{ person.last_name }}</h1>
+      <p class="lead blog-description" style="text-align:center">{{ person.titles }}</p>
 
       <div class="col-sm-8">
 
         <div class="section_heading">
           {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-          <img src="{% static image_static %}" alt="">
+          <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
           {% endwith %}
-          <h4>(Family: {{ person.house_name }})</h4>
+          <h4 style="text-align:center">(Family: {{ person.house_name }})</h4>
             
             <h2 class="blog-post-title">Description</h2>
-            <p>{{ person.first_name }} is {{ person.status }}.</p>
-            <p>{{ person.description }}</p>
+            <p>{{ person.bio }}</p>
         </div><!-- /.blog-post -->
 
-        <div class="section_heading">
-          <h2 class="blog-post-title">History</h2>
-          <p>...</p>
         </div><!-- /.blog-post -->
 
       </div><!-- /.blog-main -->
@@ -103,7 +100,8 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <p>{{ person.first_name }} {{ person.last_name }} is played by {{ person.actor }}.</p>
+            <p>{{ person.first_name }} is {{ person.status }}.</p>
           </div>
           <div class="sidebar-module">
             <h4>Quick Links</h4>
@@ -125,7 +123,7 @@
       </div><!-- /.row -->
 
     </div><!-- /.container -->
-    </header>
+    </body>
 
     <!-- jQuery -->
     <script src="{% static "js/jquery.js" %}"></script>
