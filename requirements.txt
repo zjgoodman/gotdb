@@ -2,3 +2,5 @@ django
 djangorestframework
 django-filter
 Pillow
+django-nose
+coverage
