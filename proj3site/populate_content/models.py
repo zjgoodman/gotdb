@@ -17,6 +17,7 @@ class Person(models.Model) :
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
     house_name = models.ForeignKey('House', null=True)
+    region_from = models.ForeignKey('Region', null=True)
 
     # titles
     titles = models.CharField(max_length=200, null=True)
