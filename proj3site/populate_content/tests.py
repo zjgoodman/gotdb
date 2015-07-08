@@ -289,4 +289,3 @@ class GOT_API_Tests (TestCase):
         actual = response.json()  # convert response to json obj
         expected = [{"id":3,"name":"Stormlands","capital_name":3,"ruling_lord":2,"description":"The Baratheon lands."},{"id":1,"name":"The North","capital_name":1,"ruling_lord":1,"description":"A big fancy place"},{"id":2,"name":"Westerlands","capital_name":2,"ruling_lord":3,"description":"The Lannister lands"}]
         self.assertEqual(actual, expected)
-
