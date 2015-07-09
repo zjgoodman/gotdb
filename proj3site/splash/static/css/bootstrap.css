@@ -4049,6 +4049,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
+  background: #222;
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
