@@ -82,16 +82,12 @@
                     {% if all_regions %}
                         {% for region in all_regions %}
                                 <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/regions/{{ region.region_id }}/" class="portfolio-box">
-                                        {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
-                                        <img src="{% static image_static %}" class="img-responsive" alt="">
-                                        {% endwith %}
-                                        <div class="portfolio-box-caption">
-                                            <div class="portfolio-box-caption-content">
-                                                <div class="project-category text-faded">
-                                                    {{ region.name }}
-                                                </div>
-                                            </div>
+                                    <div class="portfolio-box-caption">
+                                        <a href="/content/regions/{{ region.region_id }}/" class="portfolio-box">
+                                            <h4 style="align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ region.name }}</h4>
+                                            {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
+                                            <img src="{% static image_static %}" class="img-responsive" alt="">
+                                            {% endwith %}
                                         </div>
                                     </a>
                                 </div>
