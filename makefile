@@ -57,5 +57,5 @@ testserver: proj3site/manage.py
 	python proj3site/manage.py migrate
 	python proj3site/manage.py runserver
 
-unittest: tests.py proj3site/manage.py
+unittest: proj3site/populate_content/tests.py proj3site/manage.py
 	python proj3site/manage.py test proj3site/populate_content
