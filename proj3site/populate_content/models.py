@@ -1,17 +1,17 @@
 from django.db import models
 
+"""
+Person model corresponds to a character in the show.
+A Person has the following attributes that appear on its page:
+- First Name
+- Last Name
+- Actor Name
+- Title
+- House Name (ForeignKey House)
+- Status
+- Bio
+"""
 class Person(models.Model) :
-    """
-    Person model corresponds to a character in the show.
-    A Person has the following attributes that appear on its page:
-    - First Name
-    - Last Name
-    - Actor Name
-    - Title
-    - House Name (ForeignKey House)
-    - Status
-    - Bio
-    """
     # name info
     person_id = models.CharField(max_length=200, null=True)
     first_name = models.CharField(max_length=200, null=True)

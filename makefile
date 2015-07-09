@@ -18,36 +18,49 @@ check:
 
 clean:
 	rm -f  .coverage
-	rm -f  *.pyc
 	rm -f  models.html
 	rm -f  IDB.log
 	rm -rf __pycache__
 	rm -f  TestIDB.out
+	rm -f  IDB.log
+	rm -f proj3site/populate_content/*.pyc
+	rm -f proj3site/splash/*.pyc
 
 config:
 	git config -l
 
-models.html: models.py
+models.html: proj3site/populate_content/models.py
 	pydoc3 -w models
 
-idb.log:
+log:
 	git log > IDB.log
 
-requirements:
-	pip install -r requirements.txt
+requirements: requirements.txt
+	pip3 install -r requirements.txt
 
-runserver:
-	proj3site/manage.py runserver 0.0.0.0:8000
+deploy: proj3site/manage.py
+	python3 proj3site/manage.py runserver 0.0.0.0:8000
 
 sha:
 	git rev-parse HEAD
-fake:
-	python proj3site/manage.py migrate --fake
 
-testserver:
-	python proj3site/manage.py makemigrations
-	python proj3site/manage.py migrate
-	python proj3site/manage.py runserver
+soup: soupscraper.py
+	python3 soupscraper.py > soup.out
 
-unittest: tests.py
-	python proj3site/manage.py test proj3site/populate_content
+fake: proj3site/manage.py
+	python3 proj3site/manage.py migrate --fake
+
+migrations: proj3site/manage.py
+	python3 proj3site/manage.py makemigrations
+	python3 proj3site/manage.py migrate
+
+testserver: proj3site/manage.py
+	python3 proj3site/manage.py makemigrations
+	python3 proj3site/manage.py migrate
+	python3 proj3site/manage.py runserver
+
+runserver: proj3site/manage.py
+	python3 proj3site/manage.py runserver
+
+unittest: proj3site/populate_content/tests.py proj3site/manage.py
+	python3 proj3site/manage.py test proj3site/populate_content

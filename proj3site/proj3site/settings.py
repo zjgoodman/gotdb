@@ -52,7 +52,8 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=populate_content',
+    '--cover-package=populate_content.models',
+    '--verbosity=1',
 ]
 
 MIDDLEWARE_CLASSES = (
