@@ -18,11 +18,11 @@ check:
 
 clean:
 	rm -f  .coverage
-	rm -f  *.pyc
 	rm -f  models.html
 	rm -f  IDB.log
 	rm -rf __pycache__
 	rm -f  TestIDB.out
+	rm -f  IDB.log
 
 config:
 	git config -l
@@ -30,24 +30,32 @@ config:
 models.html: proj3site/populate_content/models.py
 	pydoc3 -w models
 
-idb.log:
+log:
 	git log > IDB.log
 
-requirements:
+requirements: requirements.txt
 	pip install -r requirements.txt
 
-runserver:
+runserver: proj3site/manage.py
 	proj3site/manage.py runserver 0.0.0.0:8000
 
 sha:
 	git rev-parse HEAD
-fake:
+
+soup: soupscraper.py
+	python soupscraper.py > soup.out
+
+fake: proj3site/manage.py
 	python proj3site/manage.py migrate --fake
 
-testserver:
+migrations: proj3site/manage.py
+	python proj3site/manage.py makemigrations
+	python proj3site/manage.py migrate
+
+testserver: proj3site/manage.py
 	python proj3site/manage.py makemigrations
 	python proj3site/manage.py migrate
 	python proj3site/manage.py runserver
 
-unittest: tests.py
+unittest: tests.py proj3site/manage.py
 	python proj3site/manage.py test proj3site/populate_content
