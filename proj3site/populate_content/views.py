@@ -13,32 +13,31 @@ from .models import Person, Region, Castle
 def index(request):
     return render(request, 'splash/index.html')
 
+def about_index(request):
+    all_authors = Author.objects.all()
+    context = {'all_authors': all_authors}
+    return render(request, 'populate_content/about_index.html', context)
+
 def person_index(request):
     all_people = Person.objects.all()
     context = {'all_people': all_people}
     return render(request, 'populate_content/person_index.html', context)
 
-def person_detail(request, person_name):
+def person_detail(request, person_id):
     try:
-        first_name, last_name = person_name.split('_')
-        person = Person.objects.get(last_name__exact=last_name)
+        person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
     return render(request, 'populate_content/person_detail.html', {'person': person})
-
-def about_index(request):
-    all_authors = Author.objects.all()
-    context = {'all_authors': all_authors}
-    return render(request, 'populate_content/about_index.html', context)
 
 def region_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
     return render(request, 'populate_content/region_index.html', context)
 
-def region_detail(request, region_name):
+def region_detail(request, region_id):
     try:
-        region = Region.objects.get(name__exact=region_name)
+        region = Region.objects.get(region_id__exact=region_id)
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
     return render(request, 'populate_content/region_detail.html', {'region': region})
@@ -48,9 +47,9 @@ def castle_index(request):
     context = {'all_castles': all_castles}
     return render(request, 'populate_content/castle_index.html', context)
 
-def castle_detail(request, castle_name):
+def castle_detail(request, castle_id):
     try:
-        castle = Castle.objects.get(name__exact=castle_name)
+        castle = Castle.objects.get(castle_id__exact=castle_id)
     except Castle.DoesNotExist:
         raise Http404("Castle does not exist :")
     return render(request, 'populate_content/castle_detail.html', {'castle': castle})
