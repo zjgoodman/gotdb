@@ -86,7 +86,7 @@
                     {% if all_people %}
                         {% for person in all_people %}
                                 <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/people/{{ person.first_name }}_{{ person.last_name }}/">
+                                    <a href="/content/people/{{ person.person_id }}/">
                                         {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}

@@ -82,7 +82,7 @@
                     {% if all_regions %}
                         {% for region in all_regions %}
                                 <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/regions/{{ region.name }}/">
+                                    <a href="/content/regions/{{ region.region_id }}/">
                                         {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}

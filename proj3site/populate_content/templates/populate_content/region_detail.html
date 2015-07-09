@@ -117,8 +117,8 @@
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
               <li><a href="#">Ruling House: {{ region.ruling_house }}</a></li>
-              <li><a href="/content/people/{{ region.ruling_lord.first_name }}_{{ region.ruling_lord.last_name }}/">Ruling Lord: {{ region.ruling_lord }}</a></li>
-              <li><a href="/content/castles/{{ region.capital_name }}">Capital: {{ region.capital_name }}</a></li>
+              <li><a href="/content/people/{{ region.ruling_lord.person_id }}/">Ruling Lord: {{ region.ruling_lord }}</a></li>
+              <li><a href="/content/castles/{{ region.capital_name.castle_id }}">Capital: {{ region.capital_name }}</a></li>
             </ol>
           </div>
           <div class="sidebar-module">

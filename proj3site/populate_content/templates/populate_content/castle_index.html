@@ -83,7 +83,7 @@
                     {% if all_castles %}
                         {% for castle in all_castles %}
                                 <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/castles/{{ castle.name }}/">
+                                    <a href="/content/castles/{{ castle.castle_id }}/">
                                         {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}
