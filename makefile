@@ -62,5 +62,8 @@ testserver: proj3site/manage.py
 runserver: proj3site/manage.py
 	python3 proj3site/manage.py runserver
 
+bgserver: proj3site/manage.py
+	python3 proj3site/manage.py runserver &
+
 unittest: proj3site/populate_content/tests.py proj3site/manage.py
 	python3 proj3site/manage.py test proj3site/populate_content
