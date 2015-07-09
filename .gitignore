@@ -1,0 +1,7 @@
+# ignore the following files:
+*.coverage
+*.pyc
+*.swp
+*.swo
+
+proj3site/populate_content/migrations/*
