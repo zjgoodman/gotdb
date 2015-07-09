@@ -22,7 +22,7 @@ hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 #using Westeros.org
 #finds and scrapes info on all people listed in string
 print("People:\n")
-for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
+for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_Targaryen', 'Jon_Snow', 'Sansa_Stark', 'Arya_Stark', 'Stannis_Baratheon', 'Tyrion_Lannister', 'Theon_Grejoy', 'Joffrey_Baratheon', 'Ramsay_Bolton', 'Cersei_Lannister', 'Bran_Stark', 'Margaery_Tyrell', 'Melisandre_of_Asshai', 'Daario_Naharis', 'Jaime_Lannister', 'Robb_Stark', 'Jorah_Mormont', 'Petyr_Baelish', 'Tommen_Baratheon', 'Sandor_Clegane', 'Jaqen_Hghar', 'Gendry', 'Khal_Drogo', 'Brienne_of_Tarth', 'Ygritte', 'Roose_Bolton', 'Catelyn_Stark', 'Varys', 'Bronn', 'Viserys_Targaryen', 'Shae', 'Talisa_Stark', 'Ellaria_Sand', 'Jeor_Mormont', 'Samwell_Tarly', 'Davos_Seaworth', 'Gilly', 'Tormund', 'Missandei'):
 	# name = 'Eddard_Stark'
 	site = 'http://www.westeros.org/GoT/Characters/Entry/' + name
 	req = urllib2.Request(site, headers=hdr)
@@ -49,7 +49,7 @@ for name in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon'):
 print("\nPlaces:\n")
 regions = False
 houses = False
-for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_Stormlands', 'The_Westerlands', 'House_Stark', 'House_Baratheon', 'House_Lannister'):
+for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Dragonstone', 'Pyke_(castle)', 'The_Dreadfort', 'King\'s_Landing', 'Highgarden', 'Asshai', 'Tyrosh', 'Bear_Island', 'The_Fingers', 'Clegane\'s_Keep', 'Braavos', 'Vaes_Dothrak', 'Evenfall_Hall', 'Riverrun', 'Lys', 'Lorath', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'The_North', 'The_Stormlands', 'The_Westerlands', 'Iron_Islands', 'The_Crownlands', 'The_Reach', 'Essos', 'The_Vale_of_Arryn', 'Beyond_the_Wall', 'The_Riverlands', 'Dorne', 'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen', 'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont', 'House_Baelish', 'House_Clegane'):
 	#place = 'Winterfell'
 	if place == 'The_North':
 		print("\nRegions:\n")
@@ -86,5 +86,7 @@ for place in ('Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'The_North', 'The_S
 				if parag[start] == '[':
 					cut = start
 			parag = parag[:cut] + parag[end + 1:] #removed bracketed section
-		print(parag)
+		#take out sentence long paragraphs or junk
+		if parag.count(".") > 1:
+			print("<p>" + parag + "</p>")
 	print('\n\n')
