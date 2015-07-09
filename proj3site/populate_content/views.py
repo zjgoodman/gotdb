@@ -111,13 +111,12 @@ def castle_api_list(request):
         serializer = CastleSerializer(castle, many=True)
         return JSONResponse(serializer.data)
 
-def person_api_detail(request, name):
+def person_api_detail(request, person_id):
     """
     Retrieve, update or delete a code snippet.
     """
     try:
-        first_name, last_name = name.split('_')
-        person = Person.objects.get(last_name__exact=last_name)
+        person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         return HttpResponse(status=404)
 
@@ -125,12 +124,12 @@ def person_api_detail(request, name):
         serializer = PeopleSerializer(person)
         return JSONResponse(serializer.data)
 
-def region_api_detail(request, name):
+def region_api_detail(request, region_id):
     """
     Retrieve, update or delete a code snippet.
     """
     try:
-        region = Region.objects.get(name__exact=name)
+        region = Region.objects.get(region_id__exact=region_id)
     except Region.DoesNotExist:
         return HttpResponse(status=404)
 
@@ -138,12 +137,12 @@ def region_api_detail(request, name):
         serializer = RegionSerializer(region)
         return JSONResponse(serializer.data)
 
-def castle_api_detail(request, name):
+def castle_api_detail(request, castle_id):
     """
     Retrieve, update or delete a code snippet.
     """
     try:
-        castle = Castle.objects.get(name__exact=name)
+        castle = Castle.objects.get(castle_id__exact=castle_id)
     except Castle.DoesNotExist:
         return HttpResponse(status=404)
 
