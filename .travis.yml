@@ -10,9 +10,9 @@ branches:
     - master
 
 # whitelist
-branches:
-  only:
-    - dev
+#branches:
+#  only:
+#    - dev
 
 language: python
 
@@ -41,5 +41,5 @@ script:
     # - make models.html
     - ls -al
     - make requirements
-    #- make testserver
+    - make migrations
     - make unittest
