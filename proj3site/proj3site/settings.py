@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'proj3site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'game_of_thrones',
+        'USER': 'zjg95',
+        'PASSWORD': 'downing11',
+        'HOST': '104.130.27.102',
+        'PORT': '3306',
     }
 }
 
