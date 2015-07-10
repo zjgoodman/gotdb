@@ -64,7 +64,7 @@ def house_detail(request, house_id):
         house = House.objects.get(house_id__exact=house_id)
     except House.DoesNotExist:
         raise Http404("House does not exist :")
-    return render(request, 'populate_content/house_detail.html', {'house': house})
+    return render(request, 'populate_content/house_detail.html', {'house': house, 'people':house.people.all()})
 
 def all_castles_index(request):
     all_castles = Castle.objects.all()
