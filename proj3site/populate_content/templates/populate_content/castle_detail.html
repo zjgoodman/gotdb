@@ -65,6 +65,9 @@
                         <a class="navbar-brand page-scroll" style="color:#fff" href="/content/regions">Regions</a>
                     </li>
                     <li>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/houses">Houses</a>
+                    </li>
+                    <li>
                         <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
                     </li>
                 </ul>
@@ -95,7 +98,7 @@
 
         <div class="section_heading">
           <h2 class="blog-post-title">History</h2>
-          <p>{{  castle.history }}p>
+          <p>{{  castle.history }}
         </div><!-- /.blog-post -->
 
       </div><!-- /.blog-main -->
@@ -108,7 +111,7 @@
           <div class="sidebar-module">
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
-              <li><a href="#">Ruling House: {{ castle.ruling_house }}</a></li>
+              <li><a href="/content/houses/{{ castle.ruling_house.house_id }}">Ruling House: {{ castle.ruling_house }}</a></li>
               <li><a href="/content/people/{{ castle.ruling_lord.person_id }}/">Ruling Lord: {{ castle.ruling_lord }}</a></li>
               <li><a href="/content/regions/{{ castle.region_name.region_id }}">Region: {{ castle.region_name }}</a></li>
             </ol>
