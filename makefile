@@ -45,7 +45,7 @@ sha:
 	git rev-parse HEAD
 
 soup: soupscraper.py
-	python3 soupscraper.py > soup.out
+	python soupscraper.py > soup.out
 
 fake: proj3site/manage.py
 	python3 proj3site/manage.py migrate --fake
