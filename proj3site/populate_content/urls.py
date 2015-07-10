@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^all_castles/$', views.all_castles_index, name='all_castles_index'),
     url(r'^all_regions/$', views.all_regions_index, name='all_regions_index'),
     url(r'^all_people/$', views.all_people_index, name='all_people_index'),
+    url(r'^all_houses/$', views.all_houses_index, name='all_houses_index'),
 ]

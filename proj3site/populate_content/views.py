@@ -81,6 +81,11 @@ def all_regions_index(request):
     context = {'all_regions': all_regions}
     return render(request, 'populate_content/all_regions_index.html', context)
 
+def all_houses_index(request):
+    all_houses = House.objects.all()
+    context = {'all_houses': all_houses}
+    return render(request, 'populate_content/all_houses_index.html', context)
+
 
 #--------------------------------------------------------------------------------
 #                           API STUFF
