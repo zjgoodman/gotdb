@@ -114,7 +114,7 @@ class House(models.Model) :
     description = models.TextField(null=True)
 
     # people in this House
-    people = models.ManyToManyField(Person, null=True)
+    people = models.ManyToManyField(Person, blank=True)
 
     def __str__(self):
         return self.name
