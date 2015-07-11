@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from .models import Castle, Region, Person, Author
+from .models import Castle, Region, Person, House, Author
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer
 
 from .models import Person, Region, Castle
@@ -54,6 +54,18 @@ def castle_detail(request, castle_id):
         raise Http404("Castle does not exist :")
     return render(request, 'populate_content/castle_detail.html', {'castle': castle})
 
+def house_index(request):
+    all_houses = House.objects.all()
+    context = {'all_houses': all_houses}
+    return render(request, 'populate_content/house_index.html', context)
+
+def house_detail(request, house_id):
+    try:
+        house = House.objects.get(house_id__exact=house_id)
+    except House.DoesNotExist:
+        raise Http404("House does not exist :")
+    return render(request, 'populate_content/house_detail.html', {'house': house, 'people':house.people.all()})
+
 def all_castles_index(request):
     all_castles = Castle.objects.all()
     context = {'all_castles': all_castles}
@@ -68,6 +80,11 @@ def all_regions_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
     return render(request, 'populate_content/all_regions_index.html', context)
+
+def all_houses_index(request):
+    all_houses = House.objects.all()
+    context = {'all_houses': all_houses}
+    return render(request, 'populate_content/all_houses_index.html', context)
 
 
 #--------------------------------------------------------------------------------

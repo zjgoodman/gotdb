@@ -1,7 +1,6 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
-{% load staticfiles %}
 
 <head>
 
@@ -11,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Game of Thrones | {{ region.name }}</title>
+    <title>Game of Thrones | {{ house.name }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
@@ -77,43 +76,50 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+</body>
 
     <body style="background-image: url();color:#000">
 
-      <h1 class="header-content"><br></h1>
-      <h1 class="header-content" style="text-align:center">{{ region.name }}</h1>
-      <p class="lead blog-description" style="text-align:center">Ruled by House {{ region.ruling_house }}</p>
+      <h1 class="header_content"><br></h1>
+      <h1 class="header_content" style="text-align:center">{{ house.name }}</h1>
+      <p class="lead blog-description" style="text-align:center">"{{ house.words }}"</p>
 
       <div class="col-sm-8">
 
         <div class="section_heading">
-          {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
+          {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
           <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
           {% endwith %}
-          <h4 style="text-align:center">(Capital: {{ region.capital_name }})</h3>
             
             <h2 class="blog-post-title">Description</h2>
-            <p>{{ region.description }}</p>
+            <p>{{ house.description }}</p>
         </div><!-- /.blog-post -->
 
         <div class="section_heading">
           <h2 class="blog-post-title">History</h2>
-          <p>{{ region.history }}</p>
+          <p>{{  castle.history }}
         </div><!-- /.blog-post -->
 
       </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>{{ region.name }}'s ruling lord is {{ region.ruling_lord }}.</p>
+            <h4>People in House {{ house.name }}</h4>
+            <ol class="list-unstyled">
+              {% if people %}
+                  {% for person in people %}
+                      <li><a href="/content/people/{{ person.person_id }}/">{{ person.first_name }} {{ person.last_name }}</a></li>
+                  {% endfor %}
+              {% else %}
+                  <li>No people!</li>
+              {% endif %}
+            </ol>
           </div>
           <div class="sidebar-module">
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
-              <li><a href="/content/houses/{{ region.ruling_house.house_id }}">Ruling House: {{ region.ruling_house }}</a></li>
-              <li><a href="/content/people/{{ region.ruling_lord.person_id }}/">Ruling Lord: {{ region.ruling_lord }}</a></li>
-              <li><a href="/content/castles/{{ region.capital_name.castle_id }}">Capital: {{ region.capital_name }}</a></li>
+              <li><a href="/content/regions/{{ house.region_name.region_id }}">Region: {{ house.region_name }}</a></li>
+              <li><a href="/content/castles/{{ house.castle_name.castle_id }}/">Castle: {{ house.castle_name }}</a></li>
             </ol>
           </div>
           <div class="sidebar-module">
@@ -154,6 +160,7 @@
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
   </body>
 </html>
+
 
 
 
