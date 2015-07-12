@@ -95,13 +95,15 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 	# print(place + ':')
 	data = soup.find('div', id = "mw-content-text")
 	if people:
+		pid = place.replace("\'", "")
+		pid = pid.lower()
+		print('\t\t\t\"person_id\": "' + pid + '\",')
 		cut = place.find('_')
 		if cut == -1:
 			print('\t\t\t\"first_name\": ' + '\"' + place + '\",')
 		else:
 			print('\t\t\t\"first_name\": ' + '\"' + place[:cut] + '\",')
 			print('\t\t\t\"last_name\": ' + '\"' + place[cut + 1:] + '\",')
-
 
 		table = soup.find('table', attrs={'class': 'infobox'})
 		for row in table.find_all('tr'):
@@ -115,7 +117,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 				if prnt:
 					if titles:
 						text = text.replace("</td>", "\"")
-						text = text.replace("<br/>", "\"\n\t\t\t\t\t\"")
+						text = text.replace("<br/>", "\",\n\t\t\t\t\t\"")
 						
 					while text.find('<') != -1 and text.find('>') != -1:
 						start = text.find('<')
@@ -220,15 +222,15 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 		parag = parag.replace("\"", "\\\"") #add escape sequences
 		#take out sentence long paragraphs or junk
 		if parag.count(".") > 1:
-			if first:
-				first = False
-				print('\t\t\t\"bio\":')
-				print('\t\t\t\t\"')
 			count += 1
 			if count == 2 and not people:
 				print("\nHistory:")
-			print("\t\t\t\t<p>" + parag[:-1] + "</p>")
-	print('\t\t\t\t\"')
+			if first:
+				first = False
+				print('\t\t\t\"bio\": \"' + "<p>" + parag[:-1] + "</p>"),
+			else:
+				print("<p>" + parag[:-1] + "</p>"),
+	print('\"')
 	print('\t\t}')
 	print('\t},')
 print(']')
