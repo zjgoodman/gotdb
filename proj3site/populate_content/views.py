@@ -6,7 +6,7 @@ from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from .models import Castle, Region, Person, House, Author
-from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer
+from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer, AuthorSerializer
 
 from .models import Person, Region, Castle
 
@@ -91,7 +91,7 @@ def all_houses_index(request):
 #                           API STUFF
 #--------------------------------------------------------------------------------
 
-# API Views and JSON creator class
+# JSON creator class
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -101,9 +101,10 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
+#List all items.
 def person_api_list(request):
     """
-    List all code snippets, or create a new snippet.
+    List all people (characters).
     """
     if request.method == 'GET':
         people = Person.objects.all()
@@ -112,7 +113,7 @@ def person_api_list(request):
 
 def region_api_list(request):
     """
-    List all code snippets, or create a new snippet.
+    List all regions.
     """
     if request.method == 'GET':
         region = Region.objects.all()
@@ -121,16 +122,36 @@ def region_api_list(request):
 
 def castle_api_list(request):
     """
-    List all code snippets, or create a new snippet.
+    List all castles.
     """
     if request.method == 'GET':
         castle = Castle.objects.all()
         serializer = CastleSerializer(castle, many=True)
         return JSONResponse(serializer.data)
 
+def house_api_list(request):
+    """
+    List all houses.
+    """
+    if request.method == 'GET':
+        house = House.objects.all()
+        serializer = HouseSerializer(house, many=True)
+        return JSONResponse(serializer.data)
+
+def author_api_list(request):
+    """
+    List all authors.
+    """
+    if request.method == 'GET':
+        authors = Author.objects.all()
+        serializer = AuthorSerializer(authors, many=True)
+        return JSONResponse(serializer.data)
+
+#List a specific item
+
 def person_api_detail(request, person_id):
     """
-    Retrieve, update or delete a code snippet.
+    Retrieve a specific person.
     """
     try:
         person = Person.objects.get(person_id__exact=person_id)
@@ -143,7 +164,7 @@ def person_api_detail(request, person_id):
 
 def region_api_detail(request, region_id):
     """
-    Retrieve, update or delete a code snippet.
+    Retrieve a specific region.
     """
     try:
         region = Region.objects.get(region_id__exact=region_id)
@@ -156,7 +177,7 @@ def region_api_detail(request, region_id):
 
 def castle_api_detail(request, castle_id):
     """
-    Retrieve, update or delete a code snippet.
+    Retrieve a specific castle.
     """
     try:
         castle = Castle.objects.get(castle_id__exact=castle_id)
@@ -165,4 +186,30 @@ def castle_api_detail(request, castle_id):
 
     if request.method == 'GET':
         serializer = CastleSerializer(castle)
+        return JSONResponse(serializer.data)
+
+def house_api_detail(request, house_id):
+    """
+    Retrieve a specific house.
+    """
+    try:
+        house = House.objects.get(house_id__exact=house_id)
+    except House.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = HouseSerializer(house)
+        return JSONResponse(serializer.data)
+
+def author_api_detail(request, author_id):
+    """
+    Retrieve a specific author.
+    """
+    try:
+        author = Author.objects.get(author_id__exact=author_id)
+    except Author.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = AuthorSerializer(author)
         return JSONResponse(serializer.data)
