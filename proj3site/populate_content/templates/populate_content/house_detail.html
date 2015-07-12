@@ -78,7 +78,7 @@
     </nav>
 </body>
 
-    <body style="background-image: url();color:#000">
+    <body>
 
       <h1 class="header_content"><br></h1>
       <h1 class="header_content" style="text-align:center">{{ house.name }}</h1>
@@ -87,9 +87,27 @@
       <div class="col-sm-8">
 
         <div class="section_heading">
-          {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
-          <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
-          {% endwith %}
+          <h2 class="blog-post-title">People</h2>
+          <header class="house-{{ house.house_id }}">
+            <div class="container-fluid">
+                <div class="row">
+                    {% if people %}
+                        {% for person in people %}
+                            <div class="col-lg-4 col-sm-6">
+                                <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
+                                    <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person.first_name }} {{ person.last_name }}</h4>
+                                    {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
+                                    <img src="{% static image_static %}" class="img-responsive" alt="">
+                                    {% endwith %}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No people are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+          </header>
             
             <h2 class="blog-post-title">Description</h2>
             <p>{{ house.description }}</p>
@@ -103,18 +121,6 @@
       </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>People in House {{ house.name }}</h4>
-            <ol class="list-unstyled">
-              {% if people %}
-                  {% for person in people %}
-                      <li><a href="/content/people/{{ person.person_id }}/">{{ person.first_name }} {{ person.last_name }}</a></li>
-                  {% endfor %}
-              {% else %}
-                  <li>No people!</li>
-              {% endif %}
-            </ol>
-          </div>
           <div class="sidebar-module">
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
