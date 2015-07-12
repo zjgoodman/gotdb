@@ -31,7 +31,10 @@ class Person(models.Model) :
     bio = models.TextField(null=True)
 
     def __str__(self):
-        return self.first_name + " " + self.last_name
+        if not self.last_name:
+            return self.first_name
+        else:
+            return self.first_name + " " + self.last_name
 
     class Meta:
         ordering = ('last_name',)
