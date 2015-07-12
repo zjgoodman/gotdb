@@ -5,3 +5,6 @@ django-nose
 coverage
 requests
 BeautifulSoup4
+mysqlclient
+mysql-python
+clear
