@@ -41,6 +41,5 @@ script:
     # - make models.html
     - ls -al
     - make requirements
-    - make migrations
     - make bgserver
     - make unittest
