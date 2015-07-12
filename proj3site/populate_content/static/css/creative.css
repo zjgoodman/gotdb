@@ -181,6 +181,7 @@ header {
     background-image: url(../img/header.jpg);
     background-position: center;
     background-attachment: fixed;
+    padding: 100px 15px 100px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -283,7 +284,8 @@ header .header-content .header-content-inner p {
 }
 
 .portfolio-box img {
-    z-index: -1;
+    position: relative;
+    z-index: 0;
     overflow: hidden;
     -webkit-transition: all .35s ease;
     -moz-transition: all .35s ease;

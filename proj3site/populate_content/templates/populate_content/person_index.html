@@ -80,16 +80,14 @@
     </nav>
 
     <header>
-        <br><br><br><br>
         <h1>People</h1>
-        <div class="header-content">
             <div class="container-fluid">
             <div class="row">
                 {% if all_people %}
                     {% for person in all_people %}
                         <div class="col-lg-4 col-sm-6">
                             <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
-                                <h4 style="align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person.first_name }} {{ person.last_name }}</h4>
+                                <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person.first_name }} {{ person.last_name }}</h4>
                                 
                                 {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
                                 <img src="{% static image_static %}" class="img-responsive" alt="">
@@ -102,7 +100,6 @@
                 {% endif %}
             </div>
             </div>
-        </div>
     </header>
 
     <!-- jQuery -->
