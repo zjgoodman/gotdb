@@ -117,7 +117,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 				if prnt:
 					if titles:
 						text = text.replace("</td>", "\"")
-						text = text.replace("<br/>", "\",\n\t\t\t\t\t\"")
+						text = text.replace("<br/>", ", ")
 						
 					while text.find('<') != -1 and text.find('>') != -1:
 						start = text.find('<')
@@ -134,8 +134,9 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 						this_dict['status'] = text
 						status = False
 					if titles:
-						print('\t\t\t\t\t"' + text)
-						print('\t\t\t\t],')
+						# print('\t\t\t\t\t"' + text)
+						# print('\t\t\t\t],')
+						print('\t\t\t\"titles\": \"' + text + ',')
 						titles = False
 					if actor:
 						print('\t\t\t\"actor\": \"' + text + '\",')
@@ -149,7 +150,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 					origin = True
 					prnt = True
 				if text.find("Titles") != -1:
-					print('\t\t\t\"titles\":' + '\n\t\t\t\t[')
+					# print('\t\t\t\"titles\":' + '\n\t\t\t\t[')
 					titles = True
 					prnt = True
 				if text.find("Portrayed by") != -1:
