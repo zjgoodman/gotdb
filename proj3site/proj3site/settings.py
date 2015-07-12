@@ -77,6 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'game_of_thrones',
+        'TEST_NAME': 'game_of_thrones_test ',
         'USER': 'zjg95',
         'PASSWORD': 'downing11',
         'HOST': '104.130.27.102',
