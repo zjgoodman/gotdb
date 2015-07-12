@@ -97,7 +97,6 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
               </ol>
-              {% if people %}
                  
               <div class="carousel-inner" role="listbox">
                 {% if people %}
@@ -108,7 +107,7 @@
                                 <div class="col-lg-4 col-sm-6">
                                     <a href="/content/people/{{ p1.person_id }}/" class="portfolio-box">
                                         <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ p1.first_name }} {{ p1.last_name }}</h4>
-                                        {% with 'img/portfolio/'|add:p2.person_id|add:'.jpg' as image_static %}
+                                        {% with 'img/portfolio/'|add:p1.person_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}
                                     </a>
@@ -122,6 +121,7 @@
                                         {% endwith %}
                                     </a>
                                 </div>
+                                {% else %}
                                 {% endif %}
                                 {% if p3 %}
                                 <div class="col-lg-4 col-sm-6">
@@ -132,6 +132,7 @@
                                         {% endwith %}
                                     </a>
                                 </div>
+                                {% else %}
                                 {% endif %}
                             </div>
                           </div>
