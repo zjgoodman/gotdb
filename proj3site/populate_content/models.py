@@ -20,7 +20,7 @@ class Person(models.Model) :
     region_from = models.ForeignKey('Region', null=True)
 
     # titles
-    titles = models.CharField(max_length=200, null=True)
+    titles = models.TextField(null=True)
 
     actor = models.CharField(max_length=200, null=True)
 
@@ -31,6 +31,8 @@ class Person(models.Model) :
     bio = models.TextField(null=True)
 
     def __str__(self):
+        if not self.last_name :
+            return self.first_name
         return self.first_name + " " + self.last_name
 
     class Meta:
