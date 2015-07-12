@@ -1,17 +1,19 @@
 from django.db import models
 
-"""
-Person model corresponds to a character in the show.
-A Person has the following attributes that appear on its page:
-- First Name
-- Last Name
-- Actor Name
-- Title
-- House Name (ForeignKey House)
-- Status
-- Bio
-"""
+
 class Person(models.Model) :
+    """
+    Person model corresponds to a character in the show.
+    A Person has the following attributes that appear on its page:
+    - First Name
+    - Last Name
+    - Actor Name
+    - Title
+    - House Name (ForeignKey House)
+    - Status
+    - Bio
+    """
+
     # name info
     person_id = models.CharField(max_length=200, null=True)
     first_name = models.CharField(max_length=200, null=True)
@@ -97,6 +99,16 @@ class Castle(models.Model):
         ordering = ('name',)
 
 class House(models.Model) :
+    """
+    House models correspond to ruling families.
+    A House has the following attributes that appear on its page:
+    - Name
+    - Words
+    - Location (ForeignKey Region)
+    - Castle (ForeignKey Castle)
+    - Description
+    - People
+    """
     # name
     house_id = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200, null=True)
@@ -123,6 +135,17 @@ class House(models.Model) :
         ordering = ('name',)
 
 class Author(models.Model) :
+    """
+    Author model corresponds to each of the 
+    five students who are working on this website
+    for cs373. They have the following attributes:
+    - Name
+    - Bio
+    - Responsibilities
+    - Number of commits
+    - Number of issues
+    - Number of unit tests
+    """
     # name
     author_id = models.CharField(max_length=200, null=True)
     first_name = models.CharField(max_length=200, null=True)
