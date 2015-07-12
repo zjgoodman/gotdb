@@ -56,30 +56,35 @@ hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 
 # using gameofthrones.wikia.com
 # finds and scrapes info on all places and regions listed in string, places first
-people = True
+people = False
 places = False
 regions = False
-houses = False
+houses = True
 pcount = 0
+skip = True
 main_dict = []
 print('[')
 for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_Targaryen', 'Jon_Snow', 'Sansa_Stark', 'Arya_Stark', 'Stannis_Baratheon', 'Tyrion_Lannister', 'Theon_Greyjoy', 'Joffrey_Baratheon', 'Ramsay_Bolton', 'Cersei_Lannister', 'Bran_Stark', 'Margaery_Tyrell', 'Melisandre', 'Daario_Naharis', 'Jaime_Lannister', 'Robb_Stark', 'Jorah_Mormont', 'Petyr_Baelish', 'Tommen_Baratheon', 'Sandor_Clegane', 'Jaqen_H\'ghar', 'Gendry', 'Drogo', 'Brienne_of_Tarth', 'Ygritte', 'Roose_Bolton', 'Catelyn_Stark', 'Varys', 'Bronn', 'Viserys_Targaryen', 'Shae', 'Talisa_Stark', 'Ellaria_Sand', 'Jeor_Mormont', 'Samwell_Tarly', 'Davos_Seaworth', 'Gilly', 'Tormund', 'Missandei', 'Grey_Worm', 'Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Dragonstone', 'Pyke_(castle)', 'The_Dreadfort', 'King\'s_Landing', 'Highgarden', 'Asshai', 'Tyrosh', 'Bear_Island', 'The_Fingers', 'Clegane\'s_Keep', 'Braavos', 'Vaes_Dothrak', 'Evenfall_Hall', 'Riverrun', 'Lys', 'Lorath', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'Summer_Isles', 'Naath', 'The_North', 'The_Stormlands', 'The_Westerlands', 'Iron_Islands', 'The_Crownlands', 'The_Reach', 'Essos', 'Sothoryos', 'The_Vale_of_Arryn', 'Beyond_the_Wall', 'The_Riverlands', 'Dorne', 'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen', 'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont', 'House_Baelish', 'House_Clegane', 'House_Tarly'):
-	this_dict = {}
+	# this_dict = {}
+	if place != 'House_Stark' and skip:
+		continue
 	if place == 'The_North':
-		count = 0
+		pcount = 0
 		print(']\n[')
 		# print("\nRegions:\n")
+		skip = False
 		regions = True
 		places = False
 	if place == 'House_Stark':
-		count = 0
+		skip = False
+		pcount = 0
 		print(']\n[')
 		# print("\nHouses:\n")
 		houses = True
 		regions = False
 	if place == 'Winterfell':
-		break
-		count = 0
+		skip = False
+		pcount = 0
 		print(']\n[')
 		# print("\nPlaces:\n")
 		people = False
@@ -93,18 +98,23 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 	page = urllib2.urlopen(site)
 	soup = BeautifulSoup(page)
 	# print(place + ':')
+	if houses:
+		print('\t\t\"model\": \"populate_content.house\", \"pk\": ' +  str(pcount) + ', \"fields\":\n\t\t{')
+		hid = place.lower()
+		print('\t\t\t\"house_id\": \"' + hid + '\",')
+		hname = place.replace("_", " ")
+		print('\t\t\t\"name\": \"' + hname + '\",')
 	data = soup.find('div', id = "mw-content-text")
 	if people:
 		pid = place.replace("\'", "")
 		pid = pid.lower()
-		print('\t\t\t\"person_id\": "' + pid + '\",')
+		print('\t\t\t\"person_id\": \"' + pid + '\",')
 		cut = place.find('_')
 		if cut == -1:
 			print('\t\t\t\"first_name\": ' + '\"' + place + '\",')
 		else:
 			print('\t\t\t\"first_name\": ' + '\"' + place[:cut] + '\",')
 			print('\t\t\t\"last_name\": ' + '\"' + place[cut + 1:] + '\",')
-
 		table = soup.find('table', attrs={'class': 'infobox'})
 		for row in table.find_all('tr'):
 			prnt = False
@@ -112,6 +122,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 			titles = False
 			actor = False
 			origin = False
+			words = False
 			for line in row.find_all('td'):
 				text = str(line)
 				if prnt:
@@ -168,12 +179,12 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 				text = str(row)
 				if places:
 					if prnt:
-						if text.find("Location") != -1:
-							continue
-						if text.find("Rulers") != -1:
-							continue
-						if rulers:
-							text = text.replace("<br/>", "\n")
+						# if text.find("Location") != -1:
+						# 	continue
+						# if text.find("Rulers") != -1:
+						# 	continue
+						# if rulers:
+						# 	text = text.replace("<br/>", "\n")
 						while text.find('<') != -1 and text.find('>') != -1:
 							start = text.find('<')
 							cut = start
@@ -183,16 +194,37 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 								if text[start] == '<':
 									cut = start
 							text = text[:cut] + text[end + 1:] #removed bracketed section
-						print(text)
+						# print(text)
 						prnt = False
-					if text.find("Location") != -1:
-						print("Region:")
+					# if text.find("Location") != -1:
+					# 	print("Region:")
+					# 	prnt = True
+					# if text.find("Rulers") != -1:
+					# 	print("Ruling Family:")
+						# rulers = True
+						# prnt = True
+				if houses:
+					if prnt:
+						if text.find("Words") != -1:
+							continue
+						while text.find('<') != -1 and text.find('>') != -1:
+							start = text.find('<')
+							cut = start
+							end = text.find('>')
+							while (start < end):
+								start += 1
+								if text[start] == '<':
+									cut = start
+							text = text[:cut] + text[end + 1:] #removed bracketed section
+						prnt = False
+						if words:
+							if text != '':
+								text = text.replace('"','\\"')
+								print('\t\t\t\"words\": \"' + text + '\",')
+							words = False
+					if text.find("Words") != -1:
+						words = True
 						prnt = True
-					if text.find("Rulers") != -1:
-						print("Ruling Family:")
-						rulers = True
-						prnt = True
-				# if regions:
 
 	count = 0
 	first = True
@@ -224,18 +256,14 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 		#take out sentence long paragraphs or junk
 		if parag.count(".") > 1:
 			count += 1
-			if count == 2 and not people:
+			if count == 2 and not people and not houses:
 				print("\nHistory:")
 			if first:
 				first = False
-				print('\t\t\t\"bio\": \"' + "<p>" + parag[:-1] + "</p>"),
+				print('\t\t\t\"description\": \"' + "<p>" + parag[:-1] + "</p>"),
 			else:
 				print("<p>" + parag[:-1] + "</p>"),
 	print('\"')
 	print('\t\t}')
 	print('\t},')
 print(']')
-print('\n\n')
-main_dict += this_dict
-
-print(main_dict)
