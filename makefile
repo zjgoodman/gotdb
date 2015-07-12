@@ -51,7 +51,6 @@ fake: proj3site/manage.py
 	python3 proj3site/manage.py migrate --fake
 
 migrations: proj3site/manage.py
-	python3 manage.py syncdb
 	python3 proj3site/manage.py makemigrations
 	python3 proj3site/manage.py migrate
 
