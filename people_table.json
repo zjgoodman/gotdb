@@ -251,10 +251,18 @@
 		"actor" : "Emilia Clarke",
 		"house" : "House Targaryen",
 		"titles" : [
-					
+					"Daenerys of the House Targaryen",
+					"the First of Her Name",
+					"Queen of Meereen",
+					"Queen of the Andals, the Rhoynar and the First Men",
+					"Lady Regnant of the Seven Kingdoms",
+					"Protector of the Realm",
+					"Khaleesi of the Great Grass Sea",
+					"Breaker of Chains",
+					"Mother of Dragons"
 					],
-		"home" : "",
-		"status" : "",
+		"home" : "Dragonstone",
+		"status" : "Alive",
 		"description" : "<p>Daenerys Targaryen, sometimes called Dany by her brother Viserys, is a major character in the first, second, third, fourth and fifth seasons. She is played by starring cast member Emilia Clarke, and debuts in the series premiere.
 </p>
 <p>She is the only surviving child of King Aerys II Targaryen, who was ousted from the Iron Throne during Robert's Rebellion. Daenerys's mother was sent to safety on Dragonstone island just before the Sack of King's Landing, and died giving birth to her during a great storm which wrecked the remaining Targaryen fleet at anchor, earning her the sobriquet Daenerys Stormborn. She lived in exile in Essos, until she was sold into marriage by her brother to the Dothraki Khal Drogo; the two gradually fell in love, but she lost her husband and stillborn son to the manipulations of the vengeful maegi Mirri Maz Duur. Her marriage to Drogo and subsequent interaction with the Dothraki people gives her the confidence and strength to lead and the belief in herself as the rightful queen of the Seven Kingdoms. Following the death of her brother Viserys, Daenerys was left as the last Targaryen, and intends to claim the Iron Throne as her birthright. She formally styles herself as Queen Daenerys of House Targaryen, First of Her Name.
@@ -381,10 +389,10 @@
 		"actor" : "Kit Harington",
 		"house" : "House Stark",
 		"titles" : [
-					
+					"998th Lord Commander of the Night's Watch"
 					],
-		"home" : "",
-		"status" : "",
+		"home" : "Winterfell",
+		"status" : "Dead",
 		"description" : "<p>Jon Snow is a major character in the first, second, third, fourth and fifth seasons. He is played by starring cast member Kit Harington, and debuts in the series premiere. Jon is the bastard son of Lord Eddard Stark of Winterfell. He was a steward in the Night's Watch. Now serving on the Wall, Jon has found a place of acceptance where the circumstances of his birth are of little importance. He has a pet direwolf named Ghost, and wields the bastard sword, Longclaw, which was a gift from Lord Commander Jeor Mormont, who took Jon as his personal steward and came to see him as a surrogate son.
 </p>
 <p>On a mission to discover King-Beyond-the-Wall Mance Rayder's plans, Jon infiltrated the wildling army. While learning their plans, Jon fell in love with a wildling woman, Ygritte, and began a relationship with her. Jon was forced to leave her behind after they scaled the Wall. Jon returned to his sworn brothers in the Watch and warned them about the coming invasion.
@@ -529,10 +537,11 @@
 		"actor" : "Sophie Turner",
 		"house" : "House Stark",
 		"titles" : [
-					
+					"Princess",
+					"Lady of Winterfell"
 					],
-		"home" : "",
-		"status" : "",
+		"home" : "Winterfell",
+		"status" : "Uncertain",
 		"description" : "<p>Sansa Stark is a major character in the first, second, third, fourth, and fifth seasons. She is played by starring cast member Sophie Turner, and debuts in the series premiere. Sansa is the daughter of Lord Eddard Stark of Winterfell and his wife Lady Catelyn, sister of Robb, Arya, Bran and Rickon Stark, and half-sister of Jon Snow. She moves to King's Landing when her father is appointed Hand of the King to Robert Baratheon, and she is betrothed to heir apparent Joffrey.
 </p>
 <p>Things soon turn sour for Sansa in King's Landing; she is forced to watch as her father is betrayed and executed for treason by Joffrey. During the resulting War of the Five Kings, Sansa is effectively a prisoner of the Lannisters, and repeatedly humiliated and brutalized by Joffrey, who later repudiates his betrothal to her in favor of Margaery Tyrell. During her captivity, Sansa, by now thought to be the last surviving Stark and thus the key to the North, is unwillingly married to Tyrion Lannister at the behest of his father. In the wake of Joffrey's assassination, she is spirited away from the city by Petyr Baelish. She adopts the alias of Alayne and is presented as Lord Petyr's niece, to hide her from recapture by the Lannisters, although she has recently been married to Ramsay Bolton as part of Baelish's bigger schemes. Sansa is frequently praised as being very beautiful. Though her naiveté has cost her dearly in the past, Sansa has begun to learn from her mistakes and is ready to be more than just a pawn in the game of thrones.
@@ -648,10 +657,10 @@ While she prays at the Red Keeps's godswood under guard, Margaery comes and talk
 		"actor" : "Maisie Williams",
 		"house" : "House Stark",
 		"titles" : [
-					
+					"Princess"
 					],
-		"home" : "",
-		"status" : "",
+		"home" : "Winterfell",
+		"status" : "Alive",
 		"description" : "<p>Arya Stark is a major character in the first, second, third, fourth, fifth and sixth seasons. She is played by starring cast member Maisie Williams, and debuts in the series premiere. Arya is the younger daughter of Lord Eddard Stark and his wife Lady Catelyn Stark. She is headstrong, fiercely independent, disdains traditional women's pursuits, and thus is often mistaken for a boy. She wields a sword named Needle, a gift from her half-brother, Jon Snow, and was trained in the Braavosi style of swordfighting while living in King's Landing. She adopted the direwolf Nymeria, but they have since been separated after Nymeria attacked Joffrey, forcing Arya to send her away in order to prevent her execution.
 </p>
 <p>When her father is betrayed and executed by Joffrey, Arya flees the capital with the help of the Night's Watch recruiter, Yoren, who gets her out of the city disguised as an orphan boy \"Arry\" and tries to take her home. However, she is taken prisoner by Ser Gregor Clegane's men and taken to Harrenhal, where she briefly serves as cupbearer to an unsuspecting Tywin Lannister. After escaping, she begins making her way towards Riverrun and is captured by the Brotherhood Without Banners and subsequently by Sandor Clegane. They travel across Westeros as he unsuccessfully attempts to ransom her to various family members. In Clegane's company, Arya becomes increasingly hardened and brutalized, and personally kills a number of men. She compiles a list of people she intends to kill. After Clegane is gravely injured in a fight, she abandons him. Long since given up for dead by many in Westeros, Arya is now in Braavos, training with the Faceless Men. However, as a result of violating the assassins' code, Arya has been rendered blind by the guild as punishment.
@@ -778,9 +787,15 @@ While she prays at the Red Keeps's godswood under guard, Margaery comes and talk
 		"actor" : "Stephen Dillane",
 		"house" : "House Baratheon",
 		"titles" : [
-					
+					"King of the Andals and the First Men",
+					"Lord of the Seven Kingdoms",
+					"Protector of the Realm",
+					"Lord of Dragonstone",
+					"Lord of Storm's End",
+					"Lord Paramount of the Stormlands",
+					"Master of Ships"
 					],
-		"home" : "",
+		"home" : "Storm's End",
 		"status" : "",
 		"description" : "<p>Stannis Baratheon is a major character in the second, third, fourth and fifth seasons. He is played by starring cast member Stephen Dillane, and debuts in \"The North Remembers\". Stannis is mentioned in the first season but did not appear.
 </p>
@@ -3627,13 +3642,48 @@ Jaqen H'ghar is a mysterious man - introducing himself as a Lorathi criminal - w
 		"person_id": "grey_worm",
 		"first_name": "Grey",
 		"last_name": "Worm",
-		"actor": "",
+		"actor": "Jacob Anderson",
 		"house": "none",
 		"titles" : [
 					
 					],
 		"home" : "",
 		"status" : "",
-		"description": ""
+		"description": "<p>Grey Worm is a recurring character in the third, fourth and fifth seasons. He is played by Jacob Anderson and debuts in \"Kissed by Fire\". Grey Worm is the chosen commander of the Unsullied, the warrior-eunuchs of Astapor whose reputation for combat is without equal.
+</p>
+<p>Grey Worm became one of the main advisors to Daenerys Targaryen after she acquires the Unsullied from the Masters of Astapor. He participates in the sack of Astapor, inflitrated Yunkai and led the liberation of Meereen. After Daenerys leaves Meereen on the back of her dragon, Drogon, Grey Worm remains in Meereen to assist Tyrion Lannister to rule the city.
+</p>
+<p>Grey Worm was originally a boy taken into slavery by the Good Masters of Astapor, an oligarchy of slave-traders dedicated to the training and commerce of Unsullied, warrior-eunuch slaves trained into absolute obedience since early childhood. It later is revealed that he is originally from the Summer Islands and was taken by the slavers in a raid as a baby. He has no memory of his life before being an Unsullied.
+</p>
+<p>He is released from slavery after Daenerys Targaryen buys all the Unsullied in the city and has them put all slave owners in Astapor to the sword and release all slaves. Once released, Grey Worm, like all his brethren, chooses to fight for Daenerys as a free man.
+</p>
+<p>As per Daenerys's instructions, the Unsullied officers select their own leader to act as their official commander, reporting directly to her. Grey Worm is selected, though it is not established how. Upon reporting his election to Daenerys, she finds his name and its associated practice– given to him by the Good Masters to remind him that he is vermin– distasteful, and tells him that he and all Unsullied may use their original names or chose new ones they like. Grey Worm agrees to disseminate the instructions to the other Unsullied, but chooses to keep his. He considers that his birth name was cursed as he had it when was taken as a slave, while \"Grey Worm\" is a lucky name as it was the one he had when Daenerys Stormborn set him free.
+</p>
+<p>Grey Worm is present when Daenerys hosts the captains of the Second Sons, Mero and Prendahl na Ghezn, and their lieutenant Daario Naharis. Grey Worm is highly offended by Mero's boorish and insulting behavior towards Daenerys and Missandei, and offers - in Low Valyrian - to remove Mero's tongue as punishment, reaching for the bronze dagger in his belt. Daenerys graciously has him stand down.
+</p>
+<p>Grey Worm is present when Jorah Mormont and Daario plan the infiltration of Yunkai. Grey Worm remains silent throughout most of the meeting, until Daenerys asks for his opinion of Daario. Grey Worm is not used to having his own opinions, but Daenerys gently encourages him by saying that he is a leader now, and he responds that he trusts him. Daenerys sends the three to sneak into the city. Grey Worm proves himself an artist with his spear, easily besting dozens of Yunkish guards. He returns to his queen battered but uninjured at the end of the night.
+</p>
+<p>At the gates of Meereen, Grey Worm asks to be allowed to kill the city's champion for Daenerys. The queen declines as she is unwilling to risk her army's official commander.
+</p>
+<p>While swimming, Grey Worm notices Missandei bathing naked with other women down the stream, and gazes at her intently. She notices this, and stands up slowly to let him view her before finally covering herself. Later he apologizes if he made her uncomfortable, and Missandei assures him he did not. It is made apparent that some sexual desire may still reside in him, even with his castration, and Missandei is not averse to his interest, later speculating with Daenerys as to \"how much\" the masters took from him. Grey Worm is later present when Jorah Mormont is banished from Daenerys's service.
+</p>
+<p>Grey Worm is on hand when Daenerys learns that Drogon has killed a three year old girl. He later reports that Drogon is not actually in Meereen.
+</p>
+<p>Grey Worm reports to Daenerys when an Unsullied soldier named White Rat is murdered while visiting a brothel. Later, he is approached by Missandei, who asks him why an Unsullied would want to visit a brothel. Grey Worm states that he does not know and leaves.
+</p>
+<p>Grey Worm, with the help of Daario Naharis, successfully track down and arrest a Son of the Harpy involved in White Rat's murder. Daario teaches Grey Worm that his Second Sons are less conspicuous than the Unsullied, making them much better at tracking down illusive Sons of the Harpy. After, Grey Worm is at Daenerys's council when they discuss what should be done with the Son of the Harpy who has been arrested. Later, he is present when Mossador is publicly executed for murdering the prisoner before a fair trial could take place. Grey Worm leads the Unsullied who escort Daenerys and her retainers away when a riot breaks out.
+</p>
+<p>Grey Worm is patrolling the streets of Meereen with other Unsullied when they discover that the Sons of the Harpy have murdered several individuals in broad daylight. The same prostitute that lured White Rat to his death direct Grey Worm and his Unsullied into a trap, where they are surrounded by members of the Sons of the Harpy. The Unsullied are overwhelmed by their sheer numbers and are brutally murdered. Grey Worm, despite taking numerous wounds, kills several of his attackers until he is the last Unsullied left alive. Just as the Sons of the Harpy close in around him, Ser Barristan Selmy arrives and manages to draw most of them away from Grey Worm. Barristan fights valiantly, but ultimately succumbs to the Sons of the Harpy's attacks. Before a Son of the Harpy can cut Barristan's throat, Grey Worm manages to kill him before collapsing from his wounds next to the dead knight.
+</p>
+<p>Grey Worm ultimately survives his injuries, but is incapacitated and confined to a bed. He is accosted by Missandei, and admits to her his shame for letting Barristan Selmy die and failing Daenerys, and for feeling fear when he believed he was going to die, not for his life, but because of the possibility of never seeing her again. Missandei, touched by Grey Worm's words, kisses him.
+</p>
+<p>In the aftermath of the attack by the Sons of the Harpy at Daznak's Pit and Daenerys' disappearance on Drogon, Missandei brings Grey Worm – still recovering from his injuries – to a meeting of Daenerys's advisor, which now includes Tyrion Lannister. They decide that Jorah (who had returned to the city with Tyrion) and Daario would find Daenerys and Tyrion would rule in Meereen in her stead. Grey Worm volunteers to help Jorah and Daario look for Daenerys, but they tell him to remain in the city with Missandei, as he is the only one who can lead the Unsullied in keeping the peace and enforcing Tyrion's rule over Meereen.
+</p>
+<p>In the A Song of Ice and Fire novels, Grey Worm is a stalwart and skilled warrior. Like all Unsullied, he doesn't have a real name, instead choosing a name every day by lottery from a barrel. The names the slave-masters came up with for them are intentionally demeaning, usually a combination of a color and a kind of vermin. He decides to keep the name Grey Worm as it is the one he had on the day he was freed.
+</p>
+<p>Slaves in Astapor are taken from all over the world, and no indication has been given about where Grey Worm is originally from, or if he even knows where it is. The TV series invented the background that he is from the Summer Islands, but was taken by slavers as a baby, and has no memory of his life before being an Unsullied - though it is entirely plausible that this could be his background in the books.
+</p>
+<p>There is no budding attraction between Grey Worm and Missandei in the books, given that the book version of Missandei is only ten years old. As for the plausibility of such a relationship, just because a eunuch does not feel sexual attraction, this does not prevent him from having human emotional attachments. In the books, some time after Daenerys captures Meereen an Unsullied called Stalwart Shield is the target of a revenge killing by one of the old slaver families. Daenerys asks how this Unsullied was ambushed alone, given that they patrol the streets in pairs. She is told that Stalwart Shield went off on his own to a brothel, where he was ambushed. Daenerys is confused why a eunuch would visit a prostitute, and Grey Worm himself explains to her that \"Even those who lack a man's parts may still have a man's heart.\" Stalwart Shield simply paid prostitutes to lay with him and hold him lovingly, to feel some sort of basic human affection after a lifetime of brutal debasement at the hands of the slave masters. Also, Grey Worm's friendly rivalry with Daario Naharis is absent in the books.
+</p>"
 	}
 ]
