@@ -97,27 +97,49 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
               </ol>
+              {% if people %}
+                 
               <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <div class="container-fluid">
-                    <div class="row">
-                        {% if people %}
-                            {% for person in people %}
+                {% if people %}
+                    {% for p1, p2, p3 in people %}
+                        <div class="item">
+                          <div class="container-fluid">
+                            <div class="row">
                                 <div class="col-lg-4 col-sm-6">
-                                    <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
-                                        <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person.first_name }} {{ person.last_name }}</h4>
-                                        {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
+                                    <a href="/content/people/{{ p1.person_id }}/" class="portfolio-box">
+                                        <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ p1.first_name }} {{ p1.last_name }}</h4>
+                                        {% with 'img/portfolio/'|add:p2.person_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}
                                     </a>
                                 </div>
-                            {% endfor %}
-                        {% else %}
-                            <p>No people are available.</p>
-                        {% endif %}
-                    </div>
-                  </div>
-                </div>
+                                {% if p2 %}
+                                <div class="col-lg-4 col-sm-6">
+                                    <a href="/content/people/{{ p2.person_id }}/" class="portfolio-box">
+                                        <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ p2.first_name }} {{ p2.last_name }}</h4>
+                                        {% with 'img/portfolio/'|add:p2.person_id|add:'.jpg' as image_static %}
+                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                                        {% endwith %}
+                                    </a>
+                                </div>
+                                {% endif %}
+                                {% if p3 %}
+                                <div class="col-lg-4 col-sm-6">
+                                    <a href="/content/people/{{ p3.person_id }}/" class="portfolio-box">
+                                        <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ p3.first_name }} {{ p3.last_name }}</h4>
+                                        {% with 'img/portfolio/'|add:p3.person_id|add:'.jpg' as image_static %}
+                                        <img src="{% static image_static %}" class="img-responsive" alt="">
+                                        {% endwith %}
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No people are available.</p>
+                {% endif %}
 
               <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
