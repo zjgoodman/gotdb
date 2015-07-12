@@ -6,4 +6,3 @@ coverage
 requests
 BeautifulSoup4
 mysqlclient
-clear
