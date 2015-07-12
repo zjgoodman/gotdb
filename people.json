@@ -1,0 +1,14 @@
+[
+	{
+		"id" : "7",
+		"person_id" : "tyrion_lannister",
+		"first_name" : "Tyrion",
+		"last_name" : "Lannister",
+		"titles" : "The Imp",
+		"status" : "Alive",
+		"bio" : "He is the funniest",
+		"house_name_id" : "5",
+		"actor" : "Peter Dinklage",
+		"region_from_id" : "5"
+	}
+]

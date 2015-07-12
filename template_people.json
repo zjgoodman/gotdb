@@ -1,0 +1,18 @@
+{"model" : "castle", "fields" : {"name" : "ned stark"}},{}
+
+[
+	{
+		"model": "populate_content.person", "fields":
+		{
+			"titles": "King",
+			"status": "Dead",
+			"bio": "He's a nice dude.",
+			"last_name": "Baratheon",
+			"house_name": 4,
+			"region_from": 4,
+			"first_name": "Renley",
+			"person_id": "renley_baratheon",
+			"actor" : ""
+		}
+	}
+]

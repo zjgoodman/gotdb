@@ -80,16 +80,14 @@
 
 
     <header>
-        <br><br><br><br>
         <h1>Castles</h1>
-        <div class="header-content">
             <div class="container-fluid">
                 <div class="row">
                     {% if all_castles %}
                         {% for castle in all_castles %}
                                 <div class="col-lg-4 col-sm-6">
                                     <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                                        <h4 style="align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ castle.name }}</h4>
+                                        <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ castle.name }}</h4>
                                         {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
                                         <img src="{% static image_static %}" class="img-responsive" alt="">
                                         {% endwith %}
@@ -101,7 +99,6 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
     </header>
 
     <!-- jQuery -->
