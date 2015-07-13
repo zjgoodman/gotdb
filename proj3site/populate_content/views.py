@@ -97,7 +97,7 @@ class JSONResponse(HttpResponse):
     An HttpResponse that renders its content into JSON.
     """
     def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
+        content = JSONRenderer().render(data, renderer_context={'indent':4})
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
