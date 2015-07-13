@@ -65,43 +65,126 @@ skip = True
 main_dict = []
 print('[')
 for place in (
+
+	# ------
+	# PEOPLE
+	# ------
+
 	# stark
 	'Eddard_Stark', 'Jon_Snow', 'Sansa_Stark', 'Arya_Stark', 'Bran_Stark', 'Robb_Stark', 'Talisa_Stark', 'Catelyn_Stark', 'Benjen_Stark', 'Rickon_Stark', 'Hodor', 'Rodrik_Cassel',
+	
 	# lannister
 	'Tywin_Lannister', 'Tyrion_Lannister', 'Cersei_Lannister', 'Jaime_Lannister', 'Lancel', 'Kevan_Lannister', 
-	# # targaryen
+	
+	# targaryen
 	'Daenerys_Targaryen', 'Viserys_Targaryen', 'Aemon',
-	# # bolton
+	
+	# bolton
 	'Ramsay_Bolton', 'Roose_Bolton',
-	# # tyrell
+	
+	# tyrell
 	'Margaery_Tyrell', 'Loras_Tyrell', 'Olenna_Tyrell',
-	# # martell
+	
+	# martell
 	'Ellaria_Sand', 'Tyene_Sand', 'Oberyn_Martell', 'Doran_Martell', 'Nymeria_Sand', 'Obara_Sand',
-	# # clegane
+	
+	# clegane
 	'Sandor_Clegane', 'Gregor_Clegane',
+	
 	# karstark
 	'Rickard_Karstark',
+	
 	# umber
 	'Greatjon_Umber',
-	# # frey
+	
+	# frey
 	'Walder_Frey', 'Roslin_Frey', 'Walda_Frey_(Fat_Walda)',
-	# # Arryn
+	
+	# Arryn
 	'Lysa_Arryn', 'Robin_Arryn', 'Jon_Arryn',
-	# # tully
+	
+	# tully
 	'Hoster_Tully', 'Brynden_Tully', 'Edmure_Tully',
-	# # baelish
+	
+	# baelish
 	'Petyr_Baelish',
-	# # baratheon
+	
+	# baratheon
 	'Robert_Baratheon', 'Renly_Baratheon', 'Stannis_Baratheon', 'Joffrey_Baratheon', 'Tommen_Baratheon', 'Shireen_Baratheon', 'Myrcella_Baratheon', 'Selyse_Baratheon',
-	# # greyjoy
+	
+	# greyjoy
 	'Balon_Greyjoy', 'Yara_Greyjoy', 'Theon_Greyjoy',
-	# # mormont
+	
+	# mormont
 	'Jeor_Mormont', 'Jorah_Mormont',
-	# # tarly
+	
+	# tarly
 	'Samwell_Tarly',
-	# # no house
-	'Melisandre', 'Davos_Seaworth', 'Daario_Naharis', 'Jaqen_H\'ghar', 'Gendry', 'Drogo', 'Ygritte', 'Varys', 'Bronn', 'Shae', 'Brienne_of_Tarth', 'Gilly', 'Tormund', 'Missandei', 'Grey_Worm', 'Alliser_Thorne', 'Barristan_Selmy', 'Meryn_Trant', 'Myranda', 'Podrick_Payne', 'Janos_Slynt', 'High_Sparrow', 'Osha', 'Pycelle', 'Luwin',
-	# 'Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Dragonstone', 'Pyke_(castle)', 'The_Dreadfort', 'King\'s_Landing', 'Highgarden', 'Asshai', 'Tyrosh', 'Bear_Island', 'The_Fingers', 'Clegane\'s_Keep', 'Braavos', 'Vaes_Dothrak', 'Evenfall_Hall', 'Riverrun', 'Lys', 'Lorath', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'Summer_Isles', 'Naath', 'The_North', 'The_Stormlands', 'The_Westerlands', 'Iron_Islands', 'The_Crownlands', 'The_Reach', 'Essos', 'Sothoryos', 'The_Vale_of_Arryn', 'Beyond_the_Wall', 'The_Riverlands', 'Dorne', 'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen', 'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont', 'House_Baelish', 'House_Clegane', 'House_Tarly'
+	
+	# beyond the wall
+	'Tormund', 'Alliser_Thorne', 'Mance_Rayder', 'Ygritte', 'Gilly', 'Janos_Slynt',
+	
+	# essos people
+	'Daario_Naharis', 'Jaqen_H\'ghar', 'Drogo', 'Barristan_Selmy', 'Missandei', 'Grey_Worm',
+	
+	# no house
+	'Melisandre', 'Davos_Seaworth', 'Gendry', 'Varys', 'Bronn', 'Shae', 'Brienne_of_Tarth', 'Meryn_Trant', 'Myranda', 'Podrick_Payne', 'High_Sparrow', 'Osha', 'Pycelle', 'Luwin',
+	
+	# -------
+	# CASTLES
+	# -------
+
+	# 7 kingdoms
+	'Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Sunspear',
+	'Highgarden', 'The_Eyrie', 'Riverrun',
+
+	# other westeros castles
+	'Red_Keep',
+
+	# north
+	'Last_Hearth', 'Karhold', 'Moat_Cailin', 'The_Dreadfort', 'Castle_Black',
+
+	'Clegane\'s_Keep', 'Evenfall_Hall', 'Harrenhal', 'Dragonstone', 'Pyke_(castle)',
+	'The_Twins',
+
+	# ------
+	# CITIES
+	# ------
+
+	# westeros
+	'King\'s_Landing', 
+
+	# essos
+	'Asshai', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'Naath',
+	'Braavos', 'Vaes_Dothrak', 'Tyrosh', 'Lys', 'Lorath', 'Pentos', 'Astapor',
+	'Meereen', 'Yunkai', 'Old_Valyria', 'Qarth',
+
+	# -------
+	# REGIONS
+	# -------
+
+	# 7 kingdoms
+	'The_North', 'The_Stormlands', 'The_Westerlands', 'Dorne',
+	'The_Reach', 'The_Vale_of_Arryn', 'The_Riverlands',
+	
+	# sub-regions in westeros
+	'The_Crownlands', 'Iron_Islands',
+	'Beyond_the_Wall', 'The_Fingers',
+	'Bear_Island',
+
+	# essos
+	'Essos', 'Sothoryos', 'Summer_Isles',
+
+	# ------
+	# HOUSES
+	# ------
+
+	'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen',
+	'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont',
+	'House_Baelish', 'House_Clegane', 'House_Tarly', 'House_Tarth',
+	'House_Karstark', 'House_Umber', 'House_Tully', 'House_Frey'
+	'Night\'s_Watch',
+	
 	):
 	# this_dict = {}
 	if place == 'House_Stark':
