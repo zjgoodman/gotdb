@@ -192,6 +192,7 @@ header {
     position: relative;
     background-image: url(../img/portfolio/baratheon.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
     padding: 50px 15px 50px;
 }
 
@@ -199,6 +200,7 @@ header {
     position: relative;
     background-image: url(../img/portfolio/lannister.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
     padding: 50px 15px 50px;
 }
 
@@ -206,13 +208,15 @@ header {
     position: relative;
     background-image: url(../img/portfolio/stark.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
     padding: 50px 15px 50px;
 }
 
 .house-targaryen {
     position: relative;
     background-image: url(../img/portfolio/targaryen.jpg);
-    background-size: contain
+    background-size: contain;
+    background-repeat: no-repeat;
     padding: 15px 15px 15px;
 }
 
