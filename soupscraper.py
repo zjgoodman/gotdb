@@ -56,19 +56,142 @@ hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 
 # using gameofthrones.wikia.com
 # finds and scrapes info on all places and regions listed in string, places first
-people = False
+people = True
 places = False
 regions = False
-houses = True
+houses = False
 pcount = 0
 skip = True
 main_dict = []
 print('[')
-for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_Targaryen', 'Jon_Snow', 'Sansa_Stark', 'Arya_Stark', 'Stannis_Baratheon', 'Tyrion_Lannister', 'Theon_Greyjoy', 'Joffrey_Baratheon', 'Ramsay_Bolton', 'Cersei_Lannister', 'Bran_Stark', 'Margaery_Tyrell', 'Melisandre', 'Daario_Naharis', 'Jaime_Lannister', 'Robb_Stark', 'Jorah_Mormont', 'Petyr_Baelish', 'Tommen_Baratheon', 'Sandor_Clegane', 'Jaqen_H\'ghar', 'Gendry', 'Drogo', 'Brienne_of_Tarth', 'Ygritte', 'Roose_Bolton', 'Catelyn_Stark', 'Varys', 'Bronn', 'Viserys_Targaryen', 'Shae', 'Talisa_Stark', 'Ellaria_Sand', 'Jeor_Mormont', 'Samwell_Tarly', 'Davos_Seaworth', 'Gilly', 'Tormund', 'Missandei', 'Grey_Worm', 'Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Dragonstone', 'Pyke_(castle)', 'The_Dreadfort', 'King\'s_Landing', 'Highgarden', 'Asshai', 'Tyrosh', 'Bear_Island', 'The_Fingers', 'Clegane\'s_Keep', 'Braavos', 'Vaes_Dothrak', 'Evenfall_Hall', 'Riverrun', 'Lys', 'Lorath', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'Summer_Isles', 'Naath', 'The_North', 'The_Stormlands', 'The_Westerlands', 'Iron_Islands', 'The_Crownlands', 'The_Reach', 'Essos', 'Sothoryos', 'The_Vale_of_Arryn', 'Beyond_the_Wall', 'The_Riverlands', 'Dorne', 'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen', 'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont', 'House_Baelish', 'House_Clegane', 'House_Tarly'):
+for place in (
+
+	# ------
+	# PEOPLE
+	# ------
+
+	# stark
+	'Eddard_Stark', 'Jon_Snow', 'Sansa_Stark', 'Arya_Stark', 'Bran_Stark', 'Robb_Stark', 'Talisa_Stark', 'Catelyn_Stark', 'Benjen_Stark', 'Rickon_Stark', 'Hodor', 'Rodrik_Cassel',
+	
+	# lannister
+	'Tywin_Lannister', 'Tyrion_Lannister', 'Cersei_Lannister', 'Jaime_Lannister', 'Lancel', 'Kevan_Lannister', 
+	
+	# targaryen
+	'Daenerys_Targaryen', 'Viserys_Targaryen', 'Aemon',
+	
+	# bolton
+	'Ramsay_Bolton', 'Roose_Bolton',
+	
+	# tyrell
+	'Margaery_Tyrell', 'Loras_Tyrell', 'Olenna_Tyrell',
+	
+	# martell
+	'Ellaria_Sand', 'Tyene_Sand', 'Oberyn_Martell', 'Doran_Martell', 'Nymeria_Sand', 'Obara_Sand',
+	
+	# clegane
+	'Sandor_Clegane', 'Gregor_Clegane',
+	
+	# karstark
+	'Rickard_Karstark',
+	
+	# umber
+	'Greatjon_Umber',
+	
+	# frey
+	'Walder_Frey', 'Roslin_Frey', 'Walda_Frey_(Fat_Walda)',
+	
+	# Arryn
+	'Lysa_Arryn', 'Robin_Arryn', 'Jon_Arryn',
+	
+	# tully
+	'Hoster_Tully', 'Brynden_Tully', 'Edmure_Tully',
+	
+	# baelish
+	'Petyr_Baelish',
+	
+	# baratheon
+	'Robert_Baratheon', 'Renly_Baratheon', 'Stannis_Baratheon', 'Joffrey_Baratheon', 'Tommen_Baratheon', 'Shireen_Baratheon', 'Myrcella_Baratheon', 'Selyse_Baratheon',
+	
+	# greyjoy
+	'Balon_Greyjoy', 'Yara_Greyjoy', 'Theon_Greyjoy',
+	
+	# mormont
+	'Jeor_Mormont', 'Jorah_Mormont',
+	
+	# tarly
+	'Samwell_Tarly',
+	
+	# beyond the wall
+	'Tormund', 'Alliser_Thorne', 'Mance_Rayder', 'Ygritte', 'Gilly', 'Janos_Slynt',
+	
+	# essos people
+	'Daario_Naharis', 'Jaqen_H\'ghar', 'Drogo', 'Barristan_Selmy', 'Missandei', 'Grey_Worm',
+	
+	# no house
+	'Melisandre', 'Davos_Seaworth', 'Gendry', 'Varys', 'Bronn', 'Shae', 'Brienne_of_Tarth', 'Meryn_Trant', 'Myranda', 'Podrick_Payne', 'High_Sparrow', 'Osha', 'Pycelle', 'Luwin',
+	
+	# -------
+	# CASTLES
+	# -------
+
+	# 7 kingdoms
+	'Winterfell', 'Storm\'s_End', 'Casterly_Rock', 'Sunspear',
+	'Highgarden', 'The_Eyrie', 'Riverrun',
+
+	# other westeros castles
+	'Red_Keep',
+
+	# north
+	'Last_Hearth', 'Karhold', 'Moat_Cailin', 'The_Dreadfort', 'Castle_Black',
+
+	'Clegane\'s_Keep', 'Evenfall_Hall', 'Harrenhal', 'Dragonstone', 'Pyke_(castle)',
+	'The_Twins',
+
+	# ------
+	# CITIES
+	# ------
+
+	# westeros
+	'King\'s_Landing', 
+
+	# essos
+	'Asshai', 'Volantis', 'Hellholt', 'Horn_Hill', 'Craster\'s_Keep', 'Naath',
+	'Braavos', 'Vaes_Dothrak', 'Tyrosh', 'Lys', 'Lorath', 'Pentos', 'Astapor',
+	'Meereen', 'Yunkai', 'Old_Valyria', 'Qarth',
+
+	# -------
+	# REGIONS
+	# -------
+
+	# 7 kingdoms
+	'The_North', 'The_Stormlands', 'The_Westerlands', 'Dorne',
+	'The_Reach', 'The_Vale_of_Arryn', 'The_Riverlands',
+	
+	# sub-regions in westeros
+	'The_Crownlands', 'Iron_Islands',
+	'Beyond_the_Wall', 'The_Fingers',
+	'Bear_Island',
+
+	# essos
+	'Essos', 'Sothoryos', 'Summer_Isles',
+
+	# ------
+	# HOUSES
+	# ------
+
+	'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen',
+	'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont',
+	'House_Baelish', 'House_Clegane', 'House_Tarly', 'House_Tarth',
+	'House_Karstark', 'House_Umber', 'House_Tully', 'House_Frey',
+	'Night\'s_Watch', 'House_Arryn', 'House_Greyjoy', 'House_Thorne',
+	'House_Slynt',
+	
+	):
 	# this_dict = {}
-	if place != 'House_Stark' and skip:
-		continue
+	if place == 'House_Stark':
+		break
 	if place == 'The_North':
+		break
 		pcount = 0
 		print(']\n[')
 		# print("\nRegions:\n")
@@ -83,6 +206,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 		houses = True
 		regions = False
 	if place == 'Winterfell':
+		break
 		skip = False
 		pcount = 0
 		print(']\n[')
@@ -142,7 +266,7 @@ for place in ('Eddard_Stark', 'Tywin_Lannister', 'Robert_Baratheon', 'Daenerys_T
 						text = text[:cut] + text[end + 1:] #removed bracketed section
 					if status:
 						print('\t\t\t\"status\": ' + '\"' + text + '\",')
-						this_dict['status'] = text
+						# this_dict['status'] = text
 						status = False
 					if titles:
 						# print('\t\t\t\t\t"' + text)
