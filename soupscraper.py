@@ -182,8 +182,9 @@ for place in (
 	'House_Stark', 'House_Baratheon', 'House_Lannister', 'House_Targaryen',
 	'House_Martell', 'House_Bolton', 'House_Tyrell', 'House_Mormont',
 	'House_Baelish', 'House_Clegane', 'House_Tarly', 'House_Tarth',
-	'House_Karstark', 'House_Umber', 'House_Tully', 'House_Frey'
-	'Night\'s_Watch',
+	'House_Karstark', 'House_Umber', 'House_Tully', 'House_Frey',
+	'Night\'s_Watch', 'House_Arryn', 'House_Greyjoy', 'House_Thorne',
+	'House_Slynt',
 	
 	):
 	# this_dict = {}
