@@ -307,7 +307,7 @@
 		"model": "populate_content.person", "pk": 27, "fields":
 		{
 			"person_id": "brienne_of_tarth",
-			"first_name": "Brienne",
+			"first_name": "Brienne of",
 			"last_name": "Tarth",
 			"status": "Alive",
 			"actor": "Gwendoline Christie",
