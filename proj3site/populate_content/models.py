@@ -1,17 +1,18 @@
 from django.db import models
 
-"""
-Person model corresponds to a character in the show.
-A Person has the following attributes that appear on its page:
-- First Name
-- Last Name
-- Actor Name
-- Title
-- House Name (ForeignKey House)
-- Status
-- Bio
-"""
 class Person(models.Model) :
+    """
+    Person model corresponds to a character in the show.
+    A Person has the following attributes that appear on its page:
+    - First Name
+    - Last Name
+    - Actor Name
+    - Region From (ForeignKey Region)
+    - Title
+    - House Name (ForeignKey House)
+    - Status
+    - Bio
+    """
     # name info
     person_id = models.CharField(max_length=200, null=True)
     first_name = models.CharField(max_length=200, null=True)
@@ -45,6 +46,7 @@ class Region(models.Model) :
     - Name
     - Capitol (ForeignKey Castle)
     - Ruling Family (ForeignKey House)
+    - Ruling Lord (ForeignKey Person)
     - Description 
     - History 
     """
@@ -76,6 +78,7 @@ class Castle(models.Model):
     - Name
     - Location (ForeignKey Region)
     - Ruling Family (ForeignKey House)
+    - Ruling Lord (ForeignKey Person)
     - Description
     - History
     """
@@ -99,6 +102,16 @@ class Castle(models.Model):
         ordering = ('name',)
 
 class House(models.Model) :
+    """
+    House models correspond to families that own castles.
+    A House has the following attributes that appear on its page:
+    - Name
+    - Words
+    - Location (ForeignKey Region)
+    - Castle Name (ForeignKey Castle)
+    - Description
+    - People (ForeignKey Person)
+    """
     # name
     house_id = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200, null=True)
@@ -125,6 +138,17 @@ class House(models.Model) :
         ordering = ('name',)
 
 class Author(models.Model) :
+    """
+    Author models correspond to each of the five team members
+    that are building this website for cs373.
+    An Author has the following attributes that appear on the about page:
+    - Name
+    - Bio
+    - Responsibilities
+    - Num Commits
+    - Num Issues 
+    - Num Unit Tests 
+    """
     # name
     author_id = models.CharField(max_length=200, null=True)
     first_name = models.CharField(max_length=200, null=True)
