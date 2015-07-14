@@ -92,7 +92,7 @@
           <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
           {% endwith %}
           {% endwith %}
-          <h4 style="text-align:center">(Family: {{ person.house_name }})</h4>
+          <h4 style="text-align:center">(Family: {{ person.primary_house }})</h4>
             
             <h2 class="blog-post-title">Description</h2>
             <p>{{ bio }}</p>
@@ -111,17 +111,32 @@
           <div class="sidebar-module">
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
-              <li><a href="/content/houses/{{ person.house_name.house_id }}">House: {{ person.house_name }}</a></li>
+              <!-- <li><a href="/content/houses/{{ person.houses.first.house_id }}">{{ person.houses.first }}</a></li> -->
+              {% if person.houses %}
+                {% for house in person.houses.all %}
+                    <li><a href="/content/houses/{{ house.house_id }}">{{ house }}</a></li>
+                {% endfor %}
+              {% endif %}
               <li><a href="/content/regions/{{ person.region_from.region_id }}/">From Region: {{ person.region_from }}</a></li>
             </ol>
           </div>
           <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
+            {% if person.houses %}
+                  {% for house in person.houses.all %}
+                      <div class="col-lg-4 col-sm-6">
+                          <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
+                              <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              {{ house }}
+                              </h4>
+                              {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
+                              <img src="{% static image_static %}" class="img-responsive" alt="">
+                              {% endwith %}
+                          </a>
+                      </div>
+                  {% endfor %}
+              {% else %}
+                  <p>{{ person }} is not a member of a house.</p>
+              {% endif %}
           </div>
         </div><!-- /.blog-sidebar -->
 
