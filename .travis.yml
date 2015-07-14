@@ -34,6 +34,8 @@ before_script:
 
 script:
     - date
+
+    - make bgserver
     # - ls -al
     # - touch IDB.log
     # - ls -al
@@ -41,5 +43,4 @@ script:
     # - make models.html
     - ls -al
     - make requirements
-    - make bgserver
     - make unittest
