@@ -46,7 +46,11 @@ def region_detail(request, region_id):
         region = Region.objects.get(region_id__exact=region_id)
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
-    return render(request, 'populate_content/region_detail.html', {'region': region})
+    context = {'region'     : region,
+               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
+               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
+              }
+    return render(request, 'populate_content/region_detail.html', context)
 
 def castle_index(request):
     all_castles = Castle.objects.all()
@@ -59,7 +63,8 @@ def castle_detail(request, castle_id):
     except Castle.DoesNotExist:
         raise Http404("Castle does not exist :")
     context = {'castle'     : castle,
-               #'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
+               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
+               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.history))),
               }
     return render(request, 'populate_content/castle_detail.html', context)
 
