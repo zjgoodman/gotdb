@@ -104,7 +104,7 @@ class Castle(models.Model):
     previous_houses = models.ManyToManyField('House', blank=True, related_name='castle_previous_houses')
     
     # lords of the castle
-    primary_lord    = models.ForeignKey(Person, null=True)
+    #primary_lord    = models.ForeignKey(Person, null=True)
     previous_lords  = models.ManyToManyField(Person, blank=True, related_name='castle_previous_lords')
 
     # brief description
