@@ -78,41 +78,59 @@
     </nav>
 </body>
 
-    <body class="house-{{ house.house_id }}">
-
+    <body>
+      {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as bg_img %}
+      {% with 'img/portfolio/filler_img.png' as filler_image %}
+      <!-- the filler image will be covered if the correct image is found -->
+      <div style="background-image:url('{% static filler_image %}');background-position:right-top;">
+      <div style="background-image:url('{% static bg_img %}');background-position:right-top;">
       <h1 class="header_content"><br></h1>
-      <h1 class="header_content" style="text-align:center;color:#fff">{{ house.name }}</h1>
-      <p class="lead blog-description" style="text-align:center;padding-bottom:300px;color:#fff">"{{ house.words }}"</p>
+      <h1 class="header_content" style="position:relative;right:15%;text-align:center;color:#fff;margin-top:100px">{{ house.name }}</h1>
+      <p class="lead blog-description" style="position:relative;right:15%;text-align:center;padding-bottom:450px;color:#fff">"{{ house.words }}"</p>
+      </div>
+      </div>
+      {% endwith %}
+      {% endwith %}
 
-      <div class="col-sm-8" style:"background-color:#000">
+      <div style:"align:center;background-color:#000">
 
-        <div class="section_heading">
+        <div class="section_heading" style="margin-left:20%;margin-right:20%;">
           <h2 class="blog-post-title">Members</h2>
-          <header style="background-image:none">
             <div class="container-fluid">
                 <div class="row">
                     {% if people %}
                         {% for person in people %}
+
+                        {% if forloop.counter|divisibleby:3 %}
+                        <div class="row">
+                        {% endif %}
+
                             <div class="col-lg-4 col-sm-6">
                                 <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
-                                    <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person }}</h4>
+                                    <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person }}</h4>
                                     
                                     {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-                                    <img src="{% static image_static %}" class="img-responsive" alt="">
+                                    {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                                    {% endwith %}
                                     {% endwith %}
                                 </a>
                             </div>
+
+                        {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                        {% endif %}
+
                         {% endfor %}
                     {% else %}
                         <p>No people are available.</p>
                     {% endif %}
                 </div>
             </div>
-          </header>
           <div style="padding:20px 20px 20px 20px;background-color:#fff">
                 
               <h2 class="blog-post-title">Description</h2>
-              <p>{{ house.description }}</p>
+              <p>{{ description }}</p>
 
               <h2 class="blog-post-title">Castle</h2>
 

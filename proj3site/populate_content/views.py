@@ -1,4 +1,6 @@
-import string
+from django.utils.html import format_html_join
+from django.utils.safestring import mark_safe
+import string, re
 
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
@@ -9,6 +11,7 @@ from .models import Castle, Region, Person, House, Author
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer
 
 from .models import Person, Region, Castle
+
 
 def index(request):
     return render(request, 'splash/index.html')
@@ -64,7 +67,11 @@ def house_detail(request, house_id):
         house = House.objects.get(house_id__exact=house_id)
     except House.DoesNotExist:
         raise Http404("House does not exist :")
-    return render(request, 'populate_content/house_detail.html', {'house': house, 'people':house.members.all()})
+    context = {'house'      : house, 
+               'people'     : house.members.all(), 
+               'description': house.description}
+
+    return render(request, 'populate_content/house_detail.html', context)
 
 def all_castles_index(request):
     all_castles = Castle.objects.all()
