@@ -1,39 +1,32 @@
 FORMAT: 1A
-HOST: http://GOT.apiblueprint.org/
+HOST: http://housedowning.me:8000/
 
 # GOTapi
 
 Simple API for navigating the GOT inspired imdb
 
-## Group Splash Page
-
-# Splash Page [/]
-
-Going to have links to characters in places that appear in the show. 
-
-## Go to home page [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "Person_url": "/Person"
-            "Castles_url": "/Castles"
-            "Region_url": "/Regions"
-        }
-
 ## Group Person
 
-Resources related to character in the API.
+Resources related to characters in the API.
 
-## People [/content/api/people/{person_name}]
+A Person object has the following attributes:
 
-A People object has the following attributes:
-
-+ id
++ Id
++ Person Id
 + First Name
 + Last Name
-+ Status
++ Titles
++ Actor
++ Status (alive or dead)
++ Cause of Death
 + Bio
++ Region From
++ Killer
++ Houses
++ Loyal To
+
+
+## All People [/content/api/people/]
 
 ### View all people [GET]
 
@@ -41,40 +34,71 @@ A People object has the following attributes:
 
         [
             {
-                "id":1,
-                "first_name":"Ned",
-                "last_name":"Stark",
-                "status":"Dead",
-                "bio":"Ned is cool"
-            },
-            {
                 "id":2,
+                "person_id":"robert_baratheon",
                 "first_name":"Robert",
                 "last_name":"Baratheon",
+                "house_name":4,
+                "region_from":4,
+                "titles":"King",
+                "actor":"Mark Addy",
                 "status":"Dead",
                 "bio":"He loves women"
             },
             {
-                "id":3,
-                "first_name":"Tywin",
-                "last_name":"Lannister",
-                "status":"Dead",
-                "bio":"Tywin is (was) pretty scary"
+                "id":6,
+                "person_id":"stannis_baratheon",
+                "first_name":"Stannis",
+                "last_name":"Baratheon",
+                "house_name":null,
+                "region_from":null,
+                "titles":null,
+                "actor":null,
+                "status":null,
+                "bio":null
+            }
+        ]
+        
+## Person [/content/api/people/{person_id}]
+### View a person [GET]
++ Parameters
+    + person_id - simple identity string (lowercase name separated by an underscore)
++ Response 200 (application/json)
+
+        [
+            {
+                "id":47,
+                "person_id":"robert_baratheon",
+                "first_name":"Robert",
+                "last_name":"Baratheon",
+                "titles": "King of the Andals and the First Men, Lord of the Seven Kingdoms, Protector of the Realm, Lord of Storm's End (former), Lord Paramount of the Stormlands (former)",
+                "actor":"Mark Addy",
+                "status":"Deceased",
+                "cause_of_death":null,
+                "bio":"...",
+                "region_from": 2,
+                "killer": null,
+                "houses": [2],
+                "loyal_to": []
             }
         ]
 
 ## Group Castles
 
-## Castles [/content/api/castles/]
-
 A Castle has the following attributes:
-fields = ('id', 'name', 'region_name', 'ruling_lord', 'description')
 
-+ id
++ Id
++ Castle Id
 + Name
-+ Region_name
-+ Ruling_load
 + Description
++ History
++ Region Name
++ Primary House
++ Primary Lord
++ Previous Houses
++ Previous Lords
+
+## All Castles [/content/api/castles/]
 
 ### View all castles [GET]
 
@@ -104,21 +128,46 @@ fields = ('id', 'name', 'region_name', 'ruling_lord', 'description')
             }
         ]
 
+## Castle [/content/api/castles/{castle_id}]
 
+### View a castle [GET]
++ Parameters
+    + castle_id - String of the castle name (lowercase with underscore separators)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 3,
+                "castle_id": "casterly_rock",
+                "name": "Casterly Rock",
+                "description": "...",
+                "region_name": 3,
+                "primary_house": 3,
+                "primary_lord": null,
+                "previous_houses": [],
+                "previous_lords": []
+            }
+        ]
 
 ## Group Regions
 
-## Regions [/content/api/regions/]
-
 A region has the following attributes:
-fields = ('id', 'name', 'capital_name', 'ruling_lord', 'description')
-+ Id
-+ Name
-+ Capitol
-+ Ruling Lord
-+ Description
 
-### View all regions in detail [GET]
++ Id
++ Region Id
++ Name
++ Description
++ History
++ Capitol Name
++ Ruling House
++ Other Castles
++ Previous Ruling Houses
++ Resident Houses
+
+## All Regions [/content/api/regions/]
+
+### View all regions [GET]
     
 + Response 200 (application/json)
     
@@ -146,8 +195,150 @@ fields = ('id', 'name', 'capital_name', 'ruling_lord', 'description')
             }
         ]
 
+## Region [/content/api/regions/{region_id}]
 
+### View a region [GET]
++ Parameters
+    + region_id - String of the region name (lowercase with underscore separators)
+    
++ Response 200 (application/json)
 
+        [
+            {
+                "id": 1,
+                "region_id": "north",
+                "name": "The North",
+                "description":"...",
+                "history":"...",
+                "capital_name": 1,
+                "ruling_house": null,
+                "other_castles": [],
+                "previous_ruling_houses": [],
+                "resident_houses": []
+            }
+        ]
+
+## Group Houses
+
+A house has the following attributes:
+
++ Id
++ House_Id
++ Name
++ Words
++ Region Name
++ Castle Name
++ Description
++ People
+
+## All Houses [/content/api/houses/]
+
+### View all houses [GET]
+    
++ Response 200 (application/json)
+    
+        [
+            {
+                "id":3,
+                "name":"Stormlands",
+                "capital_name":3,
+                "ruling_lord":2,
+                "description":"The Baratheon lands."
+            },
+            {   
+                "id":1,
+                "name":"The North",
+                "capital_name":1,
+                "ruling_lord":1,
+                "description":"A big fancy place"
+            },
+            {
+                "id":2,
+                "name":"Westerlands",
+                "capital_name":2,
+                "ruling_lord":3,
+                "description":"The Lannister lands"
+            }
+        ]
+
+## House [/content/api/houses/{house_id}]
+
+### View a house [GET]
++ Parameters
+    + house_id - String of the house name (lowercase with underscore separators)
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id":3,
+                "name":"Stormlands",
+                "capital_name":3,
+                "ruling_lord":2,
+                "description":"The Baratheon lands."
+            }
+        ]
+
+## Group Authors
+
+An author has the following attributes:
+
++ Id
++ Author Id
++ First Name
++ Last Name
++ Bio
++ Responsibilities
++ Number of Commits
++ Number of Unit Tests
+
+## All Authors [/content/api/authors/]
+
+### View all authors [GET]
+    
++ Response 200 (application/json)
+    
+        [
+            {
+                "id":3,
+                "name":"Stormlands",
+                "capital_name":3,
+                "ruling_lord":2,
+                "description":"The Baratheon lands."
+            },
+            {   
+                "id":1,
+                "name":"The North",
+                "capital_name":1,
+                "ruling_lord":1,
+                "description":"A big fancy place"
+            },
+            {
+                "id":2,
+                "name":"Westerlands",
+                "capital_name":2,
+                "ruling_lord":3,
+                "description":"The Lannister lands"
+            }
+        ]
+
+## Author [/content/api/authors/{author_id}]
+
+### View an author [GET]
++ Parameters
+    + author_id - String of the author name (lowercase with underscore separators)
+    
++ Response 200 (application/json)
+    
+        [
+            {
+                "id":3,
+                "name":"Stormlands",
+                "capital_name":3,
+                "ruling_lord":2,
+                "description":"The Baratheon lands."
+            }
+        ]
 
 
 
