@@ -387,6 +387,25 @@ for place in (
 							# print(text)
 						# print(text)
 						prnt = False
+					if text.find("Location") != -1:
+						if not location:
+							text = text.replace("\n", "")
+							text = text.replace("<br/>", ", ")
+							text = text.replace("Location", "")
+							while text.find('<') != -1 and text.find('>') != -1:
+								start = text.find('<')
+								cut = start
+								end = text.find('>')
+								while (start < end):
+									start += 1
+									if text[start] == '<':
+										cut = start
+								text = text[:cut] + text[end + 1:] #removed bracketed section
+								# print(text)
+							print("\t\t\t\"region\": \"" + text + "\",")
+						rulers = True
+						prnt = True
+						break
 					if text.find("Rulers") != -1:
 						if not rulers:
 							text = text.replace("\n", "")
