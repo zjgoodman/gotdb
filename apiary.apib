@@ -226,10 +226,10 @@ A house has the following attributes:
 + House_Id
 + Name
 + Words
-+ Region Name
-+ Castle Name
++ Sigil
 + Description
-+ People
++ Castles Controlled
++ Member
 
 ## All Houses [/content/api/houses/]
 
@@ -271,11 +271,14 @@ A house has the following attributes:
 
         [
             {
-                "id":3,
-                "name":"Stormlands",
-                "capital_name":3,
-                "ruling_lord":2,
-                "description":"The Baratheon lands."
+                "id": 2,
+                "house_id": "baratheon",
+                "name": "House Baratheon",
+                "words": "Ours is the Fury",
+                "sigil": null,
+                "description":"...",
+                "castles_controlled": [17,20,8,2],
+                "members": [50,53,48,47,54,52,49,51,24]
             }
         ]
 
