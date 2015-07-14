@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>models</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;models
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="models-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="models-module.html">Module models</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">db</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module models=models-module.html"><a title="models" class="py-name" href="#" onclick="return doclink('link-0', 'models', 'link-0');">models</a></tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="Person"></a><div id="Person-def"><a name="L3"></a><tt class="py-lineno">  3</tt> <a class="py-toggle" href="#" id="Person-toggle" onclick="return toggle('Person');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Person-class.html">Person</a><tt class="py-op">(</tt><tt class="py-base-class">models</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Person-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Person-expanded"><a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">    Person model corresponds to a character in the show.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    A Person has the following attributes that appear on its page:</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">    - First Name</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">    - Last Name</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">    - Actor Name</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">    - Region From (ForeignKey Region)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">    - Title</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring">    - House Name (ForeignKey House)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">    - Status</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">    - Bio</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-comment"># name info</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable models.Person.person_id=models.Person-class.html#person_id"><a title="models.Person.person_id" class="py-name" href="#" onclick="return doclink('link-1', 'person_id', 'link-1');">person_id</a></tt>      <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-2', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable models.Author.first_name=models.Author-class.html#first_name,Variable models.Person.first_name=models.Person-class.html#first_name"><a title="models.Author.first_name
+models.Person.first_name" class="py-name" href="#" onclick="return doclink('link-3', 'first_name', 'link-3');">first_name</a></tt>     <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-4', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable models.Author.last_name=models.Author-class.html#last_name,Variable models.Person.last_name=models.Person-class.html#last_name"><a title="models.Author.last_name
+models.Person.last_name" class="py-name" href="#" onclick="return doclink('link-5', 'last_name', 'link-5');">last_name</a></tt>      <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-6', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-comment"># houses associated with</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Variable models.Person.houses=models.Person-class.html#houses"><a title="models.Person.houses" class="py-name" href="#" onclick="return doclink('link-7', 'houses', 'link-7');">houses</a></tt>         <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-8', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'person_houses'</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable models.Person.loyal_to=models.Person-class.html#loyal_to"><a title="models.Person.loyal_to" class="py-name" href="#" onclick="return doclink('link-9', 'loyal_to', 'link-9');">loyal_to</a></tt>       <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-10', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'person_houses_loyal_to'</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">     </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable models.Person.region_from=models.Person-class.html#region_from"><a title="models.Person.region_from" class="py-name" href="#" onclick="return doclink('link-11', 'region_from', 'link-11');">region_from</a></tt>    <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-12', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'Region'</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-comment"># titles and actor</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt id="link-13" class="py-name" targets="Variable models.Person.titles=models.Person-class.html#titles"><a title="models.Person.titles" class="py-name" href="#" onclick="return doclink('link-13', 'titles', 'link-13');">titles</a></tt>         <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-14', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Variable models.Person.actor=models.Person-class.html#actor"><a title="models.Person.actor" class="py-name" href="#" onclick="return doclink('link-15', 'actor', 'link-15');">actor</a></tt>          <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-16', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-comment"># alive or dead</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt id="link-17" class="py-name" targets="Variable models.Person.status=models.Person-class.html#status"><a title="models.Person.status" class="py-name" href="#" onclick="return doclink('link-17', 'status', 'link-17');">status</a></tt>         <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-18', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-comment"># killer</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt id="link-19" class="py-name" targets="Variable models.Person.cause_of_death=models.Person-class.html#cause_of_death"><a title="models.Person.cause_of_death" class="py-name" href="#" onclick="return doclink('link-19', 'cause_of_death', 'link-19');">cause_of_death</a></tt> <tt class="py-op">=</tt> <tt id="link-20" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-20', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt id="link-21" class="py-name" targets="Variable models.Person.killer=models.Person-class.html#killer"><a title="models.Person.killer" class="py-name" href="#" onclick="return doclink('link-21', 'killer', 'link-21');">killer</a></tt>         <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-22', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'Person'</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-comment"># short biographical information</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt id="link-23" class="py-name" targets="Variable models.Author.bio=models.Author-class.html#bio,Variable models.Person.bio=models.Person-class.html#bio"><a title="models.Author.bio
+models.Person.bio" class="py-name" href="#" onclick="return doclink('link-23', 'bio', 'link-23');">bio</a></tt>            <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-24', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="Person.__str__"></a><div id="Person.__str__-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="Person.__str__-toggle" onclick="return toggle('Person.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Person-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Person.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Person.__str__-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="models.Author.last_name
+models.Person.last_name" class="py-name" href="#" onclick="return doclink('link-25', 'last_name', 'link-5');">last_name</a></tt> <tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="models.Author.first_name
+models.Person.first_name" class="py-name" href="#" onclick="return doclink('link-26', 'first_name', 'link-3');">first_name</a></tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="models.Author.first_name
+models.Person.first_name" class="py-name" href="#" onclick="return doclink('link-27', 'first_name', 'link-3');">first_name</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="models.Author.last_name
+models.Person.last_name" class="py-name" href="#" onclick="return doclink('link-28', 'last_name', 'link-5');">last_name</a></tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="Person.Meta"></a><div id="Person.Meta-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="Person.Meta-toggle" onclick="return toggle('Person.Meta');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Person.Meta-class.html">Meta</a><tt class="py-op">:</tt> </tt>
+</div><div id="Person.Meta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Person.Meta-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Variable models.Author.Meta.ordering=models.Author.Meta-class.html#ordering,Variable models.Castle.Meta.ordering=models.Castle.Meta-class.html#ordering,Variable models.House.Meta.ordering=models.House.Meta-class.html#ordering,Variable models.Person.Meta.ordering=models.Person.Meta-class.html#ordering,Variable models.Region.Meta.ordering=models.Region.Meta-class.html#ordering"><a title="models.Author.Meta.ordering
+models.Castle.Meta.ordering
+models.House.Meta.ordering
+models.Person.Meta.ordering
+models.Region.Meta.ordering" class="py-name" href="#" onclick="return doclink('link-29', 'ordering', 'link-29');">ordering</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'last_name'</tt><tt class="py-op">,</tt> <tt class="py-string">'first_name'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="Region"></a><div id="Region-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="Region-toggle" onclick="return toggle('Region');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Region-class.html">Region</a><tt class="py-op">(</tt><tt class="py-base-class">models</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Region-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Region-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">    Region models correspond to geographical areas.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    A Region has the following attributes that appear on its page:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    - Name</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">    - Capitol (ForeignKey Castle)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    - Ruling Family (ForeignKey House)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    - Ruling Lord (ForeignKey Person)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    - Description </tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    - History </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-comment"># name</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt id="link-30" class="py-name" targets="Variable models.Region.region_id=models.Region-class.html#region_id"><a title="models.Region.region_id" class="py-name" href="#" onclick="return doclink('link-30', 'region_id', 'link-30');">region_id</a></tt>  <tt class="py-op">=</tt> <tt id="link-31" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-31', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt id="link-32" class="py-name" targets="Variable models.Castle.name=models.Castle-class.html#name,Variable models.House.name=models.House-class.html#name,Variable models.Region.name=models.Region-class.html#name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-32', 'name', 'link-32');">name</a></tt>       <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-33', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">     </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-comment"># capital</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt id="link-34" class="py-name" targets="Variable models.Region.capital_name=models.Region-class.html#capital_name"><a title="models.Region.capital_name" class="py-name" href="#" onclick="return doclink('link-34', 'capital_name', 'link-34');">capital_name</a></tt>  <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-35', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'Castle'</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt id="link-36" class="py-name" targets="Variable models.Region.other_castles=models.Region-class.html#other_castles"><a title="models.Region.other_castles" class="py-name" href="#" onclick="return doclink('link-36', 'other_castles', 'link-36');">other_castles</a></tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-37', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'Castle'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'castles_in_region'</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-comment"># ruling family</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt id="link-38" class="py-name" targets="Variable models.Region.ruling_house=models.Region-class.html#ruling_house"><a title="models.Region.ruling_house" class="py-name" href="#" onclick="return doclink('link-38', 'ruling_house', 'link-38');">ruling_house</a></tt>           <tt class="py-op">=</tt> <tt id="link-39" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-39', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-comment"># families that used to rule</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt id="link-40" class="py-name" targets="Variable models.Region.previous_ruling_houses=models.Region-class.html#previous_ruling_houses"><a title="models.Region.previous_ruling_houses" class="py-name" href="#" onclick="return doclink('link-40', 'previous_ruling_houses', 'link-40');">previous_ruling_houses</a></tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-41', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'previous_ruling_houses'</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-comment"># houses found in this region</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt id="link-42" class="py-name" targets="Variable models.Region.resident_houses=models.Region-class.html#resident_houses"><a title="models.Region.resident_houses" class="py-name" href="#" onclick="return doclink('link-42', 'resident_houses', 'link-42');">resident_houses</a></tt>        <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-43', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'houses_in_this_region'</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-comment"># information</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt id="link-44" class="py-name" targets="Variable models.Castle.description=models.Castle-class.html#description,Variable models.House.description=models.House-class.html#description,Variable models.Region.description=models.Region-class.html#description"><a title="models.Castle.description
+models.House.description
+models.Region.description" class="py-name" href="#" onclick="return doclink('link-44', 'description', 'link-44');">description</a></tt>   <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-45', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt id="link-46" class="py-name" targets="Variable models.Castle.history=models.Castle-class.html#history,Variable models.Region.history=models.Region-class.html#history"><a title="models.Castle.history
+models.Region.history" class="py-name" href="#" onclick="return doclink('link-46', 'history', 'link-46');">history</a></tt>       <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-47', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="Region.__str__"></a><div id="Region.__str__-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="Region.__str__-toggle" onclick="return toggle('Region.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Region-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Region.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Region.__str__-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-48', 'name', 'link-32');">name</a></tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="Region.Meta"></a><div id="Region.Meta-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="Region.Meta-toggle" onclick="return toggle('Region.Meta');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Region.Meta-class.html">Meta</a><tt class="py-op">:</tt> </tt>
+</div><div id="Region.Meta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Region.Meta-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt id="link-49" class="py-name"><a title="models.Author.Meta.ordering
+models.Castle.Meta.ordering
+models.House.Meta.ordering
+models.Person.Meta.ordering
+models.Region.Meta.ordering" class="py-name" href="#" onclick="return doclink('link-49', 'ordering', 'link-29');">ordering</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="Castle"></a><div id="Castle-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="Castle-toggle" onclick="return toggle('Castle');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Castle-class.html">Castle</a><tt class="py-op">(</tt><tt class="py-base-class">models</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Castle-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Castle-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">    Castle models correspond to castles.</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">    A Castle has the following attributes that appear on its page:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">    - Name</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    - Location (ForeignKey Region)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">    - Ruling Family (ForeignKey House)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    - Ruling Lord (ForeignKey Person)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    - Description</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    - History</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-comment"># name and region</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt id="link-50" class="py-name" targets="Variable models.Castle.castle_id=models.Castle-class.html#castle_id"><a title="models.Castle.castle_id" class="py-name" href="#" onclick="return doclink('link-50', 'castle_id', 'link-50');">castle_id</a></tt>       <tt class="py-op">=</tt> <tt id="link-51" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-51', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt id="link-52" class="py-name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-52', 'name', 'link-32');">name</a></tt>            <tt class="py-op">=</tt> <tt id="link-53" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-53', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt id="link-54" class="py-name" targets="Variable models.Castle.region_name=models.Castle-class.html#region_name"><a title="models.Castle.region_name" class="py-name" href="#" onclick="return doclink('link-54', 'region_name', 'link-54');">region_name</a></tt>     <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-55', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name" targets="Class models.Region=models.Region-class.html"><a title="models.Region" class="py-name" href="#" onclick="return doclink('link-56', 'Region', 'link-56');">Region</a></tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-comment"># ruling house and lord</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt id="link-57" class="py-name" targets="Variable models.Castle.primary_house=models.Castle-class.html#primary_house"><a title="models.Castle.primary_house" class="py-name" href="#" onclick="return doclink('link-57', 'primary_house', 'link-57');">primary_house</a></tt>   <tt class="py-op">=</tt> <tt id="link-58" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-58', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-comment"># houses that once controlled this castle</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt id="link-59" class="py-name" targets="Variable models.Castle.previous_houses=models.Castle-class.html#previous_houses"><a title="models.Castle.previous_houses" class="py-name" href="#" onclick="return doclink('link-59', 'previous_houses', 'link-59');">previous_houses</a></tt> <tt class="py-op">=</tt> <tt id="link-60" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-60', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt class="py-string">'House'</tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'castle_previous_houses'</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">     </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-comment"># lords of the castle</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt id="link-61" class="py-name" targets="Variable models.Castle.primary_lord=models.Castle-class.html#primary_lord"><a title="models.Castle.primary_lord" class="py-name" href="#" onclick="return doclink('link-61', 'primary_lord', 'link-61');">primary_lord</a></tt>    <tt class="py-op">=</tt> <tt id="link-62" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-62', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt id="link-63" class="py-name" targets="Class models.Person=models.Person-class.html"><a title="models.Person" class="py-name" href="#" onclick="return doclink('link-63', 'Person', 'link-63');">Person</a></tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt id="link-64" class="py-name" targets="Variable models.Castle.previous_lords=models.Castle-class.html#previous_lords"><a title="models.Castle.previous_lords" class="py-name" href="#" onclick="return doclink('link-64', 'previous_lords', 'link-64');">previous_lords</a></tt>  <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-65', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt id="link-66" class="py-name"><a title="models.Person" class="py-name" href="#" onclick="return doclink('link-66', 'Person', 'link-63');">Person</a></tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'castle_previous_lords'</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-comment"># brief description</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt id="link-67" class="py-name"><a title="models.Castle.description
+models.House.description
+models.Region.description" class="py-name" href="#" onclick="return doclink('link-67', 'description', 'link-44');">description</a></tt>     <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-68', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-69" class="py-name"><a title="models.Castle.history
+models.Region.history" class="py-name" href="#" onclick="return doclink('link-69', 'history', 'link-46');">history</a></tt>         <tt class="py-op">=</tt> <tt id="link-70" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-70', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="Castle.__str__"></a><div id="Castle.__str__-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="Castle.__str__-toggle" onclick="return toggle('Castle.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Castle-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Castle.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Castle.__str__-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-71', 'name', 'link-32');">name</a></tt> </tt>
+</div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="Castle.Meta"></a><div id="Castle.Meta-def"><a name="L117"></a><tt class="py-lineno">117</tt> <a class="py-toggle" href="#" id="Castle.Meta-toggle" onclick="return toggle('Castle.Meta');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Castle.Meta-class.html">Meta</a><tt class="py-op">:</tt> </tt>
+</div><div id="Castle.Meta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Castle.Meta-expanded"><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt id="link-72" class="py-name"><a title="models.Author.Meta.ordering
+models.Castle.Meta.ordering
+models.House.Meta.ordering
+models.Person.Meta.ordering
+models.Region.Meta.ordering" class="py-name" href="#" onclick="return doclink('link-72', 'ordering', 'link-29');">ordering</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="House"></a><div id="House-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="House-toggle" onclick="return toggle('House');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.House-class.html">House</a><tt class="py-op">(</tt><tt class="py-base-class">models</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="House-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="House-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">    House models correspond to families that own castles.</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">    A House has the following attributes that appear on its page:</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">    - Name</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">    - Words</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    - Location (ForeignKey Region)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    - Castle Name (ForeignKey Castle)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    - Description</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    - People (ForeignKey Person)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-comment"># name</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt id="link-73" class="py-name" targets="Variable models.House.house_id=models.House-class.html#house_id"><a title="models.House.house_id" class="py-name" href="#" onclick="return doclink('link-73', 'house_id', 'link-73');">house_id</a></tt>    <tt class="py-op">=</tt> <tt id="link-74" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-74', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt id="link-75" class="py-name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-75', 'name', 'link-32');">name</a></tt>        <tt class="py-op">=</tt> <tt id="link-76" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-76', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-comment"># famous expressions</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt id="link-77" class="py-name" targets="Variable models.House.words=models.House-class.html#words"><a title="models.House.words" class="py-name" href="#" onclick="return doclink('link-77', 'words', 'link-77');">words</a></tt>       <tt class="py-op">=</tt> <tt id="link-78" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-78', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">300</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt id="link-79" class="py-name" targets="Variable models.House.sigil=models.House-class.html#sigil"><a title="models.House.sigil" class="py-name" href="#" onclick="return doclink('link-79', 'sigil', 'link-79');">sigil</a></tt>       <tt class="py-op">=</tt> <tt id="link-80" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-80', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">300</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt class="py-comment"># the name of their castle</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt id="link-81" class="py-name" targets="Variable models.House.castles_controlled=models.House-class.html#castles_controlled"><a title="models.House.castles_controlled" class="py-name" href="#" onclick="return doclink('link-81', 'castles_controlled', 'link-81');">castles_controlled</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-82', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt id="link-83" class="py-name" targets="Class models.Castle=models.Castle-class.html"><a title="models.Castle" class="py-name" href="#" onclick="return doclink('link-83', 'Castle', 'link-83');">Castle</a></tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'house_castles_controlled'</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-comment"># brief description</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt id="link-84" class="py-name"><a title="models.Castle.description
+models.House.description
+models.Region.description" class="py-name" href="#" onclick="return doclink('link-84', 'description', 'link-44');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-85" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-85', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">    <tt class="py-comment"># people in this House</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt id="link-86" class="py-name" targets="Variable models.House.members=models.House-class.html#members"><a title="models.House.members" class="py-name" href="#" onclick="return doclink('link-86', 'members', 'link-86');">members</a></tt>     <tt class="py-op">=</tt> <tt id="link-87" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-87', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">ManyToManyField</tt><tt class="py-op">(</tt><tt id="link-88" class="py-name"><a title="models.Person" class="py-name" href="#" onclick="return doclink('link-88', 'Person', 'link-63');">Person</a></tt><tt class="py-op">,</tt> <tt class="py-name">blank</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">related_name</tt><tt class="py-op">=</tt><tt class="py-string">'house_family_members'</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="House.__str__"></a><div id="House.__str__-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="House.__str__-toggle" onclick="return toggle('House.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.House-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="House.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="House.__str__-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="models.Castle.name
+models.House.name
+models.Region.name" class="py-name" href="#" onclick="return doclink('link-89', 'name', 'link-32');">name</a></tt> </tt>
+</div><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="House.Meta"></a><div id="House.Meta-def"><a name="L151"></a><tt class="py-lineno">151</tt> <a class="py-toggle" href="#" id="House.Meta-toggle" onclick="return toggle('House.Meta');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="models.House.Meta-class.html">Meta</a><tt class="py-op">:</tt> </tt>
+</div><div id="House.Meta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="House.Meta-expanded"><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt id="link-90" class="py-name"><a title="models.Author.Meta.ordering
+models.Castle.Meta.ordering
+models.House.Meta.ordering
+models.Person.Meta.ordering
+models.Region.Meta.ordering" class="py-name" href="#" onclick="return doclink('link-90', 'ordering', 'link-29');">ordering</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"> </tt>
+<a name="Author"></a><div id="Author-def"><a name="L154"></a><tt class="py-lineno">154</tt> <a class="py-toggle" href="#" id="Author-toggle" onclick="return toggle('Author');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Author-class.html">Author</a><tt class="py-op">(</tt><tt class="py-base-class">models</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt> <tt class="py-op">:</tt> </tt>
+</div><div id="Author-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Author-expanded"><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">    Author models correspond to each of the five team members</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">    that are building this website for cs373.</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">    An Author has the following attributes that appear on the about page:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">    - Name</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">    - Bio</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">    - Responsibilities</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">    - Num Commits</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">    - Num Issues </tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">    - Num Unit Tests </tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-comment"># name</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt id="link-91" class="py-name" targets="Variable models.Author.author_id=models.Author-class.html#author_id"><a title="models.Author.author_id" class="py-name" href="#" onclick="return doclink('link-91', 'author_id', 'link-91');">author_id</a></tt>        <tt class="py-op">=</tt> <tt id="link-92" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-92', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">    <tt id="link-93" class="py-name"><a title="models.Author.first_name
+models.Person.first_name" class="py-name" href="#" onclick="return doclink('link-93', 'first_name', 'link-3');">first_name</a></tt>       <tt class="py-op">=</tt> <tt id="link-94" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-94', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt id="link-95" class="py-name"><a title="models.Author.last_name
+models.Person.last_name" class="py-name" href="#" onclick="return doclink('link-95', 'last_name', 'link-5');">last_name</a></tt>        <tt class="py-op">=</tt> <tt id="link-96" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-96', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">CharField</tt><tt class="py-op">(</tt><tt class="py-name">max_length</tt><tt class="py-op">=</tt><tt class="py-number">200</tt><tt class="py-op">,</tt> <tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-comment"># bio</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">    <tt id="link-97" class="py-name"><a title="models.Author.bio
+models.Person.bio" class="py-name" href="#" onclick="return doclink('link-97', 'bio', 'link-23');">bio</a></tt>              <tt class="py-op">=</tt> <tt id="link-98" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-98', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt class="py-comment"># major responsibilities</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">    <tt id="link-99" class="py-name" targets="Variable models.Author.responsibilities=models.Author-class.html#responsibilities"><a title="models.Author.responsibilities" class="py-name" href="#" onclick="return doclink('link-99', 'responsibilities', 'link-99');">responsibilities</a></tt> <tt class="py-op">=</tt> <tt id="link-100" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-100', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">TextField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt class="py-comment"># statistics</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">    <tt id="link-101" class="py-name" targets="Variable models.Author.num_commits=models.Author-class.html#num_commits"><a title="models.Author.num_commits" class="py-name" href="#" onclick="return doclink('link-101', 'num_commits', 'link-101');">num_commits</a></tt>      <tt class="py-op">=</tt> <tt id="link-102" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-102', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">IntegerField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt id="link-103" class="py-name" targets="Variable models.Author.num_issues=models.Author-class.html#num_issues"><a title="models.Author.num_issues" class="py-name" href="#" onclick="return doclink('link-103', 'num_issues', 'link-103');">num_issues</a></tt>       <tt class="py-op">=</tt> <tt id="link-104" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-104', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">IntegerField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt id="link-105" class="py-name" targets="Variable models.Author.num_unit_tests=models.Author-class.html#num_unit_tests"><a title="models.Author.num_unit_tests" class="py-name" href="#" onclick="return doclink('link-105', 'num_unit_tests', 'link-105');">num_unit_tests</a></tt>   <tt class="py-op">=</tt> <tt id="link-106" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-106', 'models', 'link-0');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">IntegerField</tt><tt class="py-op">(</tt><tt class="py-name">null</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"> </tt>
+<a name="Author.__str__"></a><div id="Author.__str__-def"><a name="L182"></a><tt class="py-lineno">182</tt> <a class="py-toggle" href="#" id="Author.__str__-toggle" onclick="return toggle('Author.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Author-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Author.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Author.__str__-expanded"><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="models.Author.author_id" class="py-name" href="#" onclick="return doclink('link-107', 'author_id', 'link-91');">author_id</a></tt> </tt>
+</div><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"> </tt>
+<a name="Author.Meta"></a><div id="Author.Meta-def"><a name="L185"></a><tt class="py-lineno">185</tt> <a class="py-toggle" href="#" id="Author.Meta-toggle" onclick="return toggle('Author.Meta');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Author.Meta-class.html">Meta</a><tt class="py-op">:</tt> </tt>
+</div><div id="Author.Meta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Author.Meta-expanded"><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt id="link-108" class="py-name"><a title="models.Author.Meta.ordering
+models.Castle.Meta.ordering
+models.House.Meta.ordering
+models.Person.Meta.ordering
+models.Region.Meta.ordering" class="py-name" href="#" onclick="return doclink('link-108', 'ordering', 'link-29');">ordering</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'last_name'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jul 14 15:18:29 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
