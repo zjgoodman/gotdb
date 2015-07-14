@@ -33,6 +33,7 @@ class GOT_Tests (TestCase):
 
         self.assertEqual(self.person.first_name, 'Eddard')
         self.assertEqual(self.person.last_name,  'Stark')
+        self.assertEqual(self.person.__str__(), "Eddard Stark")
     #
     # def test_person_2(self):
     #     """
