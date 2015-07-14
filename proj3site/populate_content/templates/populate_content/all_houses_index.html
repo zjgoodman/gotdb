@@ -17,20 +17,6 @@ $(document).ready(function(){
     $('#myTable').dataTable();
 });
 </script>
-    house_id = models.CharField(max_length=200, null=True)
-    name = models.CharField(max_length=200, null=True)
-
-    # famous expressions
-    words = models.CharField(max_length=300, null=True)
-
-    # region of the world
-    region_name = models.ForeignKey(Region, null=True)
-
-    # the name of their castle
-    castle_name = models.ForeignKey(Castle, null=True)
-
-    # brief description
-    description = models.TextField(null=True)
 
 <div class="table-responsive">      
   <table id="myTable" class="table table-striped">

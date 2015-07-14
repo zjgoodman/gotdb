@@ -32,8 +32,9 @@ def person_detail(request, person_id):
         person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
-    context = {'person': person,
-               'bio'   : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),}
+    context = {'person'  : person,
+               'bio'     : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),
+               'castles' : person.castles_controlled.all(),}
     return render(request, 'populate_content/person_detail.html', context)
 
 def region_index(request):
