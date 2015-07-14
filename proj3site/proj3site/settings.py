@@ -45,7 +45,16 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'populate_content',
     'splash',
+    'django_nose',
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=populate_content.models',
+    '--verbosity=1',
+]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -68,17 +77,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'game_of_thrones',
-<<<<<<< HEAD
         'USER': 'write',
         'PASSWORD': 'downing11',
-=======
-        'TEST_NAME': 'game_of_thrones_test',
-        'USER': 'read',
-        'PASSWORD': '',
->>>>>>> dev
         'HOST': '104.130.27.102',
         'PORT': '3306',
     }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db.sqlite3',
+#     }
 }
 
 # Internationalization
