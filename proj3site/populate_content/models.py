@@ -99,7 +99,7 @@ class Castle(models.Model):
     region_name     = models.ForeignKey(Region, null=True)
 
     # ruling house and lord
-    primary_house   = models.ForeignKey('House', null=True)
+    #primary_house   = models.ForeignKey('House', null=True)
     # houses that once controlled this castle
     previous_houses = models.ManyToManyField('House', blank=True, related_name='castle_previous_houses')
     
