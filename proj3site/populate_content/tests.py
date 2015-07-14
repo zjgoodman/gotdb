@@ -7,33 +7,32 @@
 import json
 import requests
 from django.test import TestCase
-from . import models
+from .models import Person, Castle, Region, House
 
 
-#class GOT_Tests (TestCase):
+class GOT_Tests (TestCase):
+    def setUp(self):
+        self.person = Person.objects.create(last_name='Stark',
+                        first_name='Eddard',
+                        status='Dead',
+                        titles='Lord of Winterfell',
+                        bio='Neds bio')
 
-    def test_person_1(self):
+        # region = Person.objects.create(name='The North',
+        #                        capital_name=models.Castle(self, name='whatever'),
+        #                        ruling_house=models.House(self, name='that one house'),
+        #                        ruling_lord=models.Person(self, first_name="evil guy", last_name="prob"),
+        #                        description='may the lord bless your soul')
+
+    def test_names_1(self):
         """
         Testing Person Models
         Create and store Person model
         check for correct output.
         """
-        person = models.Person(first_name='Eddard',
-                               last_name='Stark',
-                               titles='Lord of Winterfell',
-                               status='Dead',
-                               bio='Neds bio')
-        first_name = person.first_name
-        last_name = person.last_name
-        titles = person.titles
-        status = person.status
-        bio = person.bio
 
-        self.assertEqual(first_name, 'Eddard')
-        self.assertEqual(last_name,  'Stark')
-        self.assertEqual(titles,     'Lord of Winterfell')
-        self.assertEqual(status, 	 'Dead')
-        self.assertEqual(bio,        'Neds bio')
+        self.assertEqual(self.person.first_name, 'Eddard')
+        self.assertEqual(self.person.last_name,  'Stark')
     #
     # def test_person_2(self):
     #     """
@@ -41,11 +40,18 @@ from . import models
     #     Create and store Person model (move input around)
     #     check for correct output.
     #     """
-    #     person = models.Person(last_name='Stark',
+    #     person = Person(last_name='Stark',
     #                            first_name='Eddard',
     #                            status='Dead',
     #                            titles='Lord of Winterfell',
     #                            bio='Neds bio')
+    #
+    #     person2 = models.Person(last_name='Stark',
+    #                            first_name='Eddard',
+    #                            status='Dead',
+    #                            titles='Lord of Winterfell',
+    #                            bio='Neds bio')
+    #
     #     first_name = person.first_name
     #     last_name = person.last_name
     #     titles = person.titles
@@ -57,6 +63,7 @@ from . import models
     #     self.assertEqual(titles,     'Lord of Winterfell')
     #     self.assertEqual(status, 	 'Dead')
     #     self.assertEqual(bio,        'Neds bio')
+    #     self.assertEqual(person, person2)
     #
     # def test_person_3(self):
     #     """
