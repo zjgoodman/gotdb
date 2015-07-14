@@ -1,4 +1,5 @@
 from django.utils.html import format_html_join
+from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
 import string, re
 
@@ -31,7 +32,9 @@ def person_detail(request, person_id):
         person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
-    return render(request, 'populate_content/person_detail.html', {'person': person})
+    context = {'person': person,
+               'bio'   : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),}
+    return render(request, 'populate_content/person_detail.html', context)
 
 def region_index(request):
     all_regions = Region.objects.all()
@@ -55,7 +58,10 @@ def castle_detail(request, castle_id):
         castle = Castle.objects.get(castle_id__exact=castle_id)
     except Castle.DoesNotExist:
         raise Http404("Castle does not exist :")
-    return render(request, 'populate_content/castle_detail.html', {'castle': castle})
+    context = {'castle'     : castle,
+               #'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
+              }
+    return render(request, 'populate_content/castle_detail.html', context)
 
 def house_index(request):
     all_houses = House.objects.all()
@@ -69,7 +75,7 @@ def house_detail(request, house_id):
         raise Http404("House does not exist :")
     context = {'house'      : house, 
                'people'     : house.members.all(), 
-               'description': house.description}
+               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description)))}
 
     return render(request, 'populate_content/house_detail.html', context)
 
