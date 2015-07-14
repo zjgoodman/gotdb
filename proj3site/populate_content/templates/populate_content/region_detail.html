@@ -88,17 +88,19 @@
 
         <div class="section_heading">
           {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
-          <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
+          {% with 'img/portfolio/filler_img.png' as filler_image %}
+          <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
+          {% endwith %}
           {% endwith %}
           <h4 style="text-align:center">(Capital: {{ region.capital_name }})</h3>
             
             <h2 class="blog-post-title">Description</h2>
-            <p>{{ region.description }}</p>
+            <p>{{ description }}</p>
         </div><!-- /.blog-post -->
 
         <div class="section_heading">
           <h2 class="blog-post-title">History</h2>
-          <p>{{ region.history }}</p>
+          <p>{{ history }}</p>
         </div><!-- /.blog-post -->
 
       </div><!-- /.blog-main -->
