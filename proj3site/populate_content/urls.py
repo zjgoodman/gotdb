@@ -20,13 +20,11 @@ urlpatterns = [
     url(r'^api/castles/$', views.castle_api_list),
     url(r'^api/regions/$', views.region_api_list),
     url(r'^api/houses/$', views.house_api_list),
-    url(r'^api/authors/$', views.author_api_list),
 
     url(r'^api/people/(?P<person_id>[a-z_]+)/$', views.person_api_detail),
     url(r'^api/regions/(?P<region_id>[a-z_]+)/$', views.region_api_detail),
     url(r'^api/castles/(?P<castle_id>[a-z_]+)/$', views.castle_api_detail),
     url(r'^api/houses/(?P<house_id>[a-z_]+)/$', views.house_api_detail),
-    url(r'^api/authors/(?P<author_id>[a-z_]+)/$', views.author_api_detail),
 
     url(r'^all_castles/$', views.all_castles_index, name='all_castles_index'),
     url(r'^all_regions/$', views.all_regions_index, name='all_regions_index'),
