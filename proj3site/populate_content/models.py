@@ -24,8 +24,7 @@ class Person(models.Model) :
 
     # castles that this person controls
     castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_castles_owned')
-    former_castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_former_castles_owned')
-    
+
     region_from    = models.ForeignKey('Region', null=True)
 
     # titles and actor
