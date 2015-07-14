@@ -1,9 +1,5 @@
 from django.db import models
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/lucas
 class Person(models.Model) :
     """
     Person model corresponds to a character in the show.
@@ -11,19 +7,12 @@ class Person(models.Model) :
     - First Name
     - Last Name
     - Actor Name
-<<<<<<< HEAD
     - Region From (ForeignKey Region)
-=======
->>>>>>> origin/lucas
     - Title
     - House Name (ForeignKey House)
     - Status
     - Bio
     """
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/lucas
     # name info
     person_id      = models.CharField(max_length=200, null=True)
     first_name     = models.CharField(max_length=200, null=True)
@@ -35,8 +24,7 @@ class Person(models.Model) :
 
     # castles that this person controls
     castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_castles_owned')
-    former_castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_former_castles_owned')
-    
+
     region_from    = models.ForeignKey('Region', null=True)
 
     # titles and actor
@@ -134,24 +122,14 @@ class Castle(models.Model):
 
 class House(models.Model) :
     """
-<<<<<<< HEAD
     House models correspond to families that own castles.
-=======
-    House models correspond to ruling families.
->>>>>>> origin/lucas
     A House has the following attributes that appear on its page:
     - Name
     - Words
     - Location (ForeignKey Region)
-<<<<<<< HEAD
     - Castle Name (ForeignKey Castle)
     - Description
     - People (ForeignKey Person)
-=======
-    - Castle (ForeignKey Castle)
-    - Description
-    - People
->>>>>>> origin/lucas
     """
     # name
     house_id    = models.CharField(max_length=200, null=True)
@@ -179,7 +157,6 @@ class House(models.Model) :
 
 class Author(models.Model) :
     """
-<<<<<<< HEAD
     Author models correspond to each of the five team members
     that are building this website for cs373.
     An Author has the following attributes that appear on the about page:
@@ -189,17 +166,6 @@ class Author(models.Model) :
     - Num Commits
     - Num Issues 
     - Num Unit Tests 
-=======
-    Author model corresponds to each of the 
-    five students who are working on this website
-    for cs373. They have the following attributes:
-    - Name
-    - Bio
-    - Responsibilities
-    - Number of commits
-    - Number of issues
-    - Number of unit tests
->>>>>>> origin/lucas
     """
     # name
     author_id        = models.CharField(max_length=200, null=True)
