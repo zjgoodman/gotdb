@@ -56,8 +56,8 @@ hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 
 # using gameofthrones.wikia.com
 # finds and scrapes info on all places and regions listed in string, places first
-people = True
-places = False
+people = False
+places = True
 regions = False
 houses = False
 pcount = 0
@@ -188,6 +188,8 @@ for place in (
 	
 	):
 	# this_dict = {}
+	if(skip and place != 'Winterfell'):
+		continue
 	if place == 'House_Stark':
 		break
 	if place == 'The_North':
@@ -206,7 +208,7 @@ for place in (
 		houses = True
 		regions = False
 	if place == 'Winterfell':
-		break
+		# break
 		skip = False
 		pcount = 0
 		print(']\n[')
@@ -226,6 +228,14 @@ for place in (
 		print('\t\t\"model\": \"populate_content.house\", \"pk\": ' +  str(pcount) + ', \"fields\":\n\t\t{')
 		hid = place.lower()
 		print('\t\t\t\"house_id\": \"' + hid + '\",')
+		hname = place.replace("_", " ")
+		print('\t\t\t\"name\": \"' + hname + '\",')
+	if places:
+		print('\t\t\"model\": \"populate_content.castle\", \"pk\": ' +  str(pcount) + ', \"fields\":\n\t\t{')
+		hid = place.lower()
+		hid = hid.replace('\"', '')
+		hid = hid.replace('\'', '')
+		print('\t\t\t\"castle_id\": \"' + hid + '\",')
 		hname = place.replace("_", " ")
 		print('\t\t\t\"name\": \"' + hname + '\",')
 	data = soup.find('div', id = "mw-content-text")
@@ -350,6 +360,43 @@ for place in (
 						words = True
 						prnt = True
 
+				if places:
+					if prnt:
+						# if text.find("Rulers") != -1:
+						# 	continue
+						print(text)
+						if rulers:
+							text = text.replace("<br/>", "\n")
+						while text.find('<') != -1 and text.find('>') != -1:
+							start = text.find('<')
+							cut = start
+							end = text.find('>')
+							while (start < end):
+								start += 1
+								if text[start] == '<':
+									cut = start
+							text = text[:cut] + text[end + 1:] #removed bracketed section
+							# print(text)
+						print(text)
+						prnt = False
+					if text.find("Rulers") != -1:
+						if not rulers:
+							text = text.replace("\n", "")
+							text = text.replace("<br/>", ", ")
+							text = text.replace("Rulers", "")
+							while text.find('<') != -1 and text.find('>') != -1:
+								start = text.find('<')
+								cut = start
+								end = text.find('>')
+								while (start < end):
+									start += 1
+									if text[start] == '<':
+										cut = start
+								text = text[:cut] + text[end + 1:] #removed bracketed section
+								# print(text)
+							print("\t\t\t\"ruling_house\": \"" + text + "\",")
+						rulers = True
+						prnt = True
 	count = 0
 	first = True
 	for parag in data.find_all('p'):
@@ -381,7 +428,7 @@ for place in (
 		if parag.count(".") > 1:
 			count += 1
 			if count == 2 and not people and not houses:
-				print("\nHistory:")
+				print("\",\n\t\t\t\"History\": \""),
 			if first:
 				first = False
 				print('\t\t\t\"description\": \"' + "<p>" + parag[:-1] + "</p>"),
