@@ -80,7 +80,8 @@ def house_detail(request, house_id):
         raise Http404("House does not exist :")
     context = {'house'      : house, 
                'people'     : house.members.all(), 
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description)))}
+               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description))),
+               'castles'    : house.castles_controlled.all(),}
 
     return render(request, 'populate_content/house_detail.html', context)
 
