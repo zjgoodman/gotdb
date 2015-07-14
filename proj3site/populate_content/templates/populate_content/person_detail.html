@@ -94,49 +94,70 @@
           {% endwith %}
           <h4 style="text-align:center">(Family: {{ person.primary_house }})</h4>
             
-            <h2 class="blog-post-title">Description</h2>
-            <p>{{ bio }}</p>
+          <h2 class="blog-post-title">Description</h2>
+          <p>{{ bio }}</p>
+
+          <h2>Houses</h2>
+          <div class="container-fluid">
+            <div class="row">
+              {% if person.houses %}
+                {% for house in person.houses.all %}
+                    {% if forloop.counter|divisibleby:2 %}
+                    <div class="row" style="margin-bottom:50px">
+                    {% endif %}
+                      <div class="col-lg-6 col-sm-6">
+                        <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
+                            <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                            {{ house }}
+                            </h4>
+                            {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
+                            <img src="{% static image_static %}" class="img-responsive" alt="">
+                            {% endwith %}
+                        </a>
+                      </div>
+                    {% if forloop.counter|divisibleby:2 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+              {% else %}
+                  <p>{{ person }} is not a member of a house.</p>
+              {% endif %}
+            </div>
+          </div>
         </div><!-- /.blog-post -->
 
-        </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
 
-      </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>{{ person.first_name }} {{ person.last_name }} is played by {{ person.actor }}.</p>
-            <p>{{ person.first_name }} is {{ person.status }}.</p>
-          </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="top:-10px">
           <div class="sidebar-module">
-            <h4>Quick Links</h4>
-            <ol class="list-unstyled">
-              <!-- <li><a href="/content/houses/{{ person.houses.first.house_id }}">{{ person.houses.first }}</a></li> -->
-              <!-- <li><a href="/content/regions/{{ person.region_from.region_id }}/">From Region: {{ person.region_from }}</a></li> -->
-            </ol>
-          </div>
-          <div class="sidebar-module">
+          <h2>Region</h2>
             {% if person.region_from %}
-              <div class="col-lg-4 col-sm-6">
+            <div class="container-fluid">
+              <div class="row">
                   <a href="/content/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-                      <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
                       {{ person.region_from }}
                       </h4>
                       {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                      <img src="{% static image_static %}" class="img-responsive" alt="">
+                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
                       {% endwith %}
                   </a>
               </div>
+            </div>
             {% else %}
               <p>No region information.</p>
             {% endif %}
           </div>
           <div class="sidebar-module">
+          <h2>Houses</h2>
             {% if person.houses %}
                   {% for house in person.houses.all %}
-                      <div class="col-lg-4 col-sm-6">
+                    <div class="container-fluid">
+                      <div class="row" style="margin-bottom:10px">
                           <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
-                              <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
                               {{ house }}
                               </h4>
                               {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
@@ -144,11 +165,18 @@
                               {% endwith %}
                           </a>
                       </div>
+                    </div>
                   {% endfor %}
               {% else %}
                   <p>{{ person }} is not a member of a house.</p>
               {% endif %}
           </div>
+          <div class="sidebar-module sidebar-module">
+            <h4>About</h4>
+            <p>{{ person }} is played by {{ person.actor }}.</p>
+            <p>{{ person.first_name }} is {{ person.status }}.</p>
+          </div>
+
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
