@@ -141,8 +141,9 @@ h6, .h6 {
   margin-bottom: 60px;
 }
 .blog-post-title {
-  margin-bottom: 5px;
-  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 60px;
 }
 .blog-post-meta {
   margin-bottom: 20px;

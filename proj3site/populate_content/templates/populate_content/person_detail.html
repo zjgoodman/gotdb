@@ -88,12 +88,14 @@
 
         <div class="section_heading">
           {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-          <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
+          {% with 'img/portfolio/filler_img.png' as filler_image %}
+          <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
+          {% endwith %}
           {% endwith %}
           <h4 style="text-align:center">(Family: {{ person.primary_house }})</h4>
             
             <h2 class="blog-post-title">Description</h2>
-            <p>{{ person.bio }}</p>
+            <p>{{ bio }}</p>
         </div><!-- /.blog-post -->
 
         </div><!-- /.blog-post -->
@@ -103,7 +105,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>{{ person.first_name }} {{ person.last_name }} is played by {{ person.actor }}.</p>
+            <p>{{ person }} is played by {{ person.actor }}.</p>
             <p>{{ person.first_name }} is {{ person.status }}.</p>
           </div>
           <div class="sidebar-module">

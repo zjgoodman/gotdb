@@ -12,28 +12,28 @@ from . import models
 
 #class GOT_Tests (TestCase):
 
-    # def test_person_1(self):
-    #     """
-    #     Testing Person Models
-    #     Create and store Person model
-    #     check for correct output.
-    #     """
-    #     person = models.Person(first_name='Eddard',
-    #                            last_name='Stark',
-    #                            titles='Lord of Winterfell',
-    #                            status='Dead',
-    #                            bio='Neds bio')
-    #     first_name = person.first_name
-    #     last_name = person.last_name
-    #     titles = person.titles
-    #     status = person.status
-    #     bio = person.bio
-    #
-    #     self.assertEqual(first_name, 'Eddard')
-    #     self.assertEqual(last_name,  'Stark')
-    #     self.assertEqual(titles,     'Lord of Winterfell')
-    #     self.assertEqual(status, 	 'Dead')
-    #     self.assertEqual(bio,        'Neds bio')
+    def test_person_1(self):
+        """
+        Testing Person Models
+        Create and store Person model
+        check for correct output.
+        """
+        person = models.Person(first_name='Eddard',
+                               last_name='Stark',
+                               titles='Lord of Winterfell',
+                               status='Dead',
+                               bio='Neds bio')
+        first_name = person.first_name
+        last_name = person.last_name
+        titles = person.titles
+        status = person.status
+        bio = person.bio
+
+        self.assertEqual(first_name, 'Eddard')
+        self.assertEqual(last_name,  'Stark')
+        self.assertEqual(titles,     'Lord of Winterfell')
+        self.assertEqual(status, 	 'Dead')
+        self.assertEqual(bio,        'Neds bio')
     #
     # def test_person_2(self):
     #     """
@@ -264,7 +264,7 @@ class GOT_API_Tests (TestCase):
         """
         Doing an http get on people.
         Expecting a response with a json object
-        containing a collection each persons data members
+        containing a collection of each persons data members
         """
         response = requests.get(self.url + '/content/api/people/eddard_stark')
         self.assertEqual(response.status_code, 200)
@@ -279,7 +279,7 @@ class GOT_API_Tests (TestCase):
         """
         Doing an http get on castles.
         Expecting a response with a json object
-        containing a collection each castle data members
+        containing a collection of each castle data members
         """
         response = requests.get(self.url + '/content/api/castles/casterly_rock')
         self.assertEqual(response.status_code, 200)
@@ -293,7 +293,7 @@ class GOT_API_Tests (TestCase):
         """
         Doing an http get on regions.
         Expecting a response with a json object
-        containing a collection each regions data members
+        containing a collection of each regions data members
         """
         response = requests.get(self.url + '/content/api/regions/stormlands')
         self.assertEqual(response.status_code, 200)
@@ -307,7 +307,7 @@ class GOT_API_Tests (TestCase):
         """
         Doing an http get on houses.
         Expecting a response with a json object
-        containing a collection each regions data members
+        containing a collection of each houses data members
         """
         response = requests.get(self.url + '/content/api/houses/stark')
         self.assertEqual(response.status_code, 200)
