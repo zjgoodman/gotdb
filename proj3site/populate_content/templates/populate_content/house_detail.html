@@ -86,23 +86,22 @@
       <div style="background-image:url('{% static bg_img %}');background-position:right-top;">
       <h1 class="header_content"><br></h1>
       <h1 class="header_content" style="position:relative;right:15%;text-align:center;color:#fff;margin-top:100px">{{ house.name }}</h1>
-      <p class="lead blog-description" style="position:relative;right:15%;text-align:center;padding-bottom:450px;color:#fff"><i>"{{ house.words }}"</i></p>
+      <p class="lead blog-description" style="position:relative;right:15%;text-align:center;padding-bottom:450px;color:#fff"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
       </div>
       </div>
       {% endwith %}
       {% endwith %}
 
-      <div style:"align:center;background-color:#000">
-
+      <div style="padding:20px 20px 20px 20px;background-color:#fff">
         <div class="section_heading" style="margin-left:20%;margin-right:20%;">
-          <h2 class="blog-post-title">Members</h2>
-            <div class="container-fluid">
+          <div class="container-fluid">
+            <h2 class="blog-post-title">Members</h2>
                 <div class="row">
                     {% if people %}
                         {% for person in people %}
 
                         {% if forloop.counter|divisibleby:3 %}
-                        <div class="row" style="margin-bottom:10px">
+                        <div class="row">
                         {% endif %}
 
                             <div class="col-lg-4 col-sm-6">
@@ -127,48 +126,45 @@
                     {% endif %}
                 </div>
             </div>
-          <div style="padding:20px 20px 20px 20px;background-color:#fff">
-                
-              <h2 class="blog-post-title">Description</h2>
-              <p>{{ description }}</p>
+          <div class="container-fluid">
+            <h2 class="blog-post-title">Castles</h2>
+            <div class="row">
+                {% if castles %}
+                    {% for castle in castles %}
 
-              <h2 class="blog-post-title">Castles</h2>
-              <div class="container-fluid">
-                <div class="row">
-                    {% if castles %}
-                        {% for castle in castles %}
-
-                        {% if forloop.counter|divisibleby:3 %}
-                        <div class="row" style="margin-bottom:10px">
-                        {% endif %}
-
-                            <div class="col-lg-4 col-sm-6">
-                                <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                                    <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ castle }}</h4>
-                                    
-                                    {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                                    {% with 'img/portfolio/filler_img.png' as filler_image %}
-                                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                                    {% endwith %}
-                                    {% endwith %}
-                                </a>
-                            </div>
-
-                        {% if forloop.counter|divisibleby:3 %}
-                        </div>
-                        {% endif %}
-
-                        {% endfor %}
-                    {% else %}
-                        <p><i>{{ house }} does not control any castles.</i></p>
+                    {% if forloop.counter|divisibleby:2 %}
+                    <div class="row" style="margin-bottom:10px">
                     {% endif %}
-                </div>
-              </div>
 
-              <h2 class="blog-post-title">Region</h2>
+                        <div class="col-lg-6 col-sm-6">
+                            <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                                <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ castle }}</h4>
+                                
+                                {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                                {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                                {% endwith %}
+                                {% endwith %}
+                            </a>
+                        </div>
 
-              <h2 class="blog-post-title">History</h2>
+                    {% if forloop.counter|divisibleby:2 %}
+                    </div>
+                    {% endif %}
+
+                    {% endfor %}
+                {% else %}
+                    <p><i>{{ house }} does not control any castles.</i></p>
+                {% endif %}
+            </div>
           </div>
+                
+          <h2 class="blog-post-title">Description</h2>
+          <p>{{ description }}</p>
+
+          <h2 class="blog-post-title">Region</h2>
+
+          <h2 class="blog-post-title">History</h2>
         </div><!-- /.blog-post -->
 
       </div><!-- /.blog-main -->

@@ -82,7 +82,7 @@
 
       <h1 class="header_content"><br></h1>
       <h1 class="header_content" style="text-align:center">{{ person }}</h1>
-      <p class="lead blog-description" style="text-align:center">{{ person.titles }}</p>
+      <p class="lead blog-description" style="text-align:center">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
 
       <div class="col-sm-8">
 
@@ -130,27 +130,6 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="top:-10px">
           <div class="sidebar-module">
-          <h2>Region</h2>
-            {% if person.region_from %}
-            <div class="container-fluid">
-              <div class="row">
-                  <a href="/content/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
-                      {{ person.region_from }}
-                      </h4>
-                      {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                      {% with 'img/portfolio/filler_img.png' as filler_image %}
-                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                      {% endwith %}
-                      {% endwith %}
-                  </a>
-              </div>
-            </div>
-            {% else %}
-              <p>No region information.</p>
-            {% endif %}
-          </div>
-          <div class="sidebar-module">
           <h2>Houses</h2>
             {% if person.houses %}
                   {% for house in person.houses.all %}
@@ -170,6 +149,27 @@
               {% else %}
                   <p>{{ person }} is not a member of a house.</p>
               {% endif %}
+          </div>
+          <div class="sidebar-module">
+          <h2>Region</h2>
+            {% if person.region_from %}
+            <div class="container-fluid">
+              <div class="row">
+                  <a href="/content/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
+                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      {{ person.region_from }}
+                      </h4>
+                      {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
+                      {% endwith %}
+                  </a>
+              </div>
+            </div>
+            {% else %}
+              <p>No region information.</p>
+            {% endif %}
           </div>
           <div class="sidebar-module sidebar-module">
             <h4>About</h4>
