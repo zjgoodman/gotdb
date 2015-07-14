@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'game_of_thrones',
-        'USER': 'read',
-        'PASSWORD': '',
+        'USER': 'write',
+        'PASSWORD': 'downing11',
         'HOST': '104.130.27.102',
         'PORT': '3306',
     }

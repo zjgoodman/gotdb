@@ -112,13 +112,24 @@
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
               <!-- <li><a href="/content/houses/{{ person.houses.first.house_id }}">{{ person.houses.first }}</a></li> -->
-              {% if person.houses %}
-                {% for house in person.houses.all %}
-                    <li><a href="/content/houses/{{ house.house_id }}">{{ house }}</a></li>
-                {% endfor %}
-              {% endif %}
-              <li><a href="/content/regions/{{ person.region_from.region_id }}/">From Region: {{ person.region_from }}</a></li>
+              <!-- <li><a href="/content/regions/{{ person.region_from.region_id }}/">From Region: {{ person.region_from }}</a></li> -->
             </ol>
+          </div>
+          <div class="sidebar-module">
+            {% if person.region_from %}
+              <div class="col-lg-4 col-sm-6">
+                  <a href="/content/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
+                      <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      {{ person.region_from }}
+                      </h4>
+                      {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                      <img src="{% static image_static %}" class="img-responsive" alt="">
+                      {% endwith %}
+                  </a>
+              </div>
+            {% else %}
+              <p>No region information.</p>
+            {% endif %}
           </div>
           <div class="sidebar-module">
             {% if person.houses %}
