@@ -9,7 +9,7 @@ from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from .models import Castle, Region, Person, House, Author
-from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer, AuthorSerializer
+from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer
 
 from .models import Person, Region, Castle
 
@@ -158,15 +158,6 @@ def house_api_list(request):
         serializer = HouseSerializer(house, many=True)
         return JSONResponse(serializer.data)
 
-def author_api_list(request):
-    """
-    List all authors.
-    """
-    if request.method == 'GET':
-        authors = Author.objects.all()
-        serializer = AuthorSerializer(authors, many=True)
-        return JSONResponse(serializer.data)
-
 #List a specific item
 
 def person_api_detail(request, person_id):
@@ -221,15 +212,3 @@ def house_api_detail(request, house_id):
         serializer = HouseSerializer(house)
         return JSONResponse(serializer.data)
 
-def author_api_detail(request, author_id):
-    """
-    Retrieve a specific author.
-    """
-    try:
-        author = Author.objects.get(author_id__exact=author_id)
-    except Author.DoesNotExist:
-        return HttpResponse(status=404)
-
-    if request.method == 'GET':
-        serializer = AuthorSerializer(author)
-        return JSONResponse(serializer.data)
