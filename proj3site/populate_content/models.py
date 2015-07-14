@@ -32,8 +32,8 @@ class Person(models.Model) :
     status         = models.CharField(max_length=200, null=True)
 
     # killer
-    cause_of_death = models.CharField(max_length=200, null=True)
-    killer         = models.ForeignKey('Person', null=True)
+    #cause_of_death = models.CharField(max_length=200, null=True)
+    #killer         = models.ForeignKey('Person', null=True)
 
     # short biographical information
     bio            = models.TextField(null=True)
