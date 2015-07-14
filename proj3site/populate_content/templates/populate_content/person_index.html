@@ -81,26 +81,32 @@
 
     <header>
         <h1>People</h1>
-            <div class="container-fluid">
-            <div class="row">
-                {% if all_people %}
-                    {% for person in all_people %}
+        <div class="container-fluid">
+            {% if all_people %}
+                {% for person in all_people %}
+                    {% if forloop.counter|divisibleby:3 %}
+                    <div class="row">
+                    {% endif %}
                         <div class="col-lg-4 col-sm-6">
                             <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
                                 <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
                                 {{ person }}
                                 </h4>
                                 {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-                                <img src="{% static image_static %}" class="img-responsive" alt="">
+                                {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                                {% endwith %}
                                 {% endwith %}
                             </a>
                         </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No people are available.</p>
-                {% endif %}
-            </div>
-            </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>No people are available.</p>
+            {% endif %}
+        </div>
     </header>
 
     <!-- jQuery -->

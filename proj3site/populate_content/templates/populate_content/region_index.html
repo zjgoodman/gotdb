@@ -84,16 +84,24 @@
                 <div class="row">
                     {% if all_regions %}
                         {% for region in all_regions %}
+                        {% if forloop.counter|divisibleby:3 %}
+                        <div class="row">
+                        {% endif %}
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="portfolio-box-caption">
                                         <a href="/content/regions/{{ region.region_id }}/" class="portfolio-box">
                                             <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ region.name }}</h4>
                                             {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
-                                            <img src="{% static image_static %}" class="img-responsive" alt="">
+                                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                            <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                                            {% endwith %}
                                             {% endwith %}
                                         </div>
                                     </a>
                                 </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     {% else %}
                         <p>No people are available.</p>
