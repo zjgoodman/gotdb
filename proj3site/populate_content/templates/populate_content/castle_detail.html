@@ -119,13 +119,22 @@
             </ol>
           </div>
           <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
+            <h2>Ruling House</h2>
+                {% if castle.primary_house %}
+                          <a href="/content/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              {{ castle.primary_house }}
+                              </h4>
+                              {% with 'img/portfolio/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
+                              <img src="{% static image_static %}" class="img-responsive" alt="">
+                              {% endwith %}
+                          </a>
+                        </div>
+                {% else %}
+                    <p>{{ castle }} is not ruled by any house.</p>
+                {% endif %}
+              </div>
+            </div>
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
