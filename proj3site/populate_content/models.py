@@ -134,7 +134,7 @@ class House(models.Model) :
 
     # famous expressions
     words       = models.CharField(max_length=300, null=True)
-    sigil       = models.CharField(max_length=300, null=True)
+    #sigil       = models.CharField(max_length=300, null=True)
 
     # the name of their castle
     castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_castles_controlled')
