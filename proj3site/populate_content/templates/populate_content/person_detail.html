@@ -90,7 +90,7 @@
           {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
           <img src="{% static image_static %}" class = "img-responsive" alt="" style="margin-left:auto;margin-right:auto">
           {% endwith %}
-          <h4 style="text-align:center">(Family: {{ person.house_name }})</h4>
+          <h4 style="text-align:center">(Family: {{ person.primary_house }})</h4>
             
             <h2 class="blog-post-title">Description</h2>
             <p>{{ person.bio }}</p>
@@ -109,7 +109,7 @@
           <div class="sidebar-module">
             <h4>Quick Links</h4>
             <ol class="list-unstyled">
-              <li><a href="/content/houses/{{ person.house_name.house_id }}">House: {{ person.house_name }}</a></li>
+              <li><a href="/content/houses/{{ person.primary_house.house_id }}">House: {{ person.primary_house }}</a></li>
               <li><a href="/content/regions/{{ person.region_from.region_id }}/">From Region: {{ person.region_from }}</a></li>
             </ol>
           </div>

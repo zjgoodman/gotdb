@@ -56,10 +56,10 @@ hdr = {'User-Agent': 'Mozilla/5.0'}  #for permissions
 
 # using gameofthrones.wikia.com
 # finds and scrapes info on all places and regions listed in string, places first
-people = True
+people = False
 places = False
 regions = False
-houses = False
+houses = True
 pcount = 0
 skip = True
 main_dict = []
@@ -188,10 +188,9 @@ for place in (
 	
 	):
 	# this_dict = {}
-	if place == 'House_Stark':
-		break
+	if place != 'House_Stark' and skip:
+		continue
 	if place == 'The_North':
-		break
 		pcount = 0
 		print(']\n[')
 		# print("\nRegions:\n")

@@ -14,22 +14,29 @@ class Person(models.Model) :
     - Bio
     """
     # name info
-    person_id = models.CharField(max_length=200, null=True)
-    first_name = models.CharField(max_length=200, null=True)
-    last_name = models.CharField(max_length=200, null=True)
-    house_name = models.ForeignKey('House', null=True)
-    region_from = models.ForeignKey('Region', null=True)
+    person_id      = models.CharField(max_length=200, null=True)
+    first_name     = models.CharField(max_length=200, null=True)
+    last_name      = models.CharField(max_length=200, null=True)
 
-    # titles
-    titles = models.TextField(null=True)
+    # houses associated with
+    houses         = models.ManyToManyField('House', blank=True, related_name='person_houses')
+    loyal_to       = models.ManyToManyField('House', blank=True, related_name='person_houses_loyal_to')
+    
+    region_from    = models.ForeignKey('Region', null=True)
 
-    actor = models.CharField(max_length=200, null=True)
+    # titles and actor
+    titles         = models.TextField(null=True)
+    actor          = models.CharField(max_length=200, null=True)
 
     # alive or dead
-    status = models.CharField(max_length=200, null=True)
+    status         = models.CharField(max_length=200, null=True)
+
+    # killer
+    cause_of_death = models.CharField(max_length=200, null=True)
+    killer         = models.ForeignKey('Person', null=True)
 
     # short biographical information
-    bio = models.TextField(null=True)
+    bio            = models.TextField(null=True)
 
     def __str__(self):
         if not self.last_name :
@@ -37,7 +44,7 @@ class Person(models.Model) :
         return self.first_name + " " + self.last_name
 
     class Meta:
-        ordering = ('last_name',)
+        ordering = ('last_name', 'first_name')
 
 class Region(models.Model) :
     """
@@ -51,19 +58,23 @@ class Region(models.Model) :
     - History 
     """
     # name
-    region_id = models.CharField(max_length=200, null=True)
-    name = models.CharField(max_length=200, null=True)
+    region_id  = models.CharField(max_length=200, null=True)
+    name       = models.CharField(max_length=200, null=True)
     
     # capital
-    capital_name = models.ForeignKey('Castle', null=True)
+    capital_name  = models.ForeignKey('Castle', null=True)
+    other_castles = models.ManyToManyField('Castle', blank=True, related_name='castles_in_region')
 
-    # ruling family and lord
-    ruling_house = models.ForeignKey('House', null=True)
-    ruling_lord = models.ForeignKey(Person, null=True)
+    # ruling family
+    ruling_house           = models.ForeignKey('House', null=True)
+    # families that used to rule
+    previous_ruling_houses = models.ManyToManyField('House', blank=True, related_name='previous_ruling_houses')
+    # houses found in this region
+    resident_houses        = models.ManyToManyField('House', blank=True, related_name='houses_in_this_region')
 
-    # brief description
-    description = models.TextField(null=True)
-    history = models.TextField(null=True)
+    # information
+    description   = models.TextField(null=True)
+    history       = models.TextField(null=True)
 
     def __str__(self):
         return self.name
@@ -83,17 +94,22 @@ class Castle(models.Model):
     - History
     """
     # name and region
-    castle_id = models.CharField(max_length=200, null=True)
-    name = models.CharField(max_length=200, null=True)
-    region_name = models.ForeignKey(Region, null=True)
+    castle_id       = models.CharField(max_length=200, null=True)
+    name            = models.CharField(max_length=200, null=True)
+    region_name     = models.ForeignKey(Region, null=True)
 
     # ruling house and lord
-    ruling_house = models.ForeignKey('House', null=True)
-    ruling_lord = models.ForeignKey(Person, null=True)
+    primary_house   = models.ForeignKey('House', null=True)
+    # houses that once controlled this castle
+    previous_houses = models.ManyToManyField('House', blank=True, related_name='castle_previous_houses')
+    
+    # lords of the castle
+    primary_lord    = models.ForeignKey(Person, null=True)
+    previous_lords  = models.ManyToManyField(Person, blank=True, related_name='castle_previous_lords')
 
     # brief description
-    description = models.TextField(null=True)
-    history = models.TextField(null=True)
+    description     = models.TextField(null=True)
+    history         = models.TextField(null=True)
 
     def __str__(self):
         return self.name
@@ -113,23 +129,21 @@ class House(models.Model) :
     - People (ForeignKey Person)
     """
     # name
-    house_id = models.CharField(max_length=200, null=True)
-    name = models.CharField(max_length=200, null=True)
+    house_id    = models.CharField(max_length=200, null=True)
+    name        = models.CharField(max_length=200, null=True)
 
     # famous expressions
-    words = models.CharField(max_length=300, null=True)
-
-    # region of the world
-    region_name = models.ForeignKey(Region, null=True)
+    words       = models.CharField(max_length=300, null=True)
+    sigil       = models.CharField(max_length=300, null=True)
 
     # the name of their castle
-    castle_name = models.ForeignKey(Castle, null=True)
+    castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_castles_controlled')
 
     # brief description
     description = models.TextField(null=True)
 
     # people in this House
-    people = models.ManyToManyField(Person, blank=True)
+    members     = models.ManyToManyField(Person, blank=True, related_name='house_family_members')
 
     def __str__(self):
         return self.name
@@ -150,20 +164,20 @@ class Author(models.Model) :
     - Num Unit Tests 
     """
     # name
-    author_id = models.CharField(max_length=200, null=True)
-    first_name = models.CharField(max_length=200, null=True)
-    last_name = models.CharField(max_length=200, null=True)
+    author_id        = models.CharField(max_length=200, null=True)
+    first_name       = models.CharField(max_length=200, null=True)
+    last_name        = models.CharField(max_length=200, null=True)
 
     # bio
-    bio = models.TextField(null=True)
+    bio              = models.TextField(null=True)
 
     # major responsibilities
     responsibilities = models.TextField(null=True)
 
     # statistics
-    num_commits = models.IntegerField(null=True)
-    num_issues  = models.IntegerField(null=True)
-    num_unit_tests = models.IntegerField(null=True)
+    num_commits      = models.IntegerField(null=True)
+    num_issues       = models.IntegerField(null=True)
+    num_unit_tests   = models.IntegerField(null=True)
 
     def __str__(self):
         return self.author_id
