@@ -80,16 +80,14 @@
 
     <body>
       {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as bg_img %}
-      {% with 'img/portfolio/filler_img.png' as filler_image %}
       <!-- the filler image will be covered if the correct image is found -->
-      <div style="background-image:url('{% static filler_image %}');background-position:right-top;">
-      <div style="background-image:url('{% static bg_img %}');background-position:right-top;">
+      <div style="background-color:#000">
+      <div style="background-position:left top;background-repeat:no-repeat;background-image:url('{% static bg_img %}');">
       <h1 class="header_content"><br></h1>
       <h1 class="header_content" style="position:relative;right:15%;text-align:center;color:#fff;margin-top:100px">{{ house.name }}</h1>
       <p class="lead blog-description" style="position:relative;right:15%;text-align:center;padding-bottom:450px;color:#fff"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
       </div>
       </div>
-      {% endwith %}
       {% endwith %}
 
       <div style="padding:20px 20px 20px 20px;background-color:#fff">

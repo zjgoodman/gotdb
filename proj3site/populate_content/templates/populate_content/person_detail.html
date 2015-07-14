@@ -131,7 +131,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="top:-10px">
           <div class="sidebar-module">
           <h2>Houses</h2>
-            {% if person.houses %}
+              {% if person.houses %}
                   {% for house in person.houses.all %}
                     <div class="container-fluid">
                       <div class="row" style="margin-bottom:10px">
@@ -172,8 +172,8 @@
             {% endif %}
           </div>
           <div class="sidebar-module">
-          {% if castles %}
           <h2>Castles</h2>
+          {% if castles %}
             {% for castle in castles %}
             <div class="container-fluid">
               <div class="row">
