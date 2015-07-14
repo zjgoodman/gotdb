@@ -21,6 +21,10 @@ class Person(models.Model) :
     # houses associated with
     houses         = models.ManyToManyField('House', blank=True, related_name='person_houses')
     loyal_to       = models.ManyToManyField('House', blank=True, related_name='person_houses_loyal_to')
+
+    # castles that this person controls
+    castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_castles_owned')
+    former_castles_controlled = models.ManyToManyField('Castle', blank=True, related_name='person_former_castles_owned')
     
     region_from    = models.ForeignKey('Region', null=True)
 
@@ -138,6 +142,7 @@ class House(models.Model) :
 
     # the name of their castle
     castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_castles_controlled')
+    former_castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_former_castles_controlled')
 
     # brief description
     description = models.TextField(null=True)
