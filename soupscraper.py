@@ -238,6 +238,14 @@ for place in (
 		print('\t\t\t\"castle_id\": \"' + hid + '\",')
 		hname = place.replace("_", " ")
 		print('\t\t\t\"name\": \"' + hname + '\",')
+	if regions:
+		print('\t\t\"model\": \"populate_content.region\", \"pk\": ' +  str(pcount) + ', \"fields\":\n\t\t{')
+		hid = place.lower()
+		hid = hid.replace('\"', '')
+		hid = hid.replace('\'', '')
+		print('\t\t\t\"region_id\": \"' + hid + '\",')
+		hname = place.replace("_", " ")
+		print('\t\t\t\"name\": \"' + hname + '\",')
 	data = soup.find('div', id = "mw-content-text")
 	if people:
 		pid = place.replace("\'", "")
@@ -360,7 +368,7 @@ for place in (
 						words = True
 						prnt = True
 
-				if places:
+				if places or regions:
 					if prnt:
 						# if text.find("Rulers") != -1:
 						# 	continue
@@ -377,7 +385,7 @@ for place in (
 									cut = start
 							text = text[:cut] + text[end + 1:] #removed bracketed section
 							# print(text)
-						print(text)
+						# print(text)
 						prnt = False
 					if text.find("Rulers") != -1:
 						if not rulers:
@@ -397,7 +405,9 @@ for place in (
 							print("\t\t\t\"ruling_house\": \"" + text + "\",")
 						rulers = True
 						prnt = True
+						break
 	count = 0
+	scount = 0
 	first = True
 	for parag in data.find_all('p'):
 		parag = str(parag)
@@ -426,9 +436,18 @@ for place in (
 		parag = parag.replace("\"", "\\\"") #add escape sequences
 		#take out sentence long paragraphs or junk
 		if parag.count(".") > 1:
+			if place == 'Sothoryos' and scount < 2:
+				scount += 1
+				continue
+			if place == 'The_Crownlands' and scount < 1:
+				scount += 1
+				continue
+			if place == 'Summer_Isles' and scount < 3:
+				scount += 1
+				continue
 			count += 1
 			if count == 2 and not people and not houses:
-				print("\",\n\t\t\t\"History\": \""),
+				print("\",\n\t\t\t\"history\": \""),
 			if first:
 				first = False
 				print('\t\t\t\"description\": \"' + "<p>" + parag[:-1] + "</p>"),
