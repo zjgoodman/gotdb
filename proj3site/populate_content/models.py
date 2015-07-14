@@ -138,6 +138,7 @@ class House(models.Model) :
 
     # the name of their castle
     castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_castles_controlled')
+    former_castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_former_castles_controlled')
 
     # brief description
     description = models.TextField(null=True)
