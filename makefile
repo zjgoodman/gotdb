@@ -23,6 +23,7 @@ clean:
 	rm -rf __pycache__
 	rm -f  TestIDB.out
 	rm -f  IDB.log
+	rm -f TestPopulateContent.out
 	rm -f proj3site/populate_content/*.pyc
 	rm -f proj3site/splash/*.pyc
 
@@ -66,6 +67,5 @@ bgserver: proj3site/manage.py
 	python3 proj3site/manage.py runserver &
 
 unittest: proj3site/populate_content/tests.py proj3site/manage.py
-	coverage3 run --source proj3site/populate_content/models.py --branch proj3site/manage.py test proj3site/populate_content >  TestPopulateContent.out 2>&1
-	coverage3 report -m                      >> TestPopulateContent.out
-	cat TestPopulateContent.out
+	coverage3 run --source proj3site/populate_content/models.py --branch proj3site/manage.py test proj3site/populate_content
+	coverage3 report -m
