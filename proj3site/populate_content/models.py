@@ -103,7 +103,7 @@ class Castle(models.Model):
 
     # ruling house and lord
     primary_house   = models.ForeignKey('House', null=True)
-    # houses that once controlled this castle
+    # related houses
     previous_houses = models.ManyToManyField('House', blank=True, related_name='castle_previous_houses')
     
     # lords of the castle
