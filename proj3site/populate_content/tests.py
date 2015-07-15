@@ -50,8 +50,8 @@ class GOT_Tests (TestCase):
 
 class GOT_API_Tests (TestCase):
 
-    # url = "http://104.130.27.102:8000" # rackspace
-    url  = "http://127.0.0.1:8000"     # local
+    url = "http://104.130.27.102:8000" # rackspace
+    #url  = "http://127.0.0.1:8000"     # local
 
     def test_api_get_person (self):
         """
