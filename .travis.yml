@@ -34,6 +34,8 @@ before_script:
 
 script:
     - date
+
+    - make bgserver
     # - ls -al
     # - touch IDB.log
     # - ls -al
