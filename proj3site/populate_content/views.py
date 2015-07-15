@@ -48,6 +48,7 @@ def region_detail(request, region_id):
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
     context = {'region'     : region,
+               'castles'    : region.other_castles.all(),
                'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
                'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
               }
