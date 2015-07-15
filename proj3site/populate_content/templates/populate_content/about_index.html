@@ -78,9 +78,7 @@
     </nav>
 
     <header>
-    <br><br><br><br>
-    <h1>Authors</h1>
-    <br><br><br><br>
+    <h1 style="padding-bottom:100px">Authors</h1>
     {% if all_authors %}
       {% for author in all_authors %}
       <div class="row">
@@ -93,11 +91,14 @@
           {% endwith %}
         </div>
         <div class="col-md-4" style="text-align:left">
-          <br>{{ author.first_name }} {{ author.last_name }}
-          <br>{{ author.bio }}
-          <br>Commits: {{ author.num_commits }}
-          <br>Issues: {{ author.num_issues }}
-          <br>Unit Tests: {{ author.num_unit_tests }}
+          <ul>
+            <li>{{ author.first_name }} {{ author.last_name }}</li>
+            <li>{{ author.bio }}</li>
+            <li>Responsibilities: {{ author.responsibilities }}</li>
+            <li>Commits: {{ author.num_commits }}</li>
+            <li>Issues: {{ author.num_issues }}</li>
+            <li>Unit Tests: {{ author.num_unit_tests }}</li>
+          </ul>
         </div>
       </div>
       <br><br><br><br>
@@ -105,7 +106,7 @@
     {% else %}
       <p>No authors!</p>
     {% endif %}
-<div class="row" style="color:#fff" >
+        <div class="row" style="color:#fff" >
         <div class="col-md-2">
           <br>
         </div>
