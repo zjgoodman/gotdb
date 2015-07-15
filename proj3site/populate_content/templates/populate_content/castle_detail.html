@@ -82,7 +82,7 @@
 
       <h1 class="header_content"><br></h1>
       <h1 class="header_content" style="text-align:center">{{ castle.name }}</h1>
-      <p class="lead blog-description" style="text-align:center">Occupied by House {{ castle.ruling_house }}</p>
+      <p class="lead blog-description" style="text-align:center">Occupied by {{ castle.ruling_house }}</p>
 
       <div class="col-sm-8">
 
@@ -94,8 +94,8 @@
           {% endwith %}
           <h4 style="text-align:center">(Region: {{ castle.region_name }})</h4>
             
-            <h2 class="blog-post-title">Description</h2>
-            <p>{{ description }}</p>
+          <h2 class="blog-post-title" style="padding-left:0px">Description</h2>
+          <p>{{ description }}</p>
         </div><!-- /.blog-post -->
 
         <div class="section_heading">
@@ -107,25 +107,61 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>{{ castle.name }}'s ruling lord is {{ castle.ruling_lord }}.</p>
+          <h2>Region</h2>
+            {% if castle.region_name %}
+            <div class="container-fluid">
+              <div class="row">
+                  <a href="/content/regions/{{ castle.region_name.region_id }}/" class="portfolio-box">
+                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      {{ castle.region_name }}
+                      </h4>
+                      {% with 'img/portfolio/'|add:castle.region_name.region_id|add:'.jpg' as image_static %}
+                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
+                      {% endwith %}
+                  </a>
+              </div>
+            </div>
+            {% else %}
+              <p>No region information.</p>
+            {% endif %}
           </div>
           <div class="sidebar-module">
-            <h4>Quick Links</h4>
-            <ol class="list-unstyled">
-              <li><a href="/content/houses/{{ castle.ruling_house.house_id }}">Ruling House: {{ castle.ruling_house }}</a></li>
-              <li><a href="/content/people/{{ castle.ruling_lord.person_id }}/">Ruling Lord: {{ castle.ruling_lord }}</a></li>
-              <li><a href="/content/regions/{{ castle.region_name.region_id }}">Region: {{ castle.region_name }}</a></li>
-            </ol>
+            <h2>Ruling Lord</h2>
+                {% if castle.ruling_lord %}
+                          <a href="/content/people/{{ castle.ruling_lord.person_id }}/" class="portfolio-box">
+                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              {{ castle.ruling_lord }}
+                              </h4>
+                              {% with 'img/portfolio/'|add:castle.ruling_lord.person_id|add:'.jpg' as image_static %}
+                              <img src="{% static image_static %}" class="img-responsive" alt="">
+                              {% endwith %}
+                          </a>
+                {% else %}
+                    <p>{{ castle }} is not ruled by any lord.</p>
+                {% endif %}
           </div>
           <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
+            <h2>Ruling House</h2>
+                {% if castle.primary_house %}
+                          <a href="/content/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              {{ castle.primary_house }}
+                              </h4>
+                              {% with 'img/portfolio/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
+                              <img src="{% static image_static %}" class="img-responsive" alt="">
+                              {% endwith %}
+                          </a>
+                {% else %}
+                    <p>{{ castle }} is not ruled by any house.</p>
+                {% endif %}
+            </div>
+            <div class="sidebar-module">
+            <h2>Related Houses</h2>
+
+            </div>
+
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->

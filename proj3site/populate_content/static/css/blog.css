@@ -107,7 +107,8 @@ h6, .h6 {
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
-  margin: 0 -15px 15px;
+  margin: 0 -45px 15px;
+  margin-right: 20px;
 }
 .sidebar-module-inset {
   padding: 15px;
@@ -139,10 +140,12 @@ h6, .h6 {
 
 .blog-post {
   margin-bottom: 60px;
+  padding-right: 15px;
 }
 .blog-post-title {
   margin-top: 15px;
   margin-bottom: 15px;
+  padding-right: 15px;
   font-size: 60px;
 }
 .blog-post-meta {

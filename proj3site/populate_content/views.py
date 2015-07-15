@@ -32,8 +32,9 @@ def person_detail(request, person_id):
         person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
-    context = {'person': person,
-               'bio'   : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),}
+    context = {'person'  : person,
+               'bio'     : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),
+               'castles' : person.castles_controlled.all(),}
     return render(request, 'populate_content/person_detail.html', context)
 
 def region_index(request):
@@ -47,6 +48,7 @@ def region_detail(request, region_id):
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
     context = {'region'     : region,
+               'castles'    : region.other_castles.all(),
                'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
                'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
               }
@@ -80,7 +82,8 @@ def house_detail(request, house_id):
         raise Http404("House does not exist :")
     context = {'house'      : house, 
                'people'     : house.members.all(), 
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description)))}
+               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description))),
+               'castles'    : house.castles_controlled.all(),}
 
     return render(request, 'populate_content/house_detail.html', context)
 
