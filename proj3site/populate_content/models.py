@@ -75,6 +75,8 @@ class Region(models.Model) :
     # houses found in this region
     resident_houses        = models.ManyToManyField('House', blank=True, related_name='houses_in_this_region')
 
+    ruling_lord            = models.ForeignKey(Person, null=True)
+
     # information
     description   = models.TextField(null=True)
     history       = models.TextField(null=True)
