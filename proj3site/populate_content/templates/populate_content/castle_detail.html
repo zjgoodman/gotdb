@@ -129,15 +129,15 @@
           </div>
           <div class="sidebar-module">
             <h2>Ruling Lord</h2>
-                {% if castle.ruling_lord %}
-                          <a href="/content/people/{{ castle.ruling_lord.person_id }}/" class="portfolio-box">
-                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
-                              {{ castle.ruling_lord }}
-                              </h4>
-                              {% with 'img/portfolio/'|add:castle.ruling_lord.person_id|add:'.jpg' as image_static %}
-                              <img src="{% static image_static %}" class="img-responsive" alt="">
-                              {% endwith %}
-                          </a>
+                {% if castle.primary_lord %}
+                  <a href="/content/people/{{ castle.primary_lord.person_id }}/" class="portfolio-box">
+                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      {{ castle.primary_lord }}
+                      </h4>
+                      {% with 'img/portfolio/'|add:castle.primary_lord.person_id|add:'.jpg' as image_static %}
+                      <img src="{% static image_static %}" class="img-responsive" alt="">
+                      {% endwith %}
+                  </a>
                 {% else %}
                     <p>{{ castle }} is not ruled by any lord.</p>
                 {% endif %}
@@ -145,14 +145,16 @@
           <div class="sidebar-module">
             <h2>Ruling House</h2>
                 {% if castle.primary_house %}
-                          <a href="/content/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
-                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
-                              {{ castle.primary_house }}
-                              </h4>
-                              {% with 'img/portfolio/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
-                              <img src="{% static image_static %}" class="img-responsive" alt="">
-                              {% endwith %}
-                          </a>
+                  <a href="/content/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      {{ castle.primary_house }}
+                      </h4>
+                      {% with 'img/portfolio/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
+                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
+                      {% endwith %}
+                  </a>
                 {% else %}
                     <p>{{ castle }} is not ruled by any house.</p>
                 {% endif %}
@@ -165,7 +167,7 @@
                 <div class="row">
                     <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box" style="margin-bottom:10px">
                         <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
-                        {{ castle }}
+                        {{ house }}
                         </h4>
                         {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
                         {% with 'img/portfolio/filler_img.png' as filler_image %}
