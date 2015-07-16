@@ -297,8 +297,6 @@ header .header-content .header-content-inner p {
     position: relative;
     margin: 0 auto 10px auto;
     width: auto;
-    max-height: 260px;
-    max-width: 100%;
     overflow: hidden;
 }
 
