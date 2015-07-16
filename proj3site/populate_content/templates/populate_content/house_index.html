@@ -81,32 +81,32 @@
 
     <header>
     <h1>Houses</h1>
-            <div class="container-fluid">
-                <div class="row">
-                    {% if all_houses %}
-                        {% for house in all_houses %}
-                        {% if forloop.counter0|divisibleby:3 %}
-                        <div class="row">
-                        {% endif %}
-                            <div class="col-lg-4 col-sm-6">
-                                <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
-                                    <h4 class="portfolio-box-caption">{{ house.name }}</h4>
-                                    {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
-                                    {% with 'img/portfolio/filler_img.png' as filler_image %}
-                                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                                    {% endwith %}
-                                    {% endwith %}
-                                </a>
-                            </div>
-                        {% if forloop.counter|divisibleby:3 %}
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    {% else %}
-                        <p>No houses are available.</p>
+        <div class="container-fluid">
+            <div class="row">
+                {% if all_houses %}
+                    {% for house in all_houses %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row">
                     {% endif %}
-                </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
+                                <h4 class="portfolio-box-caption">{{ house.name }}</h4>
+                                {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
+                                {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                                {% endwith %}
+                                {% endwith %}
+                            </a>
+                        </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No houses are available.</p>
+                {% endif %}
             </div>
+        </div>
     </header>
 
     <!-- jQuery -->
