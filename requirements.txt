@@ -6,3 +6,4 @@ coverage
 requests
 BeautifulSoup4
 mysqlclient
+django-haystack
