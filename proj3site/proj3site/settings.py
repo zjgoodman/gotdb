@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'proj3site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'game_of_thrones',
-        'USER': 'read',
-        'PASSWORD': '',
-        'HOST': '104.130.27.102',
+        'NAME': 'siteb',
+        'USER': 'write',
+        'PASSWORD': 'downing11',
+        'HOST': '162.242.213.163',
         'PORT': '3306',
     }
 #     'default': {
