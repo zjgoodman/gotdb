@@ -48,14 +48,6 @@ INSTALLED_APPS = (
     'django_nose',
 )
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
-NOSE_ARGS = [
-    '--with-coverage',
-    '--cover-package=populate_content.models',
-    '--verbosity=1',
-]
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,10 +68,10 @@ WSGI_APPLICATION = 'proj3site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'game_of_thrones',
-        'USER': 'read',
-        'PASSWORD': '',
-        'HOST': '104.130.27.102',
+        'NAME': 'siteb',
+        'USER': 'write',
+        'PASSWORD': 'downing11',
+        'HOST': 'housedowning-siteb.me',
         'PORT': '3306',
     }
 #     'default': {
