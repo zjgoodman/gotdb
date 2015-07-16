@@ -136,6 +136,13 @@ h6, .h6 {
   margin:auto;
   background-color:#fff"
 }
+@media (max-width: 480px) {
+  .blog-main {
+    width:90%;
+    margin:auto;
+    background-color:#fff"
+  }
+}
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
