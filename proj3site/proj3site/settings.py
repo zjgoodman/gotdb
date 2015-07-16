@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'populate_content',
     'splash',
     'django_nose',
+    'django-haystack',
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
