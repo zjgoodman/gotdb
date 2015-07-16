@@ -40,7 +40,6 @@ script:
     # - ls -al
     # - make models.html
     # - make models.html
-    - make fake
     - ls -al
     - make requirements
     - make unittest
