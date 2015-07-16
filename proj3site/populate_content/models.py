@@ -35,8 +35,8 @@ class Person(models.Model) :
     status         = models.CharField(max_length=200, null=True)
 
     # killer
-    #cause_of_death = models.CharField(max_length=200, null=True)
-    #killer         = models.ForeignKey('Person', null=True)
+    cause_of_death = models.CharField(max_length=200, null=True)
+    killer         = models.ForeignKey('Person', null=True)
 
     # short biographical information
     bio            = models.TextField(null=True)
@@ -75,6 +75,8 @@ class Region(models.Model) :
     # houses found in this region
     resident_houses        = models.ManyToManyField('House', blank=True, related_name='houses_in_this_region')
 
+    ruling_lord            = models.ForeignKey(Person, null=True)
+
     # information
     description   = models.TextField(null=True)
     history       = models.TextField(null=True)
@@ -102,12 +104,12 @@ class Castle(models.Model):
     region_name     = models.ForeignKey(Region, null=True)
 
     # ruling house and lord
-    #primary_house   = models.ForeignKey('House', null=True)
-    # houses that once controlled this castle
+    primary_house   = models.ForeignKey('House', null=True)
+    # related houses
     previous_houses = models.ManyToManyField('House', blank=True, related_name='castle_previous_houses')
     
     # lords of the castle
-    #primary_lord    = models.ForeignKey(Person, null=True)
+    primary_lord    = models.ForeignKey(Person, null=True)
     previous_lords  = models.ManyToManyField(Person, blank=True, related_name='castle_previous_lords')
 
     # brief description
@@ -137,7 +139,7 @@ class House(models.Model) :
 
     # famous expressions
     words       = models.CharField(max_length=300, null=True)
-    #sigil       = models.CharField(max_length=300, null=True)
+    sigil       = models.CharField(max_length=300, null=True)
 
     # the name of their castle
     castles_controlled = models.ManyToManyField(Castle, blank=True, related_name='house_castles_controlled')
