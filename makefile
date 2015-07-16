@@ -40,7 +40,7 @@ requirements: requirements.txt
 	pip3 install -r requirements.txt
 
 deploy: proj3site/manage.py
-	python3 proj3site/manage.py runserver 0.0.0.0:80
+	python3 proj3site/manage.py runserver 0.0.0.0:80 &
 
 sha:
 	git rev-parse HEAD
