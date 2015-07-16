@@ -45,7 +45,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'populate_content',
     'splash',
-    'django_nose',
 )
 
 MIDDLEWARE_CLASSES = (
