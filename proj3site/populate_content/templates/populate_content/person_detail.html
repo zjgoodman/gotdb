@@ -80,19 +80,17 @@
 
     <body style="background-image: url();color:#000">
 
-      <h1 class="header_content"><br></h1>
-      <h1 class="header_content" style="text-align:center">{{ person }}</h1>
-      <p class="lead blog-description" style="text-align:center">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
+      <h1 class="blog-title">{{ person }}</h1>
+      <p class="lead blog-description">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
 
       <div class="col-sm-8">
 
-        <div class="section_heading">
+        <div>
           {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
           {% with 'img/portfolio/filler_img.png' as filler_image %}
           <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
           {% endwith %}
           {% endwith %}
-          <h4 style="text-align:center">(Family: {{ person.primary_house }})</h4>
             
           <h2 class="blog-post-title">Description</h2>
           <p>{{ bio }}</p>
@@ -101,15 +99,15 @@
 
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="top:-10px">
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module">
           <h2>Houses</h2>
               {% if person.houses %}
                   {% for house in person.houses.all %}
                     <div class="container-fluid">
-                      <div class="row" style="margin-bottom:10px">
+                      <div class="row">
                           <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
-                              <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                              <h4 class="portfolio-box-caption">
                               {{ house }}
                               </h4>
                               {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
@@ -131,7 +129,7 @@
             <div class="container-fluid">
               <div class="row">
                   <a href="/content/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                      <h4 class="portfolio-box-caption">
                       {{ person.region_from }}
                       </h4>
                       {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
@@ -152,8 +150,8 @@
             {% for castle in castles %}
             <div class="container-fluid">
               <div class="row">
-                  <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box" style="margin-bottom:10px">
-                      <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                  <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                      <h4 class="portfolio-box-caption">
                       {{ castle }}
                       </h4>
                       {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}

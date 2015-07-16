@@ -84,12 +84,12 @@
         <div class="container-fluid">
             {% if all_people %}
                 {% for person in all_people %}
-                    {% if forloop.counter|divisibleby:3 %}
+                    {% if forloop.counter0|divisibleby:3 %}
                     <div class="row">
                     {% endif %}
                         <div class="col-lg-4 col-sm-6">
                             <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
-                                <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                                <h4 class="portfolio-box-caption">
                                 {{ person }}
                                 </h4>
                                 {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
