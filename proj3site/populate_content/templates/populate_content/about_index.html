@@ -26,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,57 +79,57 @@
     </nav>
 
     <header>
-    <h1 style="padding-bottom:100px">Authors</h1>
-    {% if all_authors %}
-      {% for author in all_authors %}
-      <div class="row">
-        <div class="col-md-2">
-          <br>
+        <h1 style="padding-bottom:100px">Authors</h1>
+      <div class="blog-main" style="padding:100px 50px;background-image:url();background-color:#fff">
+        <div class="container-fluid">
+            <div class="row">
+                {% if all_authors %}
+                    {% for author in all_authors %}
+                    <div class="row">
+                      <div class="col-md-4">
+                          <h4>{{ author.first_name }} {{ author.last_name }}</h4>
+                          {% with 'img/portfolio/'|add:author.author_id|add:'.jpg' as image_static %}
+                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                              <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
+                            {% endwith %}
+                          {% endwith %}
+                      </div>
+                      <div class="col-md-8">
+                          <p><div style="color:#000;text-align:left;margin-bottom:90px">
+                              <p><b>Bio</b>: "{{ author.bio }}"</p>
+                              <p><b>Responsibilities</b>:        {{ author.responsibilities }}</p>
+                              <p><b>Number of commits</b>:       {{ author.num_commits }}</p>
+                              <p><b>Number of GitHub issues</b>: {{ author.num_issues }}</p>
+                              <p><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
+                          </div></p>
+                      </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No authors are available.</p>
+                {% endif %}
+            </div>
         </div>
-        <div class="col-md-4">
-          {% with 'img/portfolio/'|add:author.author_id|add:'.jpg' as image_static %}
-          <img src="{% static image_static %}" class="img-responsive" alt="image not found"></img>
-          {% endwith %}
-        </div>
-        <div class="col-md-4" style="text-align:left">
-          <ul>
-            <li>{{ author.first_name }} {{ author.last_name }}</li>
-            <li>{{ author.bio }}</li>
-            <li>Responsibilities: {{ author.responsibilities }}</li>
-            <li>Commits: {{ author.num_commits }}</li>
-            <li>Issues: {{ author.num_issues }}</li>
-            <li>Unit Tests: {{ author.num_unit_tests }}</li>
-          </ul>
+        <div class="panel panel-info" style="margin-top:50px;">
+          <div class="panel-heading">
+            <h4 class="panel-title">External Links</h4>
+          </div>
+          <div class="panel-body">
+            <p><div style="color:#000;text-align:left">
+                <h2><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h2>
+                <h2><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h2>
+                <h2><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h2>
+                <h2><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h2>
+                <br><br>
+                <h2>Data Sources:</h2>
+                <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
+                <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
+                <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
+            </div></p>
+          </div>
         </div>
       </div>
-      <br><br><br><br>
-      {% endfor %}
-    {% else %}
-      <p>No authors!</p>
-    {% endif %}
-        <div class="row" style="color:#fff" >
-        <div class="col-md-2">
-          <br>
-        </div>
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-4" style="text-align:left">
-          <h2><a style="color:#fff" link="white"href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h2>
-          <h2><a style="color:#fff" href="https://github.com/zjg95/cs373-idb">Github Repo</a></h2>
-          <h2><a style="color:#fff" href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h2>
-          <h2><a style="color:#fff" href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h2>
-          <br><br>
-          <h2>Data Sources:</h2>
-          <h3><a style="color:#fff" href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
-          <h3><a style="color:#fff" href="http://www.westeros.org/">Westeros.org</a></h3>
-          <h3><a style="color:#fff" href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
-          
-          
-        </div>
       </div>
-      <br><br><br><br>
-
     </header>
 
 
