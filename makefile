@@ -50,6 +50,7 @@ soup: soupscraper.py
 
 fake: proj3site/manage.py
 	python3 proj3site/manage.py migrate --fake
+	python3 proj3site/manage.py migrate
 
 migrations: proj3site/manage.py
 	python3 proj3site/manage.py makemigrations

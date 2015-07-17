@@ -45,8 +45,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'populate_content',
     'splash',
-    'django_nose',
-    'django-haystack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,7 +70,7 @@ DATABASES = {
         'NAME': 'siteb',
         'USER': 'write',
         'PASSWORD': 'downing11',
-        'HOST': '162.242.213.163',
+        'HOST': 'housedowning-siteb.me',
         'PORT': '3306',
     }
 #     'default': {
