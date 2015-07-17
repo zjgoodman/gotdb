@@ -40,5 +40,5 @@ script:
     # - make models.html
     - ls -al
     - make requirements
-    - make migrations
+    - python3 proj3site/manage.py makemigrations populate_content
     - make unittest
