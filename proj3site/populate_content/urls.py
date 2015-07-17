@@ -6,7 +6,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^search/', include('haystack.urls')),
     url(r'^$', views.index, name='splash'),
     url(r'^about/$', views.about_index, name='about_index'),
     url(r'^admin/', include(admin.site.urls)),
