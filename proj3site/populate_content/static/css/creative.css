@@ -50,7 +50,31 @@ p {
     font-size: 16px;
     line-height: 1.5;
 }
-
+.author-name {
+    display: block;
+    width: 300px;
+    position:relative;
+    z-index:1;
+    text-align:center;
+    margin:auto;
+    margin-bottom:0;
+    padding:10px 0 10px 0;
+    color: #fff;
+    background-color: #222;
+}
+.author-box {
+    display: block;
+    position:relative;
+    z-index:0;
+    margin-bottom:20px;
+    padding:0;
+    color: #fff;
+    text-align:left;
+    vertical-align:center;
+}
+.author-img {
+    border: 3px solid #000;
+}
 .bg-primary {
     background-color: #f05f40;
 }
@@ -178,7 +202,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header.jpg);
+    background-image: url(../img//header/background.jpg);
     background-position: center;
     background-attachment: fixed;
     padding: 100px 15px 100px;
@@ -187,39 +211,6 @@ header {
     background-size: cover;
     -o-background-size: cover;
 }
-
-.house-baratheon {
-    position: relative;
-    background-image: url(../img/portfolio/baratheon.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-lannister {
-    position: relative;
-    background-image: url(../img/portfolio/lannister.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-stark {
-    position: relative;
-    background-image: url(../img/portfolio/stark.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-targaryen {
-    position: relative;
-    background-image: url(../img/portfolio/targaryen.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 15px 15px 15px;
-}
-
 header .header-content {
     position: relative;
     width: 100%;

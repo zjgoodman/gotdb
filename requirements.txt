@@ -1,8 +1,8 @@
 django
 djangorestframework
 django-filter
-django-nose
 coverage
 requests
 BeautifulSoup4
 mysqlclient
+django-haystack
