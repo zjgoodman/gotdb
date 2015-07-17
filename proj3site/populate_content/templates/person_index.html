@@ -58,19 +58,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/people">People</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/castles">Castles</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/regions">Regions</a>
                     </li>                    
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/houses">Houses</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -84,12 +84,12 @@
         <div class="container-fluid">
             {% if all_people %}
                 {% for person in all_people %}
-                    {% if forloop.counter|divisibleby:3 %}
+                    {% if forloop.counter0|divisibleby:3 %}
                     <div class="row">
                     {% endif %}
                         <div class="col-lg-4 col-sm-6">
-                            <a href="/people/{{ person.person_id }}/" class="portfolio-box">
-                                <h4 style="position:relative;z-index:1;align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">
+                            <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
+                                <h4 class="portfolio-box-caption">
                                 {{ person }}
                                 </h4>
                                 {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}

@@ -50,7 +50,31 @@ p {
     font-size: 16px;
     line-height: 1.5;
 }
-
+.author-name {
+    display: block;
+    width: 300px;
+    position:relative;
+    z-index:1;
+    text-align:center;
+    margin:auto;
+    margin-bottom:0;
+    padding:10px 0 10px 0;
+    color: #fff;
+    background-color: #222;
+}
+.author-box {
+    display: block;
+    position:relative;
+    z-index:0;
+    margin-bottom:20px;
+    padding:0;
+    color: #fff;
+    text-align:left;
+    vertical-align:center;
+}
+.author-img {
+    border: 3px solid #000;
+}
 .bg-primary {
     background-color: #f05f40;
 }
@@ -187,39 +211,6 @@ header {
     background-size: cover;
     -o-background-size: cover;
 }
-
-.house-baratheon {
-    position: relative;
-    background-image: url(../img/portfolio/baratheon.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-lannister {
-    position: relative;
-    background-image: url(../img/portfolio/lannister.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-stark {
-    position: relative;
-    background-image: url(../img/portfolio/stark.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px 15px 50px;
-}
-
-.house-targaryen {
-    position: relative;
-    background-image: url(../img/portfolio/targaryen.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 15px 15px 15px;
-}
-
 header .header-content {
     position: relative;
     width: 100%;
@@ -295,24 +286,20 @@ header .header-content .header-content-inner p {
 .portfolio-box {
     display: block;
     position: relative;
-    margin: 0 auto;
-    max-width: 650px;
+    margin: 0 auto 10px auto;
+    width: auto;
     overflow: hidden;
 }
 
 .portfolio-box .portfolio-box-caption {
     display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
+    position:relative;
+    z-index:1;
+    text-align:center;
+    margin-bottom:0;
+    padding:10px 0 10px 0;
     color: #fff;
-    opacity: 0;
-    background: rgba(240,95,64,.9);
-    -webkit-transition: all .35s ease;
-    -moz-transition: all .35s ease;
-    transition: all .35s ease;
+    background-color: #222;
 }
 
 .portfolio-box img {
