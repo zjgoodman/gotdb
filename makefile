@@ -16,6 +16,10 @@ check:
         [ -e $$i ] && echo "$$i found" || echo "$$i NOT FOUND"; \
     done
 
+clean:
+	rm -rf proj3site/populate_content/migrations
+	rm -rf proj3site/populate_content/__pycache__
+
 html: proj3site/populate_content/models.py
 	pydoc3 -w models
 
