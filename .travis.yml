@@ -37,9 +37,8 @@ script:
 
     # - ls -al
     # - touch IDB.log
-    # - ls -al
     # - make models.html
-    # - make models.html
-    - ls -al
+     - ls -al
     - make requirements
+    - make migrations
     - make unittest
