@@ -131,7 +131,7 @@ class GOT_Tests (TestCase):
 #         Expecting a response with a json object
 #         containing a collection of each persons data members
 #         """
-#         response = requests.get(self.url + '/content/api/people/eddard_stark')
+#         response = requests.get(self.url + '/api/people/eddard_stark')
 #         self.assertEqual(response.status_code, 200)
 #         actual = response.json()  # convert response to json obj
 #
@@ -146,7 +146,7 @@ class GOT_Tests (TestCase):
 #         Expecting a response with a json object
 #         containing a collection of each castle data members
 #         """
-#         response = requests.get(self.url + '/content/api/castles/casterly_rock')
+#         response = requests.get(self.url + '/api/castles/casterly_rock')
 #         self.assertEqual(response.status_code, 200)
 #         actual = response.json()  # convert response to json obj
 #
@@ -160,7 +160,7 @@ class GOT_Tests (TestCase):
 #         Expecting a response with a json object
 #         containing a collection of each regions data members
 #         """
-#         response = requests.get(self.url + '/content/api/regions/stormlands')
+#         response = requests.get(self.url + '/api/regions/stormlands')
 #         self.assertEqual(response.status_code, 200)
 #         actual = response.json()  # convert response to json obj
 #
@@ -174,7 +174,7 @@ class GOT_Tests (TestCase):
 #         Expecting a response with a json object
 #         containing a collection of each houses data members
 #         """
-#         response = requests.get(self.url + '/content/api/houses/stark')
+#         response = requests.get(self.url + '/api/houses/stark')
 #         self.assertEqual(response.status_code, 200)
 #         actual = response.json()  # convert response to json obj
 #

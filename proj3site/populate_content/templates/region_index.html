@@ -56,19 +56,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/people">People</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/castles">Castles</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/regions">Regions</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
                     </li> 
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/houses">Houses</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
                     </li>
 
                 </ul>
@@ -89,7 +89,7 @@
                         {% endif %}
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="portfolio-box-caption">
-                                        <a href="/content/regions/{{ region.region_id }}/" class="portfolio-box">
+                                        <a href="/regions/{{ region.region_id }}/" class="portfolio-box">
                                             <h4 class="portfolio-box-caption">{{ region.name }}</h4>
                                             {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
                                             {% with 'img/portfolio/filler_img.png' as filler_image %}

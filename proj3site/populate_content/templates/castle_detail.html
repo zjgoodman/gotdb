@@ -56,19 +56,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/people">People</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/castles">Castles</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/regions">Regions</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/houses">Houses</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/content/about">About</a>
+                        <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -106,7 +106,7 @@
           {% if castle.region_name %}
           <div class="container-fluid">
             <div class="row">
-                <a href="/content/regions/{{ castle.region_name.region_id }}/" class="portfolio-box">
+                <a href="/regions/{{ castle.region_name.region_id }}/" class="portfolio-box">
                   <h4 class="portfolio-box-caption">
                     {{ castle.region_name }}
                     </h4>
@@ -127,7 +127,7 @@
               {% if castle.primary_lord %}
               <div class="container-fluid">
                 <div class="row">
-                <a href="/content/people/{{ castle.primary_lord.person_id }}/" class="portfolio-box">
+                <a href="/people/{{ castle.primary_lord.person_id }}/" class="portfolio-box">
                   <h4 class="portfolio-box-caption">
                     {{ castle.primary_lord }}
                     </h4>
@@ -146,7 +146,7 @@
               {% if castle.primary_house %}
               <div class="container-fluid">
                 <div class="row">
-                  <a href="/content/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+                  <a href="/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
                       <h4 class="portfolio-box-caption">
                       {{ castle.primary_house }}
                       </h4>
@@ -168,7 +168,7 @@
             {% for house in castle.previous_houses.all %}
             <div class="container-fluid">
               <div class="row">
-                  <a href="/content/houses/{{ house.house_id }}/" class="portfolio-box">
+                  <a href="/houses/{{ house.house_id }}/" class="portfolio-box">
                       <h4 class="portfolio-box-caption">
                       {{ house }}
                       </h4>
