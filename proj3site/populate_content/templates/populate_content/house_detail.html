@@ -81,30 +81,28 @@
     <body>
       {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as bg_img %}
       <!-- the filler image will be covered if the correct image is found -->
-      <div style="background-color:#000">
-      <div style="background-position:left top;background-repeat:no-repeat;background-image:url('{% static bg_img %}');">
-      <h1 class="header_content"><br></h1>
-      <h1 class="header_content" style="position:relative;right:15%;text-align:center;color:#fff;margin-top:100px">{{ house.name }}</h1>
-      <p class="lead blog-description" style="position:relative;right:15%;text-align:center;padding-bottom:450px;color:#fff"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
+      <div class="title-section" style="background-image:url('{% static bg_img %}');">
+      <h1 style="color:#fff">{{ house.name }}</h1>
+      <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
       </div>
       </div>
       {% endwith %}
 
-      <div style="padding:20px 20px 20px 20px;background-color:#fff">
-        <div class="section_heading" style="margin-left:20%;margin-right:20%;">
+      <div class="blog-main">
+        <div class="section-heading">
+          <h2 class="blog-post-title">Members</h2>
           <div class="container-fluid">
-            <h2 class="blog-post-title">Members</h2>
                 <div class="row">
                     {% if people %}
                         {% for person in people %}
 
-                        {% if forloop.counter|divisibleby:3 %}
+                        {% if forloop.counter0|divisibleby:3 %}
                         <div class="row">
                         {% endif %}
 
                             <div class="col-lg-4 col-sm-6">
                                 <a href="/content/people/{{ person.person_id }}/" class="portfolio-box">
-                                    <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ person }}</h4>
+                                    <h4 class="portfolio-box-caption">{{ person }}</h4>
                                     
                                     {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
                                     {% with 'img/portfolio/filler_img.png' as filler_image %}
@@ -124,54 +122,57 @@
                     {% endif %}
                 </div>
             </div>
-          <div class="container-fluid">
-            <h2 class="blog-post-title">Castles</h2>
-            <div class="row">
-                {% if castles %}
-                    {% for castle in castles %}
-
-                    {% if forloop.counter|divisibleby:2 %}
-                    <div class="row" style="margin-bottom:10px">
-                    {% endif %}
-
-                        <div class="col-lg-6 col-sm-6">
-                            <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                                <h4 style="position:relative;z-index:1;text-align:center;margin-bottom:0;padding:10px 0 10px 0" class="bg-dark">{{ castle }}</h4>
-                                
-                                {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                                {% with 'img/portfolio/filler_img.png' as filler_image %}
-                                <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                                {% endwith %}
-                                {% endwith %}
-                            </a>
-                        </div>
-
-                    {% if forloop.counter|divisibleby:2 %}
-                    </div>
-                    {% endif %}
-
-                    {% endfor %}
-                {% else %}
-                    <p><i>{{ house }} does not control any castles.</i></p>
-                {% endif %}
-            </div>
           </div>
-                
-          <h2 class="blog-post-title">Description</h2>
-          <p>{{ description }}</p>
+          <div class="section-heading">
+            <h2 class="blog-post-title">Description</h2>
+            <p>{{ description }}</p>
+          </div>
+          <div class="section-heading">
+            <h2 class="blog-post-title">Region</h2>
 
-          <h2 class="blog-post-title">Region</h2>
+          </div>
+          <div class="section-heading">
+            <h2 class="blog-post-title">History</h2>
 
-          <h2 class="blog-post-title">History</h2>
+          </div>
+          <div class="section-heading">
+          <h2 class="blog-post-title">Castles</h2>
+          <div class="container-fluid">
+          <div class="row">
+            {% if castles %}
+                {% for castle in castles %}
+
+                {% if forloop.counter0|divisibleby:2 %}
+                <div class="row">
+                {% endif %}
+
+                    <div class="col-lg-6 col-sm-6">
+                        <a href="/content/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                            <h4 class="portfolio-box-caption">{{ castle }}</h4>
+                            
+                            {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                            <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                            {% endwith %}
+                            {% endwith %}
+                        </a>
+                    </div>
+
+                {% if forloop.counter|divisibleby:2 %}
+                </div>
+                {% endif %}
+
+                {% endfor %}
+            {% else %}
+                <p><i>{{ house }} does not control any castles.</i></p>
+            {% endif %}
+          </div>
+          </div>
+          </div>
         </div><!-- /.blog-post -->
+                
 
       </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-         
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
 
     </div><!-- /.container -->
     </body>
