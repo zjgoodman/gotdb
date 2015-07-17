@@ -86,8 +86,8 @@
       <div class="col-sm-8">
 
         <div>
-          {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-          {% with 'img/portfolio/filler_img.png' as filler_image %}
+          {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
+          {% with 'img/header/filler_img.png' as filler_image %}
           <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
           {% endwith %}
           {% endwith %}
@@ -110,8 +110,8 @@
                               <h4 class="portfolio-box-caption">
                               {{ house }}
                               </h4>
-                              {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as image_static %}
-                              {% with 'img/portfolio/filler_img.png' as filler_image %}
+                              {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
+                              {% with 'img/header/filler_img.png' as filler_image %}
                               <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                               {% endwith %}
                               {% endwith %}
@@ -132,8 +132,8 @@
                       <h4 class="portfolio-box-caption">
                       {{ person.region_from }}
                       </h4>
-                      {% with 'img/portfolio/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                      {% with 'img/header/filler_img.png' as filler_image %}
                       <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
                       {% endwith %}
@@ -154,8 +154,8 @@
                       <h4 class="portfolio-box-caption">
                       {{ castle }}
                       </h4>
-                      {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                      {% with 'img/portfolio/filler_img.png' as filler_image %}
+                      {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                      {% with 'img/header/filler_img.png' as filler_image %}
                       <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
                       {% endwith %}

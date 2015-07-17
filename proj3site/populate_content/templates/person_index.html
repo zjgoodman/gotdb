@@ -92,8 +92,8 @@
                                 <h4 class="portfolio-box-caption">
                                 {{ person }}
                                 </h4>
-                                {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-                                {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
+                                {% with 'img/header/filler_img.png' as filler_image %}
                                 <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                                 {% endwith %}
                                 {% endwith %}

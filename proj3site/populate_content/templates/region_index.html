@@ -91,8 +91,8 @@
                                     <div class="portfolio-box-caption">
                                         <a href="/regions/{{ region.region_id }}/" class="portfolio-box">
                                             <h4 class="portfolio-box-caption">{{ region.name }}</h4>
-                                            {% with 'img/portfolio/'|add:region.region_id|add:'.jpg' as image_static %}
-                                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                            {% with 'img/place/'|add:region.region_id|add:'.jpg' as image_static %}
+                                            {% with 'img/header/filler_img.png' as filler_image %}
                                             <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                                             {% endwith %}
                                             {% endwith %}

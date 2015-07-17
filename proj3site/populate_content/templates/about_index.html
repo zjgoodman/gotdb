@@ -88,8 +88,8 @@
                     <div class="row">
                       <div class="col-md-4">
                           <h4>{{ author.first_name }} {{ author.last_name }}</h4>
-                          {% with 'img/portfolio/'|add:author.author_id|add:'.jpg' as image_static %}
-                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                          {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
+                            {% with 'img/header/filler_img.png' as filler_image %}
                               <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
                             {% endwith %}
                           {% endwith %}

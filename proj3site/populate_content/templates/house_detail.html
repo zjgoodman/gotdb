@@ -79,7 +79,7 @@
 </body>
 
     <body>
-      {% with 'img/portfolio/'|add:house.house_id|add:'.jpg' as bg_img %}
+      {% with 'img/house/'|add:house.house_id|add:'.jpg' as bg_img %}
       <!-- the filler image will be covered if the correct image is found -->
       <div class="title-section" style="background-image:url('{% static bg_img %}');">
       <h1 style="color:#fff">{{ house.name }}</h1>
@@ -104,8 +104,8 @@
                                 <a href="/people/{{ person.person_id }}/" class="portfolio-box">
                                     <h4 class="portfolio-box-caption">{{ person }}</h4>
                                     
-                                    {% with 'img/portfolio/'|add:person.person_id|add:'.jpg' as image_static %}
-                                    {% with 'img/portfolio/filler_img.png' as filler_image %}
+                                    {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
+                                    {% with 'img/header/filler_img.png' as filler_image %}
                                     <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                                     {% endwith %}
                                     {% endwith %}
@@ -150,8 +150,8 @@
                         <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
                             <h4 class="portfolio-box-caption">{{ castle }}</h4>
                             
-                            {% with 'img/portfolio/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                            {% with 'img/portfolio/filler_img.png' as filler_image %}
+                            {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                            {% with 'img/header/filler_img.png' as filler_image %}
                             <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                             {% endwith %}
                             {% endwith %}
