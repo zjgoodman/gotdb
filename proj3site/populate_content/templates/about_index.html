@@ -40,98 +40,99 @@
 <body id="page-top">
 
    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
-            </div>
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+       </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
+           </li>
+         </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <h1 style="padding-bottom:100px">Authors</h1>
-      <div class="blog-main" style="padding:100px 50px;background-image:url();background-color:#fff">
+    {% with 'img/author/header.jpg' as bg_img %}
+    <div class="title-section" style="background-image:url('{% static bg_img %}');">
+      <h1 style="color:#fff">About the GoTDB</h1>
+      <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
+    </div>
+    {% endwith %}
+  
+    <div class="blog-main">
+      <div class="section-heading">
+        <h2 class="blog-post-title">Authors</h2>
         <div class="container-fluid">
-            <div class="row">
-                {% if all_authors %}
-                    {% for author in all_authors %}
-                    <div class="row">
-                      <div class="col-md-4">
-                          <h4>{{ author.first_name }} {{ author.last_name }}</h4>
-                          {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
-                            {% with 'img/header/filler_img.png' as filler_image %}
-                              <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
-                            {% endwith %}
-                          {% endwith %}
-                      </div>
-                      <div class="col-md-8">
-                          <p><div style="color:#000;text-align:left;margin-bottom:90px">
-                              <p><b>Bio</b>: "{{ author.bio }}"</p>
-                              <p><b>Responsibilities</b>:        {{ author.responsibilities }}</p>
-                              <p><b>Number of commits</b>:       {{ author.num_commits }}</p>
-                              <p><b>Number of GitHub issues</b>: {{ author.num_issues }}</p>
-                              <p><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
-                          </div></p>
-                      </div>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No authors are available.</p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="panel panel-info" style="margin-top:50px;">
-          <div class="panel-heading">
-            <h4 class="panel-title">External Links</h4>
-          </div>
-          <div class="panel-body">
-            <p><div style="color:#000;text-align:left">
-                <h2><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h2>
-                <br><br>
-                <h2>Data Sources:</h2>
-                <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
-                <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
-                <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
-            </div></p>
+          <div class="row">
+            {% if all_authors %}
+              {% for author in all_authors %}
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>{{ author.first_name }} {{ author.last_name }}</h2>
+                  {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
+                    {% with 'img/header/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
+                    {% endwith %}
+                  {% endwith %}
+                </div>
+                <div class="col-md-8">
+                  <p><div style="color:#000;text-align:left;margin-bottom:90px">
+                    <p><b>Bio</b>: "{{ author.bio }}"</p>
+                    <p><b>Responsibilities</b>:         {{ author.responsibilities }}</p>
+					<p><br><b>Number of commits</b>:    {{ author.num_commits }}
+                    <br><b>Number of GitHub issues</b>: {{ author.num_issues }}
+                    <br><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
+                  </div></p>
+                </div>
+              </div>
+              {% endfor %}
+            {% else %}
+              <p>No authors are available.</p>
+            {% endif %}
           </div>
         </div>
+		<div style="margin:40px">
+		</div>
+        <h2>External Links</h2>
+        <h3><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h3>
+        <br><br>
+        <h2>Data Sources:</h2>
+        <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
+        <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
+	    <br><br>
+        <h3><a href="unit_tests/">Click to Run Unit Tests!</a></h3>
       </div>
-      </div>
-    </header>
-
+    </div>
 
     <!-- jQuery -->
     <script src="{% static "js/jquery.js" %}"></script>

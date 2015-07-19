@@ -1,10 +1,10 @@
 from django.utils.html import format_html_join
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
-import string, re
+import string, re, subprocess, os
 
 from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -13,7 +13,6 @@ from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, H
 
 from .models import Person, Region, Castle
 
-
 def index(request):
     return render(request, 'splash.html')
 
@@ -21,6 +20,14 @@ def about_index(request):
     all_authors = Author.objects.all()
     context = {'all_authors': all_authors}
     return render(request, 'about_index.html', context)
+
+def unit_tests(request):
+	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content --keepdb"
+	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	result = pipe.stdout.readlines() + pipe.stderr.readlines()
+	return render_to_response('unit_tests.html', {'result': result})
 
 def person_index(request):
     all_people = Person.objects.all()
