@@ -52,7 +52,7 @@ fake: proj3site/manage.py
 	python3 proj3site/manage.py migrate
 
 migrations: proj3site/manage.py
-	python3 proj3site/manage.py makemigrations populate_content
+	python3 proj3site/manage.py makemigrations
 	python3 proj3site/manage.py migrate
 
 runserver: proj3site/manage.py

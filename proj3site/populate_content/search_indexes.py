@@ -1,44 +1,35 @@
-import datetime
-from haystack import indexes
-from populate_content.models import Person, Castle, Region, House
+# encoding: utf-8
 
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+from regular_app.models import Dog
+
+from haystack import indexes
+
+
+# More typical usage involves creating a subclassed `SearchIndex`. This will
+# provide more control over how data is indexed, generally resulting in better
+# search.
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
-    # first_name = indexes.CharField(model_attr='first_name')
-    # last_name  = indexes.CharField(model_attr='last_name', null=True)
+    # We can pull data straight out of the model via `model_attr`.
+    first_name = indexes.CharField(model_attr='first_name')
+    last_name = indexes.CharField(model_attr='last_name')
+    # Note that callables are also OK to use.
+    status = indexes.CharField(model_attr='status')
+    # Note that we can't assign an attribute here. We'll manually prepare it instead.
+    toys = indexes.MultiValueField()
 
     def get_model(self):
         return Person
 
     def index_queryset(self, using=None):
-         return self.get_model()._default_manager.all()
+        return self.get_model().objects.filter(public=True)
 
-class HouseIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    # name = indexes.CharField(model_attr='name')
+    # def prepare_toys(self, obj):
+    #     # Store a list of id's for filtering
+    #     return [toy.id for toy in obj.toys.all()]
 
-    def get_model(self):
-        return House
-
-    def index_queryset(self, using=None):
-         return self.get_model()._default_manager.all()
-
-class CastleIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    # name = indexes.CharField(model_attr='name')
-
-    def get_model(self):
-        return Castle
-
-    def index_queryset(self, using=None):
-         return self.get_model()._default_manager.all()
-
-class RegionIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    # name = indexes.CharField(model_attr='name')
-
-    def get_model(self):
-        return Region
-
-    def index_queryset(self, using=None):
-         return self.get_model()._default_manager.all()
+        # Alternatively, you could store the names if searching for toy names
+        # is more useful.
+        # return [toy.name for toy in obj.toys.all()]
