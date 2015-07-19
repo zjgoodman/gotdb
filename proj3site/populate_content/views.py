@@ -1,7 +1,7 @@
 from django.utils.html import format_html_join
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
-import string, re, subprocess
+import string, re, subprocess, os
 
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, render_to_response
@@ -13,7 +13,6 @@ from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, H
 
 from .models import Person, Region, Castle
 
-
 def index(request):
     return render(request, 'splash.html')
 
@@ -23,7 +22,9 @@ def about_index(request):
     return render(request, 'about_index.html', context)
 
 def unit_tests(request):
-	command = "python3 manage.py test --keepdb"
+	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content --keepdb"
 	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	result = pipe.stdout.read() + pipe.stderr.read()
 	return render_to_response('unit_tests.html', {'result': result})
