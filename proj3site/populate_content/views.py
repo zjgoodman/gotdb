@@ -24,7 +24,7 @@ def about_index(request):
 def unit_tests(request):
 	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content --keepdb"
+	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content -v 2 --keepdb"
 	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	result = pipe.stdout.readlines() + pipe.stderr.readlines()
 	return render_to_response('unit_tests.html', {'result': result})

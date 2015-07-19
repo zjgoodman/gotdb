@@ -87,18 +87,18 @@
   
     <div class="blog-main">
       <div class="section-heading">
-        <h2 class="blog-post-title">Authors</h2>
+        <h2 class="blog-post-title" style="text-align:center">Authors</h2>
         <div class="container-fluid">
           <div class="row">
             {% if all_authors %}
               {% for author in all_authors %}
               <div class="row">
                 <div class="col-md-4">
-                  <h2>{{ author.first_name }} {{ author.last_name }}</h2>
                   {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
                     {% with 'img/header/filler_img.png' as filler_image %}
-                      <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
+                      <img src="{% static image_static %}" class="author-img img-circle" onerror="this.src='{% static filler_image %}'" alt="">
                     {% endwith %}
+                  <h2 class="author-name">{{ author.first_name }} {{ author.last_name }}</h2>
                   {% endwith %}
                 </div>
                 <div class="col-md-8">
