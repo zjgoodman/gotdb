@@ -59,5 +59,5 @@ runserver: proj3site/manage.py
 	python3 proj3site/manage.py runserver
 
 unittest: proj3site/populate_content/tests.py proj3site/manage.py
-	coverage3 run --source proj3site/populate_content/  --omit proj3site/populate_content/wsgi.py --branch proj3site/manage.py test proj3site/populate_content
+	coverage3 run --source proj3site/populate_content/  --omit proj3site/populate_content/wsgi.py --branch proj3site/manage.py test proj3site/populate_content --keepdb
 	coverage3 report -m
