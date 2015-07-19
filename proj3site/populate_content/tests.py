@@ -277,7 +277,7 @@ class GOT_Views_Tests (TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_about_index_view(self):
-        response = self.c.get(reverse('about_index'))
+        response = self.c.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
 
     def test_person_index_view(self):
