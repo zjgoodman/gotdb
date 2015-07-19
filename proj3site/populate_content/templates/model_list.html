@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GoTDB | Regions</title>
+    <title>GoTDB | Castles</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
@@ -60,7 +60,7 @@
             </li>
             <li>
               <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
-            </li> 
+            </li>
             <li>
               <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
             </li>
@@ -74,25 +74,24 @@
       <!-- /.container-fluid -->
     </nav>
 
+
     <header>
-      <h1>Regions</h1>
+      <h1>{{title}}</h1>
       <div class="container-fluid">
         <div class="row">
-          {% if all_regions %}
-            {% for region in all_regions %}
+          {% if all_objects %}
+            {% for object in all_objects %}
               {% if forloop.counter0|divisibleby:3 %}
               <div class="row">
               {% endif %}
                 <div class="col-lg-4 col-sm-6">
-                  <div class="portfolio-box-caption">
-                    <a href="/regions/{{ region.region_id }}/" class="portfolio-box">
-                      <h4 class="portfolio-box-caption">{{ region.name }}</h4>
-                      {% with 'img/place/'|add:region.region_id|add:'.jpg' as image_static %}
-                        {% with 'img/header/filler_img.png' as filler_image %}
-                          <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                        {% endwith %}
+                  <a href="{{ object.get_url }}/" class="portfolio-box">
+                    <h4 class="portfolio-box-caption">{{ object }}</h4>
+                    {% with object.get_img as image_static %}
+                      {% with 'img/header/filler_img.png' as filler_image %}
+                        <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
-                    </div>
+                    {% endwith %}
                   </a>
                 </div>
               {% if forloop.counter|divisibleby:3 %}
@@ -100,7 +99,7 @@
               {% endif %}
             {% endfor %}
           {% else %}
-            <p>No people are available.</p>
+            <p>No {{title}}s are available.</p>
           {% endif %}
         </div>
       </div>
@@ -119,8 +118,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/creative.js" %}"></script>
-
   </body>
+
 </html>
 
 

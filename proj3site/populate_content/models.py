@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Person(models.Model) :
     """
@@ -46,6 +47,15 @@ class Person(models.Model) :
             return self.first_name
         return self.first_name + " " + self.last_name
 
+    def get_url(self):
+        return "/people/" + self.person_id
+
+    def get_id(self):
+        return self.person_id
+
+    def get_img(self):
+        return "img/person/" + self.person_id + ".jpg"
+
     class Meta:
         ordering = ('last_name', 'first_name')
 
@@ -84,6 +94,15 @@ class Region(models.Model) :
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/regions/" + self.region_id
+
+    def get_id(self):
+        return self.region_id
+
+    def get_img(self):
+        return "img/place/" + self.region_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -119,6 +138,15 @@ class Castle(models.Model):
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/castles/" + self.castle_id
+
+    def get_id(self):
+        return self.castle_id
+
+    def get_img(self):
+        return "img/place/" + self.castle_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -153,6 +181,15 @@ class House(models.Model) :
 
     def __str__(self):
         return self.name
+
+    def get_url(self):
+        return "/houses/" + self.house_id
+
+    def get_id(self):
+        return self.house_id
+
+    def get_img(self):
+        return "img/house/" + self.house_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
