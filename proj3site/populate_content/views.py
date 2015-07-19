@@ -26,7 +26,7 @@ def unit_tests(request):
 
 	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content --keepdb"
 	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	result = pipe.stdout.read() + pipe.stderr.read()
+	result = pipe.stdout.readlines() + pipe.stderr.readlines()
 	return render_to_response('unit_tests.html', {'result': result})
 
 def person_index(request):

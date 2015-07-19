@@ -1,5 +1,11 @@
+<html>
+<body style='font-family:"Courier New", Courier, monospace'>
 {% if result %}
-  {{ result }}
+  {% for line in result %}
+    {{ line }}<br>
+  {% endfor %}
 {% else %}
   Nothing!
 {% endif %}
+</body>
+</html>
