@@ -25,4 +25,4 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
         return Person
 
     def index_queryset(self, using=None):
-        return self.get_model().objects.filter(status='Alive')
+        return self.get_model().objects.filter(status='Dead')
