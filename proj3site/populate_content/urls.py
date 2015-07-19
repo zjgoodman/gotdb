@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^search/', include('haystack.urls')),
     url(r'^$', views.index, name='splash'),
     url(r'^about/$', views.about_index, name='about_index'),
+    url(r'^about/unit_tests/$', views.unit_tests, name='unit_tests'),
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^people/$', views.person_index, name='person_index'),

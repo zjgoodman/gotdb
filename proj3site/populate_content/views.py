@@ -1,10 +1,10 @@
 from django.utils.html import format_html_join
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
-import string, re
+import string, re, subprocess
 
 from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -21,6 +21,12 @@ def about_index(request):
     all_authors = Author.objects.all()
     context = {'all_authors': all_authors}
     return render(request, 'about_index.html', context)
+
+def unit_tests(request):
+	command = "python3 manage.py test --keepdb"
+	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	result = pipe.stdout.read() + pipe.stderr.read()
+	return render_to_response('unit_tests.html', {'result': result})
 
 def person_index(request):
     all_people = Person.objects.all()
