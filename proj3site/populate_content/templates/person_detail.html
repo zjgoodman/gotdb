@@ -1,183 +1,174 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Game of Thrones | {{ person.name }}</title>
-
+  
+    <title>GoTDB | {{ person }}</title>
+  
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
-
+  
     <!-- Custom Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" type="text/css">
-
+  
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{% static "css/animate.min.css" %}" type="text/css">
-
+  
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
     <link rel="stylesheet" href="{% static "css/blog.css" %}" type="text/css">
-
+  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+  </head>	
 
-</head>	
-
-<body id="page-top">
-
+  <body id="page-top">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
         </div>
-        <!-- /.container-fluid -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+            </li>
+            <li>
+              <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
+            </li>
+            <li>
+              <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
+            </li>
+            <li>
+              <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
+            </li>
+            <li>
+              <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
     </nav>
-    </body>
+  </body>
 
-    <body style="background-image: url();color:#000">
+  <body style="background-image: url();color:#000">
 
-      <h1 class="blog-title">{{ person }}</h1>
-      <p class="lead blog-description">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
+    <h1 class="blog-title">{{ person }}</h1>
+    <p class="lead blog-description">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
 
-      <div class="col-sm-8">
+    <div class="col-sm-8">
 
-        <div>
-          {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
-          {% with 'img/header/filler_img.png' as filler_image %}
-          <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
-          {% endwith %}
-          {% endwith %}
-            
-          <h2 class="blog-post-title">Description</h2>
-          <p>{{ bio }}</p>
+      <div>
+        {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
+        {% with 'img/header/filler_img.png' as filler_image %}
+        <img src="{% static image_static %}" class = "img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
+        {% endwith %}
+        {% endwith %}
+          
+        <h2 class="blog-post-title">Description</h2>
+        <p>{{ bio }}</p>
 
-        </div><!-- /.blog-post -->
+      </div><!-- /.blog-post -->
 
-        </div><!-- /.blog-main -->
+    </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module">
-          <h2>Houses</h2>
-              {% if person.houses %}
-                  {% for house in person.houses.all %}
-                    <div class="container-fluid">
-                      <div class="row">
-                          <a href="/houses/{{ house.house_id }}/" class="portfolio-box">
-                              <h4 class="portfolio-box-caption">
-                              {{ house }}
-                              </h4>
-                              {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
-                              {% with 'img/header/filler_img.png' as filler_image %}
-                              <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                              {% endwith %}
-                              {% endwith %}
-                          </a>
-                      </div>
-                    </div>
-                  {% endfor %}
-              {% else %}
-                  <p>{{ person }} is not a member of a house.</p>
-              {% endif %}
-          </div>
-          <div class="sidebar-module">
-          <h2>Region</h2>
-            {% if person.region_from %}
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module">
+      <h2>Houses</h2>
+        {% if person.houses %}
+          {% for house in person.houses.all %}
             <div class="container-fluid">
               <div class="row">
-                  <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-                      <h4 class="portfolio-box-caption">
-                      {{ person.region_from }}
-                      </h4>
-                      {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                      {% with 'img/header/filler_img.png' as filler_image %}
+                <a href="/houses/{{ house.house_id }}/" class="portfolio-box">
+                  <h4 class="portfolio-box-caption">
+                    {{ house }}
+                  </h4>
+                  {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
+                    {% with 'img/header/filler_img.png' as filler_image %}
                       <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                      {% endwith %}
-                      {% endwith %}
-                  </a>
+                    {% endwith %}
+                  {% endwith %}
+                </a>
               </div>
             </div>
-            {% else %}
-              <p>No region information.</p>
-            {% endif %}
+          {% endfor %}
+        {% else %}
+            <p>{{ person }} is not a member of a house.</p>
+        {% endif %}
+      </div>
+      <div class="sidebar-module">
+      <h2>Region</h2>
+        {% if person.region_from %}
+        <div class="container-fluid">
+          <div class="row">
+            <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
+              <h4 class="portfolio-box-caption">
+                {{ person.region_from }}
+              </h4>
+              {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                {% with 'img/header/filler_img.png' as filler_image %}
+                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                {% endwith %}
+              {% endwith %}
+            </a>
           </div>
-          <div class="sidebar-module">
-          <h2>Castles</h2>
-          {% if castles %}
-            {% for castle in castles %}
-            <div class="container-fluid">
-              <div class="row">
-                  <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                      <h4 class="portfolio-box-caption">
-                      {{ castle }}
-                      </h4>
-                      {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                      {% with 'img/header/filler_img.png' as filler_image %}
-                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                      {% endwith %}
-                      {% endwith %}
-                  </a>
-              </div>
-            </div>
-            {% endfor %}
-          {% else %}
-            <p>No castles.</p>
-          {% endif %}
+        </div>
+        {% else %}
+          <p>No region information.</p>
+        {% endif %}
+      </div>
+      <div class="sidebar-module">
+      <h2>Castles</h2>
+      {% if castles %}
+        {% for castle in castles %}
+        <div class="container-fluid">
+          <div class="row">
+            <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
+              <h4 class="portfolio-box-caption">
+                {{ castle }}
+              </h4>
+              {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                {% with 'img/header/filler_img.png' as filler_image %}
+                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                {% endwith %}
+              {% endwith %}
+            </a>
           </div>
-          <div class="sidebar-module">
-            <h2>About</h2>
-            <p>{{ person }} is played by {{ person.actor }}.</p>
-            <p>{{ person.first_name }} is {{ person.status }}.</p>
-          </div>
-
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>No castles.</p>
+      {% endif %}
+      </div>
+      <div class="sidebar-module">
+        <h2>About</h2>
+        <p>{{ person }} is played by {{ person.actor }}.</p>
+        <p>{{ person.first_name }} is {{ person.status }}.</p>
+      </div>
+    </div><!-- /.blog-sidebar -->
     </body>
 
     <!-- jQuery -->
