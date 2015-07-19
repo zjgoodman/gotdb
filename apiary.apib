@@ -34,28 +34,35 @@ A Person object has the following attributes:
 
         [
             {
-                "id":2,
-                "person_id":"robert_baratheon",
-                "first_name":"Robert",
-                "last_name":"Baratheon",
-                "house_name":4,
-                "region_from":4,
-                "titles":"King",
-                "actor":"Mark Addy",
-                "status":"Dead",
-                "bio":"He loves women"
+                "id": 69,
+                "person_id": "bronn",
+                "first_name": "Bronn",
+                "last_name": null,
+                "titles": "Ser, Commander of the City Watch (briefly) (former)",
+                "actor": "Jerome Flynn",
+                "status": "Alive",
+                "cause_of_death": null,
+                "bio":"...",
+                "region_from": null,
+                "killer": null,
+                "houses": [],
+                "loyal_to": [3],
+                "castles_controlled": []
             },
             {
-                "id":6,
-                "person_id":"stannis_baratheon",
-                "first_name":"Stannis",
-                "last_name":"Baratheon",
-                "house_name":null,
-                "region_from":null,
-                "titles":null,
-                "actor":null,
-                "status":null,
-                "bio":null
+                "id": 66,
+                "person_id": "drogo",
+                "first_name": "Drogo",
+                "last_name": null,
+                "titles": "Khal",
+                "actor": "Jason Momoa",
+                "status": "Deceased",
+                "cause_of_death": null,
+                        "region_from": 13,
+                "killer": null,
+                "houses": [],
+                "loyal_to": [],
+                "castles_controlled": [28]
             }
         ]
         
@@ -106,25 +113,28 @@ A Castle has the following attributes:
 
         [
             {
-                "id":2,
-                "name":"Casterly Rock",
-                "region_name":2,
-                "ruling_lord":3,
-                "description":"The seat of house Lannister"
+                "id": 21,
+                "castle_id": "asshai",
+                "name": "Asshai",
+                "description": "...",
+                "history": "...",
+                "region_name": 13,
+                "primary_house": null,
+                "primary_lord": null,
+                "previous_houses": [],
+                "previous_lords": []
             },
             {
-                "id":3,
-                "name":"Storm's End",
-                "region_name":3,
-                "ruling_lord":2,
-                "description":"The seat of house Baratheon"
-            },
-            {
-                "id":1,
-                "name":"Winterfell",
-                "region_name":1,
-                "ruling_lord":1,
-                "description":"The seat of house Stark"
+                "id": 33,
+                "castle_id": "astapor",
+                "name": "Astapor",
+                "description": "...",
+                "history": "...",
+                "region_name": 13,
+                "primary_house": 4,
+                "primary_lord": 19,
+                "previous_houses": [],
+                "previous_lords": []
             }
         ]
 
@@ -138,14 +148,15 @@ A Castle has the following attributes:
 
         [
             {
-                "id": 3,
-                "castle_id": "casterly_rock",
-                "name": "Casterly Rock",
+                "id": 1,
+                "castle_id": "winterfell",
+                "name": "Winterfell",
                 "description": "...",
-                "region_name": 3,
-                "primary_house": 3,
-                "primary_lord": null,
-                "previous_houses": [],
+                "history":"...",
+                "region_name": 1,
+                "primary_house": 6,
+                "primary_lord": 23,
+                "previous_houses": [1],
                 "previous_lords": []
             }
         ]
@@ -161,6 +172,7 @@ A region has the following attributes:
 + History
 + Capitol Name
 + Ruling House
++ Ruling Lord
 + Other Castles
 + Previous Ruling Houses
 + Resident Houses
@@ -173,25 +185,28 @@ A region has the following attributes:
     
         [
             {
-                "id":3,
-                "name":"Stormlands",
-                "capital_name":3,
-                "ruling_lord":2,
-                "description":"The Baratheon lands."
+                "id": 12,
+                "region_id": "bear_island",
+                "name": "Bear Island",
+                "description": "...",
+                "history":"...",
+                "capital_name": null,
+                "ruling_house": 6,
+                "ruling_lord": 23,
+                "other_castles": [],
+                "previous_ruling_houses": [],
+                "resident_houses": []
             },
             {   
-                "id":1,
-                "name":"The North",
-                "capital_name":1,
-                "ruling_lord":1,
-                "description":"A big fancy place"
-            },
-            {
-                "id":2,
-                "name":"Westerlands",
-                "capital_name":2,
-                "ruling_lord":3,
-                "description":"The Lannister lands"
+                "id": 10,
+                "region_id": "beyond_the_wall",
+                "name": "Beyond the Wall",
+                "capital_name": null,
+                "ruling_house": null,
+                "ruling_lord": 86,
+                "other_castles": [],
+                "previous_ruling_houses": [],
+                "resident_houses": []
             }
         ]
 
@@ -211,7 +226,8 @@ A region has the following attributes:
                 "description":"...",
                 "history":"...",
                 "capital_name": 1,
-                "ruling_house": null,
+                "ruling_house": 6,
+                "ruling_lord": 23,
                 "other_castles": [],
                 "previous_ruling_houses": [],
                 "resident_houses": []
@@ -229,6 +245,7 @@ A house has the following attributes:
 + Sigil
 + Description
 + Castles Controlled
++ Former Castles Controlled
 + Member
 
 ## All Houses [/content/api/houses/]
@@ -239,25 +256,26 @@ A house has the following attributes:
     
         [
             {
-                "id":3,
-                "name":"Stormlands",
-                "capital_name":3,
-                "ruling_lord":2,
-                "description":"The Baratheon lands."
+                "id": 18,
+                "house_id": "arryn",
+                "name": "House Arryn",
+                "words": "As High as Honor",
+                "sigil": null,
+                "description": "...",
+                "castles_controlled": [6],
+                "former_castles_controlled": [],
+                "members": [42,40,41]
             },
             {   
-                "id":1,
-                "name":"The North",
-                "capital_name":1,
-                "ruling_lord":1,
-                "description":"A big fancy place"
-            },
-            {
-                "id":2,
-                "name":"Westerlands",
-                "capital_name":2,
-                "ruling_lord":3,
-                "description":"The Lannister lands"
+                "id": 9,
+                "house_id": "baelish",
+                "name": "House Baelish",
+                "words": null,
+                "sigil": null,
+                "description": "...",
+                "castles_controlled": [16,6],
+                "former_castles_controlled": [],
+                "members": [40,46]
             }
         ]
 
@@ -278,68 +296,8 @@ A house has the following attributes:
                 "sigil": null,
                 "description":"...",
                 "castles_controlled": [17,20,8,2],
+                "former_castles_controlled": [],
                 "members": [50,53,48,47,54,52,49,51,24]
-            }
-        ]
-
-## Group Authors
-
-An author has the following attributes:
-
-+ Id
-+ Author Id
-+ First Name
-+ Last Name
-+ Bio
-+ Responsibilities
-+ Number of Commits
-+ Number of Unit Tests
-
-## All Authors [/content/api/authors/]
-
-### View all authors [GET]
-    
-+ Response 200 (application/json)
-    
-        [
-            {
-                "id":3,
-                "name":"Stormlands",
-                "capital_name":3,
-                "ruling_lord":2,
-                "description":"The Baratheon lands."
-            },
-            {   
-                "id":1,
-                "name":"The North",
-                "capital_name":1,
-                "ruling_lord":1,
-                "description":"A big fancy place"
-            },
-            {
-                "id":2,
-                "name":"Westerlands",
-                "capital_name":2,
-                "ruling_lord":3,
-                "description":"The Lannister lands"
-            }
-        ]
-
-## Author [/content/api/authors/{author_id}]
-
-### View an author [GET]
-+ Parameters
-    + author_id - String of the author name (lowercase with underscore separators)
-    
-+ Response 200 (application/json)
-    
-        [
-            {
-                "id":3,
-                "name":"Stormlands",
-                "capital_name":3,
-                "ruling_lord":2,
-                "description":"The Baratheon lands."
             }
         ]
 
