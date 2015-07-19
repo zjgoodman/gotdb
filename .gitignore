@@ -5,6 +5,7 @@
 *.swo
 *.DS_Store
 .idea
+*.seg
 *__pycache__/
 cs373-idbenv/
 proj3site/populate_content/migrations/
