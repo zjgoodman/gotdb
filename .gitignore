@@ -1,11 +1,19 @@
 # ignore the following files:
 *.coverage
+
+# cache
 *.pyc
 *.swp
 *.swo
 *.DS_Store
 .idea
+
+# search indexes
 *.seg
+*.toc
+proj3site/populate_content/whoosh_index/MAIN_WRITELOCK
+
+# cache
 *__pycache__/
 cs373-idbenv/
 proj3site/populate_content/migrations/
