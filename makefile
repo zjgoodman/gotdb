@@ -29,6 +29,15 @@ log:
 requirements: requirements.txt
 	pip3 install -r requirements.txt
 
+requirementsu: requirements.txt
+	pip3 install -r requirements.txt --user
+
+nindex:
+	python3 proj3site/manage.py rebuild_index
+
+uindex:
+	python3 proj3site/manage.py update_index
+
 deploy: proj3site/manage.py
 	python3 proj3site/manage.py runserver 0.0.0.0:80 &
 
