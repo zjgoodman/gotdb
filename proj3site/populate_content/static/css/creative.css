@@ -50,6 +50,19 @@ p {
     font-size: 17px;
     line-height: 1.5;
 }
+.splash-menu {
+    display: block;
+    margin: 50px 15%;
+}
+/* 
+ * For mobile view:
+ */
+@media (max-width: 480px) {
+    .splash-menu {
+        display: block;
+        margin: auto;
+    }
+}
 .author-name {
     display: block;
     position:relative;
