@@ -53,8 +53,8 @@ class Person(models.Model) :
     def get_id(self):
         return self.person_id
 
-    def get_plural(self):
-        return "People"
+    def get_img(self):
+        return "img/person" + person_id + ".jpg"
 
     class Meta:
         ordering = ('last_name', 'first_name')
@@ -100,8 +100,8 @@ class Region(models.Model) :
     def get_id(self):
         return self.region_id
 
-    def get_plural(self):
-        return "Regions"
+    def get_img(self):
+        return "img/place" + region_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
@@ -144,8 +144,8 @@ class Castle(models.Model):
     def get_id(self):
         return self.castle_id
 
-    def get_plural(self):
-        return "Castles"
+    def get_img(self):
+        return "img/place" + castle_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
@@ -188,8 +188,8 @@ class House(models.Model) :
     def get_id(self):
         return self.house_id
 
-    def get_plural(self):
-        return "Houses"
+    def get_img(self):
+        return "img/house" + house_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
