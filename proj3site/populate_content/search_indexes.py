@@ -52,5 +52,9 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
         return Person
 
     def index_queryset(self, using=None):
+<<<<<<< HEAD
         return self.get_model().objects.filter(status='Alive')
 >>>>>>> origin/matt
+=======
+        return self.get_model().objects.filter(status='Dead')
+>>>>>>> origin/zach
