@@ -85,9 +85,9 @@
               <div class="row">
               {% endif %}
                 <div class="col-lg-4 col-sm-6">
-                  <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                    <h4 class="portfolio-box-caption">{{ castle.name }}</h4>
-                    {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                  <a href="{{ castle.get_url }}/" class="portfolio-box">
+                    <h4 class="portfolio-box-caption">{{ castle }}</h4>
+                    {% with castle.get_img as image_static %}
                       {% with 'img/header/filler_img.png' as filler_image %}
                         <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}

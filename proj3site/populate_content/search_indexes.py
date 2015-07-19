@@ -1,28 +1,44 @@
 import datetime
 from haystack import indexes
-from populate_content.models import Note, Person
-
-
-class NoteIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    author = indexes.CharField(model_attr='user')
-    pub_date = indexes.DateTimeField(model_attr='pub_date')
-
-    def get_model(self):
-        return Note
-
-    def index_queryset(self, using=None):
-        """Used when the entire index for model is updated."""
-        return self.get_model().objects.filter(pub_date__lte=datetime.datetime.now())
+from populate_content.models import Person, Castle, Region, House
 
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
-    first_name = indexes.CharField(model_attr='first_name')
-    last_name  = indexes.CharField(model_attr='last_name', null=True)
-    bio        = indexes.CharField(model_attr='bio')
+    # first_name = indexes.CharField(model_attr='first_name')
+    # last_name  = indexes.CharField(model_attr='last_name', null=True)
 
     def get_model(self):
         return Person
 
     def index_queryset(self, using=None):
-        return self.get_model().objects.filter(status='Alive')
+         return self.get_model()._default_manager.all()
+
+class HouseIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    # name = indexes.CharField(model_attr='name')
+
+    def get_model(self):
+        return House
+
+    def index_queryset(self, using=None):
+         return self.get_model()._default_manager.all()
+
+class CastleIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    # name = indexes.CharField(model_attr='name')
+
+    def get_model(self):
+        return Castle
+
+    def index_queryset(self, using=None):
+         return self.get_model()._default_manager.all()
+
+class RegionIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    # name = indexes.CharField(model_attr='name')
+
+    def get_model(self):
+        return Region
+
+    def index_queryset(self, using=None):
+         return self.get_model()._default_manager.all()

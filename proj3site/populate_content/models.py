@@ -1,16 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-class Note(models.Model):
-    user = models.ForeignKey(User)
-    pub_date = models.DateTimeField()
-    title = models.CharField(max_length=200)
-    body = models.TextField()
-
-    def __unicode__(self):
-        return self.title
-
 class Person(models.Model) :
     """
     Person model corresponds to a character in the show.
@@ -57,6 +47,15 @@ class Person(models.Model) :
             return self.first_name
         return self.first_name + " " + self.last_name
 
+    def get_url(self):
+        return "/people/" + self.person_id
+
+    def get_id(self):
+        return self.person_id
+
+    def get_img(self):
+        return "img/person" + person_id + ".jpg"
+
     class Meta:
         ordering = ('last_name', 'first_name')
 
@@ -95,6 +94,15 @@ class Region(models.Model) :
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/regions/" + self.region_id
+
+    def get_id(self):
+        return self.region_id
+
+    def get_img(self):
+        return "img/place" + region_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -130,6 +138,15 @@ class Castle(models.Model):
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/castles/" + self.castle_id
+
+    def get_id(self):
+        return self.castle_id
+
+    def get_img(self):
+        return "img/place" + castle_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -164,6 +181,15 @@ class House(models.Model) :
 
     def __str__(self):
         return self.name
+
+    def get_url(self):
+        return "/houses/" + self.house_id
+
+    def get_id(self):
+        return self.house_id
+
+    def get_img(self):
+        return "img/house" + house_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
