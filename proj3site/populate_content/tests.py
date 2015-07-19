@@ -137,8 +137,9 @@ def make_house(h, n, d):
 class GOT_API_Tests (TestCase):
     def setUp(self):
         self.c = APIClient()
-        # self.url  = "http://127.0.0.1:8000"     # local
-        self.url = "http://housedowning-siteb.me" # rackspace
+        # self.url  = "http://127.0.0.1:8000"      # local
+        self.url = "http://housedowning-siteb.me"  # backup-rackspace
+        # self.url = "http://housedowning.me"      # production-rackspace
 
 
     def test_api_get_people(self):
@@ -164,7 +165,11 @@ class GOT_API_Tests (TestCase):
     def test_api_get_person_2(self):
         make_person("eddard_stark", "Eddard", "Stark", "I don't care")
         response = self.c.get(reverse('person_api_detail', args=["eddard_stark"]))
-        self.assertEqual(response.status_code, 200)
+        j = json.loads(response.content.decode('UTF-8'))
+        self.assertEqual(j["first_name"], "Eddard")
+        self.assertEqual(j["last_name"], "Stark")
+        self.assertEqual(j["bio"], "I don't care")
+
 
     def test_api_get_castle_1(self):
         response = self.c.get(reverse('castle_api_detail', args=["winterfell"]))
@@ -174,6 +179,10 @@ class GOT_API_Tests (TestCase):
         make_castle("winterfell", "Winterfell", "bloody", "has a cool tree")
         response = self.c.get(reverse('castle_api_detail', args=["winterfell"]))
         self.assertEqual(response.status_code, 200)
+        j = json.loads(response.content.decode('UTF-8'))
+        self.assertEqual(j["name"], "Winterfell")
+        self.assertEqual(j["history"], "bloody")
+        self.assertEqual(j["description"], "has a cool tree")
 
     def test_api_get_region_1(self):
         response = self.c.get(reverse('region_api_detail', args=["north"]))
@@ -183,6 +192,10 @@ class GOT_API_Tests (TestCase):
         make_region("north", "North", "pretty old", "pretty cold")
         response = self.c.get(reverse('region_api_detail', args=["north"]))
         self.assertEqual(response.status_code, 200)
+        j = json.loads(response.content.decode('UTF-8'))
+        self.assertEqual(j["name"], "North")
+        self.assertEqual(j["history"], "pretty old")
+        self.assertEqual(j["description"], "pretty cold")
 
     def test_api_get_house_1(self):
         response = self.c.get(reverse('house_api_detail', args=["stark"]))
@@ -192,6 +205,9 @@ class GOT_API_Tests (TestCase):
         make_house("stark", "House Stark", "They are all going to die")
         response = self.c.get(reverse('house_api_detail', args=["stark"]))
         self.assertEqual(response.status_code, 200)
+        j = json.loads(response.content.decode('UTF-8'))
+        self.assertEqual(j["name"], "House Stark")
+        self.assertEqual(j["description"], "They are all going to die")
 
     def test_api_get_person_live (self):
         """
