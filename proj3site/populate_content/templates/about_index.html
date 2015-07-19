@@ -78,60 +78,59 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <h1 style="padding-bottom:100px">Authors</h1>
-      <div class="blog-main" style="padding:100px 50px;background-image:url();background-color:#fff">
+    {% with 'img/author/header.jpg' as bg_img %}
+    <div class="title-section" style="background-image:url('{% static bg_img %}');">
+      <h1 style="color:#fff">About the GoTDB</h1>
+      <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
+    </div>
+    {% endwith %}
+  
+    <div class="blog-main">
+      <div class="section-heading">
+        <h2 class="blog-post-title">Authors</h2>
         <div class="container-fluid">
-            <div class="row">
-                {% if all_authors %}
-                    {% for author in all_authors %}
-                    <div class="row">
-                      <div class="col-md-4">
-                          <h4>{{ author.first_name }} {{ author.last_name }}</h4>
-                          {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
-                            {% with 'img/header/filler_img.png' as filler_image %}
-                              <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
-                            {% endwith %}
-                          {% endwith %}
-                      </div>
-                      <div class="col-md-8">
-                          <p><div style="color:#000;text-align:left;margin-bottom:90px">
-                              <p><b>Bio</b>: "{{ author.bio }}"</p>
-                              <p><b>Responsibilities</b>:        {{ author.responsibilities }}</p>
-                              <p><b>Number of commits</b>:       {{ author.num_commits }}</p>
-                              <p><b>Number of GitHub issues</b>: {{ author.num_issues }}</p>
-                              <p><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
-                          </div></p>
-                      </div>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No authors are available.</p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="panel panel-info" style="margin-top:50px;">
-          <div class="panel-heading">
-            <h4 class="panel-title">External Links</h4>
-          </div>
-          <div class="panel-body">
-            <p><div style="color:#000;text-align:left">
-                <h2><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h2>
-                <h2><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h2>
-                <br><br>
-                <h2>Data Sources:</h2>
-                <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
-                <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
-                <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
-            </div></p>
+          <div class="row">
+            {% if all_authors %}
+              {% for author in all_authors %}
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>{{ author.first_name }} {{ author.last_name }}</h2>
+                  {% with 'img/author/'|add:author.author_id|add:'.jpg' as image_static %}
+                    {% with 'img/header/filler_img.png' as filler_image %}
+                      <img src="{% static image_static %}" class="author-img" onerror="this.src='{% static filler_image %}'" alt="">
+                    {% endwith %}
+                  {% endwith %}
+                </div>
+                <div class="col-md-8">
+                  <p><div style="color:#000;text-align:left;margin-bottom:90px">
+                    <p><b>Bio</b>: "{{ author.bio }}"</p>
+                    <p><b>Responsibilities</b>:        {{ author.responsibilities }}</p>
+                    <p><b>Number of commits</b>:       {{ author.num_commits }}</p>
+                    <p><b>Number of GitHub issues</b>: {{ author.num_issues }}</p>
+                    <p><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
+                  </div></p>
+                </div>
+              </div>
+              {% endfor %}
+            {% else %}
+              <p>No authors are available.</p>
+            {% endif %}
           </div>
         </div>
+		<div style="margin:40px">
+		</div>
+        <h2>External Links</h2>
+        <h3><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h3>
+        <br><br>
+        <h2>Data Sources:</h2>
+        <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
+        <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
       </div>
-      </div>
-    </header>
-
+    </div>
 
     <!-- jQuery -->
     <script src="{% static "js/jquery.js" %}"></script>
