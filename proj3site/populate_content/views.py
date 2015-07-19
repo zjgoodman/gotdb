@@ -15,17 +15,17 @@ from .models import Person, Region, Castle
 
 
 def index(request):
-    return render(request, 'splash/index.html')
+    return render(request, 'splash.html')
 
 def about_index(request):
     all_authors = Author.objects.all()
     context = {'all_authors': all_authors}
-    return render(request, 'populate_content/about_index.html', context)
+    return render(request, 'about_index.html', context)
 
 def person_index(request):
     all_people = Person.objects.all()
     context = {'all_people': all_people}
-    return render(request, 'populate_content/person_index.html', context)
+    return render(request, 'person_index.html', context)
 
 def person_detail(request, person_id):
     try:
@@ -35,12 +35,12 @@ def person_detail(request, person_id):
     context = {'person'  : person,
                'bio'     : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),
                'castles' : person.castles_controlled.all(),}
-    return render(request, 'populate_content/person_detail.html', context)
+    return render(request, 'person_detail.html', context)
 
 def region_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
-    return render(request, 'populate_content/region_index.html', context)
+    return render(request, 'region_index.html', context)
 
 def region_detail(request, region_id):
     try:
@@ -52,12 +52,12 @@ def region_detail(request, region_id):
                'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
                'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
               }
-    return render(request, 'populate_content/region_detail.html', context)
+    return render(request, 'region_detail.html', context)
 
 def castle_index(request):
     all_castles = Castle.objects.all()
     context = {'all_castles': all_castles}
-    return render(request, 'populate_content/castle_index.html', context)
+    return render(request, 'castle_index.html', context)
 
 def castle_detail(request, castle_id):
     try:
@@ -68,12 +68,12 @@ def castle_detail(request, castle_id):
                'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
                'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.history))),
               }
-    return render(request, 'populate_content/castle_detail.html', context)
+    return render(request, 'castle_detail.html', context)
 
 def house_index(request):
     all_houses = House.objects.all()
     context = {'all_houses': all_houses}
-    return render(request, 'populate_content/house_index.html', context)
+    return render(request, 'house_index.html', context)
 
 def house_detail(request, house_id):
     try:
@@ -85,27 +85,27 @@ def house_detail(request, house_id):
                'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description))),
                'castles'    : house.castles_controlled.all(),}
 
-    return render(request, 'populate_content/house_detail.html', context)
+    return render(request, 'house_detail.html', context)
 
 def all_castles_index(request):
     all_castles = Castle.objects.all()
     context = {'all_castles': all_castles}
-    return render(request, 'populate_content/all_castles_index.html', context)
+    return render(request, 'all_castles_index.html', context)
 
 def all_people_index(request):
     all_people = Person.objects.all()
     context = {'all_people': all_people}
-    return render(request, 'populate_content/all_people_index.html', context)
+    return render(request, 'all_people_index.html', context)
 
 def all_regions_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
-    return render(request, 'populate_content/all_regions_index.html', context)
+    return render(request, 'all_regions_index.html', context)
 
 def all_houses_index(request):
     all_houses = House.objects.all()
     context = {'all_houses': all_houses}
-    return render(request, 'populate_content/all_houses_index.html', context)
+    return render(request, 'all_houses_index.html', context)
 
 
 #--------------------------------------------------------------------------------

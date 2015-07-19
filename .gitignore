@@ -7,4 +7,4 @@
 .idea
 *__pycache__/
 cs373-idbenv/
-proj3site/populate_content/migrations/*
+proj3site/populate_content/migrations/
