@@ -70,8 +70,6 @@
       <!-- /.container-fluid -->
     </nav>
 
-    <h2>Search</h2>
-
     <form method="get" action=".">
         <table>
             {{ form }}
@@ -84,7 +82,7 @@
         </table>
 
         {% if query %}
-            <h3>Results</h3>
+            <h4>Results found for "{{ query }}:"</h4>
 
             {% for result in page.object_list %}
 
