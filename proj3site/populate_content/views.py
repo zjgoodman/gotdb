@@ -16,10 +16,10 @@ from .models import Person, Region, Castle
 def index(request):
     return render(request, 'splash.html')
 
-def about_index(request):
+def about(request):
     all_authors = Author.objects.all()
     context = {'all_authors': all_authors}
-    return render(request, 'about_index.html', context)
+    return render(request, 'about.html', context)
 
 def unit_tests(request):
 	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
