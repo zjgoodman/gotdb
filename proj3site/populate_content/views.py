@@ -30,9 +30,9 @@ def unit_tests(request):
 	return render_to_response('unit_tests.html', {'result': result})
 
 def person_index(request):
-    all_people = Person.objects.all()
-    context = {'all_people': all_people}
-    return render(request, 'person_index.html', context)
+    all_objects = Person.objects.all()
+    context = {'all_objects': all_objects, 'title': "People"}
+    return render(request, 'model_list.html', context)
 
 def person_detail(request, person_id):
     try:
@@ -45,9 +45,9 @@ def person_detail(request, person_id):
     return render(request, 'person_detail.html', context)
 
 def region_index(request):
-    all_regions = Region.objects.all()
-    context = {'all_regions': all_regions}
-    return render(request, 'region_index.html', context)
+    all_objects = Region.objects.all()
+    context = {'all_objects': all_objects, 'title': "Regions"}
+    return render(request, 'model_list.html', context)
 
 def region_detail(request, region_id):
     try:
@@ -62,9 +62,9 @@ def region_detail(request, region_id):
     return render(request, 'region_detail.html', context)
 
 def castle_index(request):
-    all_castles = Castle.objects.all()
-    context = {'all_castles': all_castles}
-    return render(request, 'castle_index.html', context)
+    all_objects = Castle.objects.all()
+    context = {'all_objects': all_objects, 'title': "Castles"}
+    return render(request, 'model_list.html', context)
 
 def castle_detail(request, castle_id):
     try:
@@ -78,9 +78,9 @@ def castle_detail(request, castle_id):
     return render(request, 'castle_detail.html', context)
 
 def house_index(request):
-    all_houses = House.objects.all()
-    context = {'all_houses': all_houses}
-    return render(request, 'house_index.html', context)
+    all_objects = House.objects.all()
+    context = {'all_objects': all_objects, 'title': "Houses"}
+    return render(request, 'model_list.html', context)
 
 def house_detail(request, house_id):
     try:
