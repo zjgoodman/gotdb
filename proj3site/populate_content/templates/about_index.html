@@ -40,42 +40,42 @@
 <body id="page-top">
 
    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
-            </div>
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+       </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
+           </li>
+         </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
     </nav>
 
     {% with 'img/author/header.jpg' as bg_img %}
@@ -104,10 +104,10 @@
                 <div class="col-md-8">
                   <p><div style="color:#000;text-align:left;margin-bottom:90px">
                     <p><b>Bio</b>: "{{ author.bio }}"</p>
-                    <p><b>Responsibilities</b>:        {{ author.responsibilities }}</p>
-                    <p><b>Number of commits</b>:       {{ author.num_commits }}</p>
-                    <p><b>Number of GitHub issues</b>: {{ author.num_issues }}</p>
-                    <p><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
+                    <p><b>Responsibilities</b>:         {{ author.responsibilities }}</p>
+					<p><br><b>Number of commits</b>:    {{ author.num_commits }}
+                    <br><b>Number of GitHub issues</b>: {{ author.num_issues }}
+                    <br><b>Number of unit tests</b>:    {{ author.num_unit_tests }}</p>
                   </div></p>
                 </div>
               </div>

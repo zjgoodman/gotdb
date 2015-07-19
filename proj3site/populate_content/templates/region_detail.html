@@ -79,7 +79,7 @@
 
   <body style="background-image: url();color:#000">
     <h1 class="blog-title">{{ region.name }}</h1>
-    <p class="lead blog-description">Ruled by {{ region.ruling_house }}</p>
+    <p class="lead blog-description">Ruled by <a href="/houses/{{ region.ruling_house.house_id }}/">{{ region.ruling_house }}</a></p>
 
     <div class="col-sm-8">
 

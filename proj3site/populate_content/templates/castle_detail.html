@@ -78,7 +78,7 @@
   <body style="background-image: url();color:#000">
 
     <h1 class="blog-title">{{ castle.name }}</h1>
-    <p class="lead blog-description">Occupied by {{ castle.ruling_house }}</p>
+    <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
 
     <div class="col-sm-8">
       <div>
