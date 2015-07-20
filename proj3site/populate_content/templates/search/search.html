@@ -60,6 +60,9 @@
             <li>
               <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
             </li>
+            <li>
+                <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
+            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -81,7 +84,7 @@
         </table>
 
         {% if query %}
-            <h3>Results</h3>
+            <h3>Results found for "{{query}}:"</h3>
 
             {% for result in page.object_list %}
 
