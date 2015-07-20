@@ -87,10 +87,10 @@
   
     <div class="blog-main">
       <div class="section-heading">
-        <h2 class="blog-post-title">Members</h2>
-        <div class="container-fluid">
-          <div class="row">
-            {% if people %}
+        {% if people %}
+          <h2 class="blog-post-title">Members</h2>
+          <div class="container-fluid">
+            <div class="row">
               {% for person in people %}
   
               {% if forloop.counter0|divisibleby:3 %}
@@ -114,17 +114,15 @@
               {% endif %}
   
               {% endfor %}
-            {% else %}
-              <p>No people are available.</p>
-            {% endif %}
+            </div>
           </div>
-        </div>
+        {% endif %}
 	  </div>
       <div class="section-heading">
-        <h2 class="blog-post-title">Castles</h2>
-        <div class="container-fluid">
-          <div class="row">
-            {% if castles %}
+        {% if castles %}
+          <h2 class="blog-post-title">Castles</h2>
+          <div class="container-fluid">
+            <div class="row">
               {% for castle in castles %}
   
               {% if forloop.counter0|divisibleby:2 %}
@@ -148,11 +146,9 @@
               {% endif %}
   
               {% endfor %}
-            {% else %}
-              <p><i>{{ house }} does not control any castles.</i></p>
-            {% endif %}
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
       <div class="section-heading">
         <h2 class="blog-post-title">Description</h2>
