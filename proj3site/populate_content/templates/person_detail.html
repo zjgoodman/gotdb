@@ -100,8 +100,8 @@
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
+      {% if person.houses.all %}
       <h2>Houses</h2>
-        {% if person.houses %}
           {% for house in person.houses.all %}
             <div class="container-fluid">
               <div class="row">
@@ -118,53 +118,47 @@
               </div>
             </div>
           {% endfor %}
-        {% else %}
-            <p>{{ person }} is not a member of a house.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-      <h2>Region</h2>
         {% if person.region_from %}
-        <div class="container-fluid">
-          <div class="row">
-            <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-              <h4 class="portfolio-box-caption">
-                {{ person.region_from }}
-              </h4>
-              {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                {% with 'img/header/filler_img.png' as filler_image %}
-                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+          <h2>Region</h2>
+          <div class="container-fluid">
+            <div class="row">
+              <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
+                <h4 class="portfolio-box-caption">
+                  {{ person.region_from }}
+                </h4>
+                {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                  {% with 'img/header/filler_img.png' as filler_image %}
+                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                  {% endwith %}
                 {% endwith %}
-              {% endwith %}
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        {% else %}
-          <p>No region information.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-      <h2>Castles</h2>
-      {% if castles %}
-        {% for castle in castles %}
-        <div class="container-fluid">
-          <div class="row">
-            <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-              <h4 class="portfolio-box-caption">
-                {{ castle }}
-              </h4>
-              {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                {% with 'img/header/filler_img.png' as filler_image %}
-                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+        {% if castles %}
+        <h2>Castles</h2>
+          {% for castle in castles %}
+          <div class="container-fluid">
+            <div class="row">
+              <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                <h4 class="portfolio-box-caption">
+                  {{ castle }}
+                </h4>
+                {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                  {% with 'img/header/filler_img.png' as filler_image %}
+                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                  {% endwith %}
                 {% endwith %}
-              {% endwith %}
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        {% endfor %}
-      {% else %}
-        <p>No castles.</p>
-      {% endif %}
+          {% endfor %}
+        {% endif %}
       </div>
       <div class="sidebar-module">
         <h2>About</h2>

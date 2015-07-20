@@ -151,10 +151,10 @@
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>Other Castles</h2>
-        <div class="container-fluid">
-          <div class="row">
-            {% if castles %}
+        {% if castles %}
+          <h2>Other Castles</h2>
+          <div class="container-fluid">
+            <div class="row">
               {% for castle in castles %}
 
               {% if forloop.counter|divisibleby:2 %}
@@ -180,11 +180,9 @@
               {% endif %}
 
               {% endfor %}
-            {% else %}
-              <p>There are no other castles in {{ region }}.</p>
-            {% endif %}
-          </div>
-	    </div>
+            </div>
+	      </div>
+        {% endif %}
 	  </div>
     </div><!-- /.blog-sidebar -->
   </body>
