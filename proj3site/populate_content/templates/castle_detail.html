@@ -145,14 +145,36 @@
       </div>
       <div class="sidebar-module">
         <h2>Ruling House</h2>
-          {% if castle.primary_house %}
+        {% if castle.primary_house %}
+        <div class="container-fluid">
+          <div class="row">
+            <a href="/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+              <h4 class="portfolio-box-caption">
+                {{ castle.primary_house }}
+              </h4>
+              {% with 'img/house/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
+                {% with 'img/header/filler_img.png' as filler_image %}
+                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                {% endwith %}
+              {% endwith %}
+            </a>
+          </div>
+        </div>
+        {% else %}
+          <p>{{ castle }} is not ruled by any house.</p>
+        {% endif %}
+      </div>
+      <div class="sidebar-module">
+        {% if castle.previous_houses %}
+        <h2>Related Houses</h2>
+          {% for house in castle.previous_houses.all %}
           <div class="container-fluid">
             <div class="row">
-              <a href="/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
+              <a href="/houses/{{ house.house_id }}/" class="portfolio-box">
                 <h4 class="portfolio-box-caption">
-                  {{ castle.primary_house }}
+                  {{ house }}
                 </h4>
-                {% with 'img/house/'|add:castle.primary_house.house_id|add:'.jpg' as image_static %}
+                {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
                   {% with 'img/header/filler_img.png' as filler_image %}
                     <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                   {% endwith %}
@@ -160,58 +182,40 @@
               </a>
             </div>
           </div>
-          {% else %}
-              <p>{{ castle }} is not ruled by any house.</p>
-          {% endif %}
-        </div>
-        <div class="sidebar-module">
-          {% if castle.previous_houses %}
-          <h2>Related Houses</h2>
-            {% for house in castle.previous_houses.all %}
-            <div class="container-fluid">
-              <div class="row">
-                <a href="/houses/{{ house.house_id }}/" class="portfolio-box">
-                  <h4 class="portfolio-box-caption">
-                    {{ house }}
-                  </h4>
-                  {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
-                    {% with 'img/header/filler_img.png' as filler_image %}
-                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                    {% endwith %}
-                  {% endwith %}
-                </a>
-              </div>
-            </div>
-            {% endfor %}
-          {% else %}
-            <p>No castles.</p>
-          {% endif %}
-		</div>
-      </div><!-- /.blog-sidebar -->
-    </div><!-- /.container -->
+          {% endfor %}
+        {% else %}
+          <p>No castles.</p>
+        {% endif %}
+	  </div>
+    </div><!-- /.blog-sidebar -->
+  </div><!-- /.container -->
 
-    <!-- jQuery -->
-    <script src="{% static "js/jquery.js" %}"></script>
+  <!-- jQuery -->
+  <script src="{% static "js/jquery.js" %}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="{% static "js/jquery.easing.min.js" %}"></script>
-    <script src="{% static "js/jquery.fittext.js" %}"></script>
-    <script src="{% static "js/wow.min.js" %}"></script>
+  <!-- Plugin JavaScript -->
+  <script src="{% static "js/jquery.easing.min.js" %}"></script>
+  <script src="{% static "js/jquery.fittext.js" %}"></script>
+  <script src="{% static "js/wow.min.js" %}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{% static "js/creative.js" %}"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="{% static "js/creative.js" %}"></script>
 
-    <!-- Bootstrap core JavaScript 
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  <!-- Bootstrap core JavaScript 
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
   </body>
+
+  <div class="col-sm-12 blog-footer">
+    Summer 2015 - Team Deadline is Coming
+  </div>
 </html>
 
 

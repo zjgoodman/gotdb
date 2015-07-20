@@ -119,50 +119,45 @@
             {% endif %}
           </div>
         </div>
-        <div class="section-heading">
-          <h2 class="blog-post-title">Castles</h2>
-          <div class="container-fluid">
-            <div class="row">
-              {% if castles %}
-                {% for castle in castles %}
+	  </div>
+      <div class="section-heading">
+        <h2 class="blog-post-title">Castles</h2>
+        <div class="container-fluid">
+          <div class="row">
+            {% if castles %}
+              {% for castle in castles %}
   
-                {% if forloop.counter0|divisibleby:2 %}
-                <div class="row">
-                {% endif %}
-  
-                  <div class="col-lg-6 col-sm-6">
-                    <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                      <h4 class="portfolio-box-caption">{{ castle }}</h4>
-                      
-                      {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                        {% with 'img/header/filler_img.png' as filler_image %}
-                          <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
-                        {% endwith %}
-                      {% endwith %}
-                    </a>
-                  </div>
-  
-                {% if forloop.counter|divisibleby:2 %}
-                </div>
-                {% endif %}
-  
-                {% endfor %}
-              {% else %}
-                <p><i>{{ house }} does not control any castles.</i></p>
+              {% if forloop.counter0|divisibleby:2 %}
+              <div class="row">
               {% endif %}
-            </div>
+  
+                <div class="col-lg-6 col-sm-6">
+                  <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                    <h4 class="portfolio-box-caption">{{ castle }}</h4>
+                    
+                    {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                      {% with 'img/header/filler_img.png' as filler_image %}
+                        <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
+                    {% endwith %}
+                  </a>
+                </div>
+  
+              {% if forloop.counter|divisibleby:2 %}
+              </div>
+              {% endif %}
+  
+              {% endfor %}
+            {% else %}
+              <p><i>{{ house }} does not control any castles.</i></p>
+            {% endif %}
           </div>
         </div>
-        <div class="section-heading">
-          <h2 class="blog-post-title">Description</h2>
-          <p>{{ description }}</p>
-        </div>
-        <div class="section-heading">
-          <h2 class="blog-post-title">Region</h2>
-        </div>
-        <div class="section-heading">
-          <h2 class="blog-post-title">History</h2>
-        </div>
+      </div>
+      <div class="section-heading">
+        <h2 class="blog-post-title">Description</h2>
+        <p>{{ description }}</p>
+      </div>
       </div><!-- /.blog-post -->
     </div><!-- /.blog-main -->
   
@@ -188,6 +183,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
   </body>
+  <div class="col-sm-12 blog-footer">
+    Summer 2015 - Team Deadline is Coming
+  </div>
 </html>
 
 

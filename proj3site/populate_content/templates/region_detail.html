@@ -85,25 +85,17 @@
     <p class="lead blog-description">Ruled by <a href="/houses/{{ region.ruling_house.house_id }}/">{{ region.ruling_house }}</a></p>
 
     <div class="col-sm-8">
-
-      <div>
-        {% with 'img/place/'|add:region.region_id|add:'.jpg' as image_static %}
-          {% with 'img/header/filler_img.png' as filler_image %}
-            <img src="{% static image_static %}" class="img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
-          {% endwith %}
+      {% with 'img/place/'|add:region.region_id|add:'.jpg' as image_static %}
+        {% with 'img/header/filler_img.png' as filler_image %}
+          <img src="{% static image_static %}" class="img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
         {% endwith %}
-      </div><!-- /.blog-post -->
-          
-      <div>
-        <h2 class="blog-post-title">Description</h2>
-        <p>{{ description }}</p>
-      </div><!-- /.blog-post -->
+      {% endwith %}
+        
+      <h2 class="blog-post-title">Description</h2>
+      <p>{{ description }}</p>
 
-      <div>
-        <h2 class="blog-post-title">History</h2>
-        <p>{{ history }}</p>
-      </div><!-- /.blog-post -->
-
+      <h2 class="blog-post-title">History</h2>
+      <p>{{ history }}</p>
     </div><!-- /.blog-main -->
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
@@ -159,39 +151,40 @@
         {% endif %}
       </div>
       <div class="sidebar-module">
-      <h2>Other Castles</h2>
-      <div class="container-fluid">
-        <div class="row">
-          {% if castles %}
-            {% for castle in castles %}
+        <h2>Other Castles</h2>
+        <div class="container-fluid">
+          <div class="row">
+            {% if castles %}
+              {% for castle in castles %}
 
-            {% if forloop.counter|divisibleby:2 %}
-            <div class="row">
-            {% endif %}
+              {% if forloop.counter|divisibleby:2 %}
+              <div class="row">
+              {% endif %}
 
-              <div class="col-lg-6 col-sm-6">
-                <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-                  <h4 class="portfolio-box-caption">
-                    {{ castle }}
-                  </h4>
-                  
-                  {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                    {% with 'img/header/filler_img.png' as filler_image %}
-                      <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                <div class="col-lg-6 col-sm-6">
+                  <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                    <h4 class="portfolio-box-caption">
+                      {{ castle }}
+                    </h4>
+                    
+                    {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                      {% with 'img/header/filler_img.png' as filler_image %}
+                        <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                      {% endwith %}
                     {% endwith %}
-                  {% endwith %}
-                </a>
+                  </a>
+                </div>
+
+              {% if forloop.counter|divisibleby:2 %}
               </div>
+              {% endif %}
 
-            {% if forloop.counter|divisibleby:2 %}
-            </div>
+              {% endfor %}
+            {% else %}
+              <p>There are no other castles in {{ region }}.</p>
             {% endif %}
-
-            {% endfor %}
-          {% else %}
-            <p>There are no other castles in {{ region }}.</p>
-          {% endif %}
-        </div>
+          </div>
+	    </div>
 	  </div>
     </div><!-- /.blog-sidebar -->
   </body>
@@ -218,6 +211,9 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
 </body>
+<div class="col-sm-12 blog-footer">
+  Summer 2015 - Team Deadline is Coming
+</div>
 </html>
 
 
