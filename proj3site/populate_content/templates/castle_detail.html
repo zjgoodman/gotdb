@@ -36,52 +36,62 @@
 
   <body id="page-top">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-          
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
-        </div>
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+       </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
             <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+              <div class="dark" style="color:#fff">
+                <form id="searchBox" action="/search" method="get">
+                  <span>
+                    <input type="text" class="search rounded" placeholder="Search..." name="q">
+                  </span>
+                </form>
+              </div>
             </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
-            </li>
-            <li>
-              <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
+           </li>
+         </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
     </nav>
   </body>
 
   <body style="background-image: url();color:#000">
 
     <h1 class="blog-title">{{ castle.name }}</h1>
-    <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
+    {% if castle.primary_house %}
+      <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
+    {% else %}
+      <p>&nbsp;</p>
+    {% endif %}
 
     <div class="col-sm-8">
       <div>
@@ -102,8 +112,8 @@
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
-        <h2>Region</h2>
         {% if castle.region_name %}
+        <h2>Region</h2>
         <div class="container-fluid">
           <div class="row">
             <a href="/regions/{{ castle.region_name.region_id }}/" class="portfolio-box">
@@ -118,13 +128,11 @@
             </a>
           </div>
         </div>
-        {% else %}
-          <p>No region information.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>Ruling Lord</h2>
         {% if castle.primary_lord %}
+        <h2>Ruling Lord</h2>
           <div class="container-fluid">
             <div class="row">
             <a href="/people/{{ castle.primary_lord.person_id }}/" class="portfolio-box">
@@ -139,13 +147,11 @@
             </a>
             </div>
           </div>
-        {% else %}
-            <p>{{ castle }} is not ruled by any lord.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>Ruling House</h2>
         {% if castle.primary_house %}
+        <h2>Ruling House</h2>
         <div class="container-fluid">
           <div class="row">
             <a href="/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
@@ -160,12 +166,10 @@
             </a>
           </div>
         </div>
-        {% else %}
-          <p>{{ castle }} is not ruled by any house.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-        {% if castle.previous_houses %}
+        {% if castle.previous_houses.all %}
         <h2>Related Houses</h2>
           {% for house in castle.previous_houses.all %}
           <div class="container-fluid">
@@ -183,8 +187,6 @@
             </div>
           </div>
           {% endfor %}
-        {% else %}
-          <p>No castles.</p>
         {% endif %}
 	  </div>
     </div><!-- /.blog-sidebar -->

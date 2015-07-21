@@ -11,6 +11,7 @@
 # search indexes
 *.seg
 proj3site/populate_content/whoosh_index/MAIN_WRITELOCK
+*.toc
 
 # cache
 *__pycache__/

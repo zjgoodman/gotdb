@@ -35,45 +35,51 @@
 
   <body id="page-top">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
-        </div>
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+       </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
             <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+              <div class="dark" style="color:#fff">
+                <form id="searchBox" action="/search" method="get">
+                  <span>
+                    <input type="text" class="search rounded" placeholder="Search..." name="q">
+                  </span>
+                </form>
+              </div>
             </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
-            </li>
-            <li>
-              <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
-            </li>
-            <li>
-              <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
+           </li>
+         </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
     </nav>
   </body>
 
@@ -100,8 +106,8 @@
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
+      {% if person.houses.all %}
       <h2>Houses</h2>
-        {% if person.houses %}
           {% for house in person.houses.all %}
             <div class="container-fluid">
               <div class="row">
@@ -118,53 +124,47 @@
               </div>
             </div>
           {% endfor %}
-        {% else %}
-            <p>{{ person }} is not a member of a house.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-      <h2>Region</h2>
         {% if person.region_from %}
-        <div class="container-fluid">
-          <div class="row">
-            <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
-              <h4 class="portfolio-box-caption">
-                {{ person.region_from }}
-              </h4>
-              {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
-                {% with 'img/header/filler_img.png' as filler_image %}
-                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+          <h2>Region</h2>
+          <div class="container-fluid">
+            <div class="row">
+              <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
+                <h4 class="portfolio-box-caption">
+                  {{ person.region_from }}
+                </h4>
+                {% with 'img/place/'|add:person.region_from.region_id|add:'.jpg' as image_static %}
+                  {% with 'img/header/filler_img.png' as filler_image %}
+                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                  {% endwith %}
                 {% endwith %}
-              {% endwith %}
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        {% else %}
-          <p>No region information.</p>
         {% endif %}
       </div>
       <div class="sidebar-module">
-      <h2>Castles</h2>
-      {% if castles %}
-        {% for castle in castles %}
-        <div class="container-fluid">
-          <div class="row">
-            <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
-              <h4 class="portfolio-box-caption">
-                {{ castle }}
-              </h4>
-              {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
-                {% with 'img/header/filler_img.png' as filler_image %}
-                  <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+        {% if castles %}
+        <h2>Castles</h2>
+          {% for castle in castles %}
+          <div class="container-fluid">
+            <div class="row">
+              <a href="/castles/{{ castle.castle_id }}/" class="portfolio-box">
+                <h4 class="portfolio-box-caption">
+                  {{ castle }}
+                </h4>
+                {% with 'img/place/'|add:castle.castle_id|add:'.jpg' as image_static %}
+                  {% with 'img/header/filler_img.png' as filler_image %}
+                    <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
+                  {% endwith %}
                 {% endwith %}
-              {% endwith %}
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        {% endfor %}
-      {% else %}
-        <p>No castles.</p>
-      {% endif %}
+          {% endfor %}
+        {% endif %}
       </div>
       <div class="sidebar-module">
         <h2>About</h2>
