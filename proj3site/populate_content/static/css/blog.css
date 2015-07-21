@@ -2,11 +2,26 @@
  * Globals
  */
 
+html, body {
+    height: 100%;
+}
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
 }
-
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -70px; 
+}
+.footer, .push {
+    height: 70px; 
+}
+.footer {
+    padding-left:10%;
+    padding-right:10%;
+}
 h1, .h1,
 h2, .h2,
 h3, .h3,
