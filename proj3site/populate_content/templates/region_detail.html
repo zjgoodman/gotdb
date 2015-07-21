@@ -104,10 +104,14 @@
       {% endwith %}
         
       <h2 class="blog-post-title">Description</h2>
+	  {% autoescape off %}
       <p>{{ description }}</p>
+	  {% endautoescape %}
 
       <h2 class="blog-post-title">History</h2>
+	  {% autoescape off %}
       <p>{{ history }}</p>
+	  {% endautoescape %}
     </div><!-- /.blog-main -->
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
