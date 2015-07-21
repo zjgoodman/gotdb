@@ -200,21 +200,12 @@ def all_houses_index(request):
     context = {'all_houses': all_houses}
     return render(request, 'all_houses_index.html', context)
 
-<<<<<<< HEAD
-def gotopaws(request):
-=======
 def all_pets_index(request):
->>>>>>> scott
     all_pets = Pets.objects.all()
     all_cities = Cities.objects.all()
     all_shelters = Shelter.objects.all()
     context = {'all_pets': all_pets, 'all_cities' : all_cities, 'all_shelters' : all_shelters}
-<<<<<<< HEAD
-    return render(request, 'gotopaws.html', context)
-=======
     return render(request, 'all_pets_index.html', context)
-
->>>>>>> scott
 
 #--------------------------------------------------------------------------------
 #                           API STUFF
