@@ -89,14 +89,14 @@
 
     {% with 'img/author/header.jpg' as bg_img %}
     <div class="title-section" style="padding-bottom:300px;background-image:url('{% static bg_img %}');background-size:cover;">
-      <h1 style="color:#fff">About the GoTDB</h1>
+      <h1 style="color:#fff" class='got'>About the GoTDB</h1>
       <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
     </div>
     {% endwith %}
   
     <div class="blog-main">
       <div class="section-heading">
-        <h2 class="blog-post-title" style="text-align:center">Authors</h2>
+        <h2 class="blog-post-title got" style="text-align:center">Authors</h2>
         <div class="container-fluid">
           <div class="row">
             {% if all_authors %}
@@ -122,19 +122,19 @@
               </div>
               {% endfor %}
             {% else %}
-              <p>No authors are available.</p>
+              <p class='got'>No authors are available.</p>
             {% endif %}
           </div>
         </div>
 		<div style="margin:40px">
 		</div>
-        <h2>External Links</h2>
+        <h2 class='got'>External Links</h2>
         <h3><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h3>
         <br><br>
-        <h2>Data Sources:</h2>
+        <h2 class='got'>Data Sources:</h2>
         <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
         <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>

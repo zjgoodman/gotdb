@@ -63,6 +63,13 @@ p {
         margin: auto;
     }
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/game_of_thrones.ttf');
+}
+.got {
+  font-family: myFirstFont;
+}
 .rounded { 
     border-radius:15px; 
     -moz-border-radius:15px; 
