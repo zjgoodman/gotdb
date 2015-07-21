@@ -8,7 +8,7 @@ from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from .models import Castle, Region, Person, House, Author
+from .models import Castle, Region, Person, House, Author, Pets, Shelter, Cities
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer
 
 from .models import Person, Region, Castle
@@ -200,6 +200,12 @@ def all_houses_index(request):
     context = {'all_houses': all_houses}
     return render(request, 'all_houses_index.html', context)
 
+def all_pets_index(request):
+    all_pets = Pets.objects.all()
+    all_cities = Cities.objects.all()
+    all_shelters = Shelter.objects.all()
+    context = {'all_pets': all_pets, 'all_cities' : all_cities, 'all_shelters' : all_shelters}
+    return render(request, 'all_pets_index.html', context)
 
 #--------------------------------------------------------------------------------
 #                           API STUFF

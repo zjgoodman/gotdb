@@ -75,9 +75,9 @@
      <!-- /.container-fluid -->
     </nav>
 
-    {% with 'img/author/other_group_header.jpg' as bg_img %}
+    {% with 'img/pets/background.jpeg' as bg_img %}
     <div class="title-section" style="background-image:url('{% static bg_img %}');">
-      <h1 style="color:#fff">About GoToPaws</h1>
+      <h1 style="color:#fff">Adopt a Pet</h1>
     </div>
     {% endwith %}
   
@@ -89,7 +89,7 @@
             {% if all_pets %}
               {% for pet in all_pets %}
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6">
                   {%with 'http://gotopaws.me/Dog_Rangel.html' as link%}
                   <a href="{{link}}" class="portfolio-box">
                   {%endwith%}
@@ -98,7 +98,7 @@
                     
                     {%endwith%}
 
-                  <h2 class="pet-name">{{ pet.pet_name }} </h2>
+                  <h2 class="pet-name portfolio-box-caption">{{ pet.pet_name }} </h2>
                 </div>
                 <div class="col-md-8">
                   <p><div style="color:#000;text-align:left;margin-bottom:90px">

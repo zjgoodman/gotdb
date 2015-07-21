@@ -56,6 +56,9 @@ class Person(models.Model) :
     def get_img(self):
         return "img/person/" + self.person_id + ".jpg"
 
+    def get_img_thumb(self):
+        return "img/person/thumb/" + self.person_id + ".jpg"
+
     class Meta:
         ordering = ('last_name', 'first_name')
 
@@ -103,6 +106,9 @@ class Region(models.Model) :
     def get_img(self):
         return "img/place/" + self.region_id + ".jpg"
 
+    def get_img_thumb(self):
+        return "img/place/thumb/" + self.region_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -147,6 +153,9 @@ class Castle(models.Model):
     def get_img(self):
         return "img/place/" + self.castle_id + ".jpg"
 
+    def get_img_thumb(self):
+        return "img/place/thumb/" + self.castle_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -190,6 +199,9 @@ class House(models.Model) :
 
     def get_img(self):
         return "img/house/" + self.house_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/house/thumb/" + self.house_id + ".jpg"
 
     class Meta:
         ordering = ('name',)

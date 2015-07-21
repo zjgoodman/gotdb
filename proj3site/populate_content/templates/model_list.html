@@ -96,7 +96,7 @@
                 <div class="col-lg-4 col-sm-6">
                   <a href="{{ object.get_url }}/" class="portfolio-box">
                     <h4 class="portfolio-box-caption">{{ object }}</h4>
-                    {% with object.get_img as image_static %}
+                    {% with object.get_img_thumb as image_static %}
                       {% with 'img/header/filler_img.png' as filler_image %}
                         <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
