@@ -121,12 +121,7 @@
                       CONTEXTUAL SEARCH RESULTS<br>
                       Etc etc etc<br>
                       more words and stuff<br>
-                      hello<br>
-                      {% for text in result.highlighted.text %}
-                        <blockquote>{% highlight text with query %}</blockquote>
-                      {% empty %}
-                        <p>No results found.</p>
-                      {% endfor %}
+                      found: {{ result.summary }}<br>
                   </div>
                 </div>
             {% empty %}
