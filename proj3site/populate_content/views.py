@@ -42,20 +42,20 @@ def person_detail(request, person_id):
 
     description = person.bio
     for h in House.objects.all():
-        regex = re.compile("%s" % str(h))
+        regex = re.compile("\\b%s\\b" % str(h))
         description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
 
     for p in Person.objects.all():
         if str(p) != str(person):
-            regex = re.compile("%s" % str(p))
+            regex = re.compile("\\b%s\\b" % str(p))
             description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
 
     for c in Castle.objects.all():
-        regex = re.compile("%s" % str(c))
+        regex = re.compile("\\b%s\\b" % str(c))
         description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
 
     for r in Region.objects.all():
-        regex = re.compile("%s" % str(r))
+        regex = re.compile("\\b%s\\b" % str(r))
         description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
 
     context = {'person'  : person,
@@ -77,23 +77,23 @@ def region_detail(request, region_id):
     description = region.description
     history     = region.history
     for h in House.objects.all():
-        regex = re.compile("%s" % str(h))
+        regex = re.compile("\\b%s\\b" % str(h))
         description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
         history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
 
     for p in Person.objects.all():
-        regex = re.compile("%s" % str(p))
+        regex = re.compile("\\b%s\\b" % str(p))
         description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
         history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
 
     for c in Castle.objects.all():
-        regex = re.compile("%s" % str(c))
+        regex = re.compile("\\b%s\\b" % str(c))
         description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
         history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
 
     for r in Region.objects.all():
         if r.name != region.name:
-            regex = re.compile("%s" % str(r))
+            regex = re.compile("\\b%s\\b" % str(r))
             history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
             description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
 
@@ -118,23 +118,23 @@ def castle_detail(request, castle_id):
     description = castle.description
     history     = castle.history
     for h in House.objects.all():
-        regex = re.compile("%s" % str(h))
+        regex = re.compile("\\b%s\\b" % str(h))
         description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
         history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
 
     for p in Person.objects.all():
-        regex = re.compile("%s" % str(p))
+        regex = re.compile("\\b%s\\b" % str(p))
         description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
         history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
 
     for c in Castle.objects.all():
         if c.name != castle.name:
-            regex = re.compile("%s" % str(c))
+            regex = re.compile("\\b%s\\b" % str(c))
             description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
             history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
 
     for r in Region.objects.all():
-        regex = re.compile("%s" % str(r))
+        regex = re.compile("\\b%s\\b" % str(r))
         history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
         description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
 
@@ -158,19 +158,19 @@ def house_detail(request, house_id):
     description = house.description
     for h in House.objects.all():
         if h.name != house.name:
-            regex = re.compile("%s" % str(h))
+            regex = re.compile("\\b%s\\b" % str(h))
             description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
 
     for p in Person.objects.all():
-        regex = re.compile("%s" % str(p))
+        regex = re.compile("\\b%s\\b" % str(p))
         description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
 
     for c in Castle.objects.all():
-        regex = re.compile("%s" % str(c))
+        regex = re.compile("\\b%s\\b" % str(c))
         description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
 
     for r in Region.objects.all():
-        regex = re.compile("%s" % str(r))
+        regex = re.compile("\\b%s\\b" % str(r))
         description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
 
     context = {'house'      : house, 
