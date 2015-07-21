@@ -76,18 +76,16 @@
      <!-- /.container-fluid -->
     </nav>
 
+    <header class="search-results">
     <h2>Search</h2>
 
-    <form method="get" action=".">
-        <table>
-            {{ form }}
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <input type="submit" value="Search">
-                </td>
-            </tr>
-        </table>
+    <div class="light">
+      <form id="searchBox" action="/search" method="get">
+        <span>
+          <input type="text" class="search rounded" placeholder="Search..." name="q"> 
+        </span>
+      </form>
+    </div>
 
         {% if query %}
             <h3>Results found for "{{query}}:"</h3>
@@ -129,6 +127,7 @@
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
     </form>
+</header>
 {% endblock %}
 
 <script src="{% static "js/jquery.js" %}"></script>
