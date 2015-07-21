@@ -39,8 +39,27 @@ def person_detail(request, person_id):
         person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
+
+    description = person.bio
+    for h in House.objects.all():
+        regex = re.compile("%s" % str(h))
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+
+    for p in Person.objects.all():
+        if str(p) != str(person):
+            regex = re.compile("%s" % str(p))
+            description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+
+    for c in Castle.objects.all():
+        regex = re.compile("%s" % str(c))
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+
+    for r in Region.objects.all():
+        regex = re.compile("%s" % str(r))
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'person'  : person,
-               'bio'     : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),
+               'bio'     : description,
                'castles' : person.castles_controlled.all(),}
     return render(request, 'person_detail.html', context)
 
@@ -54,10 +73,34 @@ def region_detail(request, region_id):
         region = Region.objects.get(region_id__exact=region_id)
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
+
+    description = region.description
+    history     = region.history
+    for h in House.objects.all():
+        regex = re.compile("%s" % str(h))
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+        history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
+
+    for p in Person.objects.all():
+        regex = re.compile("%s" % str(p))
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+        history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
+
+    for c in Castle.objects.all():
+        regex = re.compile("%s" % str(c))
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+        history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
+
+    for r in Region.objects.all():
+        if r.name != region.name:
+            regex = re.compile("%s" % str(r))
+            history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
+            description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'region'     : region,
                'castles'    : region.other_castles.all(),
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
-               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
+               'description': description,
+               'history'    : history,
               }
     return render(request, 'region_detail.html', context)
 
@@ -71,9 +114,33 @@ def castle_detail(request, castle_id):
         castle = Castle.objects.get(castle_id__exact=castle_id)
     except Castle.DoesNotExist:
         raise Http404("Castle does not exist :")
+
+    description = castle.description
+    history     = castle.history
+    for h in House.objects.all():
+        regex = re.compile("%s" % str(h))
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+        history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
+
+    for p in Person.objects.all():
+        regex = re.compile("%s" % str(p))
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+        history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
+
+    for c in Castle.objects.all():
+        if c.name != castle.name:
+            regex = re.compile("%s" % str(c))
+            description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+            history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
+
+    for r in Region.objects.all():
+        regex = re.compile("%s" % str(r))
+        history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'castle'     : castle,
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
-               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.history))),
+               'description': description,
+               'history': history,
               }
     return render(request, 'castle_detail.html', context)
 
@@ -87,9 +154,28 @@ def house_detail(request, house_id):
         house = House.objects.get(house_id__exact=house_id)
     except House.DoesNotExist:
         raise Http404("House does not exist :")
+
+    description = house.description
+    for h in House.objects.all():
+        if h.name != house.name:
+            regex = re.compile("%s" % str(h))
+            description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+
+    for p in Person.objects.all():
+        regex = re.compile("%s" % str(p))
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+
+    for c in Castle.objects.all():
+        regex = re.compile("%s" % str(c))
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+
+    for r in Region.objects.all():
+        regex = re.compile("%s" % str(r))
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'house'      : house, 
                'people'     : house.members.all(), 
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description))),
+               'description': description,
                'castles'    : house.castles_controlled.all(),}
 
     return render(request, 'house_detail.html', context)

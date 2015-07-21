@@ -98,7 +98,9 @@
         {% endwith %}
           
         <h2 class="blog-post-title">Description</h2>
+		{% autoescape off %}
         <p>{{ bio }}</p>
+		{% endautoescape %}
 
       </div><!-- /.blog-post -->
 
