@@ -85,7 +85,7 @@
 
   <body style="background-image: url();color:#000">
 
-    <h1 class="blog-title">{{ person }}</h1>
+    <h1 class="blog-title got">{{ person }}</h1>
     <p class="lead blog-description">{% if person.titles %}{{ person.titles }}{% else %}(no titles){% endif %}</p>
 
     <div class="col-sm-8">
@@ -97,7 +97,7 @@
         {% endwith %}
         {% endwith %}
           
-        <h2 class="blog-post-title">Description</h2>
+        <h2 class="blog-post-title got" style="font-size:40px">Description</h2>
 		{% autoescape off %}
         <p>{{ bio }}</p>
 		{% endautoescape %}
@@ -109,7 +109,7 @@
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
       {% if person.houses.all %}
-      <h2>Houses</h2>
+      <h4 class='got'>Houses</h4>
           {% for house in person.houses.all %}
             <div class="container-fluid">
               <div class="row">
@@ -130,7 +130,7 @@
       </div>
       <div class="sidebar-module">
         {% if person.region_from %}
-          <h2>Region</h2>
+          <h4 class='got'>Region</h4>
           <div class="container-fluid">
             <div class="row">
               <a href="/regions/{{ person.region_from.region_id }}/" class="portfolio-box">
@@ -149,7 +149,7 @@
       </div>
       <div class="sidebar-module">
         {% if castles %}
-        <h2>Castles</h2>
+        <h4 class='got'>Castles</h4>
           {% for castle in castles %}
           <div class="container-fluid">
             <div class="row">
@@ -169,7 +169,7 @@
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>About</h2>
+        <h4 class='got'>About</h4>
         <p>{{ person }} is played by {{ person.actor }}.</p>
         <p>{{ person.first_name }} is {{ person.status }}.</p>
       </div>

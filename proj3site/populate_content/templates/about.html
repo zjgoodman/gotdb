@@ -89,8 +89,8 @@
 
     {% with 'img/author/header.jpg' as bg_img %}
     <div class="title-section" style="padding-bottom:300px;background-image:url('{% static bg_img %}');background-size:cover;">
-      <h1 style="color:#fff" class='got'>About the GoTDB</h1>
-      <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
+      <h1 style="color:#fff" class='got'>About</h1>
+      <p class="lead blog-description"><i></i></p>
     </div>
     {% endwith %}
   
@@ -107,7 +107,7 @@
                     {% with 'img/header/filler_img.png' as filler_image %}
                       <img src="{% static image_static %}" class="author-img img-circle" onerror="this.src='{% static filler_image %}'" alt="">
                     {% endwith %}
-                  <h2 class="author-name">{{ author.first_name }} {{ author.last_name }}</h2>
+                  <h2 class="author-name got" style="font-size:20px">{{ author.first_name }} {{ author.last_name }}</h2>
                   {% endwith %}
                 </div>
                 <div class="col-md-8">
