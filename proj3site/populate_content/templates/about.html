@@ -56,24 +56,30 @@
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav navbar-right">
-           <li>
-             <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
-           </li>
-           <li>
-             <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
-           </li>
-           <li>
-             <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
-           </li>
-           <li>
-             <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
-           </li>
-           <li>
-             <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
-           </li>
             <li>
-              <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
+              <div class="dark" style="color:#fff">
+                <form id="searchBox" action="/search" method="get">
+                  <span>
+                    <input type="text" class="search rounded" placeholder="Search..." name="q">
+                  </span>
+                </form>
+              </div>
             </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="/about">About</a>
+           </li>
          </ul>
        </div>
        <!-- /.navbar-collapse -->
@@ -82,7 +88,7 @@
     </nav>
 
     {% with 'img/author/header.jpg' as bg_img %}
-    <div class="title-section" style="background-image:url('{% static bg_img %}');">
+    <div class="title-section" style="padding-bottom:300px;background-image:url('{% static bg_img %}');background-size:cover;">
       <h1 style="color:#fff">About the GoTDB</h1>
       <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
     </div>

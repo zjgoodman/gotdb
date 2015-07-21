@@ -1,1 +1,5 @@
 {{ object.name }}
+{{ object.words }}
+{{ object.castles_controlled }}
+{{ object.description }}
+{{ object.members }}
