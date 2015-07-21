@@ -102,11 +102,15 @@
         {% endwith %}
           
         <h2 class="blog-post-title">Description</h2>
+		{% autoescape off %}
         <p>{{ description }}</p>
+		{% endautoescape %}
       </div><!-- /.blog-post -->
       <div>
         <h2 class="blog-post-title">History</h2>
+		{% autoescape off %}
         <p>{{ history }}</p>
+		{% endautoescape %}
       </div><!-- /.blog-post -->
     </div><!-- /.blog-main -->
 

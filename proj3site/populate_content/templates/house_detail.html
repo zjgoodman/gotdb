@@ -158,7 +158,9 @@
       </div>
       <div class="section-heading">
         <h2 class="blog-post-title">Description</h2>
+		{% autoescape off %}
         <p>{{ description }}</p>
+		{% endautoescape %}
       </div>
       </div><!-- /.blog-post -->
     </div><!-- /.blog-main -->
