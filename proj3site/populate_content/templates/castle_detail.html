@@ -87,7 +87,11 @@
   <body style="background-image: url();color:#000">
 
     <h1 class="blog-title">{{ castle.name }}</h1>
-    <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
+    {% if castle.primary_house %}
+      <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
+    {% else %}
+      <p>&nbsp;</p>
+    {% endif %}
 
     <div class="col-sm-8">
       <div>

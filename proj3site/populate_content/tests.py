@@ -8,7 +8,7 @@ import json
 import requests
 from django.test import TestCase, Client
 from rest_framework.test import APIClient
-from .models import Person, Castle, Region, House
+from .models import Person, Castle, Region, House, Pets, Shelter, Cities
 from django.core.urlresolvers import reverse
 
 
@@ -40,6 +40,28 @@ class GOT_Tests (TestCase):
                                             capital_name=self.castleTest,
                                             ruling_house=self.houseTest,
                                             description='may the lord bless your soul')
+
+        self.city = Cities.objects.create(city_name="Austin",
+                                       city_country="US",
+                                       city_state="TX",
+                                       city_vet_url='www.yelp.com')
+
+        self.shelter = Shelter.objects.create(shelter_name="Austin Pets Alive",
+                                       shelter_hours="9 to 5",
+                                       shelter_state="TX",
+                                       shelter_city='Austin',
+                                       shelter_city_url=self.city)
+
+        self.pet = Pets.objects.create(pet_name="spot on the rug",
+                                       pet_age="Old",
+                                       pet_size="L",
+                                       pet_city='Chicago',
+                                       pet_city_url=self.city,
+                                       pet_shelter_url=self.shelter)
+
+
+
+
     """
     Testing the string method of each model
     """
@@ -79,6 +101,30 @@ class GOT_Tests (TestCase):
         self.assertEqual(self.castle.name, 'Castle Black')
         self.assertEqual(self.castle.__str__(), 'Castle Black')
 
+    def test_pet_names(self):
+        """
+        Testing pet names
+        check name matches output of __str__() method.
+        """
+        self.assertEqual(self.pet.pet_name, 'spot on the rug')
+        self.assertEqual(self.pet.__str__(), 'spot on the rug')
+
+    def test_shelter_names(self):
+        """
+        Testing shelter names
+        check name matches output of __str__() method.
+        """
+        self.assertEqual(self.shelter.shelter_name, 'Austin Pets Alive')
+        self.assertEqual(self.shelter.__str__(), 'Austin Pets Alive')
+
+    def test_city_names(self):
+        """
+        Testing castle names
+        check name matches output of __str__() method.
+        """
+        self.assertEqual(self.city.city_name, 'Austin')
+        self.assertEqual(self.city.__str__(), 'Austin')
+
     """
     Testing the builtin foreign key relations in each model
     """
@@ -116,6 +162,21 @@ class GOT_Tests (TestCase):
         check that each underlying model matches the expected output
         """
         self.assertEqual(self.house.words, "Winter is coming?")
+
+    def test_shelter_relations(self):
+        """
+        Testing shelter Model
+        check that each field matches the expected output
+        """
+        self.assertEqual(self.shelter.shelter_city_url.__str__(), 'Austin')
+
+    def test_pets_relations(self):
+        """
+        Testing pets Model
+        check that each field matches the expected output
+        """
+        self.assertEqual(self.pet.pet_city_url.__str__(), 'Austin')
+        self.assertEqual(self.pet.pet_shelter_url.__str__(), 'Austin Pets Alive')
 
 
 def make_person(p_id, first, last, description):
