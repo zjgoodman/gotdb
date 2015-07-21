@@ -93,49 +93,32 @@
         <h2 class="blog-post-title got" style="text-align:center">Pets</h2>
         <div class="container-fluid">
           <div class="row">
-
             {% for pet in all_pets %}
-                <div class="row">
-                  <div class="col-md-4" style="font-size:20px;float:none;margin:auto">
-                    <p><div style="color:#000;text-align:left;margin-bottom:90px">
-                      <div class="col-sm-6">
-                      <b>City</b>:
-                        {%with 'http://gotopaws.me/'|add:pet.pet_city_url as citylink%}
-                          <a href="{{citylink}}" class="portfolio-box">
-                            {{ pet.pet_city }} 
-                          </a>
-                        {%endwith%}
-                      </div>
-                      <div class="col-sm-6">
-                      <b>Shelter</b>:
-                        {%with 'http://gotopaws.me/'|add:pet.pet_shelter_url as shelterlink%}
-                          <a href="{{shelterlink}}" class="portfolio-box">
-                            {{ pet.pet_shelter }}
-                          </a>
-                        {%endwith%}
-                      </div>
-                    </div></p>
-                  </div>
-                </div>
-                {% if forloop.counter0|divisibleby:3 %}
-                <div class="row" style="padding-bottom:50px;border-bottom:solid 3px #e6e6e6">
-                {% endif %}
-                  <div class="col-md-4" style="float:none;margin:auto">
-                      {%with 'http://gotopaws.me/'|add:pet.pet_url as petlink%}
-                        <a href="{{petlink}}" class="portfolio-box">
-                      {%endwith%}
-                        <h2 class="portfolio-box-caption got">{{ pet.pet_name }} </h2>
-                        {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
-                          <img src="{{pic}}" class="img-responsive" alt="">
-                        {%endwith%}
-                        <h2 class="portfolio-box-caption">{{ pet.pet_breed }} </h2>
+              <div class="col-lg-4 col-sm-6" style="font-size:20px;margin:auto">
+                  <b>City</b>:
+                    {%with 'http://gotopaws.me/'|add:pet.pet_city_url as citylink%}
+                      <a href="{{citylink}}">
+                        {{ pet.pet_city }} 
                       </a>
-                  </div>
-                {% if forloop.counter|divisibleby:3 %}
-                </div>
-                {% endif %}
+                    {%endwith%}
+                  <br>
+                  <b>Shelter</b>:
+                    {%with 'http://gotopaws.me/'|add:pet.pet_shelter_url as shelterlink%}
+                      <a href="{{shelterlink}}">
+                        {{ pet.pet_shelter }}
+                      </a>
+                    {%endwith%}
+                  {%with 'http://gotopaws.me/'|add:pet.pet_url as petlink%}
+                    <a href="{{petlink}}" class="portfolio-box">
+                    <h2 class="portfolio-box-caption got">{{ pet.pet_name }} </h2>
+                    {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
+                      <img src="{{pic}}" class="img-responsive" alt="">
+                    {%endwith%}
+                    <h2 class="portfolio-box-caption">{{ pet.pet_breed }} </h2>
+                    </a>
+                  {%endwith%}
+              </div>
             {% endfor %}
-
           </div>
         </div>
     <div style="margin:40px">
