@@ -90,7 +90,11 @@
 
   <body style="background-image: url();color:#000">
     <h1 class="blog-title">{{ region.name }}</h1>
-    <p class="lead blog-description">Ruled by <a href="/houses/{{ region.ruling_house.house_id }}/">{{ region.ruling_house }}</a></p>
+    {% if region.ruling_house %}
+      <p class="lead blog-description">Ruled by <a href="/houses/{{ region.ruling_house.house_id }}/">{{ region.ruling_house }}</a></p>
+    {% else %}
+      <p>&nbsp;</p>
+    {% endif %}
 
     <div class="col-sm-8">
       {% with 'img/place/'|add:region.region_id|add:'.jpg' as image_static %}
