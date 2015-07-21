@@ -75,8 +75,8 @@ p {
 }
 .dark input[type=text]{
     border:1px solid #2a2e31;
-    background-color:#2d3035;
-    color:#FFFFFF;
+    background-color:#3d4045;
+    color:#FFFFFF; /* text color */
 }
 .search { 
     padding:6px 15px 6px 30px;
