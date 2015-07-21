@@ -75,8 +75,8 @@ p {
 }
 .dark input[type=text]{
     border:1px solid #2a2e31;
-    background-color:#3d4045;
-    color:#FFFFFF; /* text color */
+    background-color:#6e6e6e;
+    color:#FFFFFF;
 }
 .search { 
     padding:6px 15px 6px 30px;
@@ -527,10 +527,10 @@ fieldset[disabled] .btn-primary.active {
 
 .btn {
     border: 0;
-    border-radius: 300px;
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
+    height: 30px;
 }
 
 .btn-xl {
