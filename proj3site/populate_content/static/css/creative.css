@@ -78,9 +78,27 @@ p {
     background-color:#6e6e6e;
     color:#FFFFFF;
 }
+.light {
+    height:50px;
+    padding:10px;
+    margin-bottom:40px;
+    text-align: center;
+}
+.light input[type=text]{
+    border:1px solid #2a2e31;
+    background-color:#e6e6e6;
+    color:#000;
+    width: 300px;
+}
 .search { 
     padding:6px 15px 6px 30px;
     background: url('search.png') no-repeat 6px 2px; 
+}
+.search-results {
+  padding-left: 10%;
+  padding-right: 10%;
+  background-image:url();
+  color:#000;
 }
 .corner {
     position: absolute;
