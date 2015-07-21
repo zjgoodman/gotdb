@@ -83,14 +83,14 @@
 
     {% with 'img/pets/background.jpeg' as bg_img %}
     <div class="title-section" style="background-position:top;background-size:cover;background-image:url('{% static bg_img %}');">
-      <h1 style="color:#fff">Adopt a Pet!</h1>
-      <h3 style="color:#fff">Courtesy of <a href="http://gotopaws.me">GoToPaws</a></h3>
+      <h1 class="got" style="color:#fff">Adopt a Pet</h1>
+      <h4 class="got" style="color:#fff">Courtesy of <a href="http://gotopaws.me">GoToPaws</a></h4>
     </div>
     {% endwith %}
   
     <div class="blog-main">
       <div class="section-heading">
-        <h2 class="blog-post-title" style="text-align:center">Pets</h2>
+        <h2 class="blog-post-title got" style="text-align:center">Pets</h2>
         <div class="container-fluid">
           <div class="row">
             {% if all_pets %}
