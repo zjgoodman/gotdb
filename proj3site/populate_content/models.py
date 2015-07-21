@@ -327,7 +327,7 @@ class Pets(models.Model) :
         "pet_shelter",
         "pet_pic_large"
         "pet_pic_url"
-        "pet_url" NOT USING THIS ONE!!!!!!!!!!!!
+        "pet_url"
         "pet_age"
         "pet_sex"
         "pet_shelter_url"
@@ -347,10 +347,10 @@ class Pets(models.Model) :
     pet_breed           = models.CharField(max_length=200, null=True)
     pet_pic_url         = models.CharField(max_length=200, null=True)
     pet_pic_large       = models.CharField(max_length=200, null=True) #the picture is within bootstrap/img.
-
+    pet_url              = models.CharField(max_length=200, null=True)
     # Here is where things may need to change. not sure.
-    pet_city_url            = models.ForeignKey('Cities', null=True)
-    pet_shelter_url         = models.ForeignKey('Shelter', null=True)
+    pet_city_url            = models.CharField(max_length=200, null=True)
+    pet_shelter_url         = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.pet_name
