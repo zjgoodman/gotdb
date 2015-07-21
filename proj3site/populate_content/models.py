@@ -251,6 +251,11 @@ class Cities(models.Model) :
     city_groomer_url            = models.CharField(max_length=200, null=True)
     city_park_url             = models.CharField(max_length=200, null=True)
     city_name             = models.CharField(max_length=200, null=True)
+    city_pic             = models.CharField(max_length=200, null=True)
+    city_url             = models.CharField(max_length=200, null=True)
+    city_groomer_pic             = models.CharField(max_length=200, null=True)
+    city_vet_pic             = models.CharField(max_length=200, null=True)
+    city_park_pic             = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.city_name
@@ -278,7 +283,7 @@ class Shelter(models.Model) :
         "shelter_address"
         "shelter_name"
     """
-    shelter_id              = models.IntegerField(null=True)
+    shelter_id              = models.CharField(max_length=200, null=True)
     shelter_name            = models.CharField(max_length=200, null=True)
     shelter_city            = models.CharField(max_length=200, null=True)
     shelter_address            = models.CharField(max_length=200, null=True)
@@ -286,6 +291,8 @@ class Shelter(models.Model) :
     shelter_state             = models.CharField(max_length=2, null=True)
     shelter_phone           = models.CharField(max_length=200, null=True)
     shelter_email         = models.CharField(max_length=200, null=True)
+    shelter_url         = models.CharField(max_length=200, null=True)
+    shelter_pic         = models.CharField(max_length=200, null=True)
 
     # Here is where things may need to change. not sure.
     shelter_city_url            = models.ForeignKey('Cities', null=True)
@@ -318,7 +325,7 @@ class Pets(models.Model) :
         "pet_id"
         "pet_city"
     """
-    pet_id              = models.IntegerField(null=True)
+    pet_id              = models.CharField(max_length=200, null=True)
     pet_shelter         = models.CharField(max_length=200, null=True)
     pet_name            = models.CharField(max_length=200, null=True)
     pet_city            = models.CharField(max_length=200, null=True)
