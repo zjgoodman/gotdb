@@ -88,37 +88,37 @@
           <div class="row">
 
             {% for pet in all_pets %}
-              {% for shelter in all_shelters%}
-                {% for city in all_cities%}
                 <div class="row">
                   <div class="col-md-3">
-                      {%with 'http://gotopaws.me/Dog_Rangel.html' as petlink%}
+                      {%with 'http://gotopaws.me/'|add:pet.pet_url as petlink%}
                         <a href="{{petlink}}" class="portfolio-box">
                       {%endwith%}
                         <h2 class="portfolio-box-caption">{{ pet.pet_name }} </h2>
                         {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
                           <img src="{{pic}}" class="img-responsive" alt="">
                         {%endwith%}
+                        <h2 class="portfolio-box-caption">{{ pet.pet_breed }} </h2>
                       </a>
                     
                   </div>
                   <div class="col-md-8">
                     <p><div style="color:#000;text-align:left;margin-bottom:90px">
                       <b>City</b>:
-                        {%with 'http://gotopaws.me/'|add:city.city_url as citylink%}
+                        {%with 'http://gotopaws.me/'|add:pet.pet_city_url as citylink%}
                           <a href="{{citylink}}" class="portfolio-box">
-                            {{ city.city_name }} 
+                            {{ pet.pet_city }} 
                           </a>
                         {%endwith%}
-                      
+                      <b>Shelter</b>:
+                        {%with 'http://gotopaws.me/'|add:pet.pet_shelter_url as shelterlink%}
+                          <a href="{{shelterlink}}" class="portfolio-box">
+                            {{ pet.pet_shelter }}
+                          </a>
+                        {%endwith%}
 
                     </div></p>
                   </div>
                 </div>
-                {% endfor %}
-               
-              {% endfor %}
-             
             {% endfor %}
 
           </div>
