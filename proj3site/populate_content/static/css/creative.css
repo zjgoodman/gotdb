@@ -63,6 +63,42 @@ p {
         margin: auto;
     }
 }
+.rounded { 
+    border-radius:15px; 
+    -moz-border-radius:15px; 
+    -webkit-border-radius:15px; 
+}
+.dark {
+    width:95%;
+    height:50px;
+    padding:10px 25px;
+}
+.dark input[type=text]{
+    border:1px solid #2a2e31;
+    background-color:#2d3035;
+    color:#FFFFFF;
+}
+.search { 
+    padding:6px 15px 6px 30px;
+    background: url('search.png') no-repeat 6px 2px; 
+}
+.corner {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    z-index: 10;
+    border-radius: 10px;
+    border: none;
+    background: #000; /* Set the bg image here. with "no-repeat" */
+}
+
+.search {
+    position: relative;
+    width: 190px;
+    height: 30px;
+}
 .author-name {
     display: block;
     position:relative;
