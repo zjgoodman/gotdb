@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js">
+      </script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+
+    <script>
+    $(document).ready(function(){
+        $('#petTable').dataTable();
+    });
+
+    $(document).ready(function(){
+        $('#cityTable').dataTable();
+    });
+
+    $(document).ready(function(){
+        $('#shelterTable').dataTable();
+    });
+    </script>
+
+    <div class="table-responsive">      
+      <table id="petTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>city</th>
+            <th>age</th>
+            <th>size</th>
+            <th>sex</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for pet in all_pets %}
+          <tr>
+            <td> {{ pet.pet_name }}</td>
+            <td>{{ pet.pet_city }}</td>
+            <td>{{ pet.pet_age }}</td>
+            <td>{{ pet.pet_size }}</td>
+            <td>{{ pet.pet_sex }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-responsive">      
+      <table id="cityTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>Groomer</th>
+            <th>Park</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for city in all_cities %}
+          <tr>
+            <td> {{ city.city_name }}</td>
+            <td>{{ city.city_country }}</td>
+            <td>{{ city.city_state }}</td>
+            <td>{{ city.city_groomer_url }}</td>
+            <td>{{ city.city_park_url }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-responsive">      
+      <table id="shelterTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Address</th>
+            <th>Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for shelter in all_shelters %}
+          <tr>
+            <td> {{ shelter.shelter_name }}</td>
+            <td>{{ shelter.shelter_city }}</td>
+            <td>{{ shelter.shelter_state }}</td>
+            <td>{{ shelter.shelter_address }}</td>
+            <td>{{ shelter.shelter_hours }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
