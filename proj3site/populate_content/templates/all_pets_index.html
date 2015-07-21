@@ -1,4 +1,159 @@
 <!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Game of Thrones</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{% static "css/animate.min.css" %}" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}" type="text/css">
+
+
+</head>
+
+<body id="page-top">
+
+   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #222">
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+       </div>
+
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../people">People</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../castles">Castles</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../regions">Regions</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../houses">Houses</a>
+           </li>
+           <li>
+             <a class="navbar-brand page-scroll" style="color:#fff" href="../about">About</a>
+           </li>
+            <li>
+              <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
+            </li>
+         </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
+    </nav>
+
+    {% with 'img/author/other_group_header.jpg' as bg_img %}
+    <div class="title-section" style="background-image:url('{% static bg_img %}');">
+      <h1 style="color:#fff">About GoToPaws</h1>
+    </div>
+    {% endwith %}
+  
+    <div class="blog-main">
+      <div class="section-heading">
+        <h2 class="blog-post-title" style="text-align:center">Pets</h2>
+        <div class="container-fluid">
+          <div class="row">
+            {% if all_pets %}
+              {% for pet in all_pets %}
+              <div class="row">
+                <div class="col-md-4">
+                  {%with 'http://gotopaws.me/Dog_Rangel.html' as link%}
+                  <a href="{{link}}" class="portfolio-box">
+                  {%endwith%}
+                    {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
+                    <img src="{{pic}}" class="img-responsive" alt="">
+                    
+                    {%endwith%}
+
+                  <h2 class="pet-name">{{ pet.pet_name }} </h2>
+                </div>
+                <div class="col-md-8">
+                  <p><div style="color:#000;text-align:left;margin-bottom:90px">
+                    <p><b>City</b>: "{{ pet.pet_city }}"</p>
+
+                  </div></p>
+                </div>
+              </div>
+              {% endfor %}
+            {% else %}
+              <p>No pets are available.</p>
+            {% endif %}
+          </div>
+        </div>
+    <div style="margin:40px">
+    </div>
+       <!--  <h2>External Links</h2>
+        <h3><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h3>
+        <br><br>
+        <h2>Data Sources:</h2>
+        <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
+        <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
+        <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
+      <br><br>
+        <h3><a href="unit_tests/">Click to Run Unit Tests!</a></h3>
+      <br><br><br> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="{% static "js/jquery.js" %}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static "js/jquery.easing.min.js" %}"></script>
+  <script src="{% static "js/jquery.fittext.js" %}"></script>
+  <script src="{% static "js/wow.min.js" %}"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="{% static "js/creative.js" %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -102,4 +257,4 @@
     </div>
 
   </body>
-</html>
+</html> -->
