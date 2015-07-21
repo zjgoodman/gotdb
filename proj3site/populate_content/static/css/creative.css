@@ -81,6 +81,7 @@ p {
 .light {
     height:50px;
     padding:10px;
+    margin-bottom:40px;
     text-align: center;
 }
 .light input[type=text]{
