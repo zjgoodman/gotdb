@@ -15,13 +15,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <style>
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-        width: 70%;
-        margin: auto;
-    }
-    </style>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
@@ -36,6 +29,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/carousel.css" %}" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -98,7 +92,7 @@
       <h1 class='got'># <div style="display:inline;font-size:48px">Database</div></h1>
       <h3><i>Spoilers are coming.</i></h3>
 
-      <div class="container" style="width:45%">
+      <div class="container">
         <p>&nbsp;</p>
         <h4 class="got">Featured Today</h4>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -118,49 +112,49 @@
 
             <div class="item active">
               <a href="/castles/kings_landing">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">King's Landing</h4>
+                <h4 class="carousel-caption got">King's Landing</h4>
                 <img src="{% static "img/place/kings_landing.jpg" %}" style="width:100%" alt="kings_landing.jpg">
               </a>
             </div>
           
             <div class="item">
               <a href="/people/eddard_stark">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Eddard Stark</h4>
+                <h4 class="carousel-caption got">Eddard Stark</h4>
                 <img src="{% static "img/person/eddard_stark.jpg" %}" alt="eddard_stark.jpg" style="width:100%">
               </a>
             </div>
 
             <div class="item">
               <a href="/people/robert_baratheon">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Robert Baratheon</h4>
+                <h4 class="carousel-caption got">Robert Baratheon</h4>
                 <img src="{% static "img/person/robert_baratheon.jpg" %}" alt="robert_baratheon.jpg" style="width:100%">
               </a>
             </div>
 
             <div class="item">
               <a href="/people/daenerys_targaryen">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Daenerys Targaryen</h4>
+                <h4 class="carousel-caption got">Daenerys Targaryen</h4>
                 <img src="{% static "img/person/daenerys_targaryen.jpg" %}" alt="daenerys_targaryen.jpg" style="width:100%">
               </a>
             </div>
 
             <div class="item">
               <a href="/people/jon_snow">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Jon Snow</h4>
+                <h4 class="carousel-caption got">Jon Snow</h4>
                 <img src="{% static "img/person/jon_snow.jpg" %}" alt="jon_snow.jpg" style="width:100%">
               </a>
             </div>
 
             <div class="item">
               <a href="/people/tyrion_lannister">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Tyrion Lannister</h4>
+                <h4 class="carousel-caption got">Tyrion Lannister</h4>
                 <img src="{% static "img/person/tyrion_lannister.jpg" %}" alt="tyrion_lannister.jpg" style="width:100%">
               </a>
             </div>
 
             <div class="item">
               <a href="/castles/winterfell">
-                <h4 class="carousel-caption got" style="font-size:30px;padding-bottom:40px">Winterfell</h4>
+                <h4 class="carousel-caption got">Winterfell</h4>
                 <img src="{% static "img/place/winterfell.jpg" %}" alt="winterfell.jpg" style="width:100%">
               </a>
             </div>
