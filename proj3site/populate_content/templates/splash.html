@@ -97,6 +97,58 @@
     <header>
       <h1>GoTDB</h1>
       <h3><i>Spoilers are coming.</i></h3>
+
+      <div class="container">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+              <a href="/people/eddard_stark">
+                <img src="{% static "img/person/eddard_stark.jpg" %}" alt="Chania" width="460" height="345">
+              </a>
+            </div>
+
+            <div class="item">
+              <a href="/people/daenarys_targaryen">
+                <img src="{% static "img/person/daenerys_targaryen.jpg" %}" alt="Chania" width="460" height="345">
+              </a>
+            </div>
+          
+            <div class="item">
+              <a href="/regions">
+                <img src="{% static "img/header/regions.jpg" %}" alt="Flower" width="460" height="345">
+              </a>
+            </div>
+
+            <div class="item">
+              <a href="/castles">
+                <img src="{% static "img/header/castles.jpg" %}" alt="Flower" width="460" height="345">
+              </a>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
       <div class="container-fluid splash-menu">
         <div class="row">
           <div class="col-lg-6 col-sm-6">
@@ -128,61 +180,6 @@
         </div>
       </div>
     </header>
-
-    <body>
-
-      <div class="container">
-        <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-            <div class="item active">
-              <a href="/people">
-                <img src="{% static "img/header/people.jpg" %}" alt="Chania" width="460" height="345">
-              </a>
-            </div>
-
-            <div class="item">
-              <a href="/houses">
-                <img src="{% static "img/header/sigils.jpg" %}" alt="Chania" width="460" height="345">
-              </a>
-            </div>
-          
-            <div class="item">
-              <a href="/regions">
-                <img src="{% static "img/header/regions.jpg" %}" alt="Flower" width="460" height="345">
-              </a>
-            </div>
-
-            <div class="item">
-              <a href="/castles">
-                <img src="{% static "img/header/castles.jpg" %}" alt="Flower" width="460" height="345">
-              </a>
-            </div>
-          </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-
-    </body>
 
     <!-- jQuery -->
     <script src="{% static "js/jquery.js" %}"></script>
