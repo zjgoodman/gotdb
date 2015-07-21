@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en">
 {% load staticfiles %}
 {% block content %}
 
@@ -24,6 +25,7 @@
   
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}" type="text/css">
   
   </head>
 
@@ -76,27 +78,30 @@
      <!-- /.container-fluid -->
     </nav>
 
+    <header class="search-results">
     <h2>Search</h2>
 
-    <form method="get" action=".">
-        <table>
-            {{ form }}
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <input type="submit" value="Search">
-                </td>
-            </tr>
-        </table>
+    <div class="light">
+      <form id="searchBox" action="/search" method="get">
+        <span>
+          <input type="text" class="search rounded" placeholder="Search..." name="q"> 
+        </span>
+      </form>
+    </div>
 
         {% if query %}
-            <h3>Results found for "{{query}}:"</h3>
+            <h4 style="text-align:left">Search results for "{{query}}":</h4>
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
 
             {% for result in page.object_list %}
 
-                {% if forloop.counter0|divisibleby:3 %}
-                <div class="row">
-                {% endif %}
+                <div class="row" style="border-top:solid 3px #e6e6e6;padding-top:20px">
                   <div class="col-lg-4 col-sm-6">
                     <div class="portfolio-box-caption">
                       <a href="{{ result.object.get_url }}/" class="portfolio-box">
@@ -109,11 +114,13 @@
                       </div>
                     </a>
                   </div>
-                {% if forloop.counter|divisibleby:3 %}
+                  <div class="col-lg-8 col-sm-6" style="text-align:left">
+                      CONTEXTUAL SEARCH RESULTS<br>
+                      Etc etc etc<br>
+                      more words and stuff<br>
+                      hello<br>
+                  </div>
                 </div>
-                {% endif %}
-
-
             {% empty %}
                 <p>No results found.</p>
             {% endfor %}
@@ -129,6 +136,7 @@
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
     </form>
+  </header>
 {% endblock %}
 
 <script src="{% static "js/jquery.js" %}"></script>
@@ -143,3 +151,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{% static "js/creative.js" %}"></script>
+</body>
+<div class="col-sm-12 blog-footer">
+Summer 2015 - Team Deadline is Coming
+</div>
+</html>
