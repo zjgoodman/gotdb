@@ -117,11 +117,11 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col-lg-8 col-sm-6" style="text-align:left">
-                      CONTEXTUAL SEARCH RESULTS<br>
-                      Etc etc etc<br>
-                      more words and stuff<br>
-                      found: {{ result.summary }}<br>
+                  <div class="col-lg-8 col-sm-6" style="text-align:left" >
+                    {%autoescape off %}
+                      {% highlight result.get_stored_fields.text with query max_length 2000 %}
+                      <br>
+                    {%endautoescape%}
                   </div>
                 </div>
             {% empty %}
