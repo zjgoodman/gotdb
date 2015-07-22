@@ -46,7 +46,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+         <a class="navbar-brand page-scroll" href="/">GoTDB</a>
        </div>
 
        <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,7 +85,7 @@
 
 
     <header>
-      <h1>{{title}}</h1>
+      <h1 class='got'>{{title}}</h1>
       <div class="container-fluid">
         <div class="row">
           {% if all_objects %}
@@ -96,7 +96,7 @@
                 <div class="col-lg-4 col-sm-6">
                   <a href="{{ object.get_url }}/" class="portfolio-box">
                     <h4 class="portfolio-box-caption">{{ object }}</h4>
-                    {% with object.get_img as image_static %}
+                    {% with object.get_img_thumb as image_static %}
                       {% with 'img/header/filler_img.png' as filler_image %}
                         <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}

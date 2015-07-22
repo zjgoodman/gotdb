@@ -46,7 +46,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+         <a class="navbar-brand page-scroll" href="/">GoTDB</a>
        </div>
 
        <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,7 +86,7 @@
 
   <body style="background-image: url();color:#000">
 
-    <h1 class="blog-title">{{ castle.name }}</h1>
+    <h1 class="blog-title got">{{ castle.name }}</h1>
     {% if castle.primary_house %}
       <p class="lead blog-description">Occupied by <a href="/houses/{{ castle.primary_house.house_id }}/">{{ castle.primary_house }}</a></p>
     {% else %}
@@ -101,19 +101,23 @@
           {% endwith %}
         {% endwith %}
           
-        <h2 class="blog-post-title">Description</h2>
+        <h2 class="blog-post-title got" style="font-size:40px">Description</h2>
+		{% autoescape off %}
         <p>{{ description }}</p>
+		{% endautoescape %}
       </div><!-- /.blog-post -->
       <div>
-        <h2 class="blog-post-title">History</h2>
+        <h2 class="blog-post-title got" style="font-size:40px">History</h2>
+		{% autoescape off %}
         <p>{{ history }}</p>
+		{% endautoescape %}
       </div><!-- /.blog-post -->
     </div><!-- /.blog-main -->
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
         {% if castle.region_name %}
-        <h2>Region</h2>
+        <h4 class='got'>Region</h2>
         <div class="container-fluid">
           <div class="row">
             <a href="/regions/{{ castle.region_name.region_id }}/" class="portfolio-box">
@@ -132,7 +136,7 @@
       </div>
       <div class="sidebar-module">
         {% if castle.primary_lord %}
-        <h2>Ruling Lord</h2>
+        <h4 class='got'>Lord</h2>
           <div class="container-fluid">
             <div class="row">
             <a href="/people/{{ castle.primary_lord.person_id }}/" class="portfolio-box">
@@ -151,7 +155,7 @@
       </div>
       <div class="sidebar-module">
         {% if castle.primary_house %}
-        <h2>Ruling House</h2>
+        <h4 class='got'>Ruling House</h2>
         <div class="container-fluid">
           <div class="row">
             <a href="/houses/{{ castle.primary_house.house_id }}/" class="portfolio-box">
@@ -170,7 +174,7 @@
       </div>
       <div class="sidebar-module">
         {% if castle.previous_houses.all %}
-        <h2>Related Houses</h2>
+        <h4 class='got'>Related Houses</h2>
           {% for house in castle.previous_houses.all %}
           <div class="container-fluid">
             <div class="row">

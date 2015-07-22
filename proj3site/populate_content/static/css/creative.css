@@ -4,6 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
 html,
 body {
     width: 100%;
@@ -52,7 +53,7 @@ p {
 }
 .splash-menu {
     display: block;
-    margin: 50px 15%;
+    margin: 50px 15% 50px 15%;
 }
 /* 
  * For mobile view:
@@ -63,6 +64,18 @@ p {
         margin: auto;
     }
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/game_of_thrones.ttf');
+}
+.got {
+  font-family: myFirstFont;
+}
+
+.highlighted{
+    background:yellow;
+}
+
 .rounded { 
     border-radius:15px; 
     -moz-border-radius:15px; 
