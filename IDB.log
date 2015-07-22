@@ -1,3 +1,1365 @@
+commit 2fd015b92b66bb65ec7f140e023008f52a221e49
+Merge: ac9c085 101e089
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 21:23:55 2015 -0500
+
+    Merge branch 'dev'
+
+commit 101e08981df2e8188753435b68b30d4b76497e8d
+Merge: 27ee8db 214f5c0
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 21:21:45 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit 214f5c01af642448d92b411b4345b0a397d37830
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 21:21:17 2015 -0500
+
+    log and pet json
+
+commit 27ee8dbab3e8f0918c5d9f40e139b1a372430d5b
+Merge: 730f81b 9f89af7
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 21:16:00 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 730f81b36e68fec5e8b6f35305b6d04b698c4858
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 21:10:36 2015 -0500
+
+    updated coverage
+
+commit 9f89af75cdc2376c7f0029c0411a5109e7a0a32a
+Merge: 900b7ba 6d5fe03
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 21:08:47 2015 -0500
+
+    Merge branch 'lucas' into zach
+
+commit cb61d3519ffb0f9a5a8996afb2f502f0a234621e
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 21:04:15 2015 -0500
+
+    fixed links on other groups api page
+
+commit f70e7a0ba1521695155d8b62f98d519b2a20302b
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 20:41:25 2015 -0500
+
+    OTHER GROUP'S API IMPLEMENTED
+
+commit 119a4acc9695929a67285e06e27691141d64a962
+Merge: ace9242 6d5fe03
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 20:40:59 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit 39679b30a73c980ec6b30f6bfb1c303cb71f81c1
+Merge: 9802f86 6d5fe03
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 20:29:46 2015 -0500
+
+    Merge branch 'lucas' into scott
+
+commit 6d5fe0380a41e5b67649fb57d1dd70891191c78f
+Merge: 5a583b0 7dd4edd
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 21 20:11:03 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit 5a583b07515934c86aaff0c26e7f898846f1aea5
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 21 20:10:54 2015 -0500
+
+    added context hightlight search
+
+commit ace92427cf0f773177099f805af322015f79b31c
+Merge: 7dd4edd 900b7ba
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 19:28:32 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 7dd4edd11d77f38429796eac537757c538781c53
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 19:28:14 2015 -0500
+
+    added github totals to about page
+
+commit 900b7ba81af2ac2f0dc00b1462f5d447ae01ef2e
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 19:27:24 2015 -0500
+
+    added pets
+
+commit 375045f10e3f715137d67c6624682393d96591cb
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 18:41:20 2015 -0500
+
+    splash!
+
+commit 577c194cd312b1721b2c136db74a185781de3b42
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 18:09:42 2015 -0500
+
+    carousel formatted, works on mobile too
+
+commit 13043f877b6841b518f9d2fac10cc793ae9d8cd6
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 17:42:38 2015 -0500
+
+    gotopaws.html finished
+
+commit 1a2965faa82afd8c17bb670a481cb60bc016a2b0
+Merge: 2fb719c e2977f8
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 17:20:13 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit e2977f8249aaa7dff478477bfbe6a733dfee7318
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 17:07:13 2015 -0500
+
+    fixes for style
+
+commit 63d1a0324f7d2dbdcc53ae97a451b98932351868
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 17:03:57 2015 -0500
+
+    added 404 and 500
+
+commit 2fb719c587260b584f5a6f884c567097ab00d0ac
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 21 16:43:50 2015 -0500
+
+    some places scaled
+
+commit 9802f86c44e803565f23369d0ee3ead3ffa5b17c
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 16:24:37 2015 -0500
+
+    removed relations tests for pets
+
+commit 388c4ceed31e1c1f542e51eb3922bd9d83e66db0
+Merge: 76224bd d4e1bd2
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 16:19:25 2015 -0500
+
+    Merge branch 'scott' into zach
+
+commit 6a43771ce1455edc892c13d0d05216b155ecb11d
+Merge: 76224bd d4e1bd2
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 16:17:44 2015 -0500
+
+    Merge branch 'scott' into matt
+
+commit 76224bd9466aa80eb304a3316b22e031af3b268a
+Merge: 37a913f d111d65
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 16:12:02 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 37a913f0a8eb008aeb49cafa724a9f322d5906c7
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 16:11:37 2015 -0500
+
+    splash edits
+
+commit d4e1bd2d7693eec6a3f2e44c95fc9e8684e8767c
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Tue Jul 21 16:08:33 2015 -0500
+
+    modified all pets pages, still a little bare
+
+commit cacb5d39f7a6e65be8234b334da017b3fc353a72
+Merge: adc707f 9d58e87
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 15:59:43 2015 -0500
+
+    Merge branch 'scott' of https://github.com/zjg95/cs373-idb into scott
+
+commit adc707fdffaaf01248f38fd7cfe065a346d6b7d3
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 15:59:21 2015 -0500
+
+    updated models to include urls
+
+commit d111d658204d982b6eb3799f45bc32320b28abb5
+Merge: 56e59b7 7f3e628
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:55:11 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit 7f3e62898ac498868eaf4a97252dd89897c2f88b
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:53:54 2015 -0500
+
+    style
+
+commit 56e59b732c886bcabfbf4659beee157953b7eb94
+Merge: d1f4bb1 81f5e76
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:51:42 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit d1f4bb1d579712d2f4182d47b31ad10e83e48c38
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:50:24 2015 -0500
+
+    the fonts have been deployed
+
+commit 9d58e8748bac644793cb9f431a49aab9f095a89c
+Merge: fede9ae 5d5b37a
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 21 15:25:25 2015 -0500
+
+    Merge branch 'scott' of https://github.com/zjg95/cs373-idb into scott
+
+commit fede9ae6188aac4503ed761ca9aa81588ea12533
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 21 15:24:57 2015 -0500
+
+    messing with all pets
+
+commit a8bddee8adb0fe3f677ffeca58ac16682f41d5e2
+Merge: 446f125 57bdc40
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:23:22 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 57bdc40a0c444492156646b772c61f763dc77d65
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:22:34 2015 -0500
+
+    applied font
+
+commit 5d5b37a7b0f2b25fe50429e9c8798adc3efea78b
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 15:16:11 2015 -0500
+
+    updated pets to include url
+
+commit 446f12594b50ed0401552fc2f594ac43ab3e9ea0
+Merge: 81f5e76 55b5871
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:16:01 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 81f5e76e328841e662ebdb72f3b494e7d78dfa80
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:15:48 2015 -0500
+
+    pulling from zach
+
+commit 55b58717bc90b484db641fbf95a5d1fd8c82dbb7
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:14:41 2015 -0500
+
+    added badass font
+
+commit 2921cae373b595bf636605d8a09ea4575639ad00
+Merge: 7bc5d53 83ea230
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:02:39 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 7bc5d534ecbfef8ee89590e4bd73881f2e255ffe
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 15:02:24 2015 -0500
+
+    commit to merge with zach
+
+commit 83ea230961c221c56231d955b34c03dc744cd806
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 15:01:53 2015 -0500
+
+    updated about page
+
+commit 07c63ec1e30b040967fa595d5862ac92d5099112
+Merge: 56a9a4a 55e0a25
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 14:56:33 2015 -0500
+
+    merging
+
+commit 55e0a25f19d96a5c710638a865f83690550df22a
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 14:53:56 2015 -0500
+
+    merged with dev
+
+commit baa4464d30cc5dd58ed5f1410ec8293809d81f40
+Merge: 3175498 f3aabd2
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 21 14:52:54 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into scott
+
+commit 56a9a4aa25d420945e16148305f00f9b29009324
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 14:46:09 2015 -0500
+
+    updated gotopaws url
+
+commit e8363eef2b5b5631eac67ed09eef4f9b80b98c87
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 14:31:52 2015 -0500
+
+    modified html pages. everything is looking pretty
+
+commit 9e1a9f795f3e3959377f557d7084e168243f1ef8
+Merge: 0378553 caa2599
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 13:43:13 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit 03785538c000e9c29b7ba46398022ce87c550c55
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 13:42:17 2015 -0500
+
+    updated carousel
+
+commit caa2599eda2c6f8cb5993dee1b1b999eb03a717d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 12:24:29 2015 -0500
+
+    fixed a small bug in the link-parsing regex
+
+commit b3754768714bd7a9d658950a8035837abe3e8983
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 12:09:23 2015 -0500
+
+    created thumbnail images for index pages
+
+commit e215d2e52be39b14d8b0e57fbea210d7fc776233
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 12:09:13 2015 -0500
+
+    created thumbnail images for index pages
+
+commit fc6c2e563540bf31828ecce07b773c4f64778064
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 02:05:37 2015 -0500
+
+    in all descriptions and histories, every mention of every person, castle, region, or house by name is now a link to that page
+
+commit 7de397962ab0664a083cc9413fb5efe6d8fe0199
+Merge: 7c49ecf f3aabd2
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 21 02:04:25 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit d734979e9c29786aa7343faaf7aad7ac59675576
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 01:39:35 2015 -0500
+
+    added carousel
+
+commit f3aabd2e14f1723f76ebd552ffe62590ac894e88
+Merge: 9afe026 205bc6f
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 01:04:28 2015 -0500
+
+    merge dev with zach
+
+commit 205bc6f801f8e1e5b1b1d0fb8ec654c7905f528e
+Merge: 2ec6daf 0e2e5e4
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 01:03:23 2015 -0500
+
+    merge with matt
+
+commit 9afe026f26b0183d640dfe3af9e2cf10b51fca86
+Author: User <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 05:57:56 2015 +0000
+
+    removed toc
+
+commit 75906bf371647e48632b93630eb3db01fbeeade0
+Merge: af77838 2ec6daf
+Author: User <zjgoodman@utexas.edu>
+Date:   Tue Jul 21 05:56:06 2015 +0000
+
+    merge with zach
+
+commit 2ec6dafa0447dfe8168d409a06bf03021a9c959e
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 23:41:05 2015 -0500
+
+    working on #91
+
+commit ca41770817d298df773b0fcd04c45a46e8b0efa2
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 22:51:39 2015 -0500
+
+    updated slogan
+
+commit 7c49ecfc56c4b39aec2046351ce6db12e5e4dbb8
+Merge: f13815d 0e2e5e4
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 22:50:41 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit ce6dc3c2787c458110d528839d4fd3bdd14e73fb
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 22:47:29 2015 -0500
+
+    minor changes to search page
+
+commit af77838b5acce4a4fe5caeab48c8005dfca8c9d9
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 20 22:19:11 2015 -0500
+
+    Update README.md
+
+commit 947311496667aec610b078f49f8980cc5e48720d
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Mon Jul 20 22:18:01 2015 -0500
+
+    Create README.md
+
+commit 8766ed23c1f6b65ba1520dc9cdd844278b56c923
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 22:12:57 2015 -0500
+
+    updated search. working to get context. #72
+
+commit 0e2e5e40644a4c4f4dd98393048258722372ad60
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 22:09:55 2015 -0500
+
+    small changes to design
+
+commit c7b6472888f32e6a065f9cd47cedf9f1be476302
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:53:30 2015 -0500
+
+    search bar fixed for mobile
+
+commit 31754981ade37937f61fa0a871cf19b026f0d663
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Mon Jul 20 21:50:20 2015 -0500
+
+    added dynamic pictures of the animals in our pets models
+
+commit 64d6a3162a34804a3442ae50ad72eb2f0a37889d
+Merge: 68a5524 1788589
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:42:31 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit 68a5524d4117f939f4c3f85f69f0f32e06fa8f79
+Merge: f091c22 3d19c14
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:42:24 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 17885898962d732d6282454a8267ab721a096685
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:42:13 2015 -0500
+
+    updated bg image
+
+commit fa6b27bff1234394fa07d67b3afc258d8a0701c5
+Merge: 42eb951 2032bf1
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:39:36 2015 -0500
+
+    commit to merge with zach
+
+commit 42eb951d40d492e45a8d7fe0209341536b33e7d7
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 21:37:44 2015 -0500
+
+    more work on search
+
+commit 2032bf1c9fb9241cb0b3d4e6a9b9611f9f283bcf
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 21:18:29 2015 -0500
+
+    changed background. editted search indexes
+
+commit 5cfe12803b9fbbdcf230d400e4ea6b50d9a9e9a0
+Merge: 6eed7ec e63f40b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 20:51:38 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit e63f40b33c4ce2427fa7bf9147e2bc277d063816
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 20:50:13 2015 -0500
+
+    updated search page
+
+commit 81899712711c9fd2e2b886c2fa985529e660b416
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 20:30:49 2015 -0500
+
+    updated search page and added a background for group api
+
+commit 6eed7ecb17061f6babcd80e0a2ba637375ebb680
+Merge: 3a35ec5 4a2adab
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 20:26:53 2015 -0500
+
+    merge with matt
+
+commit 3d19c142f904cfbb4d9da0849658771673133740
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Mon Jul 20 20:16:44 2015 -0500
+
+    scaled houses to 1920-1080 for consistency
+
+commit 5add1927a5739c5956afb0a193188fa86c018160
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Mon Jul 20 20:08:14 2015 -0500
+
+    added all pets index page that checks api of other group
+
+commit 3a35ec52f9098a33ba206ca10d81b20b8372988a
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 20:01:08 2015 -0500
+
+    updated css
+
+commit a35f3b7f924c5a95ced5202fcb1127a0cb8e1d30
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Mon Jul 20 19:54:59 2015 -0500
+
+    updated views for gotopaws
+
+commit f091c2288f8e45ddf358796a74c52af55a5bd7dc
+Merge: 4a2adab e8e07fe
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 19:52:17 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 4a2adab2783f131a0aee3ee82d732fec93f675ad
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 19:46:54 2015 -0500
+
+    commit to merge with dev
+
+commit e8e07fe5842adb2327760612869abc77b4010404
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Mon Jul 20 19:44:29 2015 -0500
+
+    updated json files, imported into db, and updated models
+
+commit e0b0564020f2275d70012b8533e2d055ad38adc6
+Merge: 89fb05f a4974f3
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 19:23:35 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 89fb05f7ffa91cd5fbecdf94db197cf3219ef87c
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 19:23:23 2015 -0500
+
+    commit to merge
+
+commit a4974f35c9b1a8991062aa19b07f0d68a0f9de1e
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 19:20:25 2015 -0500
+
+    updated search box, updated unit tests page
+
+commit ddea496f7d42c731be029296301b69cf790c9a64
+Merge: 2d51e43 c0af59d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 19:00:27 2015 -0500
+
+    Merge branch 'dev' into matt
+
+commit 2d51e43b240359cfbeb79357edf29198c31b89cb
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 18:46:44 2015 -0500
+
+    commit to switch branches, no major work
+
+commit 6456859d7c40bc1f75dcc225a4a215348c74242f
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 18:46:20 2015 -0500
+
+    commit to switch branches, no major work
+
+commit 05f0028fefec5c7a8bafa0b41a4ee2dd3211e373
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Mon Jul 20 18:38:44 2015 -0500
+
+    added tests for GotoPaws models
+
+commit 1adef0a5cf82db3b6486a9ca61237129d0e70122
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Mon Jul 20 18:00:03 2015 -0500
+
+    added models for pets, shelters, and cities. close #89
+
+commit c19c2d217225a75a0ebdbc0c5226569e3f0c472c
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Mon Jul 20 17:17:17 2015 -0500
+
+    pulled in paws group json close #87
+
+commit 784d3f1ec69a60ec5fd4ed7fff9b9e4cabb10195
+Merge: b8546ff 3fefa3b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 17:16:17 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit f13815d44aad7dd53f4aa3b6996927d89a20cd09
+Merge: 3fefa3b b8546ff
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 14:52:53 2015 -0500
+
+    Merge remote-tracking branch 'origin/zach' into matt
+
+commit 3fefa3bfa9c08450069b1ab362f7a51666b66ae1
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Mon Jul 20 14:52:41 2015 -0500
+
+    commit to merge
+
+commit 968fa576d3bd705b2450201fd83b8203503384a6
+Merge: ecf20e0 b8546ff
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 02:23:54 2015 -0500
+
+    Merge branch 'zach' into dev
+
+commit ecf20e0187cffcb25db800706cc017255ade6d33
+Merge: 22d09a1 3e2065b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 02:23:40 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit b8546ff568794bacc7a626556356b940f08b224f
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 02:23:13 2015 -0500
+
+    merge with matt
+
+commit 73c2288d9e0965739a5d416c7a47c3108ea8ce92
+Merge: 2159d75 3e2065b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Mon Jul 20 02:17:23 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit 3e2065b904b756210d73b71ca97317d7cdc5a714
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 22:59:26 2015 -0500
+
+    added a basic footer to all detail pages and the about page
+
+commit 2159d75b3d9340ec277175c0d2252aa8acffe7fe
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 18:14:19 2015 -0500
+
+    updated search page
+
+commit 22d09a1644de327c299fdb574b9e5262ef63bf56
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 18:11:12 2015 -0500
+
+    fixed #72. Basic search works!
+
+commit 651fa777b507fe8bc15c7e53bef93814158a16d5
+Merge: e27198c 65f5d71
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 18:04:29 2015 -0500
+
+    Merge branch 'zach' into dev
+
+commit 65f5d71d094ded9ae6d5c68e91e6e523aa3703d9
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 18:04:09 2015 -0500
+
+    updated cache files
+
+commit a6ca07dbab41b89ff8ce06934a2900c9094dc983
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 18:01:19 2015 -0500
+
+    added searchbar #72
+
+commit e27198ca7bdcc675827ab9e7dfda9aba8263badf
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 17:50:37 2015 -0500
+
+    updated make to keep db
+
+commit 0aa7e7858a1c6fed06da276bd4a63936dc3066e0
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 17:39:58 2015 -0500
+
+    new background
+
+commit f4cf6cbaad7e840c80a3e7ba32669adc81078f34
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 17:36:21 2015 -0500
+
+    merged, made api tests more robust
+
+commit 3b61cc770edf9b86b4139dad7fc2e2f3698cb2ba
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 17:36:19 2015 -0500
+
+    more
+
+commit e003608eac5c5a8700ab97fb13172d08e564bb43
+Merge: b33b34c 4c3842e
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 17:33:11 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #	proj3site/populate_content/search_indexes.py
+    #	proj3site/populate_content/templates/search/search.html
+    #	proj3site/populate_content/whoosh_index/MAIN_2xj54bysvjeuwu64.seg
+
+commit b33b34c24c7eb2e8f8268e680be66fc75a0a14bc
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 17:32:23 2015 -0500
+
+    made API tests more robust
+
+commit 620689f42f6e51c21b3103bbb72b04c80f00c147
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 17:28:12 2015 -0500
+
+    playing with looks
+
+commit e3d91bac876f18e23a17e2c66d5314903bce2710
+Merge: 14527e4 4c3842e
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 17:25:02 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit 4c3842e688ebac9b4e919597e944117f370411cc
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 17:24:52 2015 -0500
+
+    revert settings
+
+commit 14527e45d7b80158aea39ff0f4b069e1127d4021
+Merge: f3c2ce8 eb4b6c4
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 17:22:38 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit f3c2ce8ce3a0ba1d2a69e2dc19ed4a8f83dcf8cc
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 17:22:25 2015 -0500
+
+    aesthetic changes
+
+commit eb4b6c432c10aacd8d2b4c0c66be88a619922ab7
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 17:12:32 2015 -0500
+
+    finished normalizing all current  images
+
+commit 8ca059e5b8a7b616f6b121143f22db1f9d873f8e
+Merge: 540e515 615ed15
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 17:08:32 2015 -0500
+
+    merge with zach
+
+commit 615ed150b021476238730ccdc06bc45f9564b290
+Merge: 42e3047 cc8400b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 17:07:47 2015 -0500
+
+    merge with dev
+
+commit 540e515509943670b3f664c1425efb01ad5b178a
+Merge: a82e597 cc8400b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 17:03:54 2015 -0500
+
+    merge with dev
+
+commit a82e597697eb4a4c155a4d59e3330d4f09876b2b
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 17:00:22 2015 -0500
+
+    places/castles page normalized in size
+
+commit 42e30471b6acaa1768e2f03a0de41628df116585
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 16:58:25 2015 -0500
+
+    renamed about_index.html
+
+commit ebb61b122acac32192a8ef760b7ff4a0a60bebe0
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 16:55:56 2015 -0500
+
+    updated tests, have 42 now
+
+commit 5ce6681578e20573a0dd7fe0b06d7135a412bfc3
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 16:55:50 2015 -0500
+
+    condensed index pages into one html file
+
+commit 2b0fcafeff1f210ba57f5ca7a72062f9a41dd61e
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 16:03:02 2015 -0500
+
+    very subtle font size change for detail page text
+
+commit 9cd822868f715ac1406a73bd37a8556a4e7666df
+Merge: 5a05cdd 7105892
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:54:42 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit 5a05cdd93f89bbd0777c4b28818ab3756f23f66a
+Merge: f43a239 2ce8821
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:54:38 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit 2ce8821272f21b9599c8b752a4266dcd3c035866
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 15:50:19 2015 -0500
+
+    updated search. #72
+
+commit 710589292c77e41ae97de75cad3e6f9185a3ae1f
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 15:42:05 2015 -0500
+
+    regions images all scaled to 720H
+
+commit 626ce7c6dbc685367f30bf730b91f4d92a8480c6
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 15:34:23 2015 -0500
+
+    tried to make Walda Frey look less crappy, didn't go so hot
+
+commit f43a239a4ace6fe7bb6a59995be20ab81596be42
+Merge: 9376f30 536cdf7
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:31:58 2015 -0500
+
+    Merge branch 'zach' into matt
+
+commit c0af59d8a8e456d8a8b988ca9bbf099909a58fb4
+Merge: 988fd4a cc8400b
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:31:02 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 9376f30509ba6683e41f7fc5971eca9c7feecdb6
+Merge: 3417a9d 0c6192c
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:29:12 2015 -0500
+
+    Merge branch 'matt' of https://github.com/zjg95/cs373-idb into matt
+
+commit 3417a9dcf61881bce85576d55f6f5deb5bca1a06
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 15:28:55 2015 -0500
+
+    detail work on about page
+
+commit 536cdf77ae2b2c80722a5b137fff0f25b6d8de69
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 15:25:45 2015 -0500
+
+    updated search. #65
+
+commit cc8400b60b8d2f5b4ada599f93003597f4b8c37e
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Sun Jul 19 14:56:53 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 0c6192c11c3a4b783512b2795fd97ad1bd362651
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 14:52:27 2015 -0500
+
+    scaled slynt.jpg to 1920-1080
+
+commit 1791f444dfd25b8f88274b08a9d66a4f9c96c6ae
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 14:52:19 2015 -0500
+
+    updated search. #65
+
+commit e26c0c6491aecc48261be65e2bb875f721a6fd54
+Author: Michael Gutierrez <sdragoon@cs.utexas.edu>
+Date:   Sun Jul 19 14:49:22 2015 -0500
+
+    modified slynt's image for houses
+
+commit 123ef19814c945d80b5a19abf9a39d9bf83761b8
+Merge: b251079 e3a76a0
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Sun Jul 19 13:51:17 2015 -0500
+
+    merged with dev
+
+commit e3a76a0b5571e67abc24b061b25453e6c808ea12
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 13:47:41 2015 -0500
+
+    updated makefile
+
+commit 396e7147c580de3bfe23bde63f6b2a713f41c55e
+Merge: be34776 578a3d7
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 13:43:18 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit be347768a0e8e96a0d899423eb0e17000de7700f
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Sun Jul 19 13:40:06 2015 -0500
+
+    updated search_indexes.py
+
+commit 578a3d7288e71dda6f63c78dd01883b64da40484
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 12:15:08 2015 -0500
+
+    in-browser test output now formatted with newlines and monospaced font
+
+commit ccc63f36645ef0d5d3b720fc0e4d78499eb8235f
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 12:07:37 2015 -0500
+
+    fixed some bugs, now running tests from the about page should work in all cases
+
+commit 3a512127a1923de30a003520a3e8bb233e66b32a
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 11:56:28 2015 -0500
+
+    added a link to about to run the unit tests. the output is unformatted but it works
+
+commit b7772b49b22fae2e199d9443404b828fdf9ece96
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 11:55:52 2015 -0500
+
+    added a link to about to run the unit tests. the output is unformatted but it works
+
+commit 88fa43baced23257a66a71701beeacedecf051e0
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 04:23:32 2015 -0500
+
+    minor changes
+
+commit b9edbd88707413b4b7f42a5281fac4379ea8a51f
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Sun Jul 19 04:00:56 2015 -0500
+
+    did the about page
+
+commit a22bb221aa6ebbe663fda87d46023451e133f4e4
+Author: Matt Hauglund <shiningtoaster@Matts-MacBook-Air.local>
+Date:   Sun Jul 19 03:41:04 2015 -0500
+
+    missed one
+
+commit b540ba7429a6790ad0fac0e273e1916b223754e4
+Author: Matt Hauglund <shiningtoaster@Matts-MacBook-Air.local>
+Date:   Sun Jul 19 03:23:24 2015 -0500
+
+    cleaned up and formatted the html for readability. should be easier to work with going forward
+
+commit 9dd5b290a93df2aae62e875b83e3d2e08669f199
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 19:19:31 2015 -0500
+
+    basics of search implemented
+
+commit 208d469cb3f2479c65a9e2a85d700540c19d5a2e
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 03:20:35 2015 -0500
+
+    trying travis again
+
+commit 930f1ba37986513ed2dedfe1791534e2582851fa
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 03:15:52 2015 -0500
+
+    travis was bad
+
+commit f28ff8e6232031ad46f2a65e7f577052344be7ed
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 03:11:55 2015 -0500
+
+    updated travis to do migrations before runs
+
+commit b251079b93e56b6c4da1082da60690d520255843
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 03:06:01 2015 -0500
+
+    Revert "added basic search engine. #72"
+    
+    This reverts commit 84edad5cac767925d968bef4edc113168a81775b.
+
+commit 84edad5cac767925d968bef4edc113168a81775b
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 03:04:10 2015 -0500
+
+    added basic search engine. #72
+
+commit be6ef1a2e11cd9fa20e51cc2860166b13291395d
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 02:15:30 2015 -0500
+
+    updated requirements
+
+commit fc5321fa884d91330e1e16c3e03a6483c6db6918
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 01:55:52 2015 -0500
+
+    updated makefile
+
+commit eaa588b218faf03c8db1f55383dc2f944f924da0
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 01:37:56 2015 -0500
+
+    merge with matt
+
+commit d6a760a1803b1a91f3668fb0f67b7d701e4b4fc3
+Merge: 31a5e95 e9d53ac
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 01:35:16 2015 -0500
+
+    Merge branch 'matt' into zach
+
+commit 31a5e95a50bad8776e0dfaf4630da2507451f356
+Merge: bae8a13 9d11dd8
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 01:32:25 2015 -0500
+
+    Merge branch 'zach' into dev
+
+commit e9d53ac200dd3e846999ad2c25dd0dd3c5c6310e
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Fri Jul 17 01:26:22 2015 -0500
+
+    updated house detail page, castles listing now above description again
+
+commit 9d11dd82e5eb2903f2797de457e256ee15d2dad8
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 01:26:17 2015 -0500
+
+    relinked broken images.
+
+commit bae8a13b8d6693db3a2d65a0e371fe8f149f05c9
+Merge: b7f265c 403304f
+Author: User <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 06:21:28 2015 +0000
+
+    Merge branch 'dev' of http://github.com/zjg95/cs373-idb into dev
+
+commit b7f265c67766cfb8adb473aa476539c3d92c4e9f
+Merge: 6546507 9cb4e7e
+Author: User <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 06:20:35 2015 +0000
+
+    Merge branch 'matt' into dev
+
+commit bce3273a36d885761a65b22237ba2d99e43614d8
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 00:47:58 2015 -0500
+
+    updated broken links
+
+commit b20c27f67f2806f49dd4ae5fabd3a4847939633f
+Merge: f559eca b5f7553
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 00:39:33 2015 -0500
+
+    merge with matt
+
+commit f559eca975bb69d7dddcb1fdad72ebdfc1b2c66d
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 00:29:32 2015 -0500
+
+    clean up img directories
+
+commit bfd40f6e4a2bb149261c761c4f7b252f56777c2d
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Fri Jul 17 00:08:17 2015 -0500
+
+    repository is sqeaky clean! fixed #40
+
+commit af268bbe8618a9777061d2c583e0214aa25c4bdc
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 23:32:54 2015 -0500
+
+    cleaned up repository
+
+commit adb847a35d4dcaed8e5b40afe407de3271c19b24
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 21:59:47 2015 -0500
+
+    cleaned up repo
+
+commit 757a3c36824fc669398ae6a6bb66e19b89246252
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 20:22:56 2015 -0500
+
+    removed file
+
+commit c38f8ddc9fc7f22860a8c2a64335773f957a433e
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 20:13:03 2015 -0500
+
+    removed django-nose from requirements
+
+commit aa40b571758b15e48c6f22fb6fbfd9ddf3b2c2cd
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 19:55:10 2015 -0500
+
+    merge with dev
+
+commit db83c4e486b865677e2f4342af8bacb2391bf06a
+Merge: a097aab 403304f
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 19:54:33 2015 -0500
+
+    Merge branch 'dev' into zach
+
+commit 403304f85ef2792b778ba9fd6f6909804ff213a4
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 19:54:16 2015 -0500
+
+    unit tests work
+
+commit a097aabcd023e51422ef1ce6d9abe6c01728b3be
+Merge: 1b3fc80 890b2c1
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 19:25:23 2015 -0500
+
+    merge with dev
+
+commit 988fd4ae7e95638d4e26b6dd347d75fd94ecc753
+Merge: 5d78a0e b5f7553
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 18:28:22 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit b5f7553b51592bd21d8d2b2129b37aeccfe5088d
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 18:27:54 2015 -0500
+
+    last commit of the day
+
+commit 890b2c10305edc0b1241a0d11e60fdf48bfcb070
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:53:52 2015 -0500
+
+    updated .gitignor and travis
+
+commit 595ceb99e16415696f061aa68e8dba35e1dee789
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:50:10 2015 -0500
+
+    added make fake to travis
+
+commit 6d8d69d802e628b45072ac107c47fdfacd55afb6
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:46:28 2015 -0500
+
+    updated make fake
+
+commit 283ce7e6029b3776970a5864d06ffa2c0d73019b
+Merge: 7e20247 b6e666b
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:40:05 2015 -0500
+
+    merge with scott
+
+commit b6e666b94342d4afa3b6897e97f518d34f157e8c
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:36:42 2015 -0500
+
+    removed nose in installed apps
+
+commit 86eaa65fee16ae8ff96f26069294e5d31149e0cd
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 17:22:35 2015 -0500
+
+    unittests work with new database
+
+commit 1b3fc802a5b841acd13e293ca0d0ad92d76efd1a
+Merge: d391cb6 7e20247
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:57:33 2015 -0500
+
+    Merge branch 'dev' into zach
+
+commit 7e20247f6df638310a17d5a9a8835287c3848883
+Merge: 958c98a e663f5c
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:56:54 2015 -0500
+
+    Merge branch 'dev' of https://github.com/zjg95/cs373-idb into dev
+
+commit 958c98a53630184355f199889bc970bf1770dc95
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:56:46 2015 -0500
+
+    added search_indexes.py file. #72
+
+commit e663f5cd64b696f1744c55e382eee716f427c152
+Merge: b45dbec 3401cd5
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 16:46:47 2015 -0500
+
+    Merge branch 'scott' into dev
+
+commit 3401cd55bbe8048758e26d7fc16f5e4a4d81df84
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 16:46:20 2015 -0500
+
+    tookout nose
+
+commit b45dbec37bd004dddcfb364ed7081b8c4999078a
+Merge: 6546507 6711459
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:45:11 2015 -0500
+
+    Merge branch 'scott' into dev
+
+commit d391cb67f5704477ffcacea2d00e83e77cd3e46c
+Merge: 6546507 57d4d01
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:44:52 2015 -0500
+
+    Merge branch 'zach' of https://github.com/zjg95/cs373-idb into zach
+
+commit 69cfada55169f877e46548e092b71fd2fa41a197
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 16:21:41 2015 -0500
+
+    switched settings.py to use the test DB
+
+commit 57d4d0113e08b0c3863974a9fdef32ecded5ab22
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 16:11:57 2015 -0500
+
+    updated files for haystack. #72
+
+commit 5d78a0e8013710346db47c02fd10e243aa8e3493
+Merge: 6546507 9cb4e7e
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 16:11:02 2015 -0500
+
+    Merge branch 'matt' into dev
+
+commit 9cb4e7e686307b9238401fde7cd705b45e74cbf4
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 16:07:16 2015 -0500
+
+    fixed an issue with image sizing
+
+commit 6546507990a08240d7d3cf1641e169a94ca88efe
+Author: User <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 20:57:13 2015 +0000
+
+    updated makefile
+
+commit 5c4031481ba459246e639ad4984e1dfa144c8293
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 15:48:46 2015 -0500
+
+    minor change
+
+commit 67114597d8847991dc2efb2f4504ddd0bdbb5064
+Merge: 5a8f005 4d07427
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 15:46:54 2015 -0500
+
+    Merge branch 'dev' into scott
+
+commit 5a8f00505cdc178b18beedfa7c0d7e92019f87b2
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Thu Jul 16 15:46:15 2015 -0500
+
+    updated unittests
+
+commit be55567f3d2e7062ef28273ad39c869aa11cf6ea
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Thu Jul 16 15:43:48 2015 -0500
+
+    cleaned up HTML documents (more consistency, better use of CSS stylesheets). changed settings.py to use the read-only database
+
+commit 4d074277e718fe464294f388e95c698afbb956c0
+Merge: a45e685 8ee70e2
+Author: Zachary Goodman <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 15:40:05 2015 -0500
+
+    merge with zach. fixed #84
+
+commit 8ee70e2cd12b7417042a9406442db4aac4fd87be
+Author: Zachary Goodman <zjg95@users.noreply.github.com>
+Date:   Thu Jul 16 15:24:47 2015 -0500
+
+    #84 set up siteb database
+
+commit a45e6857ae8ac0d33de87dbffdcfb1d1cdf38db3
+Author: User <zjgoodman@utexas.edu>
+Date:   Thu Jul 16 20:18:56 2015 +0000
+
+    updated makefile
+
+commit ac9c0852b70113a3d8761c972b5fadb2d808c458
+Author: mhauglund <mhauglund@utexas.edu>
+Date:   Tue Jul 14 21:45:50 2015 -0500
+
+    log created
+
+commit 7e01340096284c65628e711f814b8327395a8ac7
+Author: harrison-lucas <harrisonlucas@utexas.edu>
+Date:   Tue Jul 14 21:39:59 2015 -0500
+
+    updated log
+
+commit 64913949fcde8b5ecaf153bf944a4b339e481a9f
+Author: Scott Stephens <stevo4932@utexas.edu>
+Date:   Tue Jul 14 21:32:54 2015 -0500
+
+    changed travis for testing.
+
 commit cbc80ca1458a20c1797a846dfd3aed2affa7c8ee
 Merge: 06a8194 e1afe56
 Author: Zachary Goodman <zjgoodman@utexas.edu>
