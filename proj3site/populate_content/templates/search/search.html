@@ -118,10 +118,10 @@
                     </a>
                   </div>
                   <div class="col-lg-8 col-sm-6" style="text-align:left" >
-                    {%autoescape off %}
+                    {% autoescape off %}
                       {% highlight result.get_stored_fields.text with query max_length 2000 %}
                       <br>
-                    {%endautoescape%}
+                    {% endautoescape %}
                   </div>
                 </div>
             {% empty %}
