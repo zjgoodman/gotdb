@@ -94,30 +94,36 @@
         <div class="container-fluid">
           <div class="row">
             {% for pet in all_pets %}
+              {% if forloop.counter0|divisibleby:3 %}
+              <div class="row">
+              {% endif %}
               <div class="col-lg-4 col-sm-6" style="font-size:20px;margin:auto">
                   <b>City</b>:
-                    {%with 'http://gotopaws.me/'|add:pet.pet_city_url as citylink%}
+                    {%with 'http://nsaid.me/'|add:pet.pet_city_url as citylink%}
                       <a href="{{citylink}}">
                         {{ pet.pet_city }} 
                       </a>
                     {%endwith%}
                   <br>
                   <b>Shelter</b>:
-                    {%with 'http://gotopaws.me/'|add:pet.pet_shelter_url as shelterlink%}
+                    {%with 'http://nsaid.me/'|add:pet.pet_shelter_url as shelterlink%}
                       <a href="{{shelterlink}}">
                         {{ pet.pet_shelter }}
                       </a>
                     {%endwith%}
-                  {%with 'http://gotopaws.me/'|add:pet.pet_url as petlink%}
+                  {%with 'http://nsaid.me/'|add:pet.pet_url as petlink%}
                     <a href="{{petlink}}" class="portfolio-box">
                     <h2 class="portfolio-box-caption got">{{ pet.pet_name }} </h2>
-                    {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
+                    {%with pet.pet_pic_large as pic%}
                       <img src="{{pic}}" class="img-responsive" alt="">
                     {%endwith%}
                     <h2 class="portfolio-box-caption">{{ pet.pet_breed }} </h2>
                     </a>
                   {%endwith%}
               </div>
+              {% if forloop.counter|divisibleby:3 %}
+              </div>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
