@@ -93,32 +93,32 @@
         <h2 class="blog-post-title got" style="text-align:center">Pets</h2>
         <div class="container-fluid">
           <div class="row">
-            {% if all_pets %}
-              {% for pet in all_pets %}
-              <div class="row">
-                <div class="col-md-4 col-sm-6">
-                  {%with 'http://gotopaws.me/Dog_Rangel.html' as link%}
-                  <a href="{{link}}" class="portfolio-box">
-                  {%endwith%}
-                    {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
-                    <img src="{{pic}}" class="img-responsive" alt="">
-                    
+            {% for pet in all_pets %}
+              <div class="col-lg-4 col-sm-6" style="font-size:20px;margin:auto">
+                  <b>City</b>:
+                    {%with 'http://gotopaws.me/'|add:pet.pet_city_url as citylink%}
+                      <a href="{{citylink}}">
+                        {{ pet.pet_city }} 
+                      </a>
                     {%endwith%}
-
-                    <h2 class="pet-name portfolio-box-caption">{{ pet.pet_name }} </h2>
-                  </a>
-                </div>
-                <div class="col-md-8">
-                  <p><div style="color:#000;text-align:left;margin-bottom:90px">
-                    <p><b>City</b>: "{{ pet.pet_city }}"</p>
-
-                  </div></p>
-                </div>
+                  <br>
+                  <b>Shelter</b>:
+                    {%with 'http://gotopaws.me/'|add:pet.pet_shelter_url as shelterlink%}
+                      <a href="{{shelterlink}}">
+                        {{ pet.pet_shelter }}
+                      </a>
+                    {%endwith%}
+                  {%with 'http://gotopaws.me/'|add:pet.pet_url as petlink%}
+                    <a href="{{petlink}}" class="portfolio-box">
+                    <h2 class="portfolio-box-caption got">{{ pet.pet_name }} </h2>
+                    {%with 'http://gotopaws.me/'|add:pet.pet_pic_large as pic%}
+                      <img src="{{pic}}" class="img-responsive" alt="">
+                    {%endwith%}
+                    <h2 class="portfolio-box-caption">{{ pet.pet_breed }} </h2>
+                    </a>
+                  {%endwith%}
               </div>
-              {% endfor %}
-            {% else %}
-              <p>No pets are available.</p>
-            {% endif %}
+            {% endfor %}
           </div>
         </div>
     <div style="margin:40px">
