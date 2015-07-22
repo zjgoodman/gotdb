@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Person(models.Model) :
     """
@@ -46,6 +47,18 @@ class Person(models.Model) :
             return self.first_name
         return self.first_name + " " + self.last_name
 
+    def get_url(self):
+        return "/people/" + self.person_id
+
+    def get_id(self):
+        return self.person_id
+
+    def get_img(self):
+        return "img/person/" + self.person_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/person/thumb/" + self.person_id + ".jpg"
+
     class Meta:
         ordering = ('last_name', 'first_name')
 
@@ -84,6 +97,18 @@ class Region(models.Model) :
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/regions/" + self.region_id
+
+    def get_id(self):
+        return self.region_id
+
+    def get_img(self):
+        return "img/place/" + self.region_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/place/thumb/" + self.region_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -119,6 +144,18 @@ class Castle(models.Model):
     def __str__(self):
         return self.name
 
+    def get_url(self):
+        return "/castles/" + self.castle_id
+
+    def get_id(self):
+        return self.castle_id
+
+    def get_img(self):
+        return "img/place/" + self.castle_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/place/thumb/" + self.castle_id + ".jpg"
+
     class Meta:
         ordering = ('name',)
 
@@ -153,6 +190,18 @@ class House(models.Model) :
 
     def __str__(self):
         return self.name
+
+    def get_url(self):
+        return "/houses/" + self.house_id
+
+    def get_id(self):
+        return self.house_id
+
+    def get_img(self):
+        return "img/house/" + self.house_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/house/thumb/" + self.house_id + ".jpg"
 
     class Meta:
         ordering = ('name',)
@@ -190,5 +239,127 @@ class Author(models.Model) :
 
     class Meta:
         ordering = ('last_name',)
-    
-        
+
+class Cities(models.Model) :
+    """
+    Cities models correspond to each of the three Cities containing the shelters
+    that are in the GotoPaws database.
+    A Cities object has the following attributes:
+        "city_vet_url": "http://www.yelp.com/biz/san-francisco-pet-hospital-san-francisco",
+        "city_country": "US",
+        "city_state": "CA",
+        "city_park_pic": "bootstrap-3.3.5-dist/img/Cities/san-franc_park.jpg", #NOT USING YET
+        "city_groomer_url": "http://www.yelp.com/biz/san-francisco-pet-hospital-san-francisco",
+        "city_park_url": "www.google.com",
+        "city_name": "San Francisco",
+        "city_vet_pic": "bootstrap-3.3.5-dist/img/Cities/san-franc_vet.jpg", #NOT USING YET
+        "city_groomer_pic": "bootstrap-3.3.5-dist/img/Cities/san-franc_groomer.jpg",  #NOT USING YET
+        "city_url": "City_SF.html", #NOT USING YET
+        "city_pic": "bootstrap-3.3.5-dist/img/Cities/san-franc.jpg" #NOT USING YET
+    """
+    city_vet_url              = models.CharField(max_length=200, null=True)
+    city_country            = models.CharField(max_length=200, null=True)
+    city_state            = models.CharField(max_length=2, null=True)
+    city_groomer_url            = models.CharField(max_length=200, null=True)
+    city_park_url             = models.CharField(max_length=200, null=True)
+    city_name             = models.CharField(max_length=200, null=True)
+    city_pic             = models.CharField(max_length=200, null=True)
+    city_url             = models.CharField(max_length=200, null=True)
+    city_groomer_pic             = models.CharField(max_length=200, null=True)
+    city_vet_pic             = models.CharField(max_length=200, null=True)
+    city_park_pic             = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.city_name
+
+    def get_id(self):
+        return self.city_name + '_' + self.city_state
+
+    class Meta:
+        ordering = ('city_name',)
+
+class Shelter(models.Model) :
+    """
+    Shelter models correspond to each of the three animal Shelters
+    that are in the GotoPaws database.
+    A Shelter object has the following attributes:
+        "shelter_email"
+        "shelter_city_url"
+        "shelter_phone"
+        "shelter_city"
+        "shelter_url" NOT USING THIS YET!!!!!!!!!!!!!!!!!!!
+        "shelter_state"
+        "shelter_id"
+        "shelter_pic" NOT USING THIS YET!!!!!!!!!
+        "shelter_hours"
+        "shelter_address"
+        "shelter_name"
+    """
+    shelter_id              = models.CharField(max_length=200, null=True)
+    shelter_name            = models.CharField(max_length=200, null=True)
+    shelter_city            = models.CharField(max_length=200, null=True)
+    shelter_address            = models.CharField(max_length=200, null=True)
+    shelter_hours             = models.CharField(max_length=200, null=True)
+    shelter_state             = models.CharField(max_length=2, null=True)
+    shelter_phone           = models.CharField(max_length=200, null=True)
+    shelter_email         = models.CharField(max_length=200, null=True)
+    shelter_url         = models.CharField(max_length=200, null=True)
+    shelter_pic         = models.CharField(max_length=200, null=True)
+
+    # Here is where things may need to change. not sure.
+    shelter_city_url            = models.ForeignKey('Cities', null=True)
+
+    def __str__(self):
+        return self.shelter_name
+
+    def get_id(self):
+        return self.shelter_id
+
+    class Meta:
+        ordering = ('shelter_name',)
+
+class Pets(models.Model) :
+    """
+    Pets models correspond to each of the three pets
+    that are in the GotoPaws database.
+    A Pets object has the following attributes:
+        "pet_size"
+        "pet_shelter",
+        "pet_pic_large"
+        "pet_pic_url"
+        "pet_url"
+        "pet_age"
+        "pet_sex"
+        "pet_shelter_url"
+        "pet_breed"
+        "pet_name"
+        "pet_city_url"
+        "pet_id"
+        "pet_city"
+    """
+    pet_id              = models.CharField(max_length=200, null=True)
+    pet_shelter         = models.CharField(max_length=200, null=True)
+    pet_name            = models.CharField(max_length=200, null=True)
+    pet_city            = models.CharField(max_length=200, null=True)
+    pet_size            = models.CharField(max_length=200, null=True)
+    pet_age             = models.CharField(max_length=200, null=True)
+    pet_sex             = models.CharField(max_length=200, null=True)
+    pet_breed           = models.CharField(max_length=200, null=True)
+    pet_pic_url         = models.CharField(max_length=200, null=True)
+    pet_pic_large       = models.CharField(max_length=200, null=True) #the picture is within bootstrap/img.
+    pet_url              = models.CharField(max_length=200, null=True)
+    # Here is where things may need to change. not sure.
+    pet_city_url            = models.CharField(max_length=200, null=True)
+    pet_shelter_url         = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.pet_name
+
+    def get_id(self):
+        return self.pet_id
+
+    class Meta:
+        ordering = ('pet_name',)
+
+
+

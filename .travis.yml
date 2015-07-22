@@ -35,12 +35,10 @@ before_script:
 script:
     - date
 
-    - make bgserver
     # - ls -al
     # - touch IDB.log
-    # - ls -al
-    # - make models.html
     # - make models.html
     - ls -al
     - make requirements
+    - python3 proj3site/manage.py makemigrations populate_content
     - make unittest

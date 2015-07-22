@@ -2,11 +2,26 @@
  * Globals
  */
 
+html, body {
+    height: 100%;
+}
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
 }
-
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -70px; 
+}
+.footer, .push {
+    height: 70px; 
+}
+.footer {
+    padding-left:10%;
+    padding-right:10%;
+}
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -30,6 +45,35 @@ h6, .h6 {
   }
 }
 
+/*
+ * House detail title section
+ */
+.title-section {
+  background-color:#000;
+  background-position:left top;
+  background-repeat:no-repeat;
+  position:relative;
+  text-align:center;
+  text-shadow: 1px 1px 1px #000000;
+  color:#fff;
+  padding-top:15%;
+  padding-bottom:425px;
+  padding-right:30%;
+  margin-bottom:30px;
+}
+
+/* 
+ * For mobile view:
+ */
+@media (max-width: 480px) {
+  .title-section {
+    background-position:top;
+    background-size: auto 150%;
+    padding-top:20%;
+    padding-bottom:425px;
+    padding-right:0px;
+  }
+}
 
 /*
  * Masthead for nav
@@ -83,15 +127,17 @@ h6, .h6 {
   padding-bottom: 20px;
 }
 .blog-title {
-  margin-top: 30px;
+  margin-top: 70px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: normal;
+  text-align: center;
 }
 .blog-description {
   font-size: 20px;
   color: #999;
   padding-bottom: 15px;
+  text-align: center;
 }
 
 
@@ -102,12 +148,21 @@ h6, .h6 {
 .blog-main {
   font-size: 18px;
   line-height: 1.5;
+  width:75%;
+  margin:auto;
+  background-color:#fff;
+}
+@media (max-width: 480px) {
+  .blog-main {
+    width:90%;
+    margin:auto;
+    background-color:#fff"
+  }
 }
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
-  padding: 15px;
-  margin: 0 -45px 15px;
+  margin: 0 0 15px;
   margin-right: 20px;
 }
 .sidebar-module-inset {
@@ -145,8 +200,12 @@ h6, .h6 {
 .blog-post-title {
   margin-top: 15px;
   margin-bottom: 15px;
-  padding-right: 15px;
   font-size: 60px;
+}
+@media (max-width: 480px) {
+  .blog-post-title {
+    font-size: 40px;
+  }
 }
 .blog-post-meta {
   margin-bottom: 20px;

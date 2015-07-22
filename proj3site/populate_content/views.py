@@ -1,112 +1,211 @@
 from django.utils.html import format_html_join
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
-import string, re
+import string, re, subprocess, os
 
 from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from .models import Castle, Region, Person, House, Author
+from .models import Castle, Region, Person, House, Author, Pets, Shelter, Cities
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer
 
 from .models import Person, Region, Castle
 
-
 def index(request):
-    return render(request, 'splash/index.html')
+    return render(request, 'splash.html')
 
-def about_index(request):
+def about(request):
     all_authors = Author.objects.all()
     context = {'all_authors': all_authors}
-    return render(request, 'populate_content/about_index.html', context)
+    return render(request, 'about.html', context)
+
+def unit_tests(request):
+	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+	command = "python3 " + os.path.join(BASE_DIR, 'manage.py') + " test populate_content -v 2 --keepdb"
+	pipe = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	result = pipe.stdout.readlines() + pipe.stderr.readlines()
+	return render_to_response('unit_tests.html', {'result': result})
 
 def person_index(request):
-    all_people = Person.objects.all()
-    context = {'all_people': all_people}
-    return render(request, 'populate_content/person_index.html', context)
+    all_objects = Person.objects.all()
+    context = {'all_objects': all_objects, 'title': "People"}
+    return render(request, 'model_list.html', context)
 
 def person_detail(request, person_id):
     try:
         person = Person.objects.get(person_id__exact=person_id)
     except Person.DoesNotExist:
         raise Http404("Person does not exist :")
+
+    description = person.bio
+    for h in House.objects.all():
+        regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+
+    for p in Person.objects.all():
+        if str(p) != str(person):
+            regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
+            description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+
+    for c in Castle.objects.all():
+        regex = re.compile("\\b%s\\b" % str(c), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+
+    for r in Region.objects.all():
+        regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'person'  : person,
-               'bio'     : format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", person.bio))),
+               'bio'     : description,
                'castles' : person.castles_controlled.all(),}
-    return render(request, 'populate_content/person_detail.html', context)
+    return render(request, 'person_detail.html', context)
 
 def region_index(request):
-    all_regions = Region.objects.all()
-    context = {'all_regions': all_regions}
-    return render(request, 'populate_content/region_index.html', context)
+    all_objects = Region.objects.all()
+    context = {'all_objects': all_objects, 'title': "Regions"}
+    return render(request, 'model_list.html', context)
 
 def region_detail(request, region_id):
     try:
         region = Region.objects.get(region_id__exact=region_id)
     except Region.DoesNotExist:
         raise Http404("Region does not exist :")
+
+    description = region.description
+    history     = region.history
+    for h in House.objects.all():
+        regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+        history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
+
+    for p in Person.objects.all():
+        regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+        history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
+
+    for c in Castle.objects.all():
+        regex = re.compile("\\b%s\\b" % str(c), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+        history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
+
+    for r in Region.objects.all():
+        if r.name != region.name:
+            regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
+            history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
+            description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'region'     : region,
                'castles'    : region.other_castles.all(),
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.description))),
-               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", region.history))),
+               'description': description,
+               'history'    : history,
               }
-    return render(request, 'populate_content/region_detail.html', context)
+    return render(request, 'region_detail.html', context)
 
 def castle_index(request):
-    all_castles = Castle.objects.all()
-    context = {'all_castles': all_castles}
-    return render(request, 'populate_content/castle_index.html', context)
+    all_objects = Castle.objects.all()
+    context = {'all_objects': all_objects, 'title': "Castles"}
+    return render(request, 'model_list.html', context)
 
 def castle_detail(request, castle_id):
     try:
         castle = Castle.objects.get(castle_id__exact=castle_id)
     except Castle.DoesNotExist:
         raise Http404("Castle does not exist :")
+
+    description = castle.description
+    history     = castle.history
+    for h in House.objects.all():
+        regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+        history     = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), history)
+
+    for p in Person.objects.all():
+        regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+        history     = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), history)
+
+    for c in Castle.objects.all():
+        if c.name != castle.name:
+            regex = re.compile("\\b%s\\b" % str(c), flags=re.IGNORECASE)
+            description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+            history     = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), history)
+
+    for r in Region.objects.all():
+        regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
+        history = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), history)
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'castle'     : castle,
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.description))),
-               'history': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", castle.history))),
+               'description': description,
+               'history': history,
               }
-    return render(request, 'populate_content/castle_detail.html', context)
+    return render(request, 'castle_detail.html', context)
 
 def house_index(request):
-    all_houses = House.objects.all()
-    context = {'all_houses': all_houses}
-    return render(request, 'populate_content/house_index.html', context)
+    all_objects = House.objects.all()
+    context = {'all_objects': all_objects, 'title': "Houses"}
+    return render(request, 'model_list.html', context)
 
 def house_detail(request, house_id):
     try:
         house = House.objects.get(house_id__exact=house_id)
     except House.DoesNotExist:
         raise Http404("House does not exist :")
+
+    description = house.description
+    for h in House.objects.all():
+        if h.name != house.name:
+            regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+            description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+
+    for p in Person.objects.all():
+        regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+
+    for c in Castle.objects.all():
+        regex = re.compile("\\b%s\\b" % str(c), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+
+    for r in Region.objects.all():
+        regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
     context = {'house'      : house, 
                'people'     : house.members.all(), 
-               'description': format_html_join('\n', '<p>{0}</p>', ((force_text(p),) for p in re.split("<p>|</p>", house.description))),
+               'description': description,
                'castles'    : house.castles_controlled.all(),}
 
-    return render(request, 'populate_content/house_detail.html', context)
+    return render(request, 'house_detail.html', context)
 
 def all_castles_index(request):
     all_castles = Castle.objects.all()
     context = {'all_castles': all_castles}
-    return render(request, 'populate_content/all_castles_index.html', context)
+    return render(request, 'all_castles_index.html', context)
 
 def all_people_index(request):
     all_people = Person.objects.all()
     context = {'all_people': all_people}
-    return render(request, 'populate_content/all_people_index.html', context)
+    return render(request, 'all_people_index.html', context)
 
 def all_regions_index(request):
     all_regions = Region.objects.all()
     context = {'all_regions': all_regions}
-    return render(request, 'populate_content/all_regions_index.html', context)
+    return render(request, 'all_regions_index.html', context)
 
 def all_houses_index(request):
     all_houses = House.objects.all()
     context = {'all_houses': all_houses}
-    return render(request, 'populate_content/all_houses_index.html', context)
+    return render(request, 'all_houses_index.html', context)
 
+def gotopaws(request):
+    all_pets = Pets.objects.all()
+    all_cities = Cities.objects.all()
+    all_shelters = Shelter.objects.all()
+    context = {'all_pets': all_pets, 'all_cities' : all_cities, 'all_shelters' : all_shelters}
+    return render(request, 'gotopaws.html', context)
 
 #--------------------------------------------------------------------------------
 #                           API STUFF

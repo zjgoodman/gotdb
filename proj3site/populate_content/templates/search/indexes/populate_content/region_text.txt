@@ -1,0 +1,6 @@
+{{ object.name }}
+{{ object.capital_name }}
+{{ object.ruling_house }}
+{{ object.ruling_lord }}
+{{ object.description }}
+{{ object.history }}

@@ -1,0 +1,8 @@
+{{ object.first_name }}
+{{ object.last_name }}
+{{ object.houses }}
+{{ object.titles }}
+{{ object.castles_controlled }}
+{{ object.status }}
+{{ object.actor }}
+{{ object.bio }}

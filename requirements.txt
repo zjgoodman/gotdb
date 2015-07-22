@@ -1,8 +1,18 @@
+# webserver
 django
 djangorestframework
 django-filter
-django-nose
+
+# code testing
 coverage
 requests
+
+# data scraping
 BeautifulSoup4
+
+# database
 mysqlclient
+
+# search engine
+django-haystack
+whoosh
