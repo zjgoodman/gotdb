@@ -163,21 +163,6 @@ class GOT_Tests (TestCase):
         """
         self.assertEqual(self.house.words, "Winter is coming?")
 
-    def test_shelter_relations(self):
-        """
-        Testing shelter Model
-        check that each field matches the expected output
-        """
-        self.assertEqual(self.shelter.shelter_city_url.__str__(), 'Austin')
-
-    def test_pets_relations(self):
-        """
-        Testing pets Model
-        check that each field matches the expected output
-        """
-        self.assertEqual(self.pet.pet_city_url.__str__(), 'Austin')
-        self.assertEqual(self.pet.pet_shelter_url.__str__(), 'Austin Pets Alive')
-
 
 def make_person(p_id, first, last, description):
     return Person.objects.create(person_id=p_id, first_name=first, last_name=last, bio=description)

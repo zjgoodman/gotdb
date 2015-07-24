@@ -50,7 +50,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+         <a class="navbar-brand page-scroll" href="/">GoTDB</a>
        </div>
 
        <!-- Collect the nav links, forms, and other content for toggling -->
@@ -89,7 +89,7 @@
 
 
   <body style="background-image: url();color:#000">
-    <h1 class="blog-title">{{ region.name }}</h1>
+    <h1 class="blog-title got">{{ region.name }}</h1>
     {% if region.ruling_house %}
       <p class="lead blog-description">Ruled by <a href="/houses/{{ region.ruling_house.house_id }}/">{{ region.ruling_house }}</a></p>
     {% else %}
@@ -103,12 +103,12 @@
         {% endwith %}
       {% endwith %}
         
-      <h2 class="blog-post-title">Description</h2>
+      <h2 class="blog-post-title got" style="font-size:40px">Description</h2>
 	  {% autoescape off %}
       <p>{{ description }}</p>
 	  {% endautoescape %}
 
-      <h2 class="blog-post-title">History</h2>
+      <h2 class="blog-post-title got" style="font-size:40px">History</h2>
 	  {% autoescape off %}
       <p>{{ history }}</p>
 	  {% endautoescape %}
@@ -116,7 +116,7 @@
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
-        <h2>Capital</h2>
+        <h4 class='got'>Capital</h4>
         {% if region.capital_name %}
           <a href="/castles/{{ region.capital_name.castle_id }}/" class="portfolio-box">
             <h4 class="portfolio-box-caption">
@@ -133,7 +133,7 @@
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>Ruling House</h2>
+        <h4 class='got'>Ruling House</h4>
         {% if region.ruling_house %}
           <a href="/houses/{{ region.ruling_house.house_id }}/" class="portfolio-box">
             <h4 class="portfolio-box-caption">
@@ -150,7 +150,7 @@
         {% endif %}
       </div>
       <div class="sidebar-module">
-        <h2>Ruling Lord</h2>
+        <h4 class='got'>Liege Lord</h4>
         {% if region.ruling_lord %}
           <a href="/people/{{ region.ruling_lord.person_id }}/" class="portfolio-box">
             <h4 class="portfolio-box-caption">

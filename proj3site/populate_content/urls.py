@@ -8,6 +8,8 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^search/', include('haystack.urls')),
     
+    url(r'^gotopaws/$', views.gotopaws, name='gotopaws'),
+    
     url(r'^$', views.index, name='splash'),
     url(r'^about/$', views.about, name='about'),
     url(r'^about/unit_tests/$', views.unit_tests, name='unit_tests'),

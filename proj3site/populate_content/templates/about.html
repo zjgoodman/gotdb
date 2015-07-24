@@ -50,7 +50,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand page-scroll" href="/">Game of Thrones</a>
+         <a class="navbar-brand page-scroll" href="/">GoTDB</a>
        </div>
 
        <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,15 +88,15 @@
     </nav>
 
     {% with 'img/author/header.jpg' as bg_img %}
-    <div class="title-section" style="padding-bottom:300px;background-image:url('{% static bg_img %}');background-size:cover;">
-      <h1 style="color:#fff">About the GoTDB</h1>
-      <p class="lead blog-description"><i>{% if house.words %}"{{ house.words }}"{% endif %}</i></p>
+    <div class="title-section" style="padding-bottom:300px;background-image:url('{% static bg_img %}');">
+      <h1 style="color:#fff" class='got'>About</h1>
+      <p class="lead blog-description"><i></i></p>
     </div>
     {% endwith %}
   
     <div class="blog-main">
       <div class="section-heading">
-        <h2 class="blog-post-title" style="text-align:center">Authors</h2>
+        <h2 class="blog-post-title got" style="text-align:center">Authors</h2>
         <div class="container-fluid">
           <div class="row">
             {% if all_authors %}
@@ -107,7 +107,7 @@
                     {% with 'img/header/filler_img.png' as filler_image %}
                       <img src="{% static image_static %}" class="author-img img-circle" onerror="this.src='{% static filler_image %}'" alt="">
                     {% endwith %}
-                  <h2 class="author-name">{{ author.first_name }} {{ author.last_name }}</h2>
+                  <h2 class="author-name got" style="font-size:20px">{{ author.first_name }} {{ author.last_name }}</h2>
                   {% endwith %}
                 </div>
                 <div class="col-md-8">
@@ -122,24 +122,30 @@
               </div>
               {% endfor %}
             {% else %}
-              <p>No authors are available.</p>
+              <p class='got'>No authors are available.</p>
             {% endif %}
           </div>
         </div>
 		<div style="margin:40px">
 		</div>
-        <h2>External Links</h2>
+        <h2 class='got'>Totals</h2>
+        <h3><b>Number of commits</b>:    561</h3>
+        <h3><b>Number of GitHub issues</b>: 92</h3>
+        <h3><b>Number of unit tests</b>:    47</h3>
+        <br><br>
+        <h2 class='got'>External Links</h2>
         <h3><a href="http://docs.gotapi.apiary.io/#">Apiary Documentation</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb">Github Repo</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/issues">Github Issue Tracker</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/wiki">Github Wiki</a></h3>
         <br><br>
-        <h2>Data Sources:</h2>
+        <h2 class='got'>Data Sources:</h2>
         <h3><a href="http://gameofthrones.wikia.com/wiki/Game_of_Thrones_Wiki">Game of Thrones Wiki</a></h3>
         <h3><a href="http://www.westeros.org/">Westeros.org</a></h3>
         <h3><a href="https://github.com/zjg95/cs373-idb/wiki/Design#data-scraping-with-beautiful-soup">How data was scraped</a></h3>
 	    <br><br>
         <h3><a href="unit_tests/">Click to Run Unit Tests!</a></h3>
+        <h3><a href="/gotopaws">Adopt a Pet!</a></h3>
 	    <br><br><br>
       </div>
     </div>
