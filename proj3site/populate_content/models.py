@@ -206,6 +206,46 @@ class House(models.Model) :
     class Meta:
         ordering = ('name',)
 
+class Title(models.Model) :
+    """
+    House models correspond to families that own castles.
+    A House has the following attributes that appear on its page:
+    - Name
+    - Words
+    - Location (ForeignKey Region)
+    - Castle Name (ForeignKey Castle)
+    - Description
+    - People (ForeignKey Person)
+    """
+    # name
+    title_id    = models.CharField(max_length=200, null=True)
+    name        = models.CharField(max_length=200, null=True)
+
+    related_people = models.ManyToManyField(Person, blank=True, related_name='title_related_people')
+    related_castles = models.ManyToManyField(Castle, blank=True, related_name='title_related_castles')
+    related_houses = models.ManyToManyField(House, blank=True, related_name='title_related_houses')
+
+    # brief description
+    description = models.TextField(null=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_url(self):
+        return "/titles/" + self.title_id
+
+    def get_id(self):
+        return self.title_id
+
+    def get_img(self):
+        return "img/title/" + self.title_id + ".jpg"
+
+    def get_img_thumb(self):
+        return "img/title/thumb/" + self.title_id + ".jpg"
+
+    class Meta:
+        ordering = ('name',)
+
 class Author(models.Model) :
     """
     Author models correspond to each of the five team members
