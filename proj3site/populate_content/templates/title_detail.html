@@ -125,7 +125,7 @@
                       {{ person }}
                     </h4>
                     
-                    {% with 'img/place/'|add:person.person_id|add:'.jpg' as image_static %}
+                    {% with 'img/person/'|add:person.person_id|add:'.jpg' as image_static %}
                       {% with 'img/header/filler_img.png' as filler_image %}
                         <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
@@ -197,7 +197,7 @@
                       {{ house }}
                     </h4>
                     
-                    {% with 'img/place/'|add:house.house_id|add:'.jpg' as image_static %}
+                    {% with 'img/house/'|add:house.house_id|add:'.jpg' as image_static %}
                       {% with 'img/header/filler_img.png' as filler_image %}
                         <img src="{% static image_static %}" class="img-responsive" onerror="this.src='{% static filler_image %}'" alt="">
                       {% endwith %}
