@@ -68,6 +68,11 @@ def region_index(request):
     context = {'all_objects': all_objects, 'title': "Regions"}
     return render(request, 'model_list.html', context)
 
+def title_index(request):
+    all_objects = Title.objects.all()
+    context = {'all_objects': all_objects, 'title': "Titles"}
+    return render(request, 'model_list.html', context)
+
 def region_detail(request, region_id):
     try:
         region = Region.objects.get(region_id__exact=region_id)

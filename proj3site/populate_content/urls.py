@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^castles/$', views.castle_index, name='castle_index'),
     url(r'^regions/$', views.region_index, name='region_index'),
     url(r'^houses/$', views.house_index, name='house_index'),
+    url(r'^titles/$', views.title_index, name='title_index'),
 
     url(r'^people/(?P<person_id>[a-z_]+)/$', views.person_detail, name='person_detail'),
     url(r'^regions/(?P<region_id>[a-z_]+)/$', views.region_detail, name='region_detail'),
