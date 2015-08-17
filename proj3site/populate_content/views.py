@@ -73,6 +73,38 @@ def title_index(request):
     context = {'all_objects': all_objects, 'title': "Titles"}
     return render(request, 'model_list.html', context)
 
+def title_detail(request, house_id):
+    try:
+        title = Title.objects.get(house_id__exact=house_id)
+    except Title.DoesNotExist:
+        raise Http404("Title does not exist :")
+
+    description = title.description
+    for h in House.objects.all():
+        if h.name != house.name:
+            regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+            description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+
+    for p in Person.objects.all():
+        regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/people/%s/">%s</a>' % (p.get_id(), str(p)), description)
+
+    for c in Castle.objects.all():
+        regex = re.compile("\\b%s\\b" % str(c), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/castles/%s/">%s</a>' % (c.get_id(), str(c)), description)
+
+    for r in Region.objects.all():
+        regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
+
+    context = {'house'      : title, 
+               'related_people'   : title.related_people.all(),
+               'related_houses'   : title.related_houses.all(), 
+               'description': description,
+               'related_castles'    : title.related_castles.all(),}
+
+    return render(request, 'title_detail.html', context)
+
 def region_detail(request, region_id):
     try:
         region = Region.objects.get(region_id__exact=region_id)
