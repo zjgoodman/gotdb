@@ -1,0 +1,13 @@
+[
+	{
+		"model": "populate_content.title", "pk": 1, "fields":
+		{
+			"title_id": "hand_of_the_king",
+			"name": "Hand of the King",
+			"related_people": [],
+			"related_castles": [],
+		    "related_houses": [1, 2, 3],
+			"description": "<p>The Hand of the King (or King's Hand) is the most powerful appointed position in the Seven Kingdoms, second only to the King in authority and responsibility. The Hand is the King's closest advisor, appointed and authorized to make decisions in the King's name. The Hand of the King is the highest-ranking member of the Small Council, and leads meetings of the council as proxy for the king when the monarch is absent.</p><p>A hand is often used as the symbol of the Hand of the King, such as on the wax seals of letters. Hands of the King often wear a badge of office shaped like a hand, such as a brooch or a gold necklace with a repeated hand design.</p><p>During the reign of strong and able kings, the Hand is the chief agent for coordinating and carrying out the king's plans. During the reign of weak or ineffectual kings, the Hand is often the real power behind the throne, and the man chiefly responsible for holding the realm together. Such was the case when Lord Tywin Lannister ably served as Hand of the King for twenty years while King Aerys II Targaryen spiraled into insanity, or when Lord Jon Arryn served as Hand of the King for seventeen years under King Robert Baratheon, who while an able soldier was not an able politician or statesman. The Hand is supposed to fulfill plans made by the king, but during the reign of weak kings when the Hand is left to clean up the political mess caused by inept rulers, a common saying is that \"The King shits, and the Hand wipes.\"</p><p>On several occasions in history, a Grand Maester has also been appointed as Hand of the King, serving in both offices at once.</p><p>The chair of the Hand of the King at the Small Council table. The Hand of the King is formally addressed as Lord Hand and resides in the Tower of the Hand at the Red Keep along with his family and household.</p>"
+		}
+	}
+]
