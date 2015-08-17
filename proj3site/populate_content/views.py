@@ -73,17 +73,16 @@ def title_index(request):
     context = {'all_objects': all_objects, 'title': "Titles"}
     return render(request, 'model_list.html', context)
 
-def title_detail(request, house_id):
+def title_detail(request, title_id):
     try:
-        title = Title.objects.get(house_id__exact=house_id)
+        title = Title.objects.get(title_id__exact=title_id)
     except Title.DoesNotExist:
         raise Http404("Title does not exist :")
 
     description = title.description
     for h in House.objects.all():
-        if h.name != house.name:
-            regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
-            description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
+        regex = re.compile("\\b%s\\b" % str(h), flags=re.IGNORECASE)
+        description = regex.sub(r'<a href="/houses/%s/">%s</a>' % (h.get_id(), str(h)), description)
 
     for p in Person.objects.all():
         regex = re.compile("\\b%s\\b" % str(p), flags=re.IGNORECASE)
