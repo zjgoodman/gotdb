@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^regions/(?P<region_id>[a-z_]+)/$', views.region_detail, name='region_detail'),
     url(r'^castles/(?P<castle_id>[a-z_]+)/$', views.castle_detail, name='castle_detail'),
     url(r'^houses/(?P<house_id>[a-z_]+)/$', views.house_detail, name='house_detail'),
+    url(r'^titles/(?P<title_id>[a-z_]+)/$', views.title_detail, name='title_detail'),
 
     url(r'^api/people/$', views.person_api_list, name='person_api_list'),
     url(r'^api/castles/$', views.castle_api_list, name='castle_api_list'),
