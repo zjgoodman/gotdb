@@ -96,7 +96,7 @@ def title_detail(request, title_id):
         regex = re.compile("\\b%s\\b" % str(r), flags=re.IGNORECASE)
         description = regex.sub(r'<a href="/regions/%s/">%s</a>' % (r.get_id(), str(r)), description)
 
-    context = {'house'      : title, 
+    context = {'title'      : title, 
                'related_people'   : title.related_people.all(),
                'related_houses'   : title.related_houses.all(), 
                'description': description,
