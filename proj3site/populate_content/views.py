@@ -8,7 +8,7 @@ from django.shortcuts import render, render_to_response
 from django.template import RequestContext, loader
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from .models import Castle, Region, Person, House, Author, Pets, Shelter, Cities
+from .models import Castle, Region, Person, House, Author, Pets, Shelter, Cities, Title
 from .serializers import PeopleSerializer, RegionSerializer, CastleSerializer, HouseSerializer
 
 from .models import Person, Region, Castle
