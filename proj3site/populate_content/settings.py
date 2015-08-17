@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'populate_content.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'siteb',
-        'USER': 'write',
-        'PASSWORD': 'downing11',
-        'HOST': 'housedowning-siteb.me',
+        'NAME': 'gotdb',
+        'USER': 'root',
+        # 'PASSWORD': 'downing11',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

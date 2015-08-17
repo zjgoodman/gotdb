@@ -199,7 +199,7 @@ class GOT_API_Tests (TestCase):
     def setUp(self):
         self.c = APIClient()
         # self.url  = "http://127.0.0.1:8000"      # local
-        self.url = "http://housedowning-siteb.me"  # backup-rackspace
+        self.url = "http://localhost"  # backup-rackspace
         # self.url = "http://housedowning.me"      # production-rackspace
 
 
