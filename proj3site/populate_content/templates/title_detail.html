@@ -92,7 +92,7 @@
     <h1 class="blog-title got">{{ title.name }}</h1>
 
     <div class="col-sm-8">
-      {% with 'img/place/'|add:title.region_id|add:'.jpg' as image_static %}
+      {% with 'img/place/'|add:title.title_id|add:'.jpg' as image_static %}
         {% with 'img/header/filler_img.png' as filler_image %}
           <img src="{% static image_static %}" class="img-responsive" alt="" onerror="this.src='{% static filler_image %}'" style="margin-left:auto;margin-right:auto">
         {% endwith %}
